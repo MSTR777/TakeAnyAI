@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="/support.js"></script>
+<link rel="alternate" hreflang="en" href="https://takeany.ai/en/blog/true-cost-of-llm">
+<link rel="alternate" hreflang="pl" href="https://takeany.ai/pl/blog/true-cost-of-llm">
+<link rel="alternate" hreflang="x-default" href="https://takeany.ai/en/blog/true-cost-of-llm">
+</head>
+<body>
+<x-dc>
+<helmet>
+<script>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[hreflang]');if(!a)return;var l=a.getAttribute('hreflang')==='pl'?'pl':'en';var x=';path=/;max-age=31536000;SameSite=Lax';document.cookie='nf_lang='+l+x;document.cookie='nf_country='+(l==='pl'?'pl':'zz')+x;},true);</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5ZKRS09ZYX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  (function(){
+    var c = null;
+    try { c = JSON.parse(localStorage.getItem('takeany-consent-v1')); } catch(e) {}
+    gtag('consent', 'default', {
+      analytics_storage: (c && c.analytics) ? 'granted' : 'denied',
+      ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied'
+    });
+  })();
+  gtag('js', new Date());
+  gtag('config', 'G-5ZKRS09ZYX');
+</script>
+<script src="/assets/consent.js?v=3" defer></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100;200;300;400;500;600;700;800;900&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/assets/blog-base.css">
+<link rel="stylesheet" href="/css/theme.css">
+<script src="/_ds/takeany-ai-design-system-365327f4-89d8-418c-be14-ea19a91e4fcb/_ds_bundle.js"></script>
+
+<style>/* design-system accent-preview widget is not site chrome */ .acc-switch{display:none!important}/* section divider standard (Home) */
+section.section:not(.partners){border-top:2px solid var(--ink)!important;position:relative}
+section.section:not(.partners)::before{content:"";position:absolute;top:-2px;left:0;width:92px;height:2px;background:var(--lit)}
+.section-head .section-num{color:var(--lit)!important;border-top:0!important;padding-top:0!important}
+.page-head{border-bottom:0!important}
+.cta-link:hover{text-decoration-thickness:2px!important;color:var(--ink)}
+</style>
+<title>What Does AI Actually Cost Your Business? The Real TCO of LLMs (2026) | TakeAny.AI</title>
+<meta name="description" content="Tokens cost pennies today. That doesn't mean AI is cheap. How agents can burn a year's budget in four months, why 73% of companies exceed their AI cost projections, and a practical guide to controlling spend.">
+<meta name="keywords" content="LLM cost for business, AI total cost of ownership, AI token costs, agentic AI costs, AI cost governance, tiered routing LLM, on-premise LLM costs, TakeAny.AI, enterprise AI budget">
+<meta name="author" content="TakeAny.AI">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<link rel="canonical" href="https://takeany.ai/en/blog/true-cost-of-llm">
+
+<meta property="og:site_name" content="TakeAny.AI">
+<meta property="og:type" content="article">
+<meta property="og:title" content="What Does AI Actually Cost Your Business? The Real TCO of LLMs">
+<meta property="og:description" content="Tokens cost pennies. AI is not cheap. How agents can burn a year's budget in four months, and what to do about it.">
+<meta property="og:url" content="https://takeany.ai/en/blog/true-cost-of-llm">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="pl_PL">
+<meta property="og:image" content="https://takeany.ai/assets/docs/mission-control-2.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://takeany.ai/assets/docs/mission-control-2.png">
+<meta name="twitter:title" content="What Does AI Actually Cost Your Business? The Real TCO of LLMs">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://takeany.ai/en/#organization",
+      "name": "TakeAny.AI",
+      "url": "https://takeany.ai/en/",
+      "description": "TakeAny.AI builds an air-gapped, self-hosted control plane for autonomous LLM agents."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://takeany.ai/en/#website",
+      "name": "TakeAny.AI",
+      "url": "https://takeany.ai/en/",
+      "inLanguage": "en",
+      "publisher": { "@id": "https://takeany.ai/en/#organization" }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://takeany.ai/en/#software",
+      "name": "TakeAny.AI",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Linux (KVM required)",
+      "url": "https://takeany.ai/en/",
+      "description": "Air-gapped, self-hosted control plane for autonomous LLM agents with Firecracker microVM isolation, three-role RBAC with per-agent grants, dual-boundary safety firewalls and 14 audit log domains.",
+      "featureList": [
+        "100% air-gapped data sovereignty",
+        "Local model support (vLLM, Ollama, LocalAI, TGI)",
+        "Firecracker microVM isolation boundary",
+        "35 discrete RBAC permissions",
+        "Dual-boundary LLM safety firewalls",
+        "14 log domains for retrieval and token audit"
+      ],
+      "author": { "@id": "https://takeany.ai/en/#organization" }
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "https://takeany.ai/en/blog/true-cost-of-llm#post",
+      "headline": "What Does AI Actually Cost Your Business? The Real TCO of LLMs",
+      "description": "A practical guide to the total cost of using LLMs in business: why cheaper tokens don't mean cheaper AI, how agents can burn budget in months, and how to control spend.",
+      "author": { "@id": "https://takeany.ai/en/#organization" },
+      "publisher": { "@id": "https://takeany.ai/en/#organization" },
+      "isPartOf": { "@type": "Blog", "@id": "https://takeany.ai/en/blog#blog", "name": "TakeAny.AI Blog", "url": "https://takeany.ai/en/blog" },
+      "about": { "@id": "https://takeany.ai/en/#software" },
+      "mentions": { "@id": "https://takeany.ai/en/#software" },
+      "articleSection": "Cost of AI in business",
+      "timeRequired": "PT9M",
+      "wordCount": 2383,
+      "image": "https://takeany.ai/assets/docs/mission-control-2.png",
+      "speakable": { "@type": "SpeakableSpecification", "cssSelector": ["h1", ".tldr", ".faq"] },
+      "datePublished": "2026-08-02",
+      "dateModified": "2026-08-02",
+      "inLanguage": "en",
+      "mainEntityOfPage": { "@type": "WebPage", "@id": "https://takeany.ai/en/blog/true-cost-of-llm", "isPartOf": { "@id": "https://takeany.ai/en/#website" } },
+      "keywords": "LLM cost for business, AI total cost of ownership, AI token costs, agentic AI costs, AI cost governance"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://takeany.ai/en/blog/true-cost-of-llm#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why are AI costs rising if token prices are falling?",
+          "acceptedAnswer": { "@type": "Answer", "text": "This is the Jevons paradox in action: when the unit cost of intelligence falls, companies don't spend less — they run more agents, automate more processes, and consume more tokens than before, which raises the total bill even as each token gets cheaper." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is tiered routing and how much does it save?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Tiered routing sends simple tasks to smaller, cheaper models and complex tasks to flagship models. Organizations using this approach pay a median of about $2.31 per million tokens, versus $18.40 when routing everything to flagship models — roughly an 8x difference." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is self-hosting an LLM cheaper than a cloud API?",
+          "acceptedAnswer": { "@type": "Answer", "text": "It depends on scale. Below a certain volume threshold (roughly hundreds of thousands of tokens per day for smaller models), cloud APIs are usually cheaper. Above that threshold, self-hosting can cut per-token cost by 60-80%, but you need to add hardware, electricity, and DevOps labor." }
+        },
+        {
+          "@type": "Question",
+          "name": "Why do AI agents cost more than a simple chat with a model?",
+          "acceptedAnswer": { "@type": "Answer", "text": "An agent in a multi-step loop resends the entire conversation history at every step, because the model has no memory between calls. On longer tasks, a single step's input can exceed 50,000 tokens, which makes one agent task up to 50 times more expensive than a single chat response." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<script>
+(function(){
+  function upd(){ var b=document.getElementById('backTop'); if(!b) return;
+    var on = window.scrollY > 600;
+    b.style.opacity = on ? '1' : '0';
+    b.style.pointerEvents = on ? 'auto' : 'none';
+    b.style.transform = on ? 'translateY(0)' : 'translateY(10px)';
+  }
+  window.addEventListener('scroll', upd, {passive:true});
+  window.addEventListener('resize', upd, {passive:true});
+  document.addEventListener('click', function(e){
+    var a = e.target && e.target.closest && e.target.closest('#backTop');
+    if (a) { e.preventDefault(); window.scrollTo({top:0, behavior:'smooth'}); }
+  });
+  setInterval(upd, 500);
+})();
+</script>
+<style>.lang-picker summary::-webkit-details-marker{display:none}.lang-picker summary::marker{content:""}.lang-picker[open] summary svg:last-of-type{transform:rotate(180deg)}.lang-picker a:hover{background:var(--paper-3);color:var(--ink)}</style>
+<script>
+(function(){
+  if (window.__takeanyNav) return; window.__takeanyNav = 1;
+  document.addEventListener('click', function(e){
+    var t = e.target && e.target.closest && e.target.closest('#navToggle');
+    if (t){ e.preventDefault(); document.body.classList.toggle('mm-open'); return; }
+    var link = e.target && e.target.closest && e.target.closest('.mobile-menu a');
+    if (link) document.body.classList.remove('mm-open');
+  });
+  window.addEventListener('resize', function(){ if (window.innerWidth > 820) document.body.classList.remove('mm-open'); }, {passive:true});
+})();
+</script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&display=swap">
+<style>
+/* editorial article typography (Newsreader) */
+.page-head .echo-sig{display:none}
+.blog .page-head h1{font-family:'Newsreader',Georgia,serif;font-weight:400;font-size:clamp(38px,5.4vw,64px);line-height:1.06;letter-spacing:-0.02em;max-width:26ch}
+.blog .page-head h1 strong{font-weight:600}
+.page-head .lede{font-family:'Newsreader',Georgia,serif;font-style:italic;font-size:23px;line-height:1.5;color:#4A4A4A;max-width:60ch}
+article{max-width:690px}
+article p{font-family:'Newsreader',Georgia,serif;font-size:21px;line-height:1.62;color:#1F1F1F;margin-bottom:24px;text-wrap:pretty}
+article > p:first-of-type{font-size:23px;line-height:1.55;color:var(--ink)}
+article ul li,article ol li{font-family:'Newsreader',Georgia,serif;font-size:20px;line-height:1.6;color:#1F1F1F}
+article ul li{padding-left:26px;margin-bottom:14px}
+article h2{font-family:'Newsreader',Georgia,serif;font-weight:600;font-size:clamp(28px,3.2vw,34px);line-height:1.14;letter-spacing:-0.012em;margin:62px 0 16px}
+article h3{font-family:'Newsreader',Georgia,serif;font-weight:600;font-size:23px;letter-spacing:-0.01em;margin:40px 0 10px}
+article h2 + p,article h3 + p{margin-top:0}
+.tldr ul li,.faq details p,.callout p{font-family:'Newsreader',Georgia,serif;font-size:18px;line-height:1.6}
+.faq summary{font-family:'Newsreader',Georgia,serif;font-size:20px;font-weight:600}
+.pullquote{border-left:0;padding-left:0;text-align:center;border-top:1px solid var(--line-warm);border-bottom:1px solid var(--line-warm);padding:32px 0}
+.pullquote p{font-family:'Newsreader',Georgia,serif;font-size:28px;font-style:italic;line-height:1.32;letter-spacing:-0.01em}
+.related-card h4,.post-body h3,.featured-copy h2{font-family:'Newsreader',Georgia,serif;font-weight:600}
+.blog .page-head{padding-top:64px}
+/* reading progress */
+.read-prog{position:fixed;top:0;left:0;right:0;height:2px;z-index:80;pointer-events:none}
+.read-prog-bar{display:block;height:100%;width:0;background:var(--lit);transition:width 90ms linear}
+@media (max-width:560px){
+  .blog .page-head .lede{font-size:20px}
+  article p{font-size:19.5px}
+  article > p:first-of-type{font-size:21px}
+  article ul li,article ol li{font-size:18.5px}
+}
+</style>
+<script>
+(function(){
+  var bar=null;
+  function upd(){
+    bar=bar||document.querySelector('.read-prog-bar');
+    var a=document.querySelector('article');
+    if(!bar||!a)return;
+    var s=a.offsetTop, e=a.offsetTop+a.offsetHeight-window.innerHeight, y=window.pageYOffset;
+    var p=e>s?(y-s)/(e-s):0;
+    bar.style.width=(Math.max(0,Math.min(1,p))*100).toFixed(2)+'%';
+  }
+  window.addEventListener('scroll',upd,{passive:true});
+  window.addEventListener('resize',upd,{passive:true});
+  document.addEventListener('DOMContentLoaded',upd);
+  setTimeout(upd,300);
+})();
+</script>
+<style>/* mobile pass: shared fixes */
+@media (max-width:720px){
+  html,body{overflow-x:clip}
+  .section-head{display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:12px!important}
+  .section-head > *{grid-column:auto!important;max-width:100%!important;margin-left:0!important;min-width:0}
+  footer .foot-top{grid-template-columns:1fr 1fr!important;gap:32px 20px!important}
+  footer .foot-brand{grid-column:1 / -1}
+  footer .foot-col{min-width:0}
+  footer .foot-col a{display:inline-block;padding:4px 0;overflow-wrap:anywhere}
+  footer .btn{margin-left:0!important}
+  .exp-sum{min-height:44px}
+  .pr-grid,.pr-incl,.pr-addons,.pr-faq,.lic-steps{grid-template-columns:minmax(0,1fr)!important}
+  .pr-grid > *,.pr-incl > *,.pr-addons > *,.pr-faq > *,.uc-card{min-width:0;overflow-wrap:anywhere}
+  #licensing-brief [style*="grid-template-columns"]{grid-template-columns:minmax(0,1fr)!important}
+  #licensing-brief *{min-width:0;overflow-wrap:anywhere}
+}
+@media (max-width:420px){
+  .nav-cta{gap:8px}
+  .nav-cta .btn{padding-left:14px!important;padding-right:14px!important;font-size:13px!important}
+}
+</style>
+</helmet>
+<div class="read-prog" aria-hidden="true"><span class="read-prog-bar"></span></div>
+<div class="nav-wrap" data-screen-label="Nav">
+  <div class="container nav">
+    <a class="wordmark" href="/en/" aria-label="TakeAny.AI"><x-import component-from-global-scope="TakeAnyAIDesignSystem_365327.Logo" height="32px" hint-size="168px,32px"></x-import></a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="/en/use-cases">Use cases</a>
+      <a href="/en/product">Product</a>
+      <a href="/en/pricing">Pricing</a>
+      <a href="/en/docs">Docs</a>
+      <a href="/en/blog" class="active">Blog</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-primary" href="/en/get-started">Get started <span class="arrow">→</span></a>
+      <button id="navToggle" class="nav-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="mobile-menu">
+    <div class="mm-inner">
+      <nav class="mm-links" aria-label="Mobile">
+        <a href="/en/use-cases">Use cases</a>
+        <a href="/en/product">Product</a>
+      <a href="/en/pricing">Pricing</a>
+        <a href="/en/docs">Docs</a>
+        <a href="/en/blog">Blog</a>
+      </nav>
+      <div class="mm-cta">
+        <a class="btn btn-primary" href="/en/get-started">Get started <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<header class="page-head">
+  <div class="container page-head-grid">
+    <span class="eyebrow"><span class="dot"></span>Cost of AI in business</span>
+    <h1>Tokens are cheaper than ever. <strong>So why is your AI bill going up?</strong></h1>
+    <p class="lede">Someone told you AI is cheap because token prices fell 90%. That's a bit like saying food is cheap because a loaf of bread costs less — then being surprised the restaurant bill keeps climbing, because you ordered twenty dishes and hired four agents to eat them for you.</p>
+    <div class="post-meta">
+      <span><strong>TakeAny.AI</strong></span>
+      <span class="dot"></span>
+      <span>9 min read</span>
+      <span class="dot"></span>
+      <span>August 2026</span>
+    </div>
+  </div>
+</header>
+
+<article>
+
+  <p>In 2026 we're witnessing one of the more absurd paradoxes in the history of IT budgeting: the price per token has fallen more than 90% since 2023, yet companies are spending more on AI than ever. This isn't a spreadsheet error. It's economics — specifically the <strong>Jevons paradox</strong>: when something gets cheaper, people don't use less of it. They use more.</p>
+
+  <p>Companies aren't pocketing the savings from cheaper tokens. They're running more agents, automating more processes, and writing more prompts — and the bill goes up even though each individual token costs a fraction of what it did two years ago. It's a bit like deciding that since gas got cheaper, you can now drive four cars at once. The math checks out. Your wallet, not so much.</p>
+
+  <div class="tldr">
+    <h4>The short version (for the busy, and for the AI reading this)</h4>
+    <ul>
+      <li><strong>Token prices have fallen over 90%</strong> since 2023, but total enterprise AI spend keeps rising — because consumption grows faster than price falls (the Jevons paradox).</li>
+      <li><strong>73% of organizations</strong> exceeded their original AI cost projections in 2026.</li>
+      <li><strong>AI agents can cost up to 50x more</strong> than a simple chat with a model, because a multi-step loop resends the entire conversation history every time.</li>
+      <li><strong>Tiered routing</strong> — sending simple tasks to cheaper models — can cut the average per-token cost by roughly 8x.</li>
+      <li><strong>Self-hosting an LLM</strong> only pays off above a certain scale — below it, cloud is cheaper once you add hardware, electricity, and engineering time.</li>
+      <li><strong>Without cost governance</strong> — limits, per-agent budgets, monitoring — even a well-designed deployment can burn a year's budget in a few months.</li>
+    </ul>
+  </div>
+
+  <h2 id="uber-story">A cautionary tale: how Uber burned a year's AI budget in four months</h2>
+
+  <p>If you need proof that cheaper tokens don't mean cheaper AI, here's 2026's best case study. Uber rolled out Claude Code to its engineering organization in December 2025. Adoption climbed fast — <a class="inline" href="https://portal26.ai/ai-agent-cost-control-stop-agents-burning-budget/">from 32% to 84% of roughly 5,000 engineers between December and March</a>. It was a rollout success: 70% of committed code was AI-assisted, 11% of backend updates were written by fully autonomous agents.</p>
+
+  <p>Then, in April, the money ran out. The entire 2026 AI budget — spent in four months. Uber's CTO <a class="inline" href="https://www.the-sourcecode.com/ai-tech/token-costs-enterprise-ai-business-case-2026">acknowledged being back at the drawing board</a>, because the budget he thought would be sufficient simply wasn't there anymore. This wasn't a technology failure — the tool worked exactly as intended. It was a financial-planning failure, and it happened <em>before</em> deployment, not during it.</p>
+
+  <div class="pullquote">
+    <p>The price of intelligence is falling. The cost of deploying it is rising at a pace no budget was built to handle.</p>
+  </div>
+
+  <p>Uber isn't an isolated case. According to the <a class="inline" href="https://optimumpartners.com/insight/ai-token-costs-and-how-they-might-wreck-your-budget/">FinOps Foundation's "State of FinOps 2026" report</a>, based on data from 1,192 practitioners responsible for a combined $83 billion-plus in annual cloud spend, <strong>73% of organizations exceeded their original AI cost projections</strong>. The share of FinOps teams managing AI spend rose from 31% in 2024 to 98% in 2026. AI cost management has become the single most sought-after skill in technology finance.</p>
+
+  <h3>Why agents are so expensive</h3>
+
+  <p>The key difference between a chat and an agent: the model has no memory between calls. Every step in a multi-step agent task resends the <em>entire</em> conversation history from scratch. On a task that reads files, calls tools, and iterates for the twentieth time, a single step's input can exceed 50,000 tokens.</p>
+
+  <p>Let's do the math, because numbers do the work here better than any metaphor: at Claude Sonnet 4.6's $3 per million input tokens, <a class="inline" href="https://leanopstech.com/blog/agentic-ai-cost-runaway-token-budget-2026/">a single late-loop step costs about $0.15. Multiply by 50 steps, and one task costs $5 or more</a>. Now multiply by 50 tasks per developer per day, by 20 developers, by 22 working days — and you get $110,000 a month for a 20-person team. An agent isn't expensive because it's badly built. It's expensive because that's how loop architecture works.</p>
+
+  <figure>
+    <div class="fig-frame">
+      <svg font-family="Geist, sans-serif" viewBox="0 0 760 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Chart: token price falls while total enterprise AI spend rises — the Jevons paradox">
+        
+        <rect width="760" height="320" fill="#FFFFFF"/>
+        <text x="40" y="46" font-size="19" font-weight="500" fill="#0A0A0A" letter-spacing="-0.5">Cheaper tokens. Bigger bills.</text>
+        <text x="40" y="70" font-size="12" letter-spacing="0.04em" fill="#6B6B6B">THE JEVONS PARADOX IN PRACTICE, 2024–2026</text>
+
+        <line x1="60" y1="270" x2="700" y2="270" stroke="#E6E6E6" stroke-width="1"/>
+        <line x1="60" y1="100" x2="60" y2="270" stroke="#E6E6E6" stroke-width="1"/>
+
+        <polyline points="80,130 260,165 440,210 620,250" fill="none" stroke="#9A9A9A" stroke-width="2.5" stroke-dasharray="5 4"/>
+        <circle cx="80" cy="130" r="4" fill="#9A9A9A"/>
+        <circle cx="620" cy="250" r="4" fill="#9A9A9A"/>
+        <text x="630" y="246" font-size="12" font-weight="600" fill="#6B6B6B">price/token −90%</text>
+
+        <polyline points="80,230 260,195 440,150 620,110" fill="none" stroke="#0A0A0A" stroke-width="3"/>
+        <circle cx="80" cy="230" r="4.5" fill="#0A0A0A"/>
+        <circle cx="620" cy="110" r="4.5" fill="#0A0A0A"/>
+        <text x="500" y="100" font-size="12" font-weight="700" fill="#0A0A0A">avg. enterprise AI budget: $1.2M → $7M</text>
+
+        <text x="80" y="292" text-anchor="middle" font-size="12" fill="#6B6B6B">2024</text>
+        <text x="620" y="292" text-anchor="middle" font-size="12" fill="#6B6B6B">2026</text>
+      </svg>
+    </div>
+    <figcaption>
+      Figure 1 — Token prices fell over 90% since 2023, yet the average company's annual AI budget grew from $1.2M (2024) to $7M (2026), because consumption volume rises faster than the price falls.
+      <span class="src">Source: Oplexa, "AI Inference Cost Crisis 2026" (March 2026) — <a href="https://oplexa.com/ai-inference-cost-crisis-2026/">oplexa.com</a></span>
+    </figcaption>
+  </figure>
+
+  <h2 id="not-frontier-everywhere">The good news: you don't have to pay flagship prices for everything</h2>
+
+  <p>This is where it gets interesting, because it's where companies actually regain control. An analysis of 2.4 billion enterprise API calls found that <a class="inline" href="https://optimumpartners.com/insight/ai-token-costs-and-how-they-might-wreck-your-budget/">organizations routing every task to flagship models paid a median of $18.40 per million tokens</a>. The same research found that companies using a tiered routing architecture — sending simple tasks to smaller, cheaper models and complex ones to flagship models — <a class="inline" href="https://optimumpartners.com/insight/ai-token-costs-and-how-they-might-wreck-your-budget/">achieved a median cost of just $2.31 per million tokens</a>.</p>
+
+  <p>That's not a minor optimization. It's nearly an 8x difference in cost, without sacrificing quality where it matters — because hard tasks still go to the best model.</p>
+
+  <figure>
+    <div class="fig-frame">
+      <svg font-family="Geist, sans-serif" viewBox="0 0 760 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bar chart: cost per million tokens falls from $18.40 to $2.31 with tiered routing">
+        
+        <rect width="760" height="280" fill="#FFFFFF"/>
+        <text x="40" y="46" font-size="19" font-weight="500" fill="#0A0A0A" letter-spacing="-0.5">Model routing makes the difference</text>
+        <text x="40" y="70" font-size="12" letter-spacing="0.04em" fill="#6B6B6B">MEDIAN COST PER MILLION TOKENS (USD)</text>
+
+        <line x1="40" y1="240" x2="720" y2="240" stroke="#E6E6E6" stroke-width="1"/>
+
+        <rect x="150" y="76" width="160" height="164" fill="#0A0A0A"/>
+        <text x="230" y="66" text-anchor="middle" font-size="18" font-weight="700" fill="#0A0A0A">$18.40</text>
+        <text x="230" y="260" text-anchor="middle" font-size="13" font-weight="500" fill="#0A0A0A">Everything to flagship model</text>
+
+        <rect x="450" y="220" width="160" height="20" fill="#4A4A4A"/>
+        <text x="530" y="210" text-anchor="middle" font-size="18" font-weight="700" fill="#0A0A0A">$2.31</text>
+        <text x="530" y="260" text-anchor="middle" font-size="13" font-weight="500" fill="#0A0A0A">Tiered routing</text>
+
+        <text x="380" y="150" text-anchor="middle" font-size="13" font-weight="600" fill="#6B6B6B">≈8x cheaper</text>
+      </svg>
+    </div>
+    <figcaption>
+      Figure 2 — Companies using tiered model routing pay a median of $2.31 per million tokens, versus $18.40 when routing everything to flagship models.
+      <span class="src">Source: Optimum Partners, analysis of 2.4bn enterprise API calls, Q1 2025–Q1 2026 — <a href="https://optimumpartners.com/insight/ai-token-costs-and-how-they-might-wreck-your-budget/">optimumpartners.com</a></span>
+    </figcaption>
+  </figure>
+
+  <h2 id="self-hosting">What about just running your own model?</h2>
+
+  <p>Tempting, right? Pull the weights off Hugging Face, run it yourself, no more API bills. The problem is that a "free" open-source model is a bit like a "free" puppy — the model itself costs nothing, but keeping it alive does.</p>
+
+  <p>Here's the reality: self-hosting only starts to pay off above a certain volume threshold — <a class="inline" href="https://promptcost.org/en/blog/local-llms-total-cost-ownership-2026/">roughly 500,000 tokens per day for a 7B model, or 2 million tokens per day for a 70B model</a>. Below that threshold, cloud usually wins. Above it, self-hosting can cut per-token cost by 60–80%, but you need to add hardware (a GPU server in the $6K–$30K range), electricity, cooling, and — most importantly — engineering time.</p>
+
+  <p>Because the real hidden cost is people's time. <a class="inline" href="https://www.sitepoint.com/self-hosted-llm-costs-2026/">Running a production deployment typically requires 20–30% of a senior engineer's time</a>, which translates to $3,000–$6,000 a month in staffing cost alone — before you've even counted power and hardware.</p>
+
+  <div class="callout">
+    <span class="k">So when does self-hosting pay off?</span>
+    <p>If you're below the volume threshold, cloud wins — it's not worth hiring a DevOps team for savings that a single engineer's salary would erase anyway. Above the threshold, especially if data sovereignty requirements are also in play, self-hosting starts winning twice over: cheaper per token, <em>and</em> your data stays with you.</p>
+    <p>The key isn't choosing "cloud or your own server" — it's an architecture that lets you mix both depending on the task.</p>
+  </div>
+
+  <h2 id="practical-guide">The practical guide: controlling AI cost in your company</h2>
+
+  <p>Enough theory and other people's mistakes. Here are concrete steps that genuinely lower the bill — without giving up what AI can do.</p>
+
+  <ol>
+    <li><strong>Set up tiered routing instead of sending everything to the flagship model.</strong> Simple classification, summaries, and routine tasks go to a smaller, cheaper model. Complex reasoning and high-stakes tasks go to the flagship model. This single change has the biggest return.</li>
+    <li><strong>Set per-agent budgets and loop limits.</strong> An agent with no step limit is an agent that can loop forever and burn a month's budget in a few hours. A hard cap on steps and tokens per task isn't a restriction — it's a fuse.</li>
+    <li><strong>Turn on prompt caching.</strong> Repeated chunks of input — system prompts, documentation, context — can be cached, saving up to 50% on repeated queries.</li>
+    <li><strong>Consider Batch API for tasks with no time pressure.</strong> Asynchronous processing can be up to half the cost of real-time requests — great for reports, summaries, or bulk document processing.</li>
+    <li><strong>Monitor cost per agent, per workflow, per token — not just in aggregate.</strong> A bulk invoice tells you nothing about which agent is burning the budget. Cost attribution to a specific task is the only way to know what to cut.</li>
+    <li><strong>Calculate the real self-hosting break-even point before you invest.</strong> If your volume is below the threshold (see above), stay on API. If you're above it, also count the team's cost, not just the hardware.</li>
+    <li><strong>Build governance before scaling agents — not after.</strong> Gartner estimates that <a class="inline" href="https://report-ai.org/indexes/enterprise-ai/enterprise-ai-statistics-2026/">over 40% of agentic AI projects will be canceled by the end of 2027</a> due to unclear ROI and weak governance. Uber's rollout was technically excellent — and it still lacked a financial plan.</li>
+  </ol>
+
+  <div class="pullquote">
+    <p>Cheaper tokens are an opportunity to scale — not a license to skip control.</p>
+  </div>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>Cost lever</th><th>Typical saving</th><th>When to use it</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Tiered routing</td><td>up to ~8x</td><td>Always — this is the baseline of cost architecture.</td></tr>
+        <tr><td>Prompt caching</td><td>up to 50%</td><td>Repeated context, long system prompts.</td></tr>
+        <tr><td>Batch API</td><td>up to 50%</td><td>Tasks with no real-time pressure.</td></tr>
+        <tr><td>Self-hosting</td><td>60–80% on per-token cost</td><td>Above the volume threshold + sovereignty needs.</td></tr>
+        <tr><td>Per-agent limits</td><td>eliminates surprise bills</td><td>Every agentic deployment, no exceptions.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 id="bottom-line">The bottom line: this isn't a technology problem. It's a visibility problem</h2>
+
+  <p>The price of intelligence will keep falling. That's good news and bad news at once — because, as 2026 shows, a falling price doesn't mean a falling bill. It means more room to overspend if nobody's watching the meter.</p>
+
+  <p>The companies winning this year aren't the ones spending the least on AI. They're the ones who <strong>know exactly what they're spending on</strong> — which agent, which task, which model, how many tokens. This isn't about cutting AI spend. It's about treating AI cost with the same seriousness as any other line in the budget.</p>
+
+  <h2 id="faq">Frequently asked questions</h2>
+  <div class="faq">
+    <details>
+      <summary>Why are AI costs rising if token prices are falling?</summary>
+      <p>This is the Jevons paradox in action: when the unit cost of intelligence falls, companies don't spend less — they run more agents, automate more processes, and consume more tokens than before, which raises the total bill even as each token gets cheaper.</p>
+    </details>
+    <details>
+      <summary>What is tiered routing and how much does it save?</summary>
+      <p>Tiered routing sends simple tasks to smaller, cheaper models and complex tasks to flagship models. Organizations using this approach pay a median of about $2.31 per million tokens, versus $18.40 when routing everything to flagship models — roughly an 8x difference.</p>
+    </details>
+    <details>
+      <summary>Is self-hosting an LLM cheaper than a cloud API?</summary>
+      <p>It depends on scale. Below a certain volume threshold (roughly hundreds of thousands of tokens per day for smaller models), cloud APIs are usually cheaper. Above that threshold, self-hosting can cut per-token cost by 60-80%, but you need to add hardware, electricity, and DevOps labor.</p>
+    </details>
+    <details>
+      <summary>Why do AI agents cost more than a simple chat with a model?</summary>
+      <p>An agent in a multi-step loop resends the entire conversation history at every step, because the model has no memory between calls. On longer tasks, a single step's input can exceed 50,000 tokens, which makes one agent task up to 50 times more expensive than a single chat response.</p>
+    </details>
+  </div>
+
+  <div class="callout" id="about-takeany">
+    <span class="k">About TakeAny.AI</span>
+    <p><strong>TakeAny.AI</strong> is an air-gapped, self-hosted control plane for autonomous LLM agents. It runs as a single Go binary against a local SQLite database, so agents, models, documents and logs all stay inside your perimeter — against local model engines (vLLM, Ollama, LocalAI, TGI) or cloud APIs, with zero outbound telemetry.</p>
+    <p>Tiered routing, loop caps and per-agent token attribution are architectural, not bolted on after the first invoice. See <a class="inline" href="/en/product">what TakeAny.AI controls host-side</a>, the <a class="inline" href="/en/docs">architecture and three-role RBAC model with per-agent grants</a>, or <a class="inline" href="/en/how-we-differ">how it differs from workflow-automation platforms</a>.</p>
+  </div>
+
+  <div class="related">
+    <h3>Related articles</h3>
+    <div class="related-grid">
+      <a class="related-card" href="/en/blog/digital-sovereignty-ai">
+        <span class="rk">Digital sovereignty</span>
+        <h4>A Practical Guide: How to Build Sovereign AI in Your Company</h4>
+        <p>How hyperscalers and the US CLOUD Act expose your trade secrets, and why on-premise LLM wins long-term.</p>
+        <span class="rd">Read more →</span>
+      </a>
+      <a class="related-card" href="/en/blog">
+        <span class="rk">TakeAny.AI blog</span>
+        <h4>See all articles</h4>
+        <p>Sovereignty, cost and agent architecture — practical knowledge for teams building resilient AI deployments.</p>
+        <span class="rd">Browse the blog →</span>
+      </a>
+    </div>
+  </div>
+
+</article>
+
+<section class="cta-strip plum">
+  <div class="container cta-grid">
+    <h2>Amplify everything. <strong>Compromise nothing</strong></h2>
+    <p class="sub">Agents get the power. You keep the keys.</p>
+    <div class="cta-bts">
+      <a class="btn btn-lg ta-btn-light" href="/en/get-started">Get started <span class="arrow">→</span></a>
+      <a class="cta-link" href="/en/get-started#talk" style="display:inline-flex;align-items:center;align-self:center;gap:6px;padding:10px 4px;font-size:16px;font-weight:500;color:#fff;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px;background:none;border:0">Talk to us</a>
+    </div>
+  </div>
+</section>
+
+<footer data-screen-label="Footer">
+  <div class="container">
+    <div class="foot-top" style="grid-template-columns:1.25fr 1fr 1.35fr 0.9fr">
+      <div class="foot-brand">
+        <a class="wordmark" href="/en/" aria-label="TakeAny.AI"><x-import component-from-global-scope="TakeAnyAIDesignSystem_365327.Logo" height="36px" hint-size="189px,36px"></x-import></a>
+        <details class="lang-picker" style="position:relative;margin-top:14px;width:max-content">
+          <summary style="display:flex;align-items:center;gap:8px;cursor:pointer;list-style:none;font-size:14px;color:var(--ink);padding:6px 0"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><circle cx="8" cy="8" r="6.2"></circle><path d="M1.9 8h12.2"></path><path d="M8 1.8c1.7 1.7 2.6 3.8 2.6 6.2S9.7 12.5 8 14.2C6.3 12.5 5.4 10.4 5.4 8S6.3 3.5 8 1.8Z"></path></svg><span>English</span><svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" style="margin-left:2px;opacity:.7"><path d="M3 4.8 6 7.8l3-3"></path></svg></summary>
+          <div role="group" aria-label="Language" style="position:absolute;left:0;bottom:calc(100% + 8px);z-index:20;min-width:168px;background:var(--paper);border:1px solid var(--line);border-radius:4px;box-shadow:0 6px 20px rgba(0,0,0,.08);overflow:hidden;display:flex;flex-direction:column">
+            <a href="/en/blog/true-cost-of-llm" hreflang="en" style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 12px;font-size:14px;color:var(--ink);text-decoration:none;background:var(--paper-3)">English<span style="font-size:11px;font-family:var(--font-mono)">✓</span></a>
+            <a href="/pl/blog/true-cost-of-llm" hreflang="pl" style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 12px;font-size:14px;color:var(--muted);text-decoration:none;background:transparent">Polski</a>
+          </div>
+        </details>
+        <p>The control layer for AI agents. Runs on your infrastructure.</p>
+      </div>
+      <div class="foot-col">
+        <h6>Product</h6>
+        <ul>
+          <li><a href="/en/product">Overview</a></li>
+          <li><a href="/en/use-cases">Use cases</a></li>
+          <li><a href="/en/product#security">Security</a></li>
+          <li><a href="/en/product#cost">Cost control</a></li>
+          <li><a href="/en/product#models">Model Selection</a></li>
+          <li><a href="/en/pricing">Pricing</a></li>
+          <li><a href="/en/how-we-differ">How we differ</a></li>
+          <li><a href="/en/alternative-n8n">TakeAny.AI vs n8n</a></li>
+          <li><a href="/en/alternative-dify">TakeAny.AI vs Dify.ai</a></li>
+          <li><a href="/en/alternative-flowise-langflow">TakeAny.AI vs Flowise / Langflow</a></li>
+          <li><a href="/en/alternative-lindy">TakeAny.AI vs Lindy.ai</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h6>Use cases</h6>
+        <ul>
+          <li><a href="/en/use-cases/model-freedom">Testing Open-Weight LLMs (vLLM / Ollama)</a></li>
+          <li><a href="/en/use-cases/self-hosted-rag-assistant">Building Local RAG on Confidential Files</a></li>
+          <li><a href="/en/use-cases/chatbot-widget">Answering Customer Questions from Your Content</a></li>
+          <li><a href="/en/use-cases/local-gpu-inference">Unboxing &amp; Accelerating Local GPUs</a></li>
+          <li><a href="/en/use-cases/ai-for-erp-crm">Supercharging ERP &amp; CRM Systems</a></li>
+          <li><a href="/en/use-cases/rfp-automation">Automating Technical RFI &amp; RFP Workflows</a></li>
+          <li><a href="/en/use-cases/build-ai-agents">Sandboxing Web Browsing Agents</a></li>
+          <li><a href="/en/use-cases/build-ai-agents">Enforcing EU AI Act</a></li>
+          <li><a href="/en/use-cases/white-label-ai">Earning on AI Under Your Own Brand</a></li>
+          <li><a href="/en/get-started#form">Your AI idea <span class="arrow">→</span></a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h6>Get going</h6>
+        <ul>
+          <li><a href="/en/get-started">Get started</a></li>
+          <li><a href="/en/docs">Docs</a></li>
+          <li><a href="/en/blog">Blog</a></li>
+          <li><a href="/en/get-started#talk">Talk to us</a></li>
+          <li><a href="/en/partners">Partnerships</a></li>
+        </ul>
+      </div>
+    </div>
+    <div style="margin:8px 0 28px;min-height:64px;background:var(--surface-plum);border-radius:14px;padding:10px 12px 10px 20px;display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px">
+      <img src="/_ds/takeany-ai-design-system-365327f4-89d8-418c-be14-ea19a91e4fcb/assets/logo/takeany-logo-ube-butter.svg" alt="TakeAny.AI" width="137" height="26" style="height:26px;width:auto;display:block">
+      <span style="width:1px;height:28px;background:rgba(255,255,255,.2)"></span>
+      <div style="position:relative;flex:1 1 360px;min-width:0">
+        <button type="button" onClick="{{ abToggle }}" aria-expanded="{{ abOpenStr }}" style="width:100%;max-width:640px;display:flex;align-items:center;gap:10px;min-height:44px;padding:0 16px;border:1px solid rgba(255,255,255,.3);border-radius:999px;background:transparent;color:#fff;font-size:14.5px;cursor:pointer;text-align:left">
+          <span style="font-family:var(--font-mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-on-plum-muted);white-space:nowrap">Use AI to</span>
+          <span style="flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ abCur.full }}</span>
+          <span style="color:var(--text-on-plum-muted)">{{ abCaret }}</span>
+        </button>
+        <ul style="display:{{ abListDisplay }};position:absolute;left:0;bottom:52px;width:100%;max-width:640px;margin:0;padding:0;list-style:none;background:#fff;border:1px solid var(--ink);border-radius:16px;overflow:hidden;z-index:30">
+          <sc-for list="{{ abItems }}" as="it" hint-placeholder-count="5">
+            <li style="border-bottom:1px solid var(--line)"><a href="{{ it.href }}" onClick="{{ it.pick }}" style="display:grid;grid-template-columns:34px minmax(0,1fr);gap:10px;align-items:baseline;min-height:52px;padding:14px 18px;color:var(--ink);text-decoration:none;background:{{ it.bg }}" style-hover="background:var(--ube-lavender-50)"><span style="font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;color:var(--lit-deep)">{{ it.n }}</span><span style="font-size:15px;line-height:1.35">{{ it.full }}</span></a></li>
+          </sc-for>
+        </ul>
+      </div>
+      <a class="btn btn-accent" href="/en/get-started#form" style="margin-left:auto">Deliver Your AI idea <span class="arrow">→</span></a>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 TakeAny.AI</span>
+      <span><a href="/llms.txt">llms.txt</a> · <a href="/en/legal#privacy">Privacy</a> · <a href="/en/legal#terms">Terms</a> · <a href="/en/legal#dpa">DPA</a> · <a href="#" data-cookie-settings="">Cookie settings</a></span>
+    </div>
+  </div>
+</footer>
+
+<a id="backTop" href="#" aria-label="Back to top" title="Back to top" style="position:fixed;right:22px;bottom:28px;z-index:70;display:flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:50%;background:var(--paper);border:1px solid var(--line);color:var(--muted);text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,.06);opacity:0;pointer-events:none;transform:translateY(10px);transition:opacity 200ms ease,transform 200ms ease,color 160ms ease,border-color 160ms ease" onMouseEnter="this.style.color='var(--ink)';this.style.borderColor='var(--ink)'" onMouseLeave="this.style.color='var(--muted)';this.style.borderColor='var(--line)'"><svg width="15" height="15" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 11.5V2.5"></path><path d="M3 6.3 7 2.3l4 4"></path></svg></a>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() { return { ...this.__rv0(), ...this.__ab() }; }
+  __ab() {
+    const L = [
+          { n: '01', full: 'Run RAG on documents that can’t leave the building', href: '/en/use-cases/self-hosted-rag-assistant' },
+          { n: '02', full: 'Turn the GPU servers you bought into a secure AI platform', href: '/en/use-cases/local-gpu-inference' },
+          { n: '03', full: 'Let agents into your ERP even when it is ageing and has no API', href: '/en/use-cases/ai-for-erp-crm' },
+          { n: '04', full: 'Juggle LLM models, let open-weight take on the frontier labs', href: '/en/use-cases/model-freedom' },
+          { n: '05', full: 'Sell AI to your clients under your own brand', href: '/en/use-cases/white-label-ai' },
+          { n: '06', full: 'Deliver Your AI idea', href: '/en/get-started#form', hl: true }
+        ];
+    const ab = this.state.ab || 0, open = !!this.state.abOpen;
+    return {
+      abCur: L[ab], abOpenStr: open ? 'true' : 'false', abCaret: open ? '▴' : '▾', abListDisplay: open ? 'block' : 'none',
+      abToggle: () => this.setState(s => ({ abOpen: !s.abOpen })),
+      abItems: L.map((x, k) => ({ ...x, bg: x.hl ? 'var(--ube-lavender-100)' : k === ab ? 'var(--ube-lavender-50)' : '#fff', pick: () => this.setState({ ab: k, abOpen: false }) }))
+    };
+  }
+  state = { navOpen: false };
+  componentDidMount() {
+    document.documentElement.lang = 'en';
+    document.body.classList.add('blog');
+  }
+  __rv0() {
+    const navOpen = this.state.navOpen;
+    return {
+      toggleMobileNav: () => this.setState(s => ({ navOpen: !s.navOpen })),
+      mobileMenuStyle: { opacity: navOpen ? 1 : 0, pointerEvents: navOpen ? 'auto' : 'none' }
+    };
+  }
+}
+</script>
+</body>
+</html>

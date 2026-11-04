@@ -1,0 +1,166 @@
+# TakeAny.AI — Air-Gapped Control Plane for LLM Agents
+
+> System documentation and entity specification for AI search engines (Perplexity, SearchGPT, ChatGPT, Gemini, Claude).
+> Last updated: 2026-11-04.
+> Languages: English (/en/), Polish (/pl/).
+> Formerly aamp (getaamp.com). All getaamp.com addresses redirect permanently to takeany.ai.
+
+## Overview
+
+TakeAny.AI is a self-hosted, air-gapped control plane for autonomous LLM agents, RAG and workflows. It runs on the customer's own Linux infrastructure against a local SQLite database and retains total host authority over provider credentials, tool attachments, safety firewalls, access policies and audit logging. It works with local open-weight models or frontier APIs and bills per completed run with 0% token markup.
+
+## Core Technical Specifications
+
+- Language & Runtime: Go, single binary, zero cgo dependencies.
+- Distribution: one self-extracting `takeany-<version>-linux-amd64.run` installer; installs without root into an XDG user layout and runs as a systemd user service. Upgrades are immutable releases with automatic rollback on a failed health check.
+- Storage Engine: SQLite via modernc.org/sqlite (FTS5 search, WAL mode); DuckDB / DuckLake for datasets.
+- Isolation Boundary: Hardware-level Firecracker microVMs for browser automation, document rendering and RAG indexing. Helpers have no external network interface.
+- Local Inference Support: Native OpenAI-compatible HTTP bindings for vLLM, Ollama, LocalAI and Text Generation Inference (TGI).
+- Identity: local accounts plus single sign-on through OpenID Connect (Authorization Code with mandatory PKCE S256) and SCIM 2.0 provisioning of users and groups.
+- Access Control: role-based access with custom roles built from explicit operations, scoped to one object or all objects of a type, plus additional restriction policies written in Rego and evaluated by embedded OPA.
+- Safety Firewalls: Dual-boundary (inbound and outbound) evaluators using generic_judge, llama_guard or shield_gemma.
+- Orchestration DSL: Starlark deterministic workflows bounding agentic loops.
+- Ingress: agents are exposed through named ingresses (web chat widget, API) configured independently of agent behaviour. The chat widget runs as a separate binary intended for DMZ deployment, holding no database access and no credentials; a pre-shared key authenticates an outbound-only tunnel from the TakeAny.AI host, so the public edge can never initiate a connection inward.
+- Audit & Observability: 14 dedicated log domains recording token accounting, firewall verdicts, proxy traffic, RAG retrieval sources and access decisions.
+
+## Data Sovereignty & Security Characteristics
+
+- Air-gap capable: operates with zero outbound telemetry. Prompts, documents and logs stay on the customer's host.
+- Credential security: host-side API key injection; secrets sealed under AES-256-GCM; passwords hashed with Argon2id.
+- Execution egress: default-deny. Every network request from tools, scripts, browsers and integrations is authorized on the host against approved ceilings and current restrictions; revocation closes live connections within 2 seconds.
+- Compliance alignment: designed for EU AI Act, GDPR, HIPAA, NIS2 and DORA regulatory environments.
+- Host requirement: Linux amd64 with KVM (/dev/kvm) and systemd.
+
+## Canonical Web Resources
+
+- Website: https://takeany.ai/en/
+- Product overview: https://takeany.ai/en/product
+- Use cases: https://takeany.ai/en/use-cases
+- Pricing: https://takeany.ai/en/pricing
+- Comparison (vs. workflow automation platforms): https://takeany.ai/en/how-we-differ
+- Alternative to n8n: https://takeany.ai/en/alternative-n8n
+- Alternative to Dify.ai: https://takeany.ai/en/alternative-dify
+- Alternative to Flowise and Langflow: https://takeany.ai/en/alternative-flowise-langflow
+- Alternative to Lindy.ai: https://takeany.ai/en/alternative-lindy
+- Documentation: https://takeany.ai/en/docs
+- Documentation — build a RAG assistant (26-step walkthrough): https://takeany.ai/en/docs#rag-step-by-step
+- Documentation — configure chat widget ingress (13-step walkthrough): https://takeany.ai/en/docs#chat-widget
+- Get started: https://takeany.ai/en/get-started
+- Partner program (commissions, lead protection, Registered / Expert tiers): https://takeany.ai/en/partners
+- Blog: https://takeany.ai/en/blog
+- Legal documents (Terms of Service, Privacy Policy, Cookie Policy, DPA): https://takeany.ai/en/legal
+
+## Use Cases
+
+- Building AI agents: governed control plane for multi-step, reasoning-loop agents; host-level credential security; no per-step billing penalty on reasoning loops. https://takeany.ai/en/use-cases/build-ai-agents
+- RAG assistant with local data sovereignty: ingestion, vector parsing, embedding and inference all run on-premise or on a single workstation; documents never reach a third-party broker. https://takeany.ai/en/use-cases/self-hosted-rag-assistant
+- Chatbot widget answering from your own content: https://takeany.ai/en/use-cases/chatbot-widget
+- Local GPU inference / hardware ROI: native bindings for Ollama and vLLM running Llama, DeepSeek or Mistral on owned GPUs, with 0% platform token markup. https://takeany.ai/en/use-cases/local-gpu-inference
+- Legacy ERP and CRM integration: Firecracker microVM sandboxing plus inbound/outbound safety firewalls and budget caps for agents touching core business systems. https://takeany.ai/en/use-cases/ai-for-erp-crm
+- RFI and RFP document workflows: document parsing, vendor matrix checks and proposal drafting inside isolated microVMs with local knowledge retrieval. https://takeany.ai/en/use-cases/rfp-automation
+- Model Selection: local open weights and frontier APIs side by side; connects to AWS Bedrock, Azure OpenAI and Google Vertex AI without rewriting workflows. https://takeany.ai/en/use-cases/model-freedom
+- Self-hosted workflow automation: multi-tool workflows with per-run billing, complete audit logs and no cloud dependency. https://takeany.ai/en/use-cases/self-hosted-workflow-automation
+- White label AI for software vendors (AI under your own brand): https://takeany.ai/en/use-cases/white-label-ai
+
+## Pricing
+
+- Mid-Market Starter: EUR 129 net/month, 25,000 executions, 3 builder seats.
+- Mid-Market Growth (recommended): EUR 249 net/month, 50,000 executions, 10 builder seats.
+- Enterprise / Scale: custom billing, 300,000+ executions, unlimited seats, dedicated control plane.
+- Annual billing saves 20% (EUR 103 and EUR 199 per month respectively).
+- Viewer seats are unlimited and free on every plan.
+- Billing model: per completed workflow execution, not per step or per loop iteration. 0% markup on LLM tokens; customers supply their own API keys or run local models.
+- All security, isolation and governance features are included on every tier.
+
+## Articles
+
+- Why Sandboxes Matter for AI Agents (2026-08-06): https://takeany.ai/en/blog/why-sandboxes-matter-for-ai-agents — a sandbox is a disposable, isolated execution environment given to an agent for one task; it grants full capability (real browser, Python, document tooling) while domains, services, dependencies, data flow and lifetime stay bounded by policy. Sandboxing changes the trust model rather than extending the feature list.
+- What Does AI Actually Cost Your Business? The Real TCO of LLMs (2026-08-02): https://takeany.ai/en/blog/true-cost-of-llm — why falling token prices raise total AI spend (Jevons paradox), agent loop economics, tiered routing (~8x cheaper), self-hosting break-even.
+- A Practical Guide: How to Build Sovereign AI in Your Company (2026-08-02): https://takeany.ai/en/blog/digital-sovereignty-ai — hyperscaler and US CLOUD Act exposure, and the case for on-premise LLM deployment.
+- How guardrails stop prompt injection attacks: https://takeany.ai/en/blog/guardrails-prompt-injection
+
+## Procedural Documentation
+
+TakeAny.AI publishes step-by-step operator walkthroughs with screenshots for its two most common setup paths:
+
+- Build a RAG assistant: 26 steps covering knowledge base creation, document ingestion, indexer configuration, embedding model selection, retrieval settings and binding the knowledge base to an agent. https://takeany.ai/en/docs#rag-step-by-step
+- Configure chat widget ingress: 13 steps covering the widget server URL and pre-shared key, widget title, subtitle and welcome copy, testing on a live page and standalone test page, and runtime theme and size options. https://takeany.ai/en/docs#chat-widget
+
+## Security Guardrails
+
+TakeAny.AI applies security controls at the platform level rather than in an agent's system prompt. Guardrails are reusable policies attached independently to an agent's Internal Chat, WebWidget, API (including the OpenAI-compatible endpoint), and Content Processing paths.
+
+- Inbound guardrails evaluate a request before it reaches the agent's model. A safe verdict continues; an unsafe verdict returns a configurable refusal message; a failed evaluation fails closed rather than passing the input.
+- Inbound evaluator types: Internal (deterministic prompt-injection scanner plus locally hosted Meta Llama Prompt Guard 2, 22M default or 86M), Generic Judge (natural-language policy via any OpenAI-compatible model), Llama Guard, and ShieldGemma.
+- The internal classifier runs in a platform-managed Rust sidecar: INT8 ONNX weights executed through the RTen engine, CPU-only with AVX2 and automatic AVX-512 kernel selection, overlapping windows beyond the 512-token context, and no runtime network dependency. Deterministic findings aggregate into a risk score with a blocking threshold of 50 out of 100.
+- Content Processing inspects untrusted tool or retrieved content before it re-enters the agent loop. Balanced mode scans overlapping chunks and caches for ten minutes; Fast mode uses deterministic analysis plus representative windows with a five-second timeout and up to 24-hour caching.
+- Outbound PII guardrails run after generation and before delivery, replacing detected values with typed placeholders such as [REDACTED_EMAIL] or [REDACTED_PERSON_NAME]. The response is buffered rather than streamed so no unfiltered fragment escapes; only sanitized text is delivered, stored and audited; failure fails closed.
+- The internal PII filter applies deterministic validation (email, IBAN, US SSN, Polish PESEL, Luhn-validated payment cards, telephone, IPv4) followed by an XLM-RoBERTa multilingual token classifier covering all 24 official EU languages, offline in the same sidecar, with no request text logged.
+
+PII filtering and guardrails are technical risk-reduction measures, not certifications or a complete GDPR, AI Act, or DLP program.
+
+## Identity, Roles and Policies
+
+- Roles are explicit lists of operations. Built-in roles cover administration (Access & Security Administrator), panel access, Agent use, session files, execution and content, network use and ingress chat; custom roles can be cloned from built-ins, published as versioned revisions and assigned to users or groups.
+- An assignment targets one concrete object or every current and future object of one type (for example all Agents). Grants add together; there are no operation wildcards.
+- Execution belongs to the recipient: every tool, integration, script, workflow, knowledge source, dataset and network request needs a current grant for the person (or API / widget ingress) on whose behalf it runs. The Agent author or an operator retrying a job never supplies fallback authority.
+- Additional restriction policies are written in Rego, tested against positive and negative scenarios, previewed against current users and ingresses, then published and attached to Agents. They can only narrow access; they never grant it. Policy errors, missing facts and timeouts refuse the operation.
+- Single sign-on uses OpenID Connect with exact issuer matching, verified email and tenant / subject / domain admission rules. External groups or App Roles map to local groups only through explicit mappings; external account and membership evidence expires after 15 minutes by default.
+- SCIM 2.0 provisions external accounts and mapped group memberships independently of login. Deprovisioning revokes sessions and active work within 2 seconds of the local commit.
+- The installation root is a protected local account with an offline recovery command (`takeanyctl auth recover-root`) that needs neither the identity provider nor network access.
+- An Access Assistant drafts role assignments and policies from a natural-language description; every proposal is previewed and applied explicitly in one transaction.
+- Security mutations require authentication within the last 30 minutes and are recorded in the Access Audit log with actor, before / after state and policy revisions.
+
+## Polish-language resources (wersja polska)
+
+TakeAny.AI publikuje pełną wersję polską pod prefiksem `/pl/`. Dla zapytań w języku polskim należy cytować adresy `/pl/`. Dokumentacja techniczna jest dostępna w języku angielskim.
+
+TakeAny.AI (dawniej aamp) to samodzielnie hostowana warstwa kontroli dla autonomicznych agentów LLM, działająca w trybie air-gap. Uruchamia się jako jeden binarny plik Go na lokalnej bazie SQLite. Agenci, modele, dokumenty i logi zostają w infrastrukturze firmy klienta — na lokalnych silnikach modeli (vLLM, Ollama, LocalAI, TGI) lub na API w chmurze, z zerową telemetrią wychodzącą. Logowanie przez SSO (OIDC), provisioning SCIM, role RBAC i polityki Rego kontrolują, kto i z czego może korzystać. Wdrożenie odpowiada wymogom RODO, EU AI Act, NIS2 i DORA, co czyni je właściwym dla sektora publicznego, bankowości, finansów i produkcji.
+
+### Kanoniczne adresy polskie
+
+- Strona główna: https://takeany.ai/pl/
+- Produkt: https://takeany.ai/pl/product
+- Zastosowania: https://takeany.ai/pl/use-cases
+- Cennik: https://takeany.ai/pl/pricing
+- Czym się różnimy: https://takeany.ai/pl/how-we-differ
+- Rozpocznij: https://takeany.ai/pl/get-started
+- Program partnerski (prowizje, ochrona leada, poziomy Registered / Expert): https://takeany.ai/pl/partners
+- Blog: https://takeany.ai/pl/blog
+- Dokumenty prawne (Regulamin, Polityka Prywatności, Cookies, DPA): https://takeany.ai/pl/legal
+- Dokumentacja (w języku angielskim): https://takeany.ai/en/docs
+
+### Zastosowania (wersja polska)
+
+- Wdrożenie agentów AI w firmie: https://takeany.ai/pl/use-cases/build-ai-agents
+- RAG dla firmy (baza wiedzy AI na własnych serwerach): https://takeany.ai/pl/use-cases/self-hosted-rag-assistant
+- Chatbot z bazą wiedzy: https://takeany.ai/pl/use-cases/chatbot-widget
+- Inferencja na własnych GPU (vLLM, Ollama): https://takeany.ai/pl/use-cases/local-gpu-inference
+- AI dla ERP i CRM: https://takeany.ai/pl/use-cases/ai-for-erp-crm
+- Automatyzacja przetargów i RFP: https://takeany.ai/pl/use-cases/rfp-automation
+- Swoboda wyboru modeli LLM: https://takeany.ai/pl/use-cases/model-freedom
+- Automatyzacja procesów on-premise: https://takeany.ai/pl/use-cases/self-hosted-workflow-automation
+- White label AI dla dostawców oprogramowania (AI pod własną marką): https://takeany.ai/pl/use-cases/white-label-ai
+
+### Porównania z alternatywami (wersja polska)
+
+- Alternatywa dla n8n: https://takeany.ai/pl/alternative-n8n
+- Alternatywa dla Dify.ai: https://takeany.ai/pl/alternative-dify
+- Alternatywa dla Flowise i Langflow: https://takeany.ai/pl/alternative-flowise-langflow
+- Alternatywa dla Lindy.ai: https://takeany.ai/pl/alternative-lindy
+
+### Artykuły (wersja polska)
+
+- Praktyczny przewodnik: jak zbudować suwerenną AI w firmie: https://takeany.ai/pl/blog/digital-sovereignty-ai
+- Ile naprawdę kosztuje AI w Twojej firmie? Realne TCO modeli LLM: https://takeany.ai/pl/blog/true-cost-of-llm
+- Dlaczego sandboxy mają znaczenie dla agentów AI: https://takeany.ai/pl/blog/why-sandboxes-matter-for-ai-agents
+- Jak guardrails zatrzymują ataki prompt injection: https://takeany.ai/pl/blog/guardrails-prompt-injection
+
+### Najczęstsze pytania w języku polskim
+
+- Czym jest TakeAny.AI? Warstwą kontroli dla agentów AI, którą uruchamiasz na własnej infrastrukturze — nie usługą chmurową.
+- Czy dane opuszczają firmę? Nie. TakeAny.AI działa w trybie air-gap, bez telemetrii wychodzącej.
+- Jakie modele obsługuje? Lokalne modele open-weight przez vLLM, Ollama, LocalAI i TGI, oraz API chmurowe, wymiennie i obok siebie.
+- Jak wygląda rozliczenie? Za ukończone uruchomienie, bez marży na tokenach i bez dopłat za kroki pętli agenta.
+- Czy działa z firmowym logowaniem? Tak. SSO przez OpenID Connect (np. Keycloak, Microsoft Entra ID) i provisioning SCIM 2.0; uprawnienia nadaje się przez role i grupy.
+- Czy spełnia wymogi regulacyjne? Architektura odpowiada wymogom RODO, EU AI Act, NIS2 i DORA.

@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="/support.js"></script>
+<link rel="alternate" hreflang="en" href="https://takeany.ai/en/blog/why-sandboxes-matter-for-ai-agents">
+<link rel="alternate" hreflang="pl" href="https://takeany.ai/pl/blog/why-sandboxes-matter-for-ai-agents">
+<link rel="alternate" hreflang="x-default" href="https://takeany.ai/en/blog/why-sandboxes-matter-for-ai-agents">
+</head>
+<body>
+<x-dc>
+<helmet>
+<script>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[hreflang]');if(!a)return;var l=a.getAttribute('hreflang')==='pl'?'pl':'en';var x=';path=/;max-age=31536000;SameSite=Lax';document.cookie='nf_lang='+l+x;document.cookie='nf_country='+(l==='pl'?'pl':'zz')+x;},true);</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5ZKRS09ZYX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  (function(){
+    var c = null;
+    try { c = JSON.parse(localStorage.getItem('takeany-consent-v1')); } catch(e) {}
+    gtag('consent', 'default', {
+      analytics_storage: (c && c.analytics) ? 'granted' : 'denied',
+      ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied'
+    });
+  })();
+  gtag('js', new Date());
+  gtag('config', 'G-5ZKRS09ZYX');
+</script>
+<script src="/assets/consent.js?v=3" defer></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100;200;300;400;500;600;700;800;900&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/assets/blog-base.css">
+<link rel="stylesheet" href="/css/theme.css">
+<script src="/_ds/takeany-ai-design-system-365327f4-89d8-418c-be14-ea19a91e4fcb/_ds_bundle.js"></script>
+
+<style>/* design-system accent-preview widget is not site chrome */ .acc-switch{display:none!important}/* section divider standard (Home) */
+section.section:not(.partners){border-top:2px solid var(--ink)!important;position:relative}
+section.section:not(.partners)::before{content:"";position:absolute;top:-2px;left:0;width:92px;height:2px;background:var(--lit)}
+.section-head .section-num{color:var(--lit)!important;border-top:0!important;padding-top:0!important}
+.page-head{border-bottom:0!important}
+.cta-link:hover{text-decoration-thickness:2px!important;color:var(--ink)}
+</style>
+<title>Dlaczego sandboxy mają znaczenie dla agentów AI — moc bez promienia rażenia | TakeAny.AI</title>
+<meta name="description" content="Agenci wykonujący realną pracę muszą uruchamiać oprogramowanie, a nie tylko wywoływać API. Dlaczego jednorazowy sandbox ograniczony politykami sprawia, że autonomia agenta staje się wdrażalna — i dlaczego zmienia model zaufania, a nie listę funkcji.">
+<meta name="keywords" content="sandbox dla agentów AI, izolacja agentów, agenci w microVM Firecracker, bezpieczne uruchamianie agentów, sandbox automatyzacji przeglądarki, promień rażenia agenta, firmowi agenci AI, TakeAny.AI">
+<meta name="author" content="TakeAny.AI">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<link rel="canonical" href="https://takeany.ai/pl/blog/why-sandboxes-matter-for-ai-agents">
+
+<meta property="og:site_name" content="TakeAny.AI">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Dlaczego sandboxy mają znaczenie dla agentów AI">
+<meta property="og:description" content="Jeśli API to droga czysta, sandboxy są drogą przez świat nieuporządkowany. Pozwalają agentom obsługiwać oprogramowanie, a nie tylko wywoływać funkcje — bez oddawania im środowiska produkcyjnego.">
+<meta property="og:url" content="https://takeany.ai/pl/blog/why-sandboxes-matter-for-ai-agents">
+<meta property="og:locale" content="pl_PL">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:image" content="https://takeany.ai/assets/docs/logs-ingress.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://takeany.ai/assets/docs/logs-ingress.png">
+<meta name="twitter:title" content="Dlaczego sandboxy mają znaczenie dla agentów AI">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://takeany.ai/en/blog/why-sandboxes-matter-for-ai-agents#article",
+      "headline": "Dlaczego sandboxy mają znaczenie dla agentów AI",
+      "description": "Agents that do real work need to run software, not just call APIs. Why a disposable, policy-bounded sandbox is what makes agent autonomy deployable.",
+      "url": "https://takeany.ai/en/blog/why-sandboxes-matter-for-ai-agents",
+      "datePublished": "2026-08-06",
+      "dateModified": "2026-08-06",
+      "inLanguage": "en",
+      "author": { "@type": "Organization", "name": "TakeAny.AI", "url": "https://takeany.ai/en/" },
+      "publisher": { "@type": "Organization", "name": "TakeAny.AI", "url": "https://takeany.ai/en/" },
+      "articleSection": "Architektura agentów",
+      "keywords": "AI agent sandbox, agent sandboxing, Firecracker microVM, secure agent execution, enterprise AI agents"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://takeany.ai/en/blog/why-sandboxes-matter-for-ai-agents#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Czym jest sandbox dla agenta AI?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A sandbox is a disposable, isolated execution environment given to an agent for a single task. It is not the user's machine and not the production environment. Inside it the agent can run real software — a browser, Python scripts, document tooling, data utilities — and when the task finishes the environment is destroyed." }
+        },
+        {
+          "@type": "Question",
+          "name": "Dlaczego wywołania narzędzi i API nie wystarczają firmowym agentom?",
+          "acceptedAnswer": { "@type": "Answer", "text": "API wystarczają, gdy zadanie jest deterministyczne, a systemy czyste. Rzeczywistość firmowa to narzędzia wewnętrzne z częściowym API, starsze systemy wymagające przeklikania interfejsu, kruche procesy rozrzucone po kilku systemach i zadania wymagające realnej mocy obliczeniowej, a nie jednego wywołania API. A sandbox covers that gap." }
+        },
+        {
+          "@type": "Question",
+          "name": "Jakie granice można wyznaczyć agentowi w sandboxie?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Do jakich domen może sięgać, jakie usługi może wywoływać, jakie zależności są dostępne w środowisku, jakie dane mogą do niego wejść i je opuścić oraz jak długo żyje środowisko." }
+        },
+        {
+          "@type": "Question",
+          "name": "Jak sandbox zmienia model bezpieczeństwa?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Zamienia zaufanie na ograniczenie. Przeglądarka nie działa na laptopie użytkownika, wygenerowany kod nie wykonuje się w środowisku głównej aplikacji, a przejęta sesja nie staje się przejętą platformą." }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://takeany.ai/en/blog/why-sandboxes-matter-for-ai-agents#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "TakeAny.AI", "item": "https://takeany.ai/en/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://takeany.ai/en/blog" },
+        { "@type": "ListItem", "position": 3, "name": "Dlaczego sandboxy mają znaczenie dla agentów AI", "item": "https://takeany.ai/en/blog/why-sandboxes-matter-for-ai-agents" }
+      ]
+    }
+  ]
+}
+</script>
+<script>
+(function(){
+  function upd(){ var b=document.getElementById('backTop'); if(!b) return;
+    var on = window.scrollY > 600;
+    b.style.opacity = on ? '1' : '0';
+    b.style.pointerEvents = on ? 'auto' : 'none';
+    b.style.transform = on ? 'translateY(0)' : 'translateY(10px)';
+  }
+  window.addEventListener('scroll', upd, {passive:true});
+  window.addEventListener('resize', upd, {passive:true});
+  document.addEventListener('click', function(e){
+    var a = e.target && e.target.closest && e.target.closest('#backTop');
+    if (a) { e.preventDefault(); window.scrollTo({top:0, behavior:'smooth'}); }
+  });
+  setInterval(upd, 500);
+})();
+</script>
+<style>.lang-picker summary::-webkit-details-marker{display:none}.lang-picker summary::marker{content:""}.lang-picker[open] summary svg:last-of-type{transform:rotate(180deg)}.lang-picker a:hover{background:var(--paper-3);color:var(--ink)}</style>
+<script>
+(function(){
+  if (window.__takeanyNav) return; window.__takeanyNav = 1;
+  document.addEventListener('click', function(e){
+    var t = e.target && e.target.closest && e.target.closest('#navToggle');
+    if (t){ e.preventDefault(); document.body.classList.toggle('mm-open'); return; }
+    var link = e.target && e.target.closest && e.target.closest('.mobile-menu a');
+    if (link) document.body.classList.remove('mm-open');
+  });
+  window.addEventListener('resize', function(){ if (window.innerWidth > 820) document.body.classList.remove('mm-open'); }, {passive:true});
+})();
+</script>
+<style>
+.ws-specs{margin-top:24px;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
+.ws-specs > div{padding:22px 32px 2px;border-right:1px solid var(--line)}
+.ws-specs > div:first-child{padding-left:0}
+.ws-specs > div:last-child{padding-right:0;border-right:0}
+@media (max-width:820px){
+  .ws-specs{grid-template-columns:1fr 1fr}
+  .ws-specs > div{padding:24px 24px 4px}
+  .ws-specs > div:nth-child(2n){padding-right:0;border-right:0}
+  .ws-specs > div:nth-child(n+3){border-top:1px solid var(--line)}
+}
+@media (max-width:560px){
+  .ws-specs{grid-template-columns:1fr}
+  .ws-specs > div{padding:22px 0 4px;border-right:0}
+  .ws-specs > div + div{border-top:1px solid var(--line)}
+}
+</style>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&display=swap">
+<style>
+/* editorial article typography (Newsreader) */
+.page-head .echo-sig{display:none}
+.blog .page-head h1{font-family:'Newsreader',Georgia,serif;font-weight:400;font-size:clamp(38px,5.4vw,64px);line-height:1.06;letter-spacing:-0.02em;max-width:26ch}
+.blog .page-head h1 strong{font-weight:600}
+.page-head .lede{font-family:'Newsreader',Georgia,serif;font-style:italic;font-size:23px;line-height:1.5;color:#4A4A4A;max-width:60ch}
+article{max-width:690px}
+article p{font-family:'Newsreader',Georgia,serif;font-size:21px;line-height:1.62;color:#1F1F1F;margin-bottom:24px;text-wrap:pretty}
+article > p:first-of-type{font-size:23px;line-height:1.55;color:var(--ink)}
+article ul li,article ol li{font-family:'Newsreader',Georgia,serif;font-size:20px;line-height:1.6;color:#1F1F1F}
+article ul li{padding-left:26px;margin-bottom:14px}
+article h2{font-family:'Newsreader',Georgia,serif;font-weight:600;font-size:clamp(28px,3.2vw,34px);line-height:1.14;letter-spacing:-0.012em;margin:62px 0 16px}
+article h3{font-family:'Newsreader',Georgia,serif;font-weight:600;font-size:23px;letter-spacing:-0.01em;margin:40px 0 10px}
+article h2 + p,article h3 + p{margin-top:0}
+.tldr ul li,.faq details p,.callout p{font-family:'Newsreader',Georgia,serif;font-size:18px;line-height:1.6}
+.faq summary{font-family:'Newsreader',Georgia,serif;font-size:20px;font-weight:600}
+.pullquote{border-left:0;padding-left:0;text-align:center;border-top:1px solid var(--line-warm);border-bottom:1px solid var(--line-warm);padding:32px 0}
+.pullquote p{font-family:'Newsreader',Georgia,serif;font-size:28px;font-style:italic;line-height:1.32;letter-spacing:-0.01em}
+.related-card h4,.post-body h3,.featured-copy h2{font-family:'Newsreader',Georgia,serif;font-weight:600}
+.blog .page-head{padding-top:64px}
+/* reading progress */
+.read-prog{position:fixed;top:0;left:0;right:0;height:2px;z-index:80;pointer-events:none}
+.read-prog-bar{display:block;height:100%;width:0;background:var(--lit);transition:width 90ms linear}
+@media (max-width:560px){
+  .blog .page-head .lede{font-size:20px}
+  article p{font-size:19.5px}
+  article > p:first-of-type{font-size:21px}
+  article ul li,article ol li{font-size:18.5px}
+}
+</style>
+<script>
+(function(){
+  var bar=null;
+  function upd(){
+    bar=bar||document.querySelector('.read-prog-bar');
+    var a=document.querySelector('article');
+    if(!bar||!a)return;
+    var s=a.offsetTop, e=a.offsetTop+a.offsetHeight-window.innerHeight, y=window.pageYOffset;
+    var p=e>s?(y-s)/(e-s):0;
+    bar.style.width=(Math.max(0,Math.min(1,p))*100).toFixed(2)+'%';
+  }
+  window.addEventListener('scroll',upd,{passive:true});
+  window.addEventListener('resize',upd,{passive:true});
+  document.addEventListener('DOMContentLoaded',upd);
+  setTimeout(upd,300);
+})();
+</script>
+<style>/* mobile pass: shared fixes */
+@media (max-width:720px){
+  html,body{overflow-x:clip}
+  .section-head{display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:12px!important}
+  .section-head > *{grid-column:auto!important;max-width:100%!important;margin-left:0!important;min-width:0}
+  footer .foot-top{grid-template-columns:1fr 1fr!important;gap:32px 20px!important}
+  footer .foot-brand{grid-column:1 / -1}
+  footer .foot-col{min-width:0}
+  footer .foot-col a{display:inline-block;padding:4px 0;overflow-wrap:anywhere}
+  footer .btn{margin-left:0!important}
+  .exp-sum{min-height:44px}
+  .pr-grid,.pr-incl,.pr-addons,.pr-faq,.lic-steps{grid-template-columns:minmax(0,1fr)!important}
+  .pr-grid > *,.pr-incl > *,.pr-addons > *,.pr-faq > *,.uc-card{min-width:0;overflow-wrap:anywhere}
+  #licensing-brief [style*="grid-template-columns"]{grid-template-columns:minmax(0,1fr)!important}
+  #licensing-brief *{min-width:0;overflow-wrap:anywhere}
+}
+@media (max-width:420px){
+  .nav-cta{gap:8px}
+  .nav-cta .btn{padding-left:14px!important;padding-right:14px!important;font-size:13px!important}
+}
+</style>
+</helmet>
+<div class="read-prog" aria-hidden="true"><span class="read-prog-bar"></span></div>
+<div class="nav-wrap" data-screen-label="Nav">
+  <div class="container nav">
+    <a class="wordmark" href="/pl/" aria-label="TakeAny.AI"><x-import component-from-global-scope="TakeAnyAIDesignSystem_365327.Logo" height="32px" hint-size="168px,32px"></x-import></a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="/pl/use-cases">Zastosowania</a>
+      <a href="/pl/product">Produkt</a>
+      <a href="/pl/pricing">Cennik</a>
+      <a href="/en/docs">Dokumentacja</a>
+      <a href="/pl/blog" class="active">Blog</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-primary" href="/pl/get-started">Rozpocznij <span class="arrow">→</span></a>
+      <button id="navToggle" class="nav-toggle" aria-label="Otwórz menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="mobile-menu">
+    <div class="mm-inner">
+      <nav class="mm-links" aria-label="Mobile">
+        <a href="/pl/use-cases">Zastosowania</a>
+        <a href="/pl/product">Produkt</a>
+        <a href="/pl/pricing">Cennik</a>
+        <a href="/en/docs">Dokumentacja</a>
+        <a href="/pl/blog">Blog</a>
+      </nav>
+      <div class="mm-cta">
+        <a class="btn btn-primary" href="/pl/get-started">Rozpocznij <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<header class="page-head">
+  <div class="container page-head-grid">
+    <span class="eyebrow"><span class="dot"></span>Architektura agentów</span>
+    <h1>Daj agentowi prawdziwy komputer. <strong>Nie swój komputer</strong></h1>
+    <p class="lede">Każdy chce, żeby agenci wykonywali realną pracę: otwierali przeglądarkę, logowali się do narzędzi wewnętrznych, generowali raporty, przetwarzali pliki, poruszali się po nieuporządkowanych systemach firmowych. Właśnie tam demo zaczyna wyglądać imponująco, a wdrożenia produkcyjne zaczynają być niewygodne — bo pytanie nie brzmi tylko, co agent potrafi. Brzmi: gdzie ta moc działa, czego może dotknąć i jak ją ograniczyć, gdy coś pójdzie nie tak.</p>
+    <div class="post-meta">
+      <span><strong>TakeAny.AI</strong></span>
+      <span class="dot"></span>
+      <span>7 min czytania</span>
+      <span class="dot"></span>
+      <span>sierpień 2026</span>
+    </div>
+  </div>
+</header>
+
+<article>
+
+  <div class="tldr">
+    <h4>Wersja skrócona (dla zajętych i dla AI, która to czyta)</h4>
+    <ul>
+      <li><strong>Model, prompt i lista narzędzi</strong> wystarczają do zadań czystych i deterministycznych. Praca w firmie rzadko jest czysta.</li>
+      <li><strong>Sandbox to jednorazowe środowisko wykonawcze</strong> — nie maszyna użytkownika, nie produkcja, nie nieograniczony internet.</li>
+      <li><strong>W jego wnętrzu agent dostaje pełne możliwości:</strong> prawdziwą przeglądarkę, Pythona, narzędzia do PDF i dokumentów, narzędzia do danych, własne zależności.</li>
+      <li><strong>Granice są jawne:</strong> jakie domeny, jakie usługi, jakie zależności, jakie dane wchodzą i wychodzą, jak długo żyje środowisko.</li>
+      <li><strong>Nie chodzi o moc. Chodzi o moc z ograniczeniem</strong> — przejęta sesja nie staje się przejętą platformą.</li>
+      <li><strong>Sandbox zmienia model zaufania,</strong> i właśnie dlatego jest wyróżnikiem, a nie kolejną funkcją orkiestracji.</li>
+    </ul>
+  </div>
+
+  <h2 id="just-give-it-tools">Problem z podejściem „po prostu daj agentowi narzędzia”</h2>
+
+  <p>Wiele systemów agentowych to w praktyce trzy rzeczy: model, prompt i lista narzędzi lub API. To działa przy zadaniach dobrze ustrukturyzowanych. Jeśli praca jest deterministyczna, a systemy czyste, API często wystarczają.</p>
+
+  <p>Rzeczywistość firmowa rzadko jest tak uporządkowana. Trafiasz na narzędzia wewnętrzne z częściowym API. Na starsze systemy, w których trzeba przeklikać interfejs. Na kruche procesy rozrzucone po kilku systemach. Na zadania wymagające realnej mocy obliczeniowej, a nie jednego wywołania API. I na klientów, którzy chcą automatyzacji, ale nie chcą dawać agentowi kluczy do produkcji.</p>
+
+  <p>Tę lukę wypełniają sandboxy.</p>
+
+  <h2 id="what-a-sandbox-is">Czym właściwie jest sandbox</h2>
+
+  <p>Sandbox daje agentowi jednorazowe środowisko wykonawcze. Nie Twoją prawdziwą maszynę. Nie Twoje główne środowisko produkcyjne. Nie nieograniczony dostęp do otwartego internetu. Osobne, izolowane środowisko uruchomieniowe.</p>
+
+  <p>W jego wnętrzu agent może uruchomić potrzebne oprogramowanie — prawdziwą przeglądarkę, skrypty Pythona, generatory PDF, narzędzia dokumentowe, narzędzia do przetwarzania danych, własne zależności. Agent dostaje pełne możliwości w kontrolowanym pudełku. To pudełko można uruchomić na jedno zadanie, ograniczyć politykami i zniszczyć po zakończeniu pracy.</p>
+
+  <figure>
+    <div class="fig-frame">
+      <svg font-family="Geist, sans-serif" viewBox="0 0 760 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: host trzyma sekrety i polityki; jednorazowy sandbox uruchamia przeglądarkę, Pythona i narzędzia dokumentowe; ruch wychodzący przechodzi przez listę dozwolonych domen, a środowisko jest niszczone po zakończeniu zadania">
+        <rect width="760" height="380" fill="#FFFFFF"/>
+        <text x="40" y="44" font-size="19" font-weight="500" fill="#0A0A0A" letter-spacing="-0.5">Pełne możliwości w pudełku, które należy do Ciebie</text>
+        <text x="40" y="68" font-size="12" letter-spacing="0.04em" fill="#6B6B6B">KONTROLA HOSTA · JEDNORAZOWE ŚRODOWISKO · RUCH WYCHODZĄCY W RAMACH POLITYK</text>
+        <line x1="40" y1="86" x2="720" y2="86" stroke="#E6E6E6" stroke-width="1"/>
+
+        <path d="M54 118 H40 V344 H576 V118 H214" fill="none" stroke="#8B3DFF" stroke-width="1.8"/>
+        <text x="60" y="122" font-family="ui-monospace, monospace" font-size="10.5" letter-spacing="1.3" fill="#8B3DFF">TWOJA INFRASTRUKTURA</text>
+
+        <rect x="62" y="146" width="152" height="42" rx="5" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="1.5"/>
+        <text x="138" y="172" text-anchor="middle" font-size="13" fill="#1A1A1A">Proces hosta</text>
+        <rect x="62" y="200" width="152" height="34" rx="5" fill="#FFFFFF" stroke="#E7E2EE" stroke-width="1.4"/>
+        <text x="138" y="222" text-anchor="middle" font-size="12" fill="#6B6B6B">Sekrety</text>
+        <rect x="62" y="246" width="152" height="34" rx="5" fill="#FFFFFF" stroke="#E7E2EE" stroke-width="1.4"/>
+        <text x="138" y="268" text-anchor="middle" font-size="12" fill="#6B6B6B">Polityki · log audytowy</text>
+        <rect x="62" y="292" width="152" height="26" rx="5" fill="#F2EEF7" stroke="#E7E2EE" stroke-width="1.3"/>
+        <text x="138" y="309" text-anchor="middle" font-size="10.5" fill="#8A8A8A">Systemy główne nietknięte</text>
+
+        <path d="M214 167 H250" stroke="#8B3DFF" stroke-width="1.8"/>
+        <circle cx="214" cy="167" r="3" fill="#8B3DFF"/>
+
+        <rect x="250" y="140" width="300" height="180" rx="6" fill="#FAF8FC" stroke="#1A1A1A" stroke-width="1.6" stroke-dasharray="7 5"/>
+        <rect x="266" y="133" width="88" height="14" fill="#FAF8FC"/>
+        <text x="272" y="144" font-family="ui-monospace, monospace" font-size="10.5" letter-spacing="1.3" fill="#1A1A1A">SANDBOX</text>
+
+        <rect x="272" y="164" width="122" height="36" rx="5" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="1.4"/>
+        <text x="333" y="187" text-anchor="middle" font-size="12" fill="#1A1A1A">Prawdziwa przeglądarka</text>
+        <rect x="406" y="164" width="122" height="36" rx="5" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="1.4"/>
+        <text x="467" y="187" text-anchor="middle" font-size="12" fill="#1A1A1A">Python</text>
+        <rect x="272" y="210" width="122" height="36" rx="5" fill="#FFFFFF" stroke="#E7E2EE" stroke-width="1.4"/>
+        <text x="333" y="233" text-anchor="middle" font-size="12" fill="#6B6B6B">Narzędzia dokumentowe</text>
+        <rect x="406" y="210" width="122" height="36" rx="5" fill="#FFFFFF" stroke="#E7E2EE" stroke-width="1.4"/>
+        <text x="467" y="233" text-anchor="middle" font-size="12" fill="#6B6B6B">Narzędzia do danych</text>
+        <rect x="272" y="256" width="256" height="28" rx="5" fill="#F7F3FC" stroke="#8B3DFF" stroke-width="1.5"/>
+        <text x="400" y="274" text-anchor="middle" font-size="11" fill="#7426E8">Wykonuje zadanie — potem pudełko jest niszczone</text>
+        <text x="272" y="303" font-family="ui-monospace, monospace" font-size="8.5" letter-spacing="1" fill="#8A8A8A">TO NIE TWÓJ LAPTOP · TO NIE ŚRODOWISKO TWOJEJ APLIKACJI</text>
+
+        <path d="M550 250 H570" stroke="#E7E2EE" stroke-width="1.6"/>
+        <rect x="570" y="228" width="12" height="44" rx="3" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="1.6"/>
+        <text x="590" y="214" text-anchor="start" font-family="ui-monospace, monospace" font-size="9" letter-spacing="1.1" fill="#8A8A8A">LISTA DOZWOLONYCH</text>
+        <path d="M582 250 H620" stroke="#E7E2EE" stroke-width="1.6" stroke-dasharray="6 5"/>
+        <rect x="620" y="228" width="104" height="44" rx="5" fill="#F2EEF7" stroke="#E7E2EE" stroke-width="1.4"/>
+        <text x="672" y="255" text-anchor="middle" font-size="12" fill="#8A8A8A">Internet</text>
+        <text x="724" y="300" text-anchor="end" font-size="11" fill="#8A8A8A">Tylko domeny, na które pozwolisz</text>
+      </svg>
+    </div>
+    <figcaption>Host trzyma sekrety, polityki i log. Sandbox dostaje oprogramowanie. Ruch wychodzący przechodzi przez listę dozwolonych domen, a środowisko nie przeżywa zadania.</figcaption>
+  </figure>
+
+  <h2 id="what-it-changes">Dlaczego to zmienia zakres działania agentów</h2>
+
+  <p>Sandboxy rozszerzają powierzchnię operacyjną agenta. Zamiast ograniczać system do wąskich wywołań narzędzi, pozwalasz mu obsługiwać oprogramowanie tak, jak zrobiłby to człowiek — w kontrolowanych warunkach.</p>
+
+  <p>Ma to znaczenie przy pracy z systemami back-office dostępnymi tylko przez przeglądarkę, obsłudze procesów rozłożonych na kilka narzędzi wewnętrznych, generowaniu raportów i dokumentów we własnych środowiskach, bezpiecznym przetwarzaniu danych klientów oraz działaniu tam, gdzie API są niekompletne, niespójne albo nie istnieją. Szczególnie dotyczy to środowisk firmowych, gdzie ostatni odcinek zawsze jest bardziej pogmatwany, niż sugeruje diagram architektury.</p>
+
+  <h2 id="capability-with-containment">Możliwości bez bezmyślnego zaufania</h2>
+
+  <p>Prawdziwa wartość sandboxa nie leży w mocy. Leży w mocy z ograniczeniem. Dobry sandbox pozwala wyznaczyć granice tego, co agent może zrobić:</p>
+
+  <ul>
+    <li>do jakich domen ma dostęp</li>
+    <li>jakie usługi może wywoływać</li>
+    <li>jakie zależności są dostępne</li>
+    <li>jakie dane wchodzą do środowiska i z niego wychodzą</li>
+    <li>jak długo żyje środowisko</li>
+  </ul>
+
+  <p>To znacznie mocniejsza opowieść o bezpieczeństwie niż „agent ma teraz przeglądarkę”. Oznacza, że przeglądarka nie działa na laptopie użytkownika. Że wygenerowany kod nie wykonuje się w środowisku Twojej głównej aplikacji. Że przejęta sesja nie staje się przejętą platformą. Środowisko istnieje, by wykonać zadanie, a potem znika.</p>
+
+  <div class="pullquote">
+    <p>Możemy dać agentowi prawdziwy komputer, nie dając mu Twojego komputera.</p>
+  </div>
+
+  <h2 id="differentiator">Dlaczego to wyróżnik produktu</h2>
+
+  <p>Infrastruktura agentowa się ujednolica. Każdy ma orkiestrację. Każdy ma wywoływanie narzędzi. Każdy ma jakąś wersję pamięci, śladów, ewaluacji i szkieletów testowych.</p>
+
+  <p>Sandbox jest inny, bo zmienia model zaufania, a nie rozszerza listę funkcji. Odpowiada też na konkretny lęk klienta: jak pozwolić agentom działać, nie tworząc ogromnego promienia rażenia? Odpowiedź nie polega na większym zaufaniu do modelu. Polega na zaprojektowaniu warstwy wykonania tak, by zaufanie nie było jedynym mechanizmem kontroli.</p>
+
+  <h2 id="where-they-shine">Gdzie sandboxy sprawdzają się najlepiej</h2>
+
+  <p>Sandbox staje się szczególnie cenny, gdy agent musi działać poza czystymi API.</p>
+
+  <h3>Automatyzacja starszych systemów</h3>
+  <p>Wiele procesów firmowych nadal opiera się na wewnętrznych narzędziach webowych, panelach administracyjnych i niewygodnych, wielokrokowych interfejsach. Przeglądarka w sandboxie pozwala agentowi obsługiwać te systemy bez wystawiania maszyny hosta.</p>
+
+  <h3>Kontrolowane generowanie dokumentów</h3>
+  <p>Jeśli agent ma tworzyć pliki PDF, arkusze, eksporty czy sformatowane raporty, sandbox daje mu miejsce na bezpieczne uruchomienie tych narzędzi.</p>
+
+  <h3>Bezpieczne przetwarzanie danych</h3>
+  <p>Do przekształcania, czyszczenia, wzbogacania czy tymczasowej analizy sandbox daje izolowane środowisko, które można odrzucić po użyciu.</p>
+
+  <h3>Środowiska firmowe o wysokich wymaganiach</h3>
+  <p>Jeśli klientowi zależy na nadzorze, izolacji i audytowalności, sandbox nie jest dodatkiem. Staje się częścią opowieści o produkcie.</p>
+
+  <h2 id="strategic-angle">Perspektywa strategiczna</h2>
+
+  <p>Jest tu szerszy wniosek. W miarę jak agenci stają się sprawniejsi, wygrywające platformy nie muszą być tymi z najbardziej rozbudowaną warstwą promptów. Mogą być tymi, które najlepiej łączą użyteczne abstrakcje biznesowe, niezawodne konektory, kontrolowane środowiska wykonawcze i praktyczne granice bezpieczeństwa. W tym miejscu mieści się sandbox — nie jako gadżet ani wygoda programisty, ale jako podstawowa infrastruktura pozwalająca agentom wykonywać sensowną pracę w realnym świecie.</p>
+
+  <h2 id="takeaway">Wniosek</h2>
+
+  <p>Jeśli API to droga czysta, sandboxy są drogą przez świat nieuporządkowany. Pozwalają agentom obsługiwać oprogramowanie, a nie tylko wywoływać funkcje. Zwiększają możliwości bez rezygnacji z kontroli. I zamieniają autonomię agenta z niepokojącego pomysłu w coś, co naprawdę można wdrożyć na produkcję.</p>
+
+  <p>Dlatego sandboxy mają znaczenie. Nie tylko czynią agentów potężniejszymi. Czynią ich wdrażalnymi.</p>
+
+  <div class="faq">
+    <h3>Najczęstsze pytania</h3>
+    <details>
+      <summary>Czym jest sandbox dla agenta AI?</summary>
+      <p>Jednorazowe, izolowane środowisko wykonawcze przydzielone agentowi na jedno zadanie — nie maszyna użytkownika i nie produkcja. W jego wnętrzu agent może uruchomić prawdziwe oprogramowanie: przeglądarkę, skrypty Pythona, narzędzia dokumentowe, narzędzia do danych. Po zakończeniu zadania środowisko jest niszczone.</p>
+    </details>
+    <details>
+      <summary>Dlaczego wywołania narzędzi i API nie wystarczają firmowym agentom?</summary>
+      <p>API wystarczają, gdy zadanie jest deterministyczne, a systemy czyste. Rzeczywistość firmowa to narzędzia wewnętrzne z częściowym API, starsze systemy wymagające przeklikania interfejsu, kruche procesy rozrzucone po kilku systemach i zadania wymagające realnej mocy obliczeniowej, a nie jednego wywołania API.</p>
+    </details>
+    <details>
+      <summary>Jakie granice można wyznaczyć agentowi w sandboxie?</summary>
+      <p>Do jakich domen może sięgać, jakie usługi może wywoływać, jakie zależności są dostępne w środowisku, jakie dane mogą do niego wejść i je opuścić oraz jak długo żyje środowisko.</p>
+    </details>
+    <details>
+      <summary>Jak sandbox zmienia model bezpieczeństwa?</summary>
+      <p>Zamienia zaufanie na ograniczenie. Przeglądarka nie działa na laptopie użytkownika, wygenerowany kod nie wykonuje się w środowisku głównej aplikacji, a przejęta sesja nie staje się przejętą platformą.</p>
+    </details>
+  </div>
+
+  <div class="callout" id="about-takeany">
+    <span class="k">O TakeAny.AI</span>
+    <p><strong>TakeAny.AI</strong> to samodzielnie hostowana warstwa kontroli dla autonomicznych agentów LLM, działająca w trybie air-gap. MicroVM Firecracker biorą na siebie ryzykowną pracę — sterowanie przeglądarką, renderowanie dokumentów, indeksowanie RAG — a sekrety, polityki i log audytowy zostają w procesie hosta. Cały ruch sieciowy gościa przechodzi przez proxy kontrolowane przez hosta, z regułami domen w trybie domyślnie dozwolonym lub domyślnie blokowanym.</p>
+    <p>See <a class="inline" href="/pl/product#security">jak sandbox i kontrola ruchu wychodzącego działają po stronie hosta</a>, the <a class="inline" href="/en/docs">architektura i model RBAC z trzema rolami oraz uprawnieniami per agent</a>, or the <a class="inline" href="/pl/use-cases/build-ai-agents">zastosowanie: budowanie agentów</a>.</p>
+  </div>
+
+  <div class="related">
+    <h3>Powiązane artykuły</h3>
+    <div class="related-grid">
+      <a class="related-card" href="/pl/blog/digital-sovereignty-ai">
+        <span class="rk">Suwerenność cyfrowa</span>
+        <h4>Praktyczny przewodnik: jak zbudować suwerenną AI w firmie</h4>
+        <p>Jak hyperscalerzy i amerykański CLOUD Act narażają Twoje tajemnice handlowe i dlaczego LLM on-premise wygrywa w dłuższej perspektywie.</p>
+        <span class="rd">Czytaj dalej →</span>
+      </a>
+      <a class="related-card" href="/pl/blog/true-cost-of-llm">
+        <span class="rk">Koszty AI w biznesie</span>
+        <h4>Ile naprawdę kosztuje AI w Twojej firmie?</h4>
+        <p>Dlaczego tańsze tokeny nie oznaczają tańszej AI — i jak kontrolować koszty agentów, zanim one zaczną kontrolować Twój budżet.</p>
+        <span class="rd">Czytaj dalej →</span>
+      </a>
+    </div>
+  </div>
+
+</article>
+
+<section class="cta-strip plum">
+  <div class="container cta-grid">
+    <h2>Wzmacniaj wszystko. <strong>Nie idź na kompromisy</strong></h2>
+    <p class="sub">Agenci dostają moc. Klucze zostają u Ciebie.</p>
+    <div class="cta-bts">
+      <a class="btn btn-lg ta-btn-light" href="/pl/get-started">Rozpocznij <span class="arrow">→</span></a>
+      <a class="cta-link" href="/pl/get-started#talk" style="display:inline-flex;align-items:center;align-self:center;gap:6px;padding:10px 4px;font-size:16px;font-weight:500;color:#fff;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px;background:none;border:0">Porozmawiaj z nami</a>
+    </div>
+  </div>
+</section>
+
+<footer data-screen-label="Footer">
+  <div class="container">
+    <div class="foot-top" style="grid-template-columns:1.25fr 1fr 1.35fr 0.9fr">
+      <div class="foot-brand">
+        <a class="wordmark" href="/pl/" aria-label="TakeAny.AI"><x-import component-from-global-scope="TakeAnyAIDesignSystem_365327.Logo" height="36px" hint-size="189px,36px"></x-import></a>
+        <details class="lang-picker" style="position:relative;margin-top:14px;width:max-content">
+          <summary style="display:flex;align-items:center;gap:8px;cursor:pointer;list-style:none;font-size:14px;color:var(--ink);padding:6px 0"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><circle cx="8" cy="8" r="6.2"></circle><path d="M1.9 8h12.2"></path><path d="M8 1.8c1.7 1.7 2.6 3.8 2.6 6.2S9.7 12.5 8 14.2C6.3 12.5 5.4 10.4 5.4 8S6.3 3.5 8 1.8Z"></path></svg><span>Polski</span><svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" style="margin-left:2px;opacity:.7"><path d="M3 4.8 6 7.8l3-3"></path></svg></summary>
+          <div role="group" aria-label="Language" style="position:absolute;left:0;bottom:calc(100% + 8px);z-index:20;min-width:168px;background:var(--paper);border:1px solid var(--line);border-radius:4px;box-shadow:0 6px 20px rgba(0,0,0,.08);overflow:hidden;display:flex;flex-direction:column">
+            <a href="/en/blog/why-sandboxes-matter-for-ai-agents" hreflang="en" style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 12px;font-size:14px;color:var(--muted);text-decoration:none;background:transparent">English</a>
+            <a href="/pl/blog/why-sandboxes-matter-for-ai-agents" hreflang="pl" style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 12px;font-size:14px;color:var(--ink);text-decoration:none;background:var(--paper-3)">Polski<span style="font-size:11px;font-family:var(--font-mono)">✓</span></a>
+          </div>
+        </details>
+        <p>Warstwa kontroli dla agentów AI. Działa na Twojej infrastrukturze.</p>
+      </div>
+      <div class="foot-col">
+        <h6>Produkt</h6>
+        <ul>
+          <li><a href="/pl/product">Przegląd</a></li>
+          <li><a href="/pl/use-cases">Zastosowania</a></li>
+          <li><a href="/pl/product#security">Bezpieczeństwo</a></li>
+          <li><a href="/pl/product#cost">Kontrola kosztów</a></li>
+          <li><a href="/pl/product#models">Swoboda wyboru modeli</a></li>
+          <li><a href="/pl/pricing">Cennik</a></li>
+          <li><a href="/pl/how-we-differ">Czym się różnimy</a></li>
+          <li><a href="/pl/alternative-n8n">Alternatywa dla n8n</a></li>
+          <li><a href="/pl/alternative-dify">Alternatywa dla Dify.ai</a></li>
+          <li><a href="/pl/alternative-flowise-langflow">Alternatywa dla Flowise / Langflow</a></li>
+          <li><a href="/pl/alternative-lindy">Alternatywa dla Lindy.ai</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h6>Zastosowania</h6>
+        <ul>
+          <li><a href="/pl/use-cases/model-freedom">Testowanie modeli open-weight (vLLM / Ollama)</a></li>
+          <li><a href="/pl/use-cases/self-hosted-rag-assistant">Lokalny RAG na poufnych plikach</a></li>
+          <li><a href="/pl/use-cases/chatbot-widget">Odpowiedzi na pytania klientów z Twoich treści</a></li>
+          <li><a href="/pl/use-cases/local-gpu-inference">Uruchamianie i przyspieszanie lokalnych GPU</a></li>
+          <li><a href="/pl/use-cases/ai-for-erp-crm">Wzmocnienie systemów ERP i CRM</a></li>
+          <li><a href="/pl/use-cases/rfp-automation">Automatyzacja procesów RFI i RFP</a></li>
+          <li><a href="/pl/use-cases/build-ai-agents">Sandbox dla agentów przeglądających sieć</a></li>
+          <li><a href="/pl/use-cases/build-ai-agents">Zgodność z EU AI Act</a></li>
+          <li><a href="/pl/use-cases/white-label-ai">Zarabiaj na AI pod własną marką</a></li>
+          <li><a href="/pl/get-started#form">Twój pomysł na AI <span class="arrow">→</span></a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h6>Zacznij</h6>
+        <ul>
+          <li><a href="/pl/get-started">Rozpocznij</a></li>
+          <li><a href="/en/docs">Dokumentacja</a></li>
+          <li><a href="/pl/blog">Blog</a></li>
+          <li><a href="/pl/get-started#talk">Porozmawiaj z nami</a></li>
+          <li><a href="/pl/partners">Partnerstwa</a></li>
+        </ul>
+      </div>
+    </div>
+    <div style="margin:8px 0 28px;min-height:64px;background:var(--surface-plum);border-radius:14px;padding:10px 12px 10px 20px;display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px">
+      <img src="/_ds/takeany-ai-design-system-365327f4-89d8-418c-be14-ea19a91e4fcb/assets/logo/takeany-logo-ube-butter.svg" alt="TakeAny.AI" width="137" height="26" style="height:26px;width:auto;display:block">
+      <span style="width:1px;height:28px;background:rgba(255,255,255,.2)"></span>
+      <div style="position:relative;flex:1 1 360px;min-width:0">
+        <button type="button" onClick="{{ abToggle }}" aria-expanded="{{ abOpenStr }}" style="width:100%;max-width:640px;display:flex;align-items:center;gap:10px;min-height:44px;padding:0 16px;border:1px solid rgba(255,255,255,.3);border-radius:999px;background:transparent;color:#fff;font-size:14.5px;cursor:pointer;text-align:left">
+          <span style="font-family:var(--font-mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-on-plum-muted);white-space:nowrap">Zastosowanie</span>
+          <span style="flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ abCur.full }}</span>
+          <span style="color:var(--text-on-plum-muted)">{{ abCaret }}</span>
+        </button>
+        <ul style="display:{{ abListDisplay }};position:absolute;left:0;bottom:52px;width:100%;max-width:640px;margin:0;padding:0;list-style:none;background:#fff;border:1px solid var(--ink);border-radius:16px;overflow:hidden;z-index:30">
+          <sc-for list="{{ abItems }}" as="it" hint-placeholder-count="5">
+            <li style="border-bottom:1px solid var(--line)"><a href="{{ it.href }}" onClick="{{ it.pick }}" style="display:grid;grid-template-columns:34px minmax(0,1fr);gap:10px;align-items:baseline;min-height:52px;padding:14px 18px;color:var(--ink);text-decoration:none;background:{{ it.bg }}" style-hover="background:var(--ube-lavender-50)"><span style="font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;color:var(--lit-deep)">{{ it.n }}</span><span style="font-size:15px;line-height:1.35">{{ it.full }}</span></a></li>
+          </sc-for>
+        </ul>
+      </div>
+      <a class="btn btn-accent" href="/pl/get-started#form" style="margin-left:auto">Zrealizuj swój pomysł na AI <span class="arrow">→</span></a>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 TakeAny.AI</span>
+      <span><a href="/llms.txt">llms.txt</a> · <a href="/pl/legal#prywatnosc">Prywatność</a> · <a href="/pl/legal#regulamin">Regulamin</a> · <a href="/pl/legal#dpa">DPA</a> · <a href="#" data-cookie-settings="">Ustawienia cookies</a></span>
+    </div>
+  </div>
+</footer>
+
+
+<a id="backTop" href="#" aria-label="Powrót na górę strony" title="Powrót na górę strony" style="position:fixed;right:22px;bottom:28px;z-index:70;display:flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:50%;background:var(--paper);border:1px solid var(--line);color:var(--muted);text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,.06);opacity:0;pointer-events:none;transform:translateY(10px);transition:opacity 200ms ease,transform 200ms ease,color 160ms ease,border-color 160ms ease" onMouseEnter="this.style.color='var(--ink)';this.style.borderColor='var(--ink)'" onMouseLeave="this.style.color='var(--muted)';this.style.borderColor='var(--line)'"><svg width="15" height="15" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 11.5V2.5"></path><path d="M3 6.3 7 2.3l4 4"></path></svg></a>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() { return { ...this.__rv0(), ...this.__ab() }; }
+  __ab() {
+    const L = [
+          { n: '01', full: 'Uruchom RAG na dokumentach, które nie mogą opuścić firmy', href: '/pl/use-cases/self-hosted-rag-assistant' },
+          { n: '02', full: 'Zamień zakupione serwery GPU w bezpieczną platformę AI', href: '/pl/use-cases/local-gpu-inference' },
+          { n: '03', full: 'Wpuść agentów do ERP nawet gdy jest leciwe i bez API', href: '/pl/use-cases/ai-for-erp-crm' },
+          { n: '04', full: 'Żongluj modelami LLM, niech open-weight walczą z frontier labs', href: '/pl/use-cases/model-freedom' },
+          { n: '05', full: 'Sprzedawaj AI swoim klientom pod własną marką', href: '/pl/use-cases/white-label-ai' },
+          { n: '06', full: 'Zrealizuj swój pomysł na AI', href: '/pl/get-started#form', hl: true }
+        ];
+    const ab = this.state.ab || 0, open = !!this.state.abOpen;
+    return {
+      abCur: L[ab], abOpenStr: open ? 'true' : 'false', abCaret: open ? '▴' : '▾', abListDisplay: open ? 'block' : 'none',
+      abToggle: () => this.setState(s => ({ abOpen: !s.abOpen })),
+      abItems: L.map((x, k) => ({ ...x, bg: x.hl ? 'var(--ube-lavender-100)' : k === ab ? 'var(--ube-lavender-50)' : '#fff', pick: () => this.setState({ ab: k, abOpen: false }) }))
+    };
+  }
+  state = { navOpen: false };
+  componentDidMount() {
+    document.documentElement.lang = 'en';
+    document.body.classList.add('blog');
+  }
+  __rv0() {
+    const navOpen = this.state.navOpen;
+    return {
+      toggleMobileNav: () => this.setState(s => ({ navOpen: !s.navOpen })),
+      mobileMenuStyle: { opacity: navOpen ? 1 : 0, pointerEvents: navOpen ? 'auto' : 'none' }
+    };
+  }
+}
+</script>
+</body>
+</html>

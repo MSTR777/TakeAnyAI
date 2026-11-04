@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="/support.js"></script>
+<link rel="alternate" hreflang="en" href="https://takeany.ai/en/use-cases/rfp-automation">
+<link rel="alternate" hreflang="pl" href="https://takeany.ai/pl/use-cases/rfp-automation">
+<link rel="alternate" hreflang="x-default" href="https://takeany.ai/en/use-cases/rfp-automation">
+</head>
+<body>
+<x-dc>
+<helmet>
+<script>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[hreflang]');if(!a)return;var l=a.getAttribute('hreflang')==='pl'?'pl':'en';var x=';path=/;max-age=31536000;SameSite=Lax';document.cookie='nf_lang='+l+x;document.cookie='nf_country='+(l==='pl'?'pl':'zz')+x;},true);</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5ZKRS09ZYX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  (function(){
+    var c = null;
+    try { c = JSON.parse(localStorage.getItem('takeany-consent-v1')); } catch(e) {}
+    gtag('consent', 'default', {
+      analytics_storage: (c && c.analytics) ? 'granted' : 'denied',
+      ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied'
+    });
+  })();
+  gtag('js', new Date());
+  gtag('config', 'G-5ZKRS09ZYX');
+</script>
+<script src="/assets/consent.js?v=3" defer></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100;200;300;400;500;600;700;800;900&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/theme.css">
+<script src="/_ds/takeany-ai-design-system-365327f4-89d8-418c-be14-ea19a91e4fcb/_ds_bundle.js"></script>
+
+<style>/* design-system accent-preview widget is not site chrome */ .acc-switch{display:none!important}
+.uc-crumb{display:flex;align-items:center;gap:10px;margin-bottom:20px;font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.uc-crumb a{color:var(--muted);text-decoration:none}
+.uc-crumb a:hover{color:var(--ink)}
+.uc-caps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.uc-rel{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.uc-how{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:48px;align-items:center}
+.uc-figslot{border:1px solid var(--line);border-radius:var(--radius);background:var(--paper);min-height:280px;display:flex;align-items:center;justify-content:center;padding:24px}
+@media (max-width:1000px){.uc-caps,.uc-rel{grid-template-columns:1fr}.uc-how{grid-template-columns:1fr;gap:28px}}
+@media (max-width:720px){.section-head .section-num{width:auto!important;max-width:100%!important;min-width:0!important;white-space:normal!important;overflow-wrap:anywhere}
+.section-head>*{min-width:0}}
+.uc-rail{display:flex!important;grid-template-columns:none!important;column-gap:20px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x proximity;scroll-padding-left:var(--gutter);scroll-padding-right:var(--gutter);-webkit-overflow-scrolling:touch;scrollbar-width:none;margin:0 calc(var(--gutter) * -1);padding:2px var(--gutter) 8px}
+.uc-rail::-webkit-scrollbar{display:none}
+.uc-rail>.uc-card{flex:0 0 400px;scroll-snap-align:start}
+@media (max-width:760px){.uc-rail>.uc-card{flex:0 0 86%}}
+.uc-card:hover{border-color:var(--lit-deep,#7426E8)}
+[data-rail-nav]:hover:not(:disabled){background:var(--lit-deep,#7426E8)!important;border-color:var(--lit-deep,#7426E8)!important;color:var(--paper)!important}
+[data-rail-nav]:disabled{opacity:.25;cursor:default!important}
+[data-rail-dots] button{width:8px;height:8px;padding:0;border:0;border-radius:999px;background:var(--muted);opacity:.3;cursor:pointer;transition:width .25s,opacity .25s,background .25s}
+[data-rail-dots] button[aria-current="true"]{width:24px;opacity:1;background:var(--ink)}
+.page-head .lede strong{color:var(--lit-deep,#7426E8)}
+.section-head .sub strong{color:var(--lit-deep,#7426E8)}
+a:hover .arrow{color:var(--lit-deep,#7426E8)}
+.uc-bul{list-style:none;margin:4px 0 0;padding:0;display:flex;flex-direction:column;gap:12px}
+.uc-bul li{font-size:15px;line-height:1.55;color:var(--muted);text-wrap:pretty}
+.uc-bul strong{color:var(--ink);font-weight:500}
+.cta-strip .cta-grid{grid-template-columns:minmax(0,1.2fr) minmax(0,auto)}
+.cta-strip .cta-bts{flex-wrap:wrap}
+@media (max-width:1100px){.cta-strip .cta-grid{grid-template-columns:minmax(0,1fr);gap:26px}}
+.cmp{border-top:1px solid var(--ink)}
+div.cmp{min-width:0;width:auto}
+.cmp-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,.9fr);gap:24px;padding:20px 0;border-bottom:1px solid var(--line);align-items:start}
+.cmp-head span{font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.cmp-row .k{font-size:15px;line-height:1.5;color:var(--muted);text-wrap:pretty}
+.cmp-row .a{font-size:15px;line-height:1.5;color:var(--ink);text-wrap:pretty}
+.cmp-row .e{font-size:15px;line-height:1.5;color:var(--ink);font-weight:500;text-wrap:pretty}
+@media (max-width:820px){
+  .cmp-head{display:none}
+  .cmp-row{grid-template-columns:1fr;gap:10px;padding:22px 0}
+  .cmp-row .k::before,.cmp-row .a::before,.cmp-row .e::before{display:block;margin-bottom:4px;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-2)}
+  .cmp-row .k::before{content:"Tradycyjne RFP"}
+  .cmp-row .a::before{content:"Z platformą TakeAny.AI";color:var(--lit-deep)}
+  .cmp-row .e::before{content:"Efekt biznesowy"}
+}
+:root{--ill-canvas:#FFFFFF;--ill-plate:#FFFFFF;--ill-ink:#1A1A1A;--ill-ink-2:#5C5C5C;--ill-label:#8A8A8A;--ill-line:#E7E2EE;--ill-line-2:#D3CCDD;--ill-lit:#8B3DFF;--ill-lit-deep:#7426E8}
+.ill-fig{margin:0}.ill{display:block;width:100%;height:auto}.ill text{font-family:var(--font-mono,'Geist Mono',ui-monospace,monospace)}
+.ill-shadow{filter:drop-shadow(0 24px 48px rgba(26,26,26,.06))}
+.ill .plate{fill:var(--ill-plate);stroke:var(--ill-line);stroke-width:1}.ill .panel{fill:var(--ill-plate);stroke:var(--ill-ink);stroke-width:2}.ill .panel-2{fill:var(--ill-plate);stroke:var(--ill-line-2);stroke-width:1}
+.ill .panel-lit{fill:#EEE6F8;stroke:var(--ill-lit);stroke-width:1.5}.ill .perimeter{fill:none;stroke:var(--ill-lit);stroke-width:1.5}.ill .perimeter-open{fill:none;stroke:var(--ill-line-2);stroke-width:1.25;stroke-dasharray:5 4}.ill .knockout{fill:var(--ill-plate)}
+.ill .link{fill:none;stroke:var(--ill-ink);stroke-width:1.25}.ill .link-opt{fill:none;stroke:var(--ill-line-2);stroke-width:1;stroke-dasharray:4 4}.ill .cut{stroke:var(--ill-ink);stroke-width:1.6;fill:none}.ill .node{fill:var(--ill-ink)}
+.ill .lbl{font-size:13px;letter-spacing:.1em;fill:var(--ill-label)}.ill .lbl-lit{font-size:13px;letter-spacing:.1em;fill:var(--lit-deep)}.ill .lbl-ink{font-size:13px;letter-spacing:.1em;fill:var(--ill-ink)}.ill .val{font-size:22px;letter-spacing:-.01em;fill:var(--ill-ink)}.ill .mono-sm{font-size:11px;letter-spacing:.12em;fill:var(--ill-label)}
+.ill .pic{fill:none;stroke:var(--ill-ink);stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;color:var(--ill-ink);--icn-accent:var(--ill-lit)}
+.page-head.has-ill .echo-sig{display:none}
+.uc-ill{margin:40px 0 0;max-width:520px}
+.uc-ill .ill-port{display:none}
+@media (min-width:1080px){.page-head.has-ill .uc-ill-wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,460px);column-gap:56px;align-items:center}.page-head.has-ill .uc-ill{margin:0}.page-head.has-ill h1{font-size:clamp(38px,3.9vw,56px)!important}}
+.uc-ill-slot{margin:0 auto;width:100%}
+@media (min-width:1080px){.uc-ill-slot{max-width:none}}
+@media (max-width:760px){.uc-ill .ill-wide{display:none}.uc-ill .ill-port{display:block}
+.page-head.has-ill{padding:24px 0 28px}
+.page-head.has-ill .uc-crumb{margin:0 0 10px!important}
+.page-head.has-ill h1{font-size:clamp(30px,8.4vw,40px)!important;margin-top:12px!important;line-height:1.06!important}
+.page-head.has-ill .lede{font-size:16.5px!important;line-height:1.45!important;margin-top:12px!important}
+.page-head.has-ill .lede + .lede,.page-head.has-ill .uc-ill-wrap ul{display:none!important}
+.page-head.has-ill .hero-cta{margin-top:16px!important;gap:10px!important}
+.page-head.has-ill .hero-cta .btn-lg{padding:12px 20px!important;font-size:15px!important}
+.uc-ill{margin:18px 0 0;max-width:340px}
+.page-head.has-ill .uc-ill-wrap{display:flex;flex-direction:column}
+.page-head.has-ill .uc-ill-wrap>div{display:contents}
+.page-head.has-ill .uc-ill-wrap>div>*{order:1}
+.page-head.has-ill .uc-ill-wrap .uc-ill{order:2;margin:18px 0 0}
+.page-head.has-ill .uc-ill-wrap .lede,.page-head.has-ill .uc-ill-wrap .hero-cta{order:3}
+.page-head.has-ill .uc-ill-wrap .lede{margin-top:18px!important}}
+:root{--icn-accent:#8B3DFF;--icn-ink:#1A1A1A}
+.icn{width:24px;height:24px;display:inline-block;vertical-align:middle;flex:0 0 auto;color:var(--icn-ink);fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
+.icn-20{width:20px;height:20px;stroke-width:2}
+.section-num:has(.icn)::before{display:none!important}
+/* section divider standard (Home) */
+section.section:not(.partners){border-top:2px solid var(--ink)!important;position:relative}
+section.section:not(.partners)::before{content:"";position:absolute;top:-2px;left:0;width:92px;height:2px;background:var(--lit)}
+.section-head .section-num{color:var(--lit)!important;border-top:0!important;padding-top:0!important}
+.page-head{border-bottom:0!important}
+.cta-link:hover{text-decoration-thickness:2px!important;color:var(--ink)}
+</style>
+<title>Automatyzacja przetargów i RFP — odpowiedzi techniczne z AI | TakeAny.AI</title>
+<meta name="description" content="Parsuj dokumentację przetargową, weryfikuj macierze dostawców i przygotowuj odpowiedzi techniczne w izolowanych microVM. Dla zespołów startujących w przetargach publicznych i postępowaniach RFI/RFP.">
+<meta name="keywords" content="automatyzacja przetargów, automatyzacja RFP, odpowiedzi na RFI, przetargi publiczne AI, automatyzacja dokumentów przetargowych, AI dla sektora publicznego, TakeAny.AI">
+<link rel="canonical" href="https://takeany.ai/pl/use-cases/rfp-automation">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TakeAny.AI">
+<meta property="og:title" content="Automatyzacja przetargów i RFP — odpowiedzi techniczne z AI | TakeAny.AI">
+<meta property="og:description" content="Parsuj dokumenty przetargowe, sprawdzaj macierze dostawców i przygotowuj oferty techniczne w izolowanych microVM, z lokalnym wyszukiwaniem wiedzy — strategia ofertowa nie opuszcza Twojej infrastruktury.">
+<meta property="og:url" content="https://takeany.ai/pl/use-cases/rfp-automation">
+<meta property="og:locale" content="pl_PL">
+<meta property="og:locale:alternate" content="en_US">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "url": "https://takeany.ai/en/use-cases/rfp-automation",
+      "name": "Automatyzuj rozbudowane techniczne odpowiedzi na RFI i RFP.",
+      "description": "Parsuj dokumenty przetargowe, sprawdzaj macierze dostawców i przygotowuj oferty techniczne w izolowanych microVM, z lokalnym wyszukiwaniem wiedzy — strategia ofertowa nie opuszcza Twojej infrastruktury.",
+      "isPartOf": {
+        "@type": "CollectionPage",
+        "url": "https://takeany.ai/en/use-cases"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://takeany.ai/en/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Zastosowania",
+          "item": "https://takeany.ai/en/use-cases"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "RFI and RFP process",
+          "item": "https://takeany.ai/en/use-cases/rfp-automation"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<script>
+(function(){
+  function upd(){ var b=document.getElementById('backTop'); if(!b) return;
+    var on = window.scrollY > 600;
+    b.style.opacity = on ? '1' : '0';
+    b.style.pointerEvents = on ? 'auto' : 'none';
+    b.style.transform = on ? 'translateY(0)' : 'translateY(10px)';
+  }
+  window.addEventListener('scroll', upd, {passive:true});
+  window.addEventListener('resize', upd, {passive:true});
+  document.addEventListener('click', function(e){
+    var a = e.target && e.target.closest && e.target.closest('#backTop');
+    if (a) { e.preventDefault(); window.scrollTo({top:0, behavior:'smooth'}); }
+  });
+  setInterval(upd, 500);
+})();
+</script>
+<style>.lang-picker summary::-webkit-details-marker{display:none}.lang-picker summary::marker{content:""}.lang-picker[open] summary svg:last-of-type{transform:rotate(180deg)}.lang-picker a:hover{background:var(--paper-3);color:var(--ink)}</style>
+<script>
+(function(){
+  if (window.__takeanyNav) return; window.__takeanyNav = 1;
+  document.addEventListener('click', function(e){
+    var t = e.target && e.target.closest && e.target.closest('#navToggle');
+    if (t){ e.preventDefault(); document.body.classList.toggle('mm-open'); return; }
+    var link = e.target && e.target.closest && e.target.closest('.mobile-menu a');
+    if (link) document.body.classList.remove('mm-open');
+  });
+  window.addEventListener('resize', function(){ if (window.innerWidth > 820) document.body.classList.remove('mm-open'); }, {passive:true});
+})();
+</script>
+<style>
+.ws-specs{margin-top:24px;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
+.ws-specs > div{padding:22px 32px 2px;border-right:1px solid var(--line)}
+.ws-specs > div:first-child{padding-left:0}
+.ws-specs > div:last-child{padding-right:0;border-right:0}
+@media (max-width:820px){
+  .ws-specs{grid-template-columns:1fr 1fr}
+  .ws-specs > div{padding:24px 24px 4px}
+  .ws-specs > div:nth-child(2n){padding-right:0;border-right:0}
+  .ws-specs > div:nth-child(n+3){border-top:1px solid var(--line)}
+}
+@media (max-width:560px){
+  .ws-specs{grid-template-columns:1fr}
+  .ws-specs > div{padding:22px 0 4px;border-right:0}
+  .ws-specs > div + div{border-top:1px solid var(--line)}
+}
+
+.section-head>.section-num{width:auto!important;max-width:100%!important;min-width:0!important;white-space:normal!important;overflow-wrap:anywhere}
+.section-head>*{min-width:0}
+.uc-more{margin-top:auto;border-top:1px solid var(--line);padding-top:12px}
+.uc-more>summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);padding:6px 0;min-height:32px}
+.uc-more>summary::-webkit-details-marker{display:none}
+.uc-more>summary::after{content:"+";font-size:16px;line-height:1;color:var(--lit-deep,#7426E8);transition:transform .2s}
+.uc-more[open]>summary::after{transform:rotate(45deg)}
+.uc-more>summary:hover{color:var(--lit-deep,#7426E8)}
+.uc-more .uc-bul{margin-top:10px}
+.uc-rail{align-items:stretch}
+.uc-rail>.uc-card{display:flex;flex-direction:column}
+</style>
+<script>
+  document.addEventListener('click', function(e){
+    var b = e.target && e.target.closest && e.target.closest('[data-rail-nav]');
+    if (!b) return;
+    e.preventDefault();
+    var sec = b.closest('section');
+    var rail = sec && sec.querySelector('.uc-rail');
+    if (!rail) return;
+    var card = rail.querySelector('.uc-card');
+    var step = card ? card.offsetWidth + 20 : 400;
+    var max = rail.scrollWidth - rail.clientWidth;
+    var target = rail.scrollLeft + (b.getAttribute('data-rail-nav') === 'next' ? step : -step);
+    target = Math.max(0, Math.min(max, target));
+    var before = rail.scrollLeft;
+    rail.scrollTo({ left: target, behavior: 'smooth' });
+    setTimeout(function(){ if (Math.abs(rail.scrollLeft - before) < 2) rail.scrollLeft = target; }, 260);
+  });
+</script>
+<script>
+(function(){
+  if (window.__takeanyRailDots) return; window.__takeanyRailDots = 1;
+  function setup(sec){
+    var rail = sec.querySelector('.uc-rail'), dots = sec.querySelector('[data-rail-dots]');
+    if (!rail || !dots || dots.__done) return; dots.__done = 1;
+    var cards = rail.querySelectorAll('.uc-card');
+    var prev = sec.querySelector('[data-rail-nav="prev"]'), next = sec.querySelector('[data-rail-nav="next"]');
+    function pages(){ var c = cards[0]; if (!c) return 1; var step = c.offsetWidth + 20; return Math.max(1, Math.ceil((rail.scrollWidth - rail.clientWidth - 4) / step) + 1); }
+    function build(){
+      var n = pages(); dots.innerHTML = '';
+      for (var i=0;i<n;i++){ var d=document.createElement('button'); d.type='button'; d.setAttribute('aria-label','Karta '+(i+1)); (function(i,n){ d.onclick=function(){ var c=cards[0], mx=rail.scrollWidth-rail.clientWidth; rail.scrollTo({left: i===n-1 ? mx : Math.min(i*(c.offsetWidth+20), mx), behavior:'smooth'}); }; })(i,n); dots.appendChild(d); }
+      upd();
+    }
+    function upd(){
+      var max = rail.scrollWidth - rail.clientWidth, n = dots.children.length;
+      var i = max > 0 ? Math.round(rail.scrollLeft / max * (n-1)) : 0;
+      for (var k=0;k<n;k++) dots.children[k].setAttribute('aria-current', k===i ? 'true' : 'false');
+      if (prev) prev.disabled = rail.scrollLeft < 4;
+      if (next) next.disabled = rail.scrollLeft > max - 4;
+      sec.querySelector('.rail-nav').style.display = max > 4 ? 'flex' : 'none';
+    }
+    rail.addEventListener('scroll', upd, {passive:true});
+    window.addEventListener('resize', build, {passive:true});
+    window.addEventListener('load', build);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(build);
+    if (window.ResizeObserver) { var lw = -1; new ResizeObserver(function(){ var w = rail.scrollWidth + 'x' + rail.clientWidth; if (w !== lw) { lw = w; build(); } }).observe(rail); }
+    dots.__build = build;
+    build();
+  }
+  function scan(){ document.querySelectorAll('.uc-rail').forEach(function(r){ var s=r.closest('section'); if (s) setup(s); }); }
+  var tries = 0, iv = setInterval(function(){ scan(); document.querySelectorAll('[data-rail-dots]').forEach(function(d){ if (d.__build) d.__build(); }); if (++tries > 20) clearInterval(iv); }, 300);
+})();
+</script>
+<style>.rm-btn{display:none}
+@media (max-width:760px){
+.rm-p:not(.rm-open)>.rm-hide{display:none!important}
+.rm-p:not(.rm-open)>.rm-clamp,.rm-c:not(.rm-open){display:-webkit-box!important;-webkit-box-orient:vertical;-webkit-line-clamp:5;overflow:hidden}
+.rm-btn{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;justify-self:start;grid-column:1/-1;width:auto;margin:0;padding:8px 0;background:none;border:0;cursor:pointer;font-family:var(--font-mono);font-size:12px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px}
+.rm-btn::after{content:"↓";display:inline-block;text-decoration:none;color:var(--lit)}
+.rm-p.rm-open>.rm-btn::after,.rm-c.rm-open+.rm-btn::after{content:"↑"}
+}</style>
+<script>
+(function(){
+  if (window.__takeanyRM) return; window.__takeanyRM = 1;
+  var mq = window.matchMedia('(max-width:760px)');
+  var pl = (document.documentElement.lang || '').indexOf('pl') === 0;
+  var L = pl ? ['Rozwiń', 'Zwiń'] : ['Show more', 'Show less'];
+  var SKIP = 'nav,footer,form,details,summary,table,.page-head,.hero,.mobile-menu,.nav-wrap,.subnav-wrap,.cta-strip,.tldr,.faq,.foot-top,.foot-bottom,.rm-btn,[data-rm-skip]';
+  var MEDIA = 'img,figure,svg,video,iframe,h1,h2,h3,h4,button,input,select,textarea,a.btn';
+  function len(e){ return (e.textContent || '').replace(/\s+/g, ' ').trim().length; }
+  function addBtn(target, after){
+    var b = document.createElement('button');
+    b.type = 'button'; b.className = 'rm-btn'; b.textContent = L[0]; b.setAttribute('aria-expanded', 'false');
+    b.addEventListener('click', function(){
+      var o = target.classList.toggle('rm-open');
+      b.textContent = o ? L[1] : L[0]; b.setAttribute('aria-expanded', o ? 'true' : 'false');
+      if (!o) { var r = target.getBoundingClientRect(); if (0 > r.top) window.scrollBy(0, r.top - 90); }
+    });
+    if (after) after.parentNode.insertBefore(b, after.nextSibling); else target.appendChild(b);
+  }
+  function scan(){
+    if (!mq.matches || document.querySelector('.read-prog')) return;
+    var groups = new Map();
+    document.querySelectorAll('body p, body ul, body ol').forEach(function(e){
+      if (e.closest(SKIP) || e.closest('.rm-p') || e.classList.contains('rm-c')) return;
+      var p = e.parentElement; if (!p || p.getAttribute('data-rm')) return;
+      if (!groups.has(p)) groups.set(p, []);
+      groups.get(p).push(e);
+    });
+    groups.forEach(function(blocks, p){
+      var total = 0; blocks.forEach(function(b){ total += len(b); });
+      if (blocks.length >= 2 && total > 600) {
+        var first = null, hide = [], hidden = 0;
+        [].slice.call(p.children).forEach(function(k){
+          var t = k.tagName.toUpperCase();
+          var textish = /^(P|UL|OL|BLOCKQUOTE)$/.test(t) || (t === 'DIV' && !k.querySelector(MEDIA) && len(k) > 0);
+          if (!textish) return;
+          if (!first) { first = k; return; }
+          hide.push(k); hidden += len(k);
+        });
+        p.setAttribute('data-rm', '1');
+        if (hidden >= 150) {
+          p.classList.add('rm-p');
+          hide.forEach(function(k){ k.classList.add('rm-hide'); });
+          if (first && first.tagName.toUpperCase() === 'P' && len(first) > 300) first.classList.add('rm-clamp');
+          addBtn(p);
+          return;
+        }
+      }
+      blocks.forEach(function(b){
+        if (b.tagName.toUpperCase() === 'P' && len(b) > 300) { b.classList.add('rm-c'); addBtn(b, b); }
+      });
+    });
+  }
+  var t = 0;
+  function queue(){ clearTimeout(t); t = setTimeout(scan, 150); }
+  new MutationObserver(queue).observe(document.documentElement, { childList: true, subtree: true });
+  if (mq.addEventListener) mq.addEventListener('change', queue);
+  document.addEventListener('DOMContentLoaded', queue);
+  window.addEventListener('load', queue);
+})();
+</script>
+<style>/* mobile pass: shared fixes */
+@media (max-width:720px){
+  html,body{overflow-x:clip}
+  .section-head{display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:12px!important}
+  .section-head > *{grid-column:auto!important;max-width:100%!important;margin-left:0!important;min-width:0}
+  footer .foot-top{grid-template-columns:1fr 1fr!important;gap:32px 20px!important}
+  footer .foot-brand{grid-column:1 / -1}
+  footer .foot-col{min-width:0}
+  footer .foot-col a{display:inline-block;padding:4px 0;overflow-wrap:anywhere}
+  footer .btn{margin-left:0!important}
+  .exp-sum{min-height:44px}
+  .pr-grid,.pr-incl,.pr-addons,.pr-faq,.lic-steps{grid-template-columns:minmax(0,1fr)!important}
+  .pr-grid > *,.pr-incl > *,.pr-addons > *,.pr-faq > *,.uc-card{min-width:0;overflow-wrap:anywhere}
+  #licensing-brief [style*="grid-template-columns"]{grid-template-columns:minmax(0,1fr)!important}
+  #licensing-brief *{min-width:0;overflow-wrap:anywhere}
+}
+@media (max-width:420px){
+  .nav-cta{gap:8px}
+  .nav-cta .btn{padding-left:14px!important;padding-right:14px!important;font-size:13px!important}
+}
+</style>
+</helmet>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="i-sec" viewBox="0 0 24 24"><path d="M8 3.6v16.8M16 3.6v16.8"></path><path d="M2.6 12h18.8M18.4 9.2 21.4 12l-3 2.8" stroke="var(--icn-accent)"></path></symbol>
+<symbol id="i-mdl" viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="2.2"></rect><rect x="10.6" y="10.6" width="2.8" height="2.8" rx="0.9" fill="currentColor" stroke="none"></rect><path d="M7 10.2H4.4M7 13.8H4.4M17 10.2h2.6M17 13.8h2.6"></path><path d="M6.4 3.6h11.2M15.4 1.8l2.2 1.8-2.2 1.8" stroke="var(--icn-accent)"></path><path d="M17.6 20.4H6.4M8.6 18.6 6.4 20.4l2.2 1.8" stroke="var(--icn-accent)"></path></symbol>
+<symbol id="i-cost" viewBox="0 0 24 24"><path d="M3 20.6h18"></path><rect x="4.4" y="9.6" width="4" height="9" rx="1.2" fill="currentColor" stroke="none"></rect><rect x="10" y="12.6" width="4" height="6" rx="1.2" fill="currentColor" stroke="none"></rect><rect x="15.6" y="15.2" width="4" height="3.4" rx="1.2" fill="currentColor" stroke="none"></rect><path d="M5 5.6 12 9l6.6 3.2M18.6 12.2l-2.9-.5M18.6 12.2l.2-2.9" stroke="var(--icn-accent)"></path></symbol>
+<symbol id="i-dash" viewBox="0 0 24 24"><rect x="2.6" y="3.6" width="18.8" height="16.8" rx="2.6"></rect><path d="M2.6 8.6h18.8"></path><rect x="5.6" y="11.4" width="5.4" height="6.4" rx="1.2" fill="currentColor" stroke="none"></rect><rect x="13.4" y="11.4" width="5" height="2.2" rx="1.1" fill="currentColor" stroke="none"></rect><rect x="13.4" y="15.6" width="5" height="2.2" rx="1.1" fill="var(--icn-accent)" stroke="none"></rect></symbol>
+<symbol id="i-prem" viewBox="0 0 24 24"><rect x="4.6" y="2.8" width="14.8" height="15.4" rx="2.2"></rect><path d="M4.6 7.9h14.8M4.6 13h14.8"></path><circle cx="7.6" cy="5.35" r="1.05" fill="currentColor" stroke="none"></circle><circle cx="7.6" cy="10.45" r="1.05" fill="currentColor" stroke="none"></circle><path d="M2.2 21.4h19.6" stroke="var(--icn-accent)"></path></symbol>
+</defs></svg>
+
+
+<div class="nav-wrap" data-screen-label="Nav">
+  <div class="container nav">
+    <a class="wordmark" href="/pl/" aria-label="TakeAny.AI"><x-import component-from-global-scope="TakeAnyAIDesignSystem_365327.Logo" height="32px" hint-size="168px,32px"></x-import></a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="/pl/use-cases" class="active">Zastosowania</a>
+      <a href="/pl/product">Produkt</a>
+      <a href="/pl/pricing">Cennik</a>
+      <a href="/en/docs">Dokumentacja</a>
+      <a href="/pl/blog">Blog</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-primary" href="/pl/get-started">Rozpocznij <span class="arrow">→</span></a>
+      <button id="navToggle" class="nav-toggle" aria-label="Otwórz menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="mobile-menu">
+    <div class="mm-inner">
+      <nav class="mm-links" aria-label="Mobile">
+        <a href="/pl/use-cases">Zastosowania</a>
+        <a href="/pl/product">Produkt</a>
+        <a href="/pl/pricing">Cennik</a>
+        <a href="/en/docs">Dokumentacja</a>
+        <a href="/pl/blog">Blog</a>
+      </nav>
+      <div class="mm-cta">
+        <a class="btn btn-primary" href="/pl/get-started">Rozpocznij <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<header class="page-head has-ill" data-screen-label="00 Hero">
+  <div class="container uc-ill-wrap">
+<div>
+    <p class="uc-crumb"><a href="/pl/use-cases">Zastosowania</a> <span aria-hidden="true">/</span> <span style="color:var(--ink)">Procesy RFI i RFP</span></p>
+    <span class="eyebrow"><span class="dot"></span>Złożone procesy dokumentowe</span>
+    <h1 style="max-width:26ch">Automatyzuj rozbudowane techniczne <strong>odpowiedzi na RFI i RFP</strong></h1>
+    <p class="lede" style="max-width:76ch">Skróć czas przygotowania ofert przetargowych z tygodni do godzin. Pozwól AI wstępnie wypełniać pytania techniczne i kwestionariusze na bazie Twojej dokumentacji — <strong>precyzyjnie, bezpiecznie i bez ryzyka halucynacji.</strong></p>
+    <div class="hero-cta" style="margin-top:30px">
+      <a class="btn btn-primary btn-lg" href="/pl/get-started">Rozpocznij <span class="arrow">→</span></a>
+      <a class="cta-link" href="/pl/product" style="display:inline-flex;align-items:center;align-self:center;gap:6px;padding:10px 4px;font-size:16px;font-weight:500;color:var(--ink);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px;background:none;border:0">Zobacz platformę</a>
+    </div>
+    <ul style="list-style:none;margin:28px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:10px 28px;font-family:var(--font-mono);font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)">
+      <li style="display:flex;align-items:center;gap:9px"><span style="width:5px;height:5px;border-radius:50%;background:var(--lit);flex:none"></span>Izolowane renderowanie dokumentów</li>
+      <li style="display:flex;align-items:center;gap:9px"><span style="width:5px;height:5px;border-radius:50%;background:var(--lit);flex:none"></span>Lokalne wyszukiwanie wiedzy</li>
+      <li style="display:flex;align-items:center;gap:9px"><span style="width:5px;height:5px;border-radius:50%;background:var(--lit);flex:none"></span>Wielokrokowe rozumowanie</li>
+      <li style="display:flex;align-items:center;gap:9px"><span style="width:5px;height:5px;border-radius:50%;background:var(--lit);flex:none"></span>Strategia ofertowa zostaje u Ciebie</li>
+    </ul>
+  </div>
+<figure class="ill-fig uc-ill">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="ur-doc" viewBox="0 0 24 24"><rect x="5" y="2.6" width="14" height="18.8" rx="2.6"></rect><path d="M8.5 8h7M8.5 11.5h7"></path><path d="M8.5 15h4.4" stroke="var(--icn-accent)"></path></symbol><symbol id="ur-table" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2.6"></rect><path d="M3 9.4h18M9 9.4V20"></path><rect x="11.6" y="12.2" width="6.6" height="2.6" rx="1.2" fill="var(--icn-accent)" stroke="none"></rect></symbol><symbol id="ur-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6"></circle><path d="M15 15l5.4 5.4" stroke="var(--icn-accent)"></path></symbol><symbol id="ur-chat" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="3"></rect><path d="M8 17v3.6l4-3.6"></path><path d="M7 10.5h10" stroke="var(--icn-accent)"></path></symbol></defs></svg>
+<svg class="ill ill-wide" viewBox="0 0 520 662" role="img" aria-labelledby="ur-t" style="overflow:visible"><title id="ur-t">Dokumenty przetargu trafiają do agenta ofertowego TakeAny.AI, który parsuje je, buduje macierz wymogów, szuka w bazie wiedzy firmy i przygotowuje pakiet ofertowy do akceptacji.</title><rect class="plate ill-shadow" x="0.5" y="0.5" width="519" height="661" rx="18"></rect>
+<text class="lbl" x="34" y="40">DOKUMENTY PRZETARGU</text>
+<rect class="panel-2" x="34" y="54" width="140" height="40" rx="20"></rect><text class="lbl-ink" x="104" y="79" text-anchor="middle" style="font-size:12px">RFI</text>
+<path class="link" d="M104 94V154"></path><rect class="node" x="102" y="92" width="4" height="4"></rect><rect class="node" x="102" y="152" width="4" height="4"></rect>
+<rect class="panel-2" x="190" y="54" width="140" height="40" rx="20"></rect><text class="lbl-ink" x="260" y="79" text-anchor="middle" style="font-size:12px">RFP</text>
+<path class="link" d="M260 94V154"></path><rect class="node" x="258" y="92" width="4" height="4"></rect><rect class="node" x="258" y="152" width="4" height="4"></rect>
+<rect class="panel-2" x="346" y="54" width="140" height="40" rx="20"></rect><text class="lbl-ink" x="416" y="79" text-anchor="middle" style="font-size:12px">SIWZ</text>
+<path class="link" d="M416 94V154"></path><rect class="node" x="414" y="92" width="4" height="4"></rect><rect class="node" x="414" y="152" width="4" height="4"></rect>
+<rect class="perimeter" x="20" y="124" width="480" height="386" rx="10"></rect>
+<rect class="knockout" x="36" y="114" width="208" height="20"></rect><text class="lbl-lit" x="44" y="129">TWOJA INFRASTRUKTURA</text>
+<rect class="panel" x="36" y="154" width="448" height="52" rx="10"></rect><text class="val" x="56" y="188">TakeAny.AI</text><text class="mono-sm" x="464" y="185" text-anchor="end">AGENT OFERTOWY</text>
+<rect class="panel-2" x="36" y="222" width="217" height="88" rx="10"></rect><use href="#ur-doc" class="pic" x="52" y="236" width="28" height="28"></use><text class="mono-sm" x="52" y="284">01</text><text class="lbl-ink" x="52" y="300" style="font-size:12px">PARSOWANIE PDF</text>
+<rect class="panel-2" x="267" y="222" width="217" height="88" rx="10"></rect><use href="#ur-table" class="pic" x="283" y="236" width="28" height="28"></use><text class="mono-sm" x="283" y="284">02</text><text class="lbl-ink" x="283" y="300" style="font-size:12px">MACIERZ WYMOGÓW</text>
+<rect class="panel-2" x="36" y="322" width="217" height="88" rx="10"></rect><use href="#ur-search" class="pic" x="52" y="336" width="28" height="28"></use><text class="mono-sm" x="52" y="384">03</text><text class="lbl-ink" x="52" y="400" style="font-size:12px">BAZA WIEDZY OFERT</text>
+<rect class="panel-2" x="267" y="322" width="217" height="88" rx="10"></rect><use href="#ur-chat" class="pic" x="283" y="336" width="28" height="28"></use><text class="mono-sm" x="283" y="384">04</text><text class="lbl-ink" x="283" y="400" style="font-size:12px">PROJEKT ODPOWIEDZI</text>
+<rect class="panel-lit" x="36" y="426" width="448" height="64" rx="10"></rect><text class="lbl-lit" x="56" y="453">PAKIET OFERTOWY</text><text class="mono-sm" x="56" y="474" style="fill:var(--lit-deep)">DO AKCEPTACJI ZESPOŁU</text>
+<path class="link" d="M64 490V558"></path><rect class="node" x="62" y="488" width="4" height="4"></rect><rect class="node" x="62" y="556" width="4" height="4"></rect><rect class="panel-2" x="20" y="558" width="88" height="52" rx="8"></rect><text class="lbl-ink" x="64" y="580" text-anchor="middle" style="font-size:11px">ARCHIWUM</text><text class="lbl-ink" x="64" y="596" text-anchor="middle" style="font-size:11px">OFERT</text>
+<path class="link" d="M162 490V558"></path><rect class="node" x="160" y="488" width="4" height="4"></rect><rect class="node" x="160" y="556" width="4" height="4"></rect><rect class="panel-2" x="118" y="558" width="88" height="52" rx="8"></rect><text class="lbl-ink" x="162" y="588" text-anchor="middle" style="font-size:11px">CERTYFIKATY</text>
+<path class="link" d="M260 490V558"></path><rect class="node" x="258" y="488" width="4" height="4"></rect><rect class="node" x="258" y="556" width="4" height="4"></rect><rect class="panel-2" x="216" y="558" width="88" height="52" rx="8"></rect><text class="lbl-ink" x="260" y="588" text-anchor="middle" style="font-size:11px">CENNIKI</text>
+<path class="link" d="M358 490V558"></path><rect class="node" x="356" y="488" width="4" height="4"></rect><rect class="node" x="356" y="556" width="4" height="4"></rect><rect class="panel-2" x="314" y="558" width="88" height="52" rx="8"></rect><text class="lbl-ink" x="358" y="580" text-anchor="middle" style="font-size:11px">CV</text><text class="lbl-ink" x="358" y="596" text-anchor="middle" style="font-size:11px">ZESPOŁU</text>
+<path class="link" d="M456 490V558"></path><rect class="node" x="454" y="488" width="4" height="4"></rect><rect class="node" x="454" y="556" width="4" height="4"></rect><rect class="panel-2" x="412" y="558" width="88" height="52" rx="8"></rect><text class="lbl-ink" x="456" y="588" text-anchor="middle" style="font-size:11px">REFERENCJE</text>
+<text class="lbl" x="20" y="640">ŹRÓDŁA FIRMY</text>
+</svg>
+<svg class="ill ill-port" viewBox="0 0 340 284" role="img" aria-labelledby="ur-tm" style="overflow:visible"><title id="ur-tm">Dokumenty przetargu trafiają do agenta ofertowego TakeAny.AI, który parsuje je, buduje macierz wymogów, szuka w bazie wiedzy firmy i przygotowuje pakiet ofertowy do akceptacji.</title><rect class="plate ill-shadow" x="0.5" y="0.5" width="339" height="283" rx="14"></rect>
+<rect class="perimeter" x="10" y="48" width="320" height="166" rx="9"></rect><rect class="knockout" x="18" y="42" width="140" height="12"></rect><text class="lbl-lit" x="24" y="51" style="font-size:9px;letter-spacing:.08em">TWOJA INFRASTRUKTURA</text>
+<rect class="panel-2" x="16" y="12" width="97.33333333333333" height="26" rx="13"></rect><text class="lbl-ink" x="65" y="29" text-anchor="middle" style="font-size:9.5px;letter-spacing:.08em">RFI</text><path class="link" d="M65 38V60"></path><rect class="node" x="63.5" y="58.5" width="3" height="3"></rect>
+<rect class="panel-2" x="121.33333333333333" y="12" width="97.33333333333333" height="26" rx="13"></rect><text class="lbl-ink" x="170" y="29" text-anchor="middle" style="font-size:9.5px;letter-spacing:.08em">RFP</text><path class="link" d="M170 38V60"></path><rect class="node" x="168.5" y="58.5" width="3" height="3"></rect>
+<rect class="panel-2" x="226.66666666666666" y="12" width="97.33333333333333" height="26" rx="13"></rect><text class="lbl-ink" x="275" y="29" text-anchor="middle" style="font-size:9.5px;letter-spacing:.08em">SIWZ</text><path class="link" d="M275 38V60"></path><rect class="node" x="273.5" y="58.5" width="3" height="3"></rect>
+<rect class="panel" x="20" y="60" width="300" height="30" rx="8"></rect><text class="val" x="32" y="81" style="font-size:16px">TakeAny.AI</text><text class="mono-sm" x="308" y="79" text-anchor="end" style="font-size:8.5px;letter-spacing:.08em">AGENT OFERTOWY</text>
+<rect class="panel-2" x="20" y="98" width="146" height="30" rx="7"></rect><use href="#ur-doc" class="pic" x="28" y="105" width="16" height="16" style="stroke-width:2"></use><text class="lbl-ink" x="52" y="116.5" style="font-size:9.5px;letter-spacing:.06em">PARSOWANIE PDF</text>
+<rect class="panel-2" x="174" y="98" width="146" height="30" rx="7"></rect><use href="#ur-table" class="pic" x="182" y="105" width="16" height="16" style="stroke-width:2"></use><text class="lbl-ink" x="206" y="116.5" style="font-size:9.5px;letter-spacing:.06em">MACIERZ WYMOGÓW</text>
+<rect class="panel-2" x="20" y="134" width="146" height="36" rx="7"></rect><use href="#ur-search" class="pic" x="28" y="144" width="16" height="16" style="stroke-width:2"></use><text class="lbl-ink" x="52" y="155.5" style="font-size:9.5px;letter-spacing:.06em">BAZA WIEDZY OFERT</text>
+<rect class="panel-2" x="174" y="134" width="146" height="36" rx="7"></rect><use href="#ur-chat" class="pic" x="182" y="144" width="16" height="16" style="stroke-width:2"></use><text class="lbl-ink" x="206" y="149" style="font-size:9.5px;letter-spacing:.06em">PROJEKT</text><text class="lbl-ink" x="206" y="161" style="font-size:9.5px;letter-spacing:.06em">ODPOWIEDZI</text>
+<rect class="panel-lit" x="20" y="178" width="300" height="26" rx="7"></rect><text class="lbl-lit" x="32" y="195" style="font-size:9.5px;letter-spacing:.08em">PAKIET OFERTOWY</text>
+<rect class="knockout" x="18" y="42" width="140" height="12"></rect><text class="lbl-lit" x="24" y="51" style="font-size:9px;letter-spacing:.08em">TWOJA INFRASTRUKTURA</text>
+<path class="link" d="M170 204V226"></path><rect class="node" x="168.5" y="224.5" width="3" height="3"></rect><rect class="panel-2" x="20" y="226" width="300" height="46" rx="7"></rect><text class="lbl" x="170" y="240" text-anchor="middle" style="font-size:8px;letter-spacing:.1em">ŹRÓDŁA FIRMY</text><text class="lbl-ink" x="170" y="253" text-anchor="middle" style="font-size:9.5px;letter-spacing:.06em">ARCHIWUM OFERT · CERTYFIKATY · CENNIKI</text><text class="lbl-ink" x="170" y="266" text-anchor="middle" style="font-size:9.5px;letter-spacing:.06em">CV ZESPOŁU · REFERENCJE</text>
+</svg>
+</figure>
+</div>
+</header>
+
+<section class="section" data-screen-label="01 Jak automatyzować">
+  <div class="container">
+    <header class="section-head">
+      <span class="section-num" style="width:auto;max-width:200px;white-space:normal">01 · Jak automatyzować RFI i RFP</span>
+      <h2>Zamień męczące cykle przetargowe <strong>w nadzorowane procesy</strong></h2>
+    </header>
+    <div class="uc-how">
+      <div>
+        <p style="margin:0;max-width:62ch;font-size:17px;line-height:1.65;color:var(--muted);text-wrap:pretty">TakeAny.AI orkiestruje parsowanie dokumentów, weryfikację macierzy dostawców i przygotowanie ofert technicznych w bezpiecznych kontenerach microVM. Lokalne wyszukiwanie wiedzy i wielokrokowe rozumowanie sprawiają, że zgodne pakiety powstają szybciej, a strategia ofertowa zostaje u Ciebie.</p>
+      </div>
+      <figure class="uc-shot" style="margin:0;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.04)"><img src="data:image/webp;base64,UklGRkx9AABXRUJQVlA4WAoAAAAgAAAArwQAcgMASUNDUMgBAAAAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADZWUDggXnsAAPCkAp0BKrAEcwM+YTCUSCQioiehkeko8AwJaW7uWB/H943noWavrN2rHUn47tgCIvXfPBlX25+6/r/NpeH5IfRDrzyhuV/+J/cPbN/k/+B7Hv7T/m/+l/TvgA/wHlQfrl7nv3D9QH6zfrR7t3+b/Z/3I/2D+7/sp8AH84/xPWU/uZ7Bv8j/0XpofuH8Ln9n/5v7me0t/9NaW9Hf2H8jvg14J/cv8D/iv9d/dfSv8a+a/t39y/yH+y/tftuf8P+M8jPq38v/uf8p6kfyD7c/jv75/i/+V/g/3k+5H8R/s/8N4v/DT+w/v37qf6/5Bfx7+a/5H+2fu9/k+Gk1n/X/9X/Qfuh8AvrR9O/3n+K/0H/q/0Xo5/zX+G/dj/B///5O/RP7V/p/8T+T32A/yb+d/6H+3fvl/jP//9S/7f/v+Nd91/3f7JfAD/NP7l/0v8b/m/24+l/+0/9X+o/3f7le4P9H/zn/l/0vwE/zb+0f9X/D/6P9ufBz+9v//94n92//+IXtH1YUUvXKrrvzAEil7R9WFFL2j6sKKXtH1YUUvaPqwope0fVhRPREhGhuKUwsX3k7XJTKrH7bIULTkmFD2snxotvhytW0pwk3cy65NGgWHn89YMit4FFL2j6sKKXtH1YUUvaPqwope0fVhQg78nmhIAk3xoPlho5DEefmfQDgbAE3x/PFdlrvnv0P7XnzoX3BL61287YgGjZw73T0r+Tcll6H7fc7HoiHVI2woufSgqIeIM+BGCndQ/ETmByiCM1jBpKgd8vrPSFACggY3B/zuirCil7R9WFFL2j6sKKXtH1YUUvaPqwjX5FQl4JXNYbPzgscnpQnKxBc8BnLDK/D2AIRe1sLGR6vWsXdUC57FNQ9HKhB5+pcZJbTh7TFafiE+aCeJOl1fsYb+kITl/8R6FFApjsFq2vjwJxQZXVvYlVr8fHOvqS44/C1QGVo+rCil7R9WFFL2j6sKKVTZn2NgUUwKmdv64RX4fXCJwQOMk5+zE9KkRe3BAQ53r3vsG0Pmj1zaAHwEIuulXeG6luo9Bl+u7HKUUjyv607h13ezHb9lhE4bbcqlM2ByvqM+8oVHQY1SdBrNsr6b+a/sx4t7DRErkNH1YUUvaPqwope0fXZK5XJrLAyKrw+u+zRTorZoTmHzWspJUgm4wr/VmiPjRbf/cl4FGOV/j9cIr1++sfGi299Y+NFt76x8aLb31j4rCLrC4aPqwopwousEbRnn/U7UpisCeLgZy6VKRO5tKYrAni4GculSkTubSmKwJ4uBnLpUpE7m0pisCeLgZy6VKRO5tKYrAni4GculSkTubRYRU0sJ52wwrv79evSlkZA8+SCjyGj6srf+H+R3ZkSsHeVN6E4UvxkmfuJ/kg+NFt76x8aLb31j40W3vrHxotvfWPirUb25bdWMqYyIkARW0u6mJyQUGs6bevXLsnJWUNVj40d5sf0xGHHNfGMEtNYinA9PwFVKIyJUC9SPtdDuh7arqDmht7K8Ig67Q/xTb6QuG7X2VXOUi4RlcN/dL/fnfKKXtH1YUUvaPqwope0fVhRS9o+qOu7QzgqmfUsfh9cInsRn+q14+6gM43o3k3PJEgalFbUTqYRyHlNZ2e3jzgs2+HY+x27O+UUvaPqwope0fVhRS9o+rCil7R9V9KSfwYNR9+KmvfURAHFZa5E/VZfUTbXiOQMMd8ogQxXsiBmgmbyDQbz4juT/rJjGMcKLwKKXtH1YUUvaPqwope0fVhRS9o+q9335D+rTVP7UqHw8FyfIOAkbSuTShmgzIHb5RS84B3oPFd2Ee+0/jwbF3t7Tr0/2nXp/tOvT/aden+069P9p16f7Tr0/2nXp/tOvT/aden+069P9p16f7Tr0/2nW6IMDgsit3VL5jbPntRSpBKr41eDqshMHQzwQ6OzFOj6sKKXtH1YUUvaPqwope0fVhRS9o+rCh19DdVpESQmbDDNJotZDYYoB0HmEyCxQfn965/PBCLKBBOsh4jiWkXhpFMKIFztLGAMu/Sc4SQXn/kn+O4R5cAxZmFgqu6ZTDczGcITR6jUArS299Y+NFt76x8aLb31j40W3vrHxotvfW5pO0Lc3gDKXtH1ZvkwTsIa9t87eBJXRQlnwz+XSHGZKPfWPjRbe+sfGi299Y+NFt76x8aLb31kr/iU7NumEpOopUaQk0RhhDGXmy0teXmLL0ZV021jdZtUqQDbf66dcfRz0pGNS6CN/UwiaRssOJDZcIvlDHposFO15yhj00WCna85Qx6aLBTtecnAz2r3UcQ0QnGaKLwOGWHCInkvJ0PZb+RRHQ4vWICe0MVrIDY+N7Rbft37l1i88FIGLLzKHzulwuS54xCvLexbwyzwzMP5ZfayqhBG49RHfbjO1bXuWCWGeo9CFURx8k8nXbPFZJcvC6zcTSqYlqG+nkUvaPqwope0fVhRS9o+rCil7R9WFFL2j6zCwAB4w+UBvovAQnZuO62CXd8c42EG//iD2zSBlkF/0ElZCdhOdO08AEiS3uAYmggSJQ7loFXHgi/IBq3GBYpW4HUMBHCVwP+DpacsNqwxcwzd0zgzNlyEnKNfKJITnH790qF72Bvk8nsfCwope0fVhRS9o+rCil7R9WFE9ETrGSpj9L/cFmZQyNulfVuW7LVtuAoV7CPvOUUvalLYay1iKQ0mp/ta40W3vrHxotvfWPjRbe+sfGi29L/Y2TF3uggB6AOL9SokplWJHFN/I8ho+rN2KgD+8o4un8qRnzPY+zowjcY1H7bigb+gZwiPMsEoiMFeVyuc2FR5WK1oDJKaBmqQ9CoohVZTXrBFBT74fH+WAm5u/7kDyH237hM/fH4u3aiW07THxotvfWPjRbe+sfGi295bs5wnV/KKXvVoENQWEFxq9tOT/GxF0g7Cvc1KfaxTtYq9Onhd2cMAv3QtmHM9dfNMQNp2icDLZKlIiDK3Uuug9VVMDvY9xSf00UypWAZULFEGucE3p4W7J+IjWwnXR3L6I8w02Wc7fz6sBVf1PRL8LWsGVCIPnfKKXtH1YUUvaPqwopdZM6RAiocgZPOnPotAWYXSQeXDtUAsZ41P2PFzD2Juao4Mope7yLeC7TRHiCDzvQPJ4hjTL+q6f4MRFYCci5A90UVN7ZzENFwSq+NXhINx03pa8E9mIi4JVfGrwkAoLvcDp3yi0g0QkpOILaygxzmsw8USdOzXhzeGID5h0UCxCil7l8vDR9WFFL2j6sKKVMAuEYv7bo7zZGoVTiwukB8yYlm2kRC6i2YBvq9CH4DqiAWtbiHRpCp5iVXiVpAo0vAjVj5Gp0HlHnc5NnGzz4+A+tWu6lYbiSE/B+gYGpFu3UqTzOgOHCZ+1LUuIm1OKI7qU7wKKXtH1YUUvaPqigE+hAAoZglQC7I14IGihqx11o3G51NgSYGsWjKdMtnIgOWroHNWpOvvkRX3MVOtyLnxGZGssl6/DtTIXQnScSANEHm/sU0Olmi2lTwDzM8DKt7bANqJlBXKP3YrIoh8l+i52ClhC1gwliILarOzu12Okr/kOY0W37d5uLUCpJDqcUYVE2EBbDKlsrcqnVLqx0w2M+dh2ZDO6L0cNz9Lnvh4qxoM4ZNu/1w5iFNEnvlE9kbOBPCPZCs0xh1HRsButd/j9cIr8PrhFfh9cBRwHhhjON8Kxy/jw7P4469SdPWJsMh1keC3fGi3ReTvtRH0Q7DmS2CTQR1eBsbJvL4CwPdMXgBCGd7T/Wi/h3rwuuWy6P4dnmEUGB/xXSOjC9MSGr8flYd4bQde1jeCd9mVcLxPSb+FNlF4x8O07PleDsc26si8F3nekSySuDgC+xalMpzGKDK83hS2+B31j42RbEhjeDUkMbwakhi9ql07/0NPuNzeDUkMbvJkhjeDUkMbwadBjeDUTbEz3MsD2rdL+lnbZ7Rbe+t8KsyJVQ1pANTUdzbbN03fGEIFo3fSYOIVpO4NSQxvBqSGN4NSQxuOwPLRLfhr5xdTDL7iiDmYaJxLvCgSOEmU7sLCil7R+VKlnYcVMe9nb3gqjyT9kPifyA3tZ8KzZPZ3kxv22MTET9IKos1DyyMKq0akhjeDUkMbwakhjd+Lk4X7Q5ntdKvkPOYMuy2PVv7WfxkG9Ok7Kd7SxjahCUlkTSqSIxUHkFMjDITwDmKYglVY0k6VVmwY123iE4JATE8NebyyhqsfGvRV7Ei7bwxA6UnRafrkQ7Qjjz+AxPRLrCcl3yVJ+Rvz2nGiwWa97vCK/D64RX4fXCK/D62oFcc04SVuUoThxFiCiw1MGyoqDkNHxG+PaR3Z8fuTLS0XdRwIejx47fPUJLSzQ5iGi4JU4zD7JVf4/W0/2FNlV/j9cIr8OPGA+BNWOC6JcEqvjLcAE7W7Pj6sKKXtSr/8XpAiL1RK4VBTKS7ic5dxDygah3be3sJ1Y92aEp875ROpsSzXAXu/Ei+5vIpWp4DsptzgGf3Zd08sxosQrpBOJNmnYbIaxvKgvk6hnRmONvLYpLX4VIACRp3NWPizdCs6ANX53yil7SKciYL/kmMXdYpp2b+xIT7DA0uqPwr2kZ3Zjd89pZXno27wxun/n/n+f+f+f64RX4fXBPU5B3GyRZEK5Jk+uUZ9OVox3SkDrYVF5ZtK6Ja3vrCp6aodYUUvaPqzgE8z2DjIJJhbXiscKZdu1YiRFmNirQPjEUnIx2P2rhgcH/uyc7EfGWw7rnZkkM/q2ISY8x4diQxvBqSGN4NSL/3pNTi5gHNUDssdKiz7s1eZIJx69TaXftsH1YTGmv7s+Pqwope1KtrSfUvV3tY8q5LcCYuPNUu7rJ8siybSsn0Z7lstRwKO0/blDdPvGmMJQ1uffWalKGvFspFKHmO+SxMh1adMaan0BiWdEcGkhetrOtLKv72AO+se/RyO/89gE802DTbe+sfGi3ZDTr+gIibSe0s+vS//uRSrc+031XNpTsBK3eoOUyUV/E/+XIMJLRx7RB+7vtEH7u/x+uEV9ssWItAxBBLy8DgJxUetqVUBNJc2lNelbsJYuLpFD655XCbbMXBD7nAXeNrWi8Cil7R+VLBhwCXauDyK7ofruvl7aM57nEdtz1My2uIBQ2cfyuxIY3g1JDG8GpF/itP/nN77vx+uENOH1wb6M1Nwp9Vt3DDR9WFFL3r3KOuRfCK+8nsSwiR7HUACfXPyQn0cBvdHVgXCQ8x3bhoLvAU/wlrOx5uZQrTXCK+8nsP9i6O3nyt9Vj40W3vrkeyp2+41cLnSSNbaAKxuU9xknLjVuPBJ/x2q1fzm6H1/eIO8/nkIA3Wu/x+uEV+H1q+ZMEy7V+H1wicDrfvrhFfh4y9o+rCimBW2vuejuNYUT3/j5syo8qGH9OOQXKSqzuWya+9Tb5WkzxN9BUvcbwvcfQEjUO8MudjHyUuivBJ+xwakhjeDHm+Ksk3o7EhjeAeT8/1wivw8Ze0fVhRTAxYZMO++4OGkjIZQrLwHeIhSeOkD9tIuiluc5Bt1rv7/oGbq/slW/ibehjeDNn2IDsSFJzD8dKDlmO8KR/287xvBqSGNndSQxvA6d8ope0fWtYefPpXxi4aHI6QZBKr41Z5U3bu1tIVSaovpq1ltmCQwkvjmKdqQDT5eL4KpZANaAUUP45oQWptPFcqoMnNVangi6yf1BlqWPSil7R9WFNdr9WKmq31NwBFSSBLyTcmdiH0Ytvytk0Lr4pJQH9TjD2DPfjvlE6ls2aclqV45aJxZSPCUEp8qL1LjNWsydtOYjgPmCWBwjpWbYDEKp88Ab2Qj3HSIJaWi24xqKEj2pquYTGFr1JDG8GpIY3gzjo2STG+d8ope0fiTk5TL/gOl7S8fxEt50cPuBTra0yuYv53dR0tLRah+niOsGfLbfFHouqovWuPUZCsugYRugO/9a0ugxvBqR2FW0Aq7QAMqsBIGXf4/XCK/D64RX4eMvaPqwopgsSqune33zbv23IbGRH4W31s0L1U9mX8vfVhQ6w7/iuOrkYM23dch5AGMHiyuEuP/CY3QBc1DQHkvVaezqGaflKZDbSGObLKmi97Etv5oTbNIHyWzPp4EFlf9WcZaFs2O6nIBN+98NDw/APf4i+EV+H1wivZwy9o+rCimBQjdoxnyRlfANKJQfxkNUJ4vWf9LENeoHNguHrXIK7qj+IakhQ/xG3hN/zxspKKV70FExHceMIxEy5zZel1fvj15hRo0fJg66CLF+O+sJIfE1enw+uEV+H1wivw+mZYgi13BqSGN4NSAJ5cfbxRwKAnhPRU1WKrTkes8qRO5tKdd9Y1Y5/QVdjyfZ1qR+5CYPF2xA8XvYij47VoBnJpPa3Xj46UjSkemJbWJiWlg6MLLsADsSGN4NSQxvBqSGM3xotvfV8wroKaxdZo3Wt6xpQtx7Fa3+PrEFhwgyXTpYkEKoFKNx5nHKYgiMfqubpWEXIzsLIL0YKHsY7h8swSnY/ub0pkQO4UUvaPqr576Znwee1POdiXRMdZjo1JDG8A5IO+OxHPmqCDL9LM6s/LJeRI0GZ4UUk+a76DKXzHu0gCIMxAOIr8PrhFfh9cIr8PqE2EbdnKQavKpBj40X/hYjLbwakhjeDUkMbv4jbS/1kyvw+uEV+H1who/6571JDG8GpIY3g1JC3WSRXqgVfeozg0BAVvCnBfellpPsn31j42RbEhfrnMyjA17aZ+Mn2DAv4Ok1PvAgO7f1wivw+uEV8VAKmZx89Q+UjQC3CalkR6rexgcQt+VCqbHsgpmGa7qIPz9w0fVhs7TuDUkMOQXehjeDUkG3vJkhjeDUh6bO6i0+lFHSJa7g1JDG8GpHwAt875RS966SRy7enAHmXNUf2jggc3k8s83hsN0rrXnHIZa07QIHc3g1JDG8GpIY3OFntI7g1JDG8GpIY3g1JDFWkqBCdkmM/QLO7MC6Wtc1GZwjfG1Qbe0fWelcBQ/QGKISZ/bK1AEgPQbokVuWxlxnIF++YUCtq3E4S1Ad/i05k+grqiWK/gx3EjTqhfSHotBvj9CHmXOCpoQr40uwS0dlX8GpIY3g1JDG8GpIY3g1JDG8GpIY3g1JDFULb6soFLe4qS00Ot+7JHX6DNPCHCl7SKZesyFXDj0MLR3CUGw1MFHgztpe+2ZagwQ9M23quEV+H1wivw+uEV+H1wivw+uEV+H1Gd/dicQ/XspaWi3ZB0wSkyGNYazBKdj+5vIpWp4DsptzgFeLZUpQ1tsfLL9zCLmAAD+/hk2fn3M69I6vpOR8pVzPdx5XTgAAAORShKIAkbAR73iPxlIIbjY8eco/Lqokpn7GoA8ZU7pDjCqxBiny0Lv+0QMESRzBVfto3Pv8661mRoXndJCES3A/ioJC8Lj47PVdTaWeQoroBvhSqRYOXc8OuU8aooGBUvoUtTvFBzhh2wg8ayt/wKRp2bvZwrEPzJ/llvwFl7SJx5x3bIaA8eK/6iqV3bC4uSRTuWgJ4I3Te76YaP+tsdqea4GthK+ef/4V3i4WB+6YT22meoDoPW7odbHUlSw8UnI2bgtfYJ9josRvvMgw0sRZsE28IinBx8yb09WxMUKDJNTKWRWweeYlEoqNyZXqp9OYZE0axEW8WlFk+fj4Y3H+Alst3e3ni8fNR+crlgiRdWYNRACDpGsa5Wz4Jt8JbMWi+crOW6J5mS7hrpaOYPlyfOgvOIEe1w0wrcNnedvx4mrXFl3usU/V0h8iEoMXvWHjQ574lPiyIymfQ/hGuvyszhXE0XTcN+Vi2RgwcLksjK6f4n90Tihod9Cy3TjP+0oeBf9fRo1tVPuX4L/HR5gFrGVFK542wFN/X4r3+vkTYSF58STPpu63qn0kKwU4Ppb+4vKJ2LM1tP3gAAMnmm5vsWohfSnzDBHXIW8DKI5ZHP3rvGX++CpjJBU4IcXWvz2MENbG/HScHna7j9ssy5b5rolyMqxcJMHrGAP7BeL/zBahFVqiAeMOg4i4He3SbifkiRVXGqBketvkf3xrDfgUZQ1a/YuONgFHajZBr82n+AycUWpOv0m2SE4LlPyZ93Yw1WLzIAccETsmA62QkgvIqIdEl/ayejuDJTGNtMey865YoxGltx6RX5kjEUrbFeumvBxO4lSGHMndQItJcV5/fjK4bVjvFm+/4Vj1izo7wv7yt34gWWBReT/QHaCetva1N1rp14f5Ufh56eu/cctjv3Q91+wH21J21DIaA/r67ZdqGTF6JLFHVVBKxEWcJzy28+XZCPayQTUy+C23RMdOuNZUaNB+XlXvzQt+0vOOO7Y3xgv1bsuUd1n2BA6y4gK1zXiyWRsY/RlGR//PWnSBJF/J77+evNAU1O58GMOHNx6q57M//KLdLgu9DT3MfNWKE6TWwQSmbqGFlspNn+admvDoN/LwbCdgbzX91U/G7OFBZB842nx34L0K+EKR+/es8eEU6EE34xppP5xb2leO4bSGbFHfs1K6TGQFIVnkHwVjdDBODENxc6Fi19GUPEBgzKwbEw3sz0G+kLLLxFTTCA1yKd7mfd3DtovJlwJv/hhMrnKxryE4rph8pyjMoAU887FpK/HbqiM5p1lZRtHPVr7ATtmI2neVmdPJmidtPaBjeCG3m0NFeP0F7G89aHsBoAwD8LbgJGyVYQDmUcvaul2+yrbNcMqwuiAA4w6SZy7pSgLqZHnNuX3q3HEKSHFWb9VbVRokcM8/LTz7VaCiUx1C7L9Sv/PALx/i0w2QnN45IVw0gaL3Xh3M/DAYH0PpWm0JzZ3lx8WY2k39cfY9ZpwzYM9NW12HLCR5mbP8aCNsmzJjqwa1ZrlVeZ+h4oF6lzwnfZGAAiZIHEC/h7Gsg5V/hwBCoXIBZJhszKJIQXeWa9lQ3Qv+fD7Of7J79NbfroOrkuNYo2k64tnXWlUdR6X8FLgme+hQ2anQTboylR7Apis+D9tT7+fEv2ysO5zrOp0wqw785Eoq2J9DWeL0qDOq1C5YIa++jKJtj+NkTIOGSZQ5z6jvNhk//7d/8hR5wTT3iDWddTwmX0kw8MSyf32LqH/3HE79KWfRr17NHvmOG7dB9dtTqKJSUIAAWru3aiYvdo+oDK1u4PGcjfSxcGjmjIagflmmcpeU3+COMZyWP413DvI1tNPWFaz60C+2FsezHZEU8RT6Q6nEXQdZP47Zv/AnobLvLRaxQepECiar4A92y0CZit7BwjyEVFeUyI0mT2eMtB6mOzJXn2AZ1AWfsh5h991sIkE9ITtsXYq3sOMkK4wAAEmcLqTKxsST+t7EkWUqUQ9xpx/ecbJrKfgUf+1oEOHN6SuQblGGYIVmS5K9DR/keoPx3H4mB19tH1nE/P7+k0jeWV53/krZZ+Ju0VJC4DYmGAmPuhAdOFAi+JKHyQJJqXAfI1ftr9vtKbpsKC/26Pu+QA29hT2TZ46MUXipeZnHuJj4yg2Pl+2dfcIuRfzitFe89/Qow37gOnZmz+Y1L85pKHZ56HDH7erCrFx4DciDT9LYONfnjaiM/GQWF5WthfW1wJeOxAR8eyeV/6Jbc/zCe53+0/af49pGGfJIO1noCWcA+dIrk5264IpLyz1nJZxjJNHPZI6et1eyzwQjyqxCKIEs+oJbNfz8NyWt8WLkgaouMQiKCohQcWgP5NWF2WmS4lhW/Th2jh8crWdnGguXvl6uQe4ufz8czyrY1V92K14RutaG7KgDHTRFSORRfqQeS5uDsRtVoJohmvoxopbFHx56QjsNPiJn+OZ68Au5BqRCPBrvE+/xMeHJ4/3b8PyKo4co4co6VeExZyagi3ZGSCB6YmyZ7JkNN6YJMGeFJd4B8l+waxd24oOAAtbXlZ7arh/bHkRuFDPIqx7OGLtP36iELq34zX600dEGOGEpErVFxJdE3YV1ecOS8w+zCVDnur2RnMgaFnai68f0wSKqRtD7FJN6r8FM5WAMgpQglVuGSwAFqLQb3Z8/DuyFHbeTVGpLHx+KzAPRBXI8ByiXoDnYNPAsfY35MSz/bh3rTPCClKd2eQ7N/PyEU4LP0eqDFinU4r88s3TzSNjVHX2Ohb4aDx0Wy6zj5XibQv/bcUDXpA6scJu2GUq4LkzlNwFs7sOqsnzx2WbJ9IXkv5pLHU7gjme7QCUNX4r5FEb4NvY3wzqPL1UrzcySVh1zcjQp6aD5wmUDJQUXL3Ne1VDRUfbCBMHvXQ2hj7BFsrL0TiJ+/2WsRnjaLUt4jez/jLc7ayHB3OwPzXzL5/GAAFl0m5SHp9TGRSxBEPPcbD46twxhXUy2SmJAHnSBPOdsiSkt8JiN4XwSoha2DNV8XSTIZ86xcMjNfaLCAB66t0uCI2NqzlQVMmiWoPaliJ+e0jDd+1TAS0ynXgWMpGhC64aHYvCCU7Q+JctZZwrNWxq096aCgcj0XlktpROcChDX2ZfhHuawUVDIFAQi9EWa3GCkDxnQwpkIKw8LbrtsKfXMdjMDQaYpKnJvVT30Byuh+Zx69QuPj1Mk2mMl7leZ2GuU50QCo5T52pCAN6wG0Uw/WaiJ+59JA7Mt8HE1ZOZyabbJn2XsbV9Cm2sVi5kF8iye2jsgTdi3oDtx74s/4MJskmMdW258T5oeMNLzOB7X9tNNs7UGVhulhtBYpZxU3j/W+gPYQKMCZpNG7iQSimBDsjrn6++bzW+yiD6iLzO6m1/etrRfLv4WyPJM6eB3GGbND1huotuaGC5HMULEe9RWQ9TI6se+0X/Yo+AAiOvZRRWegGCYO67sar8VqiTnM7VyH1+UY7pbxnJXCBUJhoHD0M2qG1asN7S29doyUzWSSllVBQxFqG1vqHEKtjwC8FCFLdcRLvNA4aL+C+vwSeQkM8mFWY14MvkykIwMBqmu5rgeyBF2eqZZIswnXYO/Zj3OfBmlv0fhpaBLb6XNtlZLt+z+YP95J8vbYoOJhzMtSSxqq1suyl9AQ9fEKwIDzvHvqShuMYqL90ciauSrmKeRBVRR3bhpd0h7uzn5NQZwyjvKo4BjKTvLid7SFSpVD6mJstSUohYQAATRNgkLvNA1QS4lzWr3i7E0pucInKfsPHvhuRQRzfmTaGgt7ZttAoi9rf7JyH5KXGVJO2Apo00v1y+Fv5LMJIdMC0N50UsrTcvoKy/f7qdXaqwb7WaU9b6Y4JBRyfS+ceiX4nSTbgzBPXQf3ORzKYoK0/4Y0UmkpL7plJilSFMjoRmyxEja5cabH8HEakyJcLoTGREMZfQweebdVU6PCgeUTeh6dLRaJzV6rUV5jL7HD8GQqLXm3Lf94kPYuyrQbhDgOCUPYqFv+4E0qWJ6S8E/p3n7shx0pXe/+T22wLtKY8rk7c8Rh2JLvuU9dpsKNpdC/d9QfAnp1XMdxkYEZcxm9dN//DxojVCrmkGHji4PHJWfp25Jk03yhjOT36bgSwP0oopLYoUMyRunAd2DHwAAAFtxB6yZwpNgAs/oH8u1ePzdxUEPybMhPQiga+QiDgnyf3zuRL+9npfvxKC6Vb2NC5c4fHS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tFMejGzuqND4pB70D9k2a3u4fsMJ37E/7M7wi2o5c9xuz3Z3v0ts6TLccHHRqh19BFi8L6SS24WnOWVqYnQ/iTnl02RcpBMAS5PWp55z4rGsLtgbU6cb1NLKUhFwEtURvFu/FYFZsDxmqtCboonxYnRopMFFQqKK3ztZBMmf4tY9WBZj+eGhymZoXH4GFYD/zXoxdHC/AgWWKIoZ0G5wEKUYACj5XBIxT1bOP7MQxPHKMKWrj13XQqUb1s/kHbawbB9PpboXg/PUNRw0aszJzTd9n39Vq3bdUOu38b984/xq52Xcd6DnQ5kxBxBwQAz7VUrMIbg9BdyHmAADwg6cfhfHCwt4/wTvgOJwbT7IPS/8gfucyPmQvVYIijTR8zDLjINgPIO9Wmd9f7djKAONsmN2rCgwNyGMoqwordjMhcZY98ptsbYgj73+TMdffvFZKwseTgXm73mhPWEQr83I/83e/UfM/r58UIg/YZr1mW/VZ2K5bp3D5g7WK6GSy54H1PYAFUklYgVwyzC/cF2NtB3ql8ZsDwqy8EXGMFBCd2N4c9s9sbqmI85YN6JdpP8oulZNlaVyOrW1ST/5TrOwsrT4415TbmTAFStbHoVXHRxv14BTuq6VEWAYcSkl117vXwIvhkAje+vaax/6+EAP79ibNWNbOkQ5XbyS6viaMcTcgKVtcEI62lSceKfq9UeZRTAlZLShUd0rkIIVx8wsepZXZoPiCS6qbNwG6PKgWjtPrugCimJgbg+zho2cFvRX4Ir84/3mO+wX0yOM8VOeGPeMjm39dlcCnjy5Inay6cBpWhifyCPbMx1swHnf3QLOt1bZZow/blSU+epzjawSrGULVf2Q6QQtnWfKW/QyOzvWMjnP1jsd10AgIyZti0PqeFzw94zL55lhJgaFluugq2bWioBv7pEeRzxr47KEkDM51BYght4cS/suP1v0eCUHUNOfosm2qdSc3EYj2/yS47j0lU5MkLiAJmve/kef8R7Hep9eMbeA382MHZu+TCPvq6Q0zdnLplElDKCOB/70L7b+YNY+bSFlsz06VZd9YRZ+h67UpXu+4CsDgeZnY7Pcnq9xgccn3ikxZeeg/EPJfRxCxzEACg7CDFJGlL6N3Ys2JuUQOGvg3BrHceBt8P247sGL6NgN8SvnjCCQlqov+tNNN7ukNlJAgKXvXrITqHCJUqPwHeKNPeooejZhNcHkxzdhmRUb8xJUp3pk+cEi9K3a8SZpH6aaEIAjpBc0h3ju25nmhrGrR/2uqUa+JfPbngYNlNBPvnTdUlI5GVFCZcPGuRCyfbxHpvNcdclhWX5ldZC+zKBB3vp+BVTiZoC97gDMSSN0LBr9FzktV5T/IflOxMiAEnG4Dw2AdmEPOPdhWOaSeaJcRIvQuui/wiOgdkXXphciOCkWOe2SkSNDZsEK5MkFRAiHP7AEJ415yTFvPV4wJ3XLFKAeTXusmwNDg9o3p+AEiSpCAQAAAfCp+ssdgawmiHgNuA24DbgNuA24DbgNuA24DbgNuA24CFabf//GCfSSQiGO0cxRVO9yEXMbwBXMlWoJ0aOz4VcZyqq8C3rib7gfdg/WbMa0c4Azy1IVQuzB4AuLFker6XyRQDh6DCI4esraaCbHeim1N7i/5wBUcYKliqLbggqBfHvSbmPDCyxl4ptZLgxZo1Q1ttcKjWlbPo2dm83+BMmtkAn0SfTzodh49Vmm+NMcW14yuVN+ougG2oY4/V73u0CXvjZi4gyv/AH1467CuRXVUD2AXMVNgC9XWe+Dquy+nl5Av1Khdjbyov13GxKYtU71vkYN5Erc4QLdWKVREADkxCnq+CgPkMZdK6CExps6a/b8KTdYnHYB3pGzuzMjM14X+RNsmUv7NC47Le4lg6DtBwaOCievdwZa8FaQNCIN1g9lofeZKgbZnwYozU+n32cEc1I6v0drvi2c8dU34YEtevsv0UmbBvVPWy/hFEGWzzfI0i2cp8Op9DMeV2dP/roxuAW5vcCVHk0Jt0e2scC9mL96pIJNUMuEar8V+rw4zQwAATCpBFs7Dac9Um/P6iMnvm3GzVEhadUjzBb10EART6GrDz75lNzzVwT0RGd2Zq6t/bJ6NDrO3KVgU2ZpYlgPibOtVJwh+7uk928wpWNk54wLO85amcXiSzGwypsuoUzH749rp4w1s8uB1/Td5PJNzN3R1fRk8V0//ebJkDIt3CtYKhOH//nOpXmFFT6KhHeE2mcOUs9u54Tzz8pKvCZ7BjEe2mHmNFOm5RiM7lP9B/F9xHpBsqkm+nucqENVS4YNq/xVKgbCr0oJQteiiJaSMKWG9w9g3ouz8dsbY85kB/pYeOL6ZoC6pX6cK/f81n5uGYR9fM1dpnwmTUOFbnverP8IL3IjxzNVl1akes2uuQpsYuzbRTcqIjDTrSZb0ANqsjtI4/pKs5bS9Gtu1oAAAAA80HzIaeSXvckMac3q9uUAFkHsDlM1wvQZsVX8t1fbGNxE7oQ1FyIZRLZDK3Rxm2jlE+XeLgB5Zct5V3RIdJFo8R1KQyUXcOgl8VjLL8NEnZ+t0mao7ygcNaMOiyTvB/Z0A7am+sRUFtisO6SmRU+W4qmwCqY63cG8asS/f/l2dCxvhxWkmL6fdcC2H3zA/itrLoFRZZjRv0YgX3tXM7QIaP3zyGzCCS7SPHUEiOJLl5kaP0CCJVOhx7r0ghYxFVLh8EZeDRw5tGD+8Ct7C1Rv9ej0Nicg/mYAAAApof74Gn3OQxkwKPiN52//1m8EvbE8KCfH0uELTMZCVVGgx1C2AMnGwQXENcwSfP3Q01t5uDis1iO8QbTbWqcqK4h094bzrwLpdHCY+uyGczXAAA4kS+47hN+G6sKKaVOwb0N8GJsS0P5N/tlJ8TDnnc5s/V+Z9nwZGuIvg0oowfXvr3XYvwQd9WDApjfGSuOJDKvEoijKPi3myME1TQVI4lbCeAFDGpUDEezZgUHk8njp6LHyAFCT6JUv6/OJRkgwpZiJle4AzhVnWIAmGM0YqHvGE1tznsUVDMZhxLmEmYG/WWW33jWT+Z+N1cP7W2bUfmWFFfabV2yOcFJ3pU5rtUTmK27YnVfV5VeBodjQXJsa4wLGQ4ISylTEMh/loRLhIpEoRKrWJNnty9qvVAA+ue2xG/7tQZ3JX6ngemJZgdu89rAnWltMYTKmueqUmf/59HpnjPvXtLeln1jmP7VpiMxUs3GAtoT7JuweQ58Gqn/xChwUwT4YDdiHYwZhiQAO4/dHVi59LBjPQt4ml+yWjH5VdDAGaRmXffAtgnsBehewM5rAZqNsAO2L4uaitjlddUoATQcgcmKym7bv166DRxFzMGCXyV4owcNPfVhDH+cd/AnwsizcOyd6yI5M8YoWwO0noUGTYYrcfqvEtWwgujHhCt8CJqJVfd2OwqCid5MKR4L7Xp4CKSW+ybNY8cK1PqdSD1DLuS/JbpAgUavkYV1x1HrdI10R2hGYveoZeGLUWBvhfX8d18fJuzlLY6kL/8xFPH12NagrJ+lh5qMqrLBOWtugj9FzprJEGseO7buWb0Lf63cYm9uOxBkjOkABgyFuXMelqhi7bFAOqJybuS2dGCVBrxk5SsbcCbg6BBDk0UrIdV7d90dAX5nkKYFgQCOL8S5ebSJj65W4rRUQIPd0z724ecmFvyl8yUqykL6Hi7SlsiSd50UxkxI8q+NpR6NgESCaOkhTb6ojvJu+8UmM4M59jHX1xJHK0bGXSxyi1Lnsf+8j7PUTUw5LANUPRL0MEqIdhB1vzC3Ie961oHBgysWiMpFxLWXvtYqFygpSSgyMdzp7TKr1Ng0veYnAXden4zsG4aQxmGg+netYsr2l4aS8JpAPqRAAADpzHS73ApQAB4VgNDZRL1pjOWKM1dqX8Yuu8Eu3fsmWmUj7+jwG8tDWDENhtMiaedpcv0eFYQNxCwAUYIHCGsVCJsj27FqDMJ7DR1bwanfTJn7Q83un1FoMZ0ooFOhADYwKavZr4PgL8cP2hQV/RrFD5OPFQSIDTwjGW5iniYIByy7MUhLLPUU2JSNv9Q4kvcopnBb2ANkq62JnMhEemDNUZEtoGLZORJVthzVWY/8m2n2RbzCPMU3hhIA8PHNeFzEVONZBr57ATwziM5rsrvWCE4ukTXIifhqwvKuQAF3mIWyTdHN19vZw6P2j8po54m/2bEoXN73MGj9Ikal56SfnuRKA/Uhx7FCIl0iA8X+tY3ZXLcpHzS473wvLC5hnj1XAAAV4Rd6tRYVh3YDDlSj/JDmqpy8JjS5nksAUPTf72IiVOsN5zyL/DN9sVrmNZV4fYeGOZxSah4tB0ZclNe2DSWAKNEW1FEgTbTy9OlC3qoYxppQjNoEduBtWvJ+gp7CSZmh7wy46qxpfsUgXBghF4JBfLIc+IB/pX5gzTBt9fLGxapP9h8CIn+stGr0cZLfAZ5x/08ZzCNTODXE8VIt4Z/tHf8ulAvMT1hUOy3yLgB+9qp0NvUyaJ+hur6m0/CFkEsxZHOOmfmDW69CFjsLUUP1cdPZ+M0cDMqbdO43yyVYnDSZbTMmutzYtjQbtJ2WY9Ml4AywiJy2g3dk5urcr1xOPu4j5H8VVZzBcclHBfMszcRBoKEnTdfdyW+5lRtoTZadwu06V9UKAkS7WR4VOEoht8G50fT7AbGLENgsmcEM2BD6MOEbnRhwjc6MOEbnRhwjc6MOEbnRhwjc6Odcbs2bq1+917D2wiHUytZfpTy2a7wqQglKOP3CYQW+6wV/cOnKAOrzO3YWAwbsnkZrpDrigt37W3aBPEBV1rsDYD3k4jsDK083/p5sOkZGTURnP6Hq/lAi4pQtJreCANviR/A9VWcoEIvV3I8/SEbsvO6CidpqT9IRdQqk4O5fQILgpbbBsdxEbw7lRq8OjkXw9iGY1+OlNc4N9thY7h4UvWu3dqjGFxMm7i6FTaj3sFk33O/+kW0rdZOHuamqMLIga98SarIB7cH7BCTAFpbBeCyX1jU2+m3vHJXNCOLwoM4TEVGQvYQ6innPS3XNhy/zQlYuYti4rGR5JqE/TbboFzX8n3NQbFjUZmeQMOmwlK3g3kIev8QaGvJwhR2vVScXMZXjLdRIB+xcMQIsXPieUEoJzWJELxnIRjGLBhlqgEYbvrZfMj8Q2NVqavQ66uZ0XzoViucvDh153bgb9CqbxDO2csUWahpqxb9hgcOJAhAc028qW6qGYQRxHdyEuY9c7loSY/eQLOmvraKK7DlNyBXdmrpIERduET4YK8GmnKw9Sp1wfqSVkRwAgtcm6weEumjBLSmawk474CnYsy1lXH4oFiVUa9S0LXM7eQ4m3mwuthiSS2fehQ0ZzI78xDkObzZlhLvINtwoI7dUURGavQYDC0US3nBCkRUUkI4IW5p3I/oOs5ovafxSnXCsJvbe2z3IqKhN/vhTN9LsI/S1NM+tDvq8eYa4j2yQw4KPTIhySyZI7dpgb0FvkP66KeIluLxaH9F3pt7TPHVDHU80DdhmwsJU1yGGXeSLh5SvT0T9a9SMhzFbx3+K4PtlBL35JDbw9irSIdvtNOON4th7Ix4Glua6IIdb+/Vlpwjpp3zXEb620hoiQ7WfYu7EBJncX3PWf/i6cPa8ML73OZMxyvofayhJj5BG4T/gwOaxhoSSvjnnZQPInUbYpVTZIbgKqfMzxKh/C0XalbWCX3DppN23Y0hJ9M11qUnf69D+3LuPl1J3gorzMGAQwDAbn1NpXD+g7sZf3rKyLfgs57/GFW5Daeei9CkZtM+Aw3Z6bMMXyzp1nGUrF6zJx2OOWMsHXC5HN80iYTPWhB+5VHHNdt/ZZ46juQFPd+EKkNAy8H9RIxbvZShsg219cWAMZ4BKHzTTmyc+ZAsESn4LQLDvjG/lYG7kibI+2/7F66/q17x92KuXzmVwL1rs9RIzfZ7TOZccvnfkXDRpfgBRR/nb0Uy5WYoHNXg1/3TAeLejixR7yw1P6Q0hGcQq9pAVJdEmbEDvZJAGJTSHghvMkB5xwYiweCLd4WNbDxu7QTPOvcjxsNiA8+6fm55xVO9mjkZ24WSVJxWUem6d9EcTXOX3GGX7efZ5FrADFSIwcbUS/imLC1w7ZCign5tVt6HT2eAzhWyqiB+Iy1yf4Iu93fp6fA1idaYnv/jfKfA/zlR7EvQRUuww047Ggzerm5zbg8eAAAABdv8fuE6GPDDcRJH58MtOdiuy72Eik1/WdA7tau8vfZfV6vIh0TlJ81Jc5l6+l2DLHB/uM+4Mzefuictx1vfGBbViTFWDyQvTB4DCpooQ9QdTj+pWPS9BwGFN0G8MMYQZf5SQKAyVjgf595d+nvpYpqkQ/iGhK1mgibTpFDCjnyFAcqF9HL9mWfPHsd0XqdUOxH/Q6pW/8IRvCe2OHCk2/X3BxaGqVwWsfzLvhxL8szEMdFq4c9v0ScrEpg9FsRLYh/J6JI/16qwasV3vw8G/YyN5T3p7Yl4a1KGbjnuzltMi2qmRNNJh2dbMLEbSkweGNzgG5Lp0muJ2K6S2ZlQTPqgQifR3wlloeKMZspFeQjeK20PMXtvJNRW7Kd9rOd+1zNq2JHfMuxm05RrUG8lO5ICeXyDXFgZCv/TwCkfrAe4oaQ4yx8uhvTtYCbmR3OK2SLiK4fi0fh0isU8A0yGo/r4GOtF65H+nWNU7isJFXJ6cvJhVr4j7Bs1F+znBrEhidEn7zOKPwOM6Wgy7I0nrnbTriynSSg+U+8SOAHflYJl1IWpWXieisHpoWvcM1zZ7gDH7z34h42vgvK4ljtdi9xuEn2dhV+fL7hRBvEacdrn4TzONNxJkZONqa2Wke4tsdQt3M/noKxmIDIm89p8F1JowPCm+ZSwLsAAJjWIgzR9OZFtS3vK8GRKTOmhrlv76CCTQVFdin5CS2t1axf1KvmSagfwuLeEfLH2o9k/J5MbiApRTrTZ5ud5YS6vaJQGTnUN8k3atRbaD9OAqfKcP4I1XNlSJEB22S8aYZEp86JlYuhgn5XF5N2vBTh6SFqWzKi4PLumORMegsAsGKx7NWhmBLaqbhoCV0hYHreks6RV5L9tJTTemk7jgyZ4PsQ8nTEPd7mbfm7J3LyLEHyy6tVt163K1FalmKVmyplgQhGdnDEas+FgVpDO2GpU3IoL2ZwMWBeNpDVmb8rM3SR0s83E1TmmGd9d+rClcGHy2jb+kcPkbyPpmbXETppaxc0Bfa071u/A6DWM8ypawEnC+OXop6ft+jPpOoyBVsd98xZlk61oT/+2eDrdv8b5DSo7yBIgW95MdISHs818BqG0bjltEDTHcWG7EFertIyhKNnzL1dH8TMuho9WckI0O5PY+wUewdd97U4gnn6jpVDtbIweOuhC3htfGL49Qk9Fw+19eYkeCQD79PY+OBk5tLtgwmwJ2UcvQpR9ly670xaQGtWdAMFbvYUkfvasR7fG9uBMxotJf92lVwwvlBWdIgwtNLDxCuF7ojaL5Xvfts024CMVzylPT9Gv/ySkLlEfs1aXHsVRcSPxCQwHh66ItpLjEG+ZkxHBbtwyeuVO3D07pD8DFr3W6AZpO5PwTBN5JyKFGpHd1LCVKYOtIN2iDjkF2adxiqjGGU2CtwTLRXK/UVqGpQxzUzReDe6f/5cER8w2Owm1VUfwAB8d2aeVUhFoRhUfsg04RdEwaQPubN6weZLeHt3yqbeIV8HZn3qDOFNXPFN/XIq1Dn4A7M3qjWyAMGDhMIiXORReAYrVIY8ScvhkU3uULFjXWZ2N4o+cyR2l8ihxOZhNKDXpoVMNWOqSFC4tN1OiloFDWq1IfNlsFgQPbV0qFqKO7dxPwMh9amkOHmAOy7t0We8bvranEPYnd5vp2LLdb8JgKBqdKN3+zfU8rg/NJqgXkLxCHAeD3gVsFF2MZu9Ex0V9gY3bkvsLXHkbWuDGcWqtCrDMaWzYt/koOOLocwnCP9HSvdayaGCNmhGi0rtk72T+rRn22oY5qnxQK9ekien82Am0TqEUPKNC6to+Vaesnn+/J4NHYnp19pJ/3r7Xd63zwaO3ZKI+jyVgAAAHioyYtJgh24hkX+N0EzRAvOH3YxfgVKOh/VDkLQkcVGgO5zzu4kkoDWBigBU3d83cDtXa4ButW3wHzWyGzjwJ9fxH/va4fu41GDHW4ewio+sJrecDR25pFFIBkq1ApawyHjdMjyZckI3bUI1+DmAReBmZcmBG1ctJRILBrzFExHlFJ0DbW8k4QVUusdZerHc0Oyx/fahjrQAMtgdisEk+ydz79jKHDcfqxP2Z92yQIuewvp/kpzy6r+XfDNyFDva/9NtQhatviLQOJ5x59FdRh98Yn244J+UvG3jNcbq4GYFqu7I93UznN7fe84kh1Ya+dhgVHTrXB3kNBsZUQsFCt+NjLNKiJmNWjgTl8GcAabrH+dR63df51EpX6eG+O5bysleiN9Lf/atCb4xApbpCJKag5x//j11ffSW+fY665xdznpz5MofPnUgi5OlQAyNqZ8diJmA2TnAe7w9DEAKUXAnpQUWwI0iVM8Z/jAAxjw2O5VfKjuO772adCALWBMnJuOj6aTr5j33zTHjDs7wBvkpOl1rriR/2jxnigZe5WK0w2raVIG70BX8mYXAQncYH0DY5y7LC2fZ0Rzrsux20pCMfKgv5RtuO9HlkAnuiNm+1/ON8KBZdUs9tXVJBK3NmjR4ElW6mkPw1tnPsAiXk9OoEAYJ9Nwt+1ForknVL22pkPD0nHPDroK5CAYFo/HNdefNzS5C3kOpJvuZmGl2AB2rHjuOW+Utwn7sZV8hAHJXsw9niRxHzMPI+1voq9N1SvU7qV0qkSzosT5SjW4QImTv7bvhBPS8MBeqdAxuKEiSiNxkTKbCHHeBpw3haqyMxCyzcH9WyVggZh0PdCX2CXBEmUR6fjomPQlmInvpEEl1XqFAhnDSrDLC3UUJQYM/9wM/XR59pku3mWfI9rvlBYDGTkv+Za9r85y6TxMjYPGfJU3glOCV4Gc1gvpJgbJg/NQxMAMptxOTlAtLwn2bTtUQJOHduPJiDmYWZDyMXCB5GojmOMWRFQ7o1iE4jSdJ7pDXAGNXu0xNajBuYne+E7M4Xcgo8WUozZ99cBTkkZRcCdd3zWYkyQ1rQghPs6MkdZLi+YSTqz2tV/vQN4HM0wWQlKOHTiruiyauvM6Ss2CwDl434UoSdodDCep7+dQlQu7t2NAdcOsibwTJ9uaFMj5iJvXQFZ5wR8vXWTZZS1PHTRNEmZE4dfF2Lo+Q/BdlPl8QzwJO3OfhEtXQrskJDNmqPvQiUahFcPufYF94cYL+N45qS4qZrRaKR2hxaPrWOwJU9SKDVOktLw7ltHXW27yLVPHwYXVt5cth1QSuCFL5bBi5h+HTGBAz4AMmuIGbM3fiplXGZqxgbi0OqacCwAD4aghoHb3xpouY+KMVGa2RKGKo5EecbPlXj4fv4PKMfxg6VAGI51PwR0GEoQzOAgUVj70bTn+qmSLy07v5s6dSRvMmQzHlJQU6jczXVR9lfHm+0e2kfX+KSebD80oD8Byv2bfzK+7bT2gdhEtOCoWNwAza7eEequC0hoQLnaTGI9UgtH6opNHnTxfBuQsaDKjsfJib9794EUcjgm2smLpDIDTA6C96GU9IvaJSOagx7zXteN/qTnH6CyjP+ICW6T0cNNVVs2tL7Ry5lrH4HDchdwGiUmcq3QyqDVDtLhfwD0gz7QoyjYDjTquJo0zGDY3Rmf+F+DtkElWLLrSKhSHuJHe6jr7h4NXXKV5UJhCOZ6c6UTP0vqZUBuA1VUHis4xC1SYMmoPd/XicTESpHfpu0n8RhD9rvn9SuRhmJsYuQ7FxKseODbSPoWYR/+6nizYnR5iLCo/3n+o4Z/CogBXkp8npAvlpF3W9WSXL/hUk1oFyudmDBRXlU8wIyvtEucQHVoH2XPUxA1itZ3wBiDv7kHMjgnKpvYVyNZ6tm8s7TqOuJja9avUtMC27LmwKig3aynwndsW/jAkdSFBTaK1jbpOePM0/OhqsAeptk8IyL/+JRkBINN7Q1a8h4ihoPnyP/QZqKAHNjeJiUJhvkyRWofwoD6SMIDPetioSuco1cXZ/u/ofFhOAlk3n8I/MJ66C5HWqDyLehK80UU0ubXYFaDlW41B+IwHSTyw5/o6RxVfi+1pWecbX/jak7gzxMn7HNwFvyErJ7KCpEddFbi8snCGDGl+NJT2hr8yPtQcXG+dDGle5ztIh3COCJ/hL7R4uePR/mKZNyUXhIGtycoU/uFg/bF75ICX25ZZ2iLXF0xfb7KjJbjmD8ycgoJdrmrQ4PQdQHXbtDQrM+01g+muk4MEKWFG0xGeEqMRozXqRSQthhVoQTispEBo6uK2DclmDLfxzSjQL+/qHChtGmZsp8RVhH0OdHXYVKz0h1mzbDehmvunYwhCAdOeSDLf5EV2rup9+aoLYEZ1Rii9nZdr1uJsvZ1ypCJeamC+8I0fIJJ4qOwmYVvb8l85rleNVzxMyOCsa33X5mDZ0uZEsufmtmNx+ps7kT49m72GOW6HPBZGQyyrdJqOHjKxkMsmRi4igAAePSnUeXwst2gq3O8tCFuKhcSpXIXQ/pRu6Z3V4PsXYhwGnMhDvk7i+LkRqqthxdFlerHsBMP/wtTGOtOnyIsaxTkT3QKBsqOJ2vVmJP5R2bCewQ/wiGZtGQx9fWEgEN2z35qebAZoFxltuEcf+G79QpKrJHFfmZt9a28f9M2i/O095LD64z2iatB/1mBb1nZmbOZ3PbEMEPWLr0bZUq2jIpXKB5vP3OFE9Nv/4u5WCFo/FcXyNRxiYNWqSHvNIuWbLXP/kCgTRdvhGuNOzFc95CfjBtE4001qF5nvVqeTQMV0OVGdLfpn5hA+b2u1p1ncnI7nKQsS6Bi3JduFnyiBqBFmrA3sRUckSNpWLOf/g+FNQifUC0fNDXDQL1M97KNoFzkGNzTr35iGUKXJnrD/ohZLaDBXcryQu11CgADjz3ChaxBY2t/aPeIImQKgxRUyMH5aNg1LEpshpwYK8XDu0lIEVIE2fMIGKTCfLewydYZm1H7s/sYqcCi+SO4/PP2MzNKA3eDmFRtWp2XMGO0/YfP7AX6Wgy3CBkj2WA/m2Xf1b4bEM0pGTqdrKSJJgUHsARV11eiAIkceQEAPbu0yS1a34KPIKsWikKMoXjDPdhuSe5VngJl9QzQyHPZLdHr3nKz5R7FqMkf8K0e6LLNsbBh4t3MJvX4Ytg6njs3a0lUxQaLoFno1JKz8YYotVgQq0hfBurttAv8uIpg6QBA5JcydRNOfSYXXUzOv1ZPqCu+CbYltOS0Y9lDqx8fjY4fwqBjHUSifrJmA5L2JAgvK9/M/WvWY4OgCYXZpjs1hyMWATp93tS1gthVQVzOgd/yU34ofsdwPUrQlBBEm3S+DK9HpwBTo1CZ/LSmgvHya7ULTeOoEFDVXnlS+bZvK09azrEEX5cAd64Gno2IAlitXggiE83glDwO3FJNIeFffylJuSdChIcNWdUSYSOO+ltkOUbpBfJtudETJcvhjNqaaB6XjmE7wuZ3nFI4+7sBXbdMS+/q+V5E++ay7GyJhrnp4j4oS88EVlU3kgJp2fVPCnx+81EocqVo267WQRZr8mgCslzCyb7JDdReMPnq5oaXzb++7NRQ9C9vr45YUdwpJ8HPk/zUFkAXUSZPaSile3KiAAFx5lGg4D8ghXyKn/4vAyfbj+oirAahY8Ge9zWSQeP1b8PEoEC/T6WAeWMFYyyurKsIeTgVZAmM4lpDwdMD6xmyp9lLvZ4KVc8c3zsl5T/S0roVdUdYXrwLe6XUq65Oa6926BH/kV343tbgGfQiIOOa+JKPLjiEJpIsAhM3thuzmPzijLKGdnzEAaitst2a5kTt+2TNoI5UsQmuea3rkCZScQ3uWJK7+ZxVE+glAJAb1DKaICiJs6XwsK9r6o5XMFXFsA7o1h8ioCpflKlsO1cv+s/w2BaBIv4O16OG3pSp9q9NKYwi9oNv/RLpZjxTWBzq2ZWBuCiwL8UxpUIRWHmCA6BqrxJstJpFO05ZaQeU18OowgUHlqgGJCgYPBng5OWd083s89diSvxdC0JzhsCiB61I+mLicxmOjmfHGHHA8Z+2I5ETl77Yl2XNsTCJcT3Pzc/mpUNljrpGPWgKXmXJAjrEg/EcTJ3xbdYbemRWdcWrR84eokcxwgiQmVZ1Y5eVNIF4Ot+G0hWzH21fxo69jIlagMVjOruW06FCVJ9uc6FZb4/El5B4n9rcCPtDVKFY1+r28schr9g2sWEfCPta9FS7rIEHp5EzRZk34nrSDyz4X0zfzGR0DhFbyWf7Amd5Xq3oLCnS+nktFCGescRupwUD9R4E7H/I2VASMoP3tqM40ERaiNO95EvbkADzkiY2+TUkDCk6uNhgYPUFndf0sghfMH0htkeveci5/mZ4tnPSztZ7TrCG3pINOZr5fcpQjKX0+kmDoK43hFaBiP3L5kpg3LVfXXmOwifF8EJPixkBSpvMsXqtaEYnV2l5wrOs62zA2CcDq1ZcedcCEJRPWgpFIcoL7d1ieuxF2xFpM5UShtvw7obwjV5ESV61emf2T4w0Jk1dD0f6R2CZ5Hxs3LL8GGO3knPil87+YxG/yRzgaII+4aGYPFZ7alzLixm0TE6nP/R9zcMp1kU5ELgVHBpCTOLjXbkHHu3Nwdl8UFJxAXQq1U1mlCqZPLbr7jSbFiwrHh3nOvcrUUYIZ17m7LsCLAnvqxtgBQITH6/6Y+n16HduX7b1omGiHPAK9SPkjEvBHX2Jj5ILVmSn4WGazu2PvhDggphezLtdFpySGf0hzcq/9SaQ3tWFU5XMaDPdtE9c6boiUjZ9+ijgrap1e9/8ns+zTPARJpjkFFSpB/dtebFfhBr5AhpzKtBsQFx1jiIpDo2neUxAu0ul7q96hpNwfanHYAlnRy1Qlr2jEJPSVJNp9cAIeKDPQB2tU77zzOqESgPrrflk5RnGbx2gWVYul2PC5iPdHNJYVTKzHOJ7Guwzdvwj58B2C67mOT4L1RcLO/qVnx7OBxKiyq8NzoogzJ12Y+Vf1aK2/imUCDmMcnBP0vDKoNQ6UT5lbiGTfSZXRbE5fL3vZ7r14XpmPmd2DkkkyJM9W/XWSXf2+LCqeQtWiVKIagSVomheV+VhJHhSymDbszzMBEx+lDglIGj0ELBalwpYdMQSqblzxsCLiXQV684QQvxRAy8Qv9hX4gjd/Hfs7h6xSgeNe/V/Yv2dbTYB48gAZNzIBXWL1Ji0sz4Ao3kewoRftGbz2UtJiDpU4yw0Bi9+8pPRgrut0gsEQBJfp39Bxc8OfsSUVo52vNNnxXnLCOPdClVr3bN/xlMqp4dJIZG/Lfy8kNeLyfSNdHTQhe0TnGbIK9/hdh3Y9iaEgj5MLIZGu5ZMO8+wo88FnjsjtvZQuo7iBCesuxrh81iEAAgizX5JJU+lmlOEH6FVqWBmXG9UbTit7XfxhyAhsn2SpnjxS4+X+5QtBu2avyIMPpV5J+v+/2weiAkzorgRDE4iavPhKhuPzBwqUlkObujHqLlFn7tyeycqnERF8Mz6rXsOI8pU/tBz2hlQjNtHfgeYACmSEGA0AbxKAZEuWXJ4+FmNI2Gnx7r9gYVesxpv8XPyvJGIe1cyLvhNjhGW4jQj3aQDYtBC7itmDUBFl/Ve1dIVYz4krTMNHGZB2vDOvPlsvcYN94Qhhw/vIMByczoi1pmJ7WPA5UjDCoe9i7821H2tu9QE7L73fOL/nGkU3DhfRUKEJuoqnrKLi9Pi76GV2bLNV9S3b0VPh3V5/qNEhEj66JMEnSbpYuBZVwURwUjCXMbpzf75RZ7P9BI5vqKD023cX4sGTDXZGlb64yippMMAu7c5xHw9NN/o4fPF71JLSYIBMvstTBDH5USJJGHMkuKmdT8e4RCUISFtog2LjiBLQnLIzCqFbsUJI3fEuv7+AEu1DEcvqIyQ5L/qpfRQ8fK0S8WDcASwj+AUGKpOkOpsW5WN/noTQEqj2G0uc90eKw7jhKY0JMZb2GISJX0/S3D2tWBeevBINmbsLHfKIYEMiDpZYvaXFlw9IvYT5k7XMmmnrwKo0OcmGd6FXyCJMGsYHXVu6ML4Cm7B0bV1ZlUFGkCXDbP/O+bVrAaDrWb6fNDzlIyZV6VpOtyoMtNhOli4FlVAdh3NjCBG7fwEzDV4UM9YAS4Z4PQ9n+qy/aTJgRVs6JXNZ0/O2Ujma42BEvaEPfXpsrSdme21Us5QS5dAvI4eI8SO2fm2upPxnbUXK4/J1PlqKTgDTmQMgMgji8Op4bz8H+F3LGkCGBMqWKrYTyYpuh+f+IstY95RdKaSXLkKT1O0C+DL4EgDO5WaB5cv1gcNwzuCmZkqJ2bxmJhJaPxhzBpTWfIeuokLOwWL5Sepx4cjZtUqIYCgtO1jsWFCr+d66GwILYMYdsU2efumwypwhYvU1BxjU+URBR0DkBm2AeBMtAEoYVdxleO5LmZOa1Z71GWuBbH8xxs2yzuwICUvS6jVgJ10H+kE6RYrv7CKVBAW2e06hvH8npltxCZOI8fLetj2Eik2KYiWHP8zn9bjqpDFWzB7GEY5veRSZy0DqAevnolbwFUX7dpgzFRlsetqn7MVssiX3Rv2cqLYT1afemIYROW4ou3u0AaLjOBXlhF/yfsdOCV69inpMgUCRDw0KBon1rltyPs45L3db5AHlNOdDC17I6jklwzFJ/CuhgSdzuItAOtJ4s4hhLTdBQEig3Pbn/mZGDI3aaOyaH+1P5+zmdJxYKc4cgRPRN0X2Btdwx8K13xLf4g5bQm94qab84+sbQaXVtV61FkElRdmYeI9kg0A76PPvheQbcYGbtGTBwXMcWkM954yBTBFrBbcqovD49Qb8ZIuIDk6lV4FpYfgh78e9GwVuJVsLYU5JS3ZUpC0fUc4eUIdra9HA3nv7Gt3igUfAAFTv6AQE0klMid3ffJU+iyhkOLYKev1fktconh7KiRThKHA4geFKgO2vY8gOXonZbhUxoN82ZiC22bOVy5oZA+ybZdtxTv2LmA5E0rD55XQ04ztsZxavv0mcnr95K1o3O1tIGx+DoQPWKZ9fOtNLhQY1Aqx8vgIn6ZB/3w24o9sB5PvScfn/OHxEfElFj2cJRxGxwQVOfR62ySBz928IrMD6dQU0bCqqlnZziOyRrSfmsmEgZkMlqsp368E+KewNXfXIFrRRlSx6e2Rm8K6bYgskMdOqugylfWWFz/NjWtyoVOagblT5yIUyZyoLLfobsLiM57B3uORfkRo7q0ObD4c/YcOVLm0DMVo5YbXD15W2sgt3rlpvta8YU0lkgNblDzErC/523RBj1xRywuU4ZfZjVIGfSTeMD8ygqqGJZbLDM5A1Qp2QN09H86q+0fTY9wuISzCch6Ln6/x/AjlZIlB2uDKwRqcYsF2hKa9JoM8Y+SIRom4myQ3sH8G26pVyrBCmXumbTabWMJJQAMCImjZgQRYwVaIOxDzAhD7vWduF8ZvyOxkiIsRsnQHLlaOSveH/4wb79eJTWeNmCn+8AbLCvul9+OuxxenQMkfTfIqE4BcYTK3pqAqiYHW6SKcZBR1fpOCDoY9X7mkl9mFlMm4NYmW/JLRCVlJ8eBwN+2iOx6+i4Br95wINSMGnwEjPAfMNheQ7gofbWB66315tQyQwASjZXUOtNYipvs8C3vAW9z6ttIPX/kmMhmkuQTtxWxY9znqA4JKVpbd6v905YESHmaonmP9bw+UV0IPggoPZkp5pHpMlfneItt89FNOi/PJAo0V+PfrogRuX8e/n5CByL7m6YP80g8hLFcwcHMFKWzxCPUhgLS8Fdhu6aj5mBiBuU8QxnqqXQRTnmZGLolVlv8O1ckRvNWxnsGMMtq9mi7UEojVZYZvewRMZvBSlE/i1kvZui5sUvlj2M8uyhOA1MBlnXZCyqoM7q5tsVN7EdreJBJQKVeAV90LIdINSyYeouAsmG8/AHLdU/byfa+LffvdVJwn4a4QJ0t49TrEa1D5Swvph2TtkQIbNX/ebjwCapgqsNTWMLNLAKJnWTEqrsYnrphZ3SsdyKkStlVZb1QjwPxXVXDSKKJtCMd0rHeGh9oQJdGsiB2Uk2JF9D2xZI0AnMg56blSMlMVvhZgGx+ezBrv7icH5Q8RnFTSYSqyiM42aS6fUGqlllHnW+LFIlo9gqOa/iYU4HR0HVvi/lEkSaFIzLs/iEygKabYt3ypQTtIiE6ShMz/q8XVKbwU3qpGYPGdSnj53kN1rOOeACj0NoINfasUaux40KibhceAh9VZ9Mw7s6U59TFRaACIGqeDnQwhYKha2dvuNbKzDwNNBxsy6i/qUtbX5qKEiWKJ+zbuuuY2hHlB/5sWQ6OdjpQZaCUI1zf0YdPMVVXQ5MQDawLpM3iRU+21isK9AdttY4bg1p0kNMi2JASNVfLGSOge+vXcJ6x09PW7+TvVQCDClrloz1jY75u65M10tWvhjwrYC11MGOfdUc6VFxtlTcAjoJWTDqMs7iqyhjWhOh8d7pawILeSh7wPXWAJ99LbXxtebSaA3sDa3T9IwaGxntKVth5xcHw6w98NbLBMEqK/4j5nROJoQLUh+jyH/ARXOSQDR//qtjpd6BFTQBOLZ6/Dvyqv8WLkCQZyEAqKhHUFiOnQYoc6/fCPESjM1M1JBX9dWicnGeJKVxYZYlEI2qbcyhySUyfk7k1gWwdIF2sESeB5TX9q97ONw9QsP8Yzp+eMFHQnGT1uESK/8vkIf8oc9MaxJvgE0vMsk/mBvCvK6utsOudqAwq4lZombDwpnc/XPHKvE84sYZH2EEO8AOBJAyLYBc6ykrk0vrXQ3OibVCKYVIXnFa59Uq7z1Qe3S6otW4XTBy5lPvvHx8fHx8fHx8fJ4NH2/4RgluBoM1pAy/ABlhag+8B1Y98Yl34CPpSO5jTypIhenoqvQRHh4eHh4eHh4eFR7uumWawaOom3QfySH8YHX2tiuvdhsyp444KZQ+96Vp89qF7xvzEKrz+pNBwHuDLQsadsj7sHCNzDITFIuW+amuVulAZ1UDcQ//dwQjoWPcAKtB+iqSS/zQJQgRn2rKO/jrnC/SrB4jpG1S6alKTrXotBvyqgUbqcknQVnHteunB9BUtZfarbN5/zHVouOdB9BYqeQCZ/lQKMS9EV4izcdrbtqXGidbscoyxRN583XgJTL5T1iJIVT71HHT14KsZ4OBU0mxKFUDC6rFpY3gacvmvmaiPtoQoKZ6QxI+i80kiRXmTzN9oNRcQwhTSVD9Q+s+ltVNlZPHry/AYVbX60kJYHT/B+iLDtSmWNGNmBiZb2Oli2/fiBtcVdzlrI4lrFbayRBGeXegQmZjwjzMZuZ6AlMkOWAvyWhRBY2C806AtQs9BSwFwxOVCbKMdZ7IRYpiLaofNxA3ITLbALnanGo/vOIwFFquM8A4U7tQ1xwG81zJ7J1vqBOEulD70UFx6z9rMXof8jC3aWa00GfkAK+5RVLzBlGzyj93YcioBrZjuI4cu/ywRHzCkQ1KUv0FTbO1CPhZNzvmWd4IbNPAu36F6CblHyQFP/YZOyVC6Expn5w+zQBzy/ASa2zFxv2vuC7bL+WfxXPbq2FgsqW9u9onnKCSQU0TeL+9nKTgM4idCWNCyHP9VqvHorXEzxbPNQabmkfTrxUjTJoluJYrN4ohb1kDk+mMSEFs2VUxhlrq2dlXobJLo3JRVTpT/ZnQ/BGgak9fl+isfUva3Veo/sVVUxVLDfj6GplB3Kom7DO+CucfSiycTmaj7UJD7lvt93N5vAkthhddCtQpdfllgpopQ1C7Dt2OgMF293ErxXfJjGxqGiWz4OFrA2dyyVZhNXq0mSJghoXl9VpyQh+zp27DkvfZAX5NHR8ZIwhbjZB4mBFDD+2WIgWdnrDuyPsj4pAirat+1swiALFGiQn3wWJWdjwqkLBaMdmFpd/ihKoR4rs/VguKoW50K3cF/ZkCbwHytgkLd0XvsZavCw47Ify6+AqGRURAEcn4mZ5c38AwDbGF2HEn2J+DmCcMT9/EPpx3c+HIAC1AbAOGaUTwEkCVLhNuE0S8lNosUiANFBWbA7YzhA2Lr1hGMDVB8+SNwy55REqQ/dod7/HG5drmLiwpmUPn/Cuig6SwYieAhOlLrTJAxZh3bBMQqKqPJ3GTj05aV1xuEdvbNKN5byvz8Up7JZEXhWO/MF5dDbt1jIGHN8aCpqQZ6mXtojDpcAmLs+Ji16GD0Tiw8A/UkzwMreLsyrLxm1VNdkqEhXJOUTO8g3Lg2icC1IRGzxtrSGOf7Gt+pWuW2gPIVueyiCrcBpFad6wjXsQgIFG8TqoliPA+YOHp3d5YXruzQWX7RLfgnikayE3VOWRVoEUbnu7WnBY7cLUqadcNWn6N0pe4ZCJrmQbQww4LiKR5WeVTM3pZYykXVYAFvO5a/kxvTDeRee1/VMDSE5J8QohSUFLg8Kg9nRIAU0CWK9nInfGA1HbTK9CCHEmXLO1PMJdjWctlps6//JQFJJE/Rd/vAx5xyGRvFCEyLR6cLclgJf854pqiIRk+q9CvUjOBhoZfmT1b7dTyC3rEGSGkRL6kxLKhQPWKRpf4GZ7RWbOGmhkcTpdGlZE9hS+ATvhIHkCXrq3TiMXYnbFCkzZjRpKMNOgDLZk0b4XD630teDkVSCEYJ8CTfw+1GZYv8odj+MURLiblym/iw9XlM4KiKiAmBCxaCdiLr9aw2dYd21kKw22BtY3uLfOqxeQBn009qDDV2RKYZl7H9saXrZo3n6J4AEdLg52dl8A2ISCrZhnGtxxkNlDc3wR6BHz0qRFUwGR5TyYWo+Me1BQV6485qKvvadOH105ohyATFJXo20YQsr/kxgPKPAcpUi9VcsY5/M28XHHvqDeRmnoQszU1kCbJ71CZPlDQY/tJlQ5OHLTyI+PcnTEP6aCLAQiBj5LQ68pUEPihtoRik9s/T+8LdBr3Br6+bGufBLH70Pmhv3Yka18GThhNKAxKaUNBt5c76dD00+IE8VYRZUj9gB1KwCxOCKMlhX5A5xWEBsGeJB1GP1drQbEhSfGk2MqFAViLcUDTAvMoGQ4u3sWqecx/Drmkl0m0O0uohUF9cPIQ8kuh9uppbF3FqGbGYunu/9GKPwCNL6TwX4ssMaemEN7QrCI9OUbSyG70JRf9q2cYmyPmPQDtKhp1NU2eI1XC9GlTb0U1k2fN1PuYTThLf7II7dYNmSm4Idgf6mTX+r+dTTJnJ3eOGjx7uKL30ZcrSZyWnJNjCcpe/fz10EXD4LgE4E8lb7SDL8NwBqPB15oDjUClXrzJiQADIZVwF2x2thaQi+BQi4QUJKwRSTN00bHJ1i0Xtn8+O3uHqDPvlZDSY0Eq1qe8V2FJHjUQrOjKUL0Mbpy2S+dh2nzv8kqc+lZmDveXymN//KcCJLfpd+rwyTdajF07uA7dk3sV1pxHY7dWGxqQVXiLgU/9ZSkYRlzauDlj/vNa8d9Qzbz0jivDlKtdAY1wIjN7ZGfALnlvAwNgKkdOWjPnTYpIdURZaVqH/BIZLyCIGsJiIOnARPoms3HDFI4o2lYC1YHzhnTgt5Jm+iv90pS4OnhRQO1FJLaFneXDmMWd6sT7Q63pvxWbyjcBFJxxyoY7QuUOs3YghR59gcjDQiMS4ypmYogJdAmq/KtcLx+oiF8VbFiU1xMrkagAYqbjG/HiLDwgiKX0VUooLN+eSGyxrGji0gWiN8yFjCr+NFz14MocZpKzr1FDCrYsEvXFNT4ONJ3Kg+RCE5OYc1mJrkyAvJIiTlHO7NgU4lk8VSM60DEsSgQkBSGw5rKurCsb2yJac/RTbAHD6BAo9+ZGOoADiUY97rtqDId4D8gSWpmTaym3kGpmgNHpLZKdylebrUaVchYBIWgYRTKsRFnrROqUnMpA1WdgjbfsPqCIeui59l4Xy73DZwtLFu2URdDM7tGBHjtfST/n5EDzJgpeAJOzR6Jh3egWRu0i5RQRrlWFUehsdhjbOlHvyH/F8/DJ5xxTbIsaoImnBm5d2KRXnCAPofP0PlQxS/0VfuBSsigqHi9+rMVQM5NNyAxt/4P/f5qb+ruoMdeczZxdYoHBCQJ/UOsRF3fKGeDC8Ih7r5AvEXJeJeFKDaTifK1dAo/HvRHc8vHOuizz4pH27Aa4LiobftVq4kB/Z8e+kzaQXwohlR42Vi9SzXJXwjQS6M5GkLdb3JBPlMBMeoXL33CrcZMKMMtDDagVBmR5FI4R2j3l8m1eJ3CwLGKvLJJJSdWyXcLyoHAu0us+L0AlMYlq2Rv2su7B1wkkpSsDmigIsEPWAtox8rvC9330fxDNsDFOAMFmBhaAHqUpiEH/SwLEfM/aVAsdkqq8M+KRKO5pJHPdbopCzarR+lwdHoI1THATFBfU1Bv7Qkdczl6LE08kN4VDBt0EBnEA2ozQjrwiJxWr6o89WwgtXpHVeCdo3olZqwzEjjFGoP89ITpAWHkKGZe7hCeSOCdxiNsdrClGk98Q2fFK2eiZejE7Q1dd0xT0x9F/nrpF9BaRv+uBBdi1gEvSt7DaZNyCOR3HmwjPvpRBYIARvafnMrpY+8vDI+yni4OiNvLomKe9JQ4pDkx6cMnv6KKBsufx61zeIEP7kuJqbVdLQH5heyXTREYQE0JWa7Ex8AUMPjvEv4YyoxZbkOEZLJ4j9dco1GSaHJn6vwvzabg5F9dR0LEtxgLYUlpvFl/ShPHhpV0GGqHu8U4jqlHWA0BL/BV2CvQCxIXl6XYw8PanNd0pbNZkE64TbC/NsCIYhhy6MCv7i4XRBN+C/xmIw4TjTQPPN5jPf5u2KSSIwQ3MOk4qT/9FWtfW1hEsTXjruD9lig6g98UkuwkeyhWwoMR2ssDUC9fMiwMjv6uFiaVeCPOHz91wXILKfjrX+8hzC9O1yMDLFwMsYgMe4gOli9aDlFzmGciP3BOxGyZQrhs5m4l7anQMI5aAlTw54Qd/+sMsLZbTW1srVqkO83TElVPMCoWcIfAS4aeOMdTLPErMe/vunHA9MpLMApAJs0ynU/fxJMsWuAlEjZKsQnl5Z/5t1X8aCNADAur7652wlms8BSakc7zBDS10jJOgtT4Y22pX2+LNBLGGbNqMXz0+zju7w/7EkHhqeRYtltpdI8Fh9q+qfukPYG5hPAAz8kDltp3ArrSFW1raZna3uqVyddjryvfmhiI+F29xV8KgG/atQ+reHro4dOUbwM7DO7KTuTtvhq3eGSAHrFPCXFvYQAfLsh+wfLo0lWGw8GdBi0dBhVqgO8c5nO+mUolSdV4mhuAV8P1+9T71Jmy4y0BnlQ+E2s9GrHILJXeNJBvf98XqecJ++iqLRmuM4eBDvmpwgANTZEZWSw/8CuoEIAkEue8qKBz2lwRkkq226qXyE3QKeKPLvLvPe0w3AedV2SURjqL2vA1fLJQXsMF0mGUUYL5fsP7pSlW18AzDwSc95Z+HRjwn/YZfTFDKTHcTOGvXwQt9DdwBGCCxs629K2aWdnNdmuLNrWBiEy2g3A7vuIsFqiAfMgiaXYR06MlwFbov9WcSRBmbeKVxRTiHcrcwkyfuoiCGYYgp+90AWfPuPcNSctWHWbbliQy8M3/f9ZUvKvPNVyOC4Q+rEeZpQKV1iknjL9li7IuCJtN2UBTeIIrXVT+tCT2+xCqy4I8A3a8FweW2it1YUU2dorya9S9Y6H33UjI7igSkpt+Vijd3nfwiNoFNu1DZ+o5Cp1OivAbmX5mRa/VtFNC4iIrXPp7s8zFHrVKdprUSWwAUpAZD+gO3fDcMRw7Qw7w4N4rsxztkCgnRhTuK9woNgvbjkKUzBju4OHoYiUDODFtyXDveCe4RTHR6mK1kJX8J/52ObViVoCbIJ6erIy9jiVuKb2ghKmNQ09w0Qy3aMbtpKOeQFZyiajyAJ3L9Xq5fqHgynHiyVIYWdR0p0vHWPzti2CpLLW5c527zVhxXx20R4JBC6HUKCQSzhHd0pdT6dwlZzempob9elk2msM4WBmQK8Wv/bTcidpNzjV+E03z4MLgBCwSJ8ND8iYyVWmEs9g4k/0VXzULZHV67CmD9a4NJMuiEL6nyzebXXigRnIbfwDccZj43Q8WAKQGsAmhjEkOqWr69wwShnnuURSnIzTQMS23LkWJtzZEFq4ptMQ8F5VFQ/u365Sl9gnGyfdj69fISlc27Y6J5+dhNCpLw5HrUEd7WR8qUhklh024qAId9iqkDZyXMH97Pc1KQW58nY/ggEOnLyLkW7R8NO0DPpXX56T6917XJADx75ZNEyL1NpfUfhcoWBE+9B1QCHNGcm+tRqzAPub5OC9o2ZgxjlNUfRmOtidVLmar9BY3qD3Y5f6fv7RY10MB8/SwC4Jid/B0DaFyMqYZgn4cZS5welvAul3S4Oee5+sXinAsKxXrlRSvOLr9brvWCKDHgRumQdb2GAbBfzzyKSzIcGNdc5C9ZkfG61DtqoXdSJnN1I9sjeHtv3tZDQP0POF2qCuxxZA1g9ZBCsqMhrqblAX8xRFk+eyWd0Knv4YeiWwUS2CiWwUS0IkecbULEqkaqzX6R2dlD1rl2/cBasfdfGUHO2KTOb3udPssLWanHI5EKina7jA7ts2uD5fms2xfmyHPGCw0S06UrLbqKNU3iTyXc2n0F3KN6ugiH6s6ISGxeTqKS/xRTDyu215gY1fIunfrFxjxXc8zWJMLwlXW0OihNm4jdlBoPsvZxc3/j8xvEXxvgIMFOT9Im1kQzG2qHKJRqAFUODIZVx9eqTsFiyPN+Toc2q8V4rhfQ4gCUEt90+Ronv77n2PPUKlki/n+ioU1dsqOZ1LlkaSz+9Wtm2Oq2PeQGJC602EkbFqWAcqBMINSuGFNFBbgOocm8yetUHmgAL1bsEqhJz5NdVn43T0hoqhRKoNAtqk+GXMoH7+KwI1IkgY0OxTo4k2oGIQ3hyN5DL1pxh6hTVvzd0vKvlQ//K6uZQP39J1fQM69qVeuvhyLLkrvZiGxMymWzLmE0xj7G/z9UVRFCMPte0ZEplAD51IYdYK6j0Gg4Mk1bXmDa5tAEiVkEoJJTSfAc57jvFPzTY2vEkKfUtWy4vQoN4ubcae0G5w/hh1U+TB/fNCYG7JXhHlaTXl3VCBXzZ5foYm2b5lvdllTrbWN763EzJb3WlXi07arQo6fC6WO7A+ycvOvkyqyaxUvCZRRNAzWrR+E5JqZzju0u8ruuW8VnFmFVvxZYPlElZxSCj9Q2v9hhl7IvVUuDqABLCNpHYc6UeDK4Onrnu4EbcMhUo6SALnEzoWK56vX4rXAPqxGlz5EtqDU90Ua0tcPBH46GGGbAT5b0ajbKwNZyG1e8PE9U7LHH+0xdbv83kUsT/EIkgn861nvX8ooOPIHmACt9KlUmgxvnqrZJvwmBE7x1Cy+mPmo/t/CzgMxQ4ZlsoqZRdycWOVJOy+GAEPuBiD+7qx3pKB6mUDEpscX9UsyJ2HVJhJbbiFcSFQx8FcedxkFp7m/4sUzzszj9nsSnSnKCykmSOL116/B+bRhwoDh5XDnKPVO1pqD55xGolQuRPR6/yfZaRoVlUBqfyot9OPd0EKTwQS3SAJLmwUNvceEQh4FY5nfo2JlvF1DXIxTEys1WMavpIKK262uYOSy2+aM9BSdxTvxFLRFjPMMldck30DI6MJqR9Uy/4TfS+yoEyLISiNscCL+rV401MvA7MovxZtCZ43v1ni0QUpJg3g+4W7c1I53TEAKSCevcLhvY7KCEeHPfqQ1BNgTgtUXzrL01bwRaRT0tiSVtAZFDjz9RNK83phZssy/qDo/XiG5DkSzF3TO9r17oWYv709Wid3hAN6xPLYuGsvRFK4CZCx3DWBw3ZLfciBBnLLpTbsxFef06YLfrmIYMlnC0UW1RXjDqtaY0rSY3EV/0kfWxhPfKE9I4p/dEjElCYcCBG2vcfCDTcz8wEYWZ+WMa7W0Enny/k3U4tgwy/S9Nul1n5oTQ9AWODswR+tzGAlNYskTY0yDCGR1kgPjK9psZaUazKD1WwOBQgcN4oBAiSqFT+/eD6PR3jPbApF1CEEZcRV3M43rjIBPHVQFWOfmOYbZN73ImV3pqPrbLAJXNpf+fKMAlyML4FuJljX8/s1gaSxGhjdpavgOP4eQ+M+oTCoMXiQzrWEOjJi5xvP/2XHl/D0vqDRPJz884zRimSfQl/Ir0Ih/UVHgogGPwm9VpA5lpYIuvKTLweq5XxD4yumjOEZGbXlpl5qX+TxvEryeANrBiW+ecxw1vuGoTPwojsMftnjszLrPgolqwDzwzFjpDwEj2VSbbFN+t+U2ujqMDkh9FtS+VU+6RU7W0UOqPaaTUc+tAP3o4ayIcOSpOHkSDpKGlVb7f/1256v1qzF3N4S7z4rBx5OOHa4uWIy9TJPzn562LhHoJQ81otqXHWGz8+AJzzDAWtqAHFsoiMDtlrXCgUQXm5jw+gcg4ftJp9GdXCRHkH3/ha3yO4wFQ9iRkibX3GMwLVjmQ0YKQkf/Pn8s8U+4BVZwMta2K3/lw2zSIGApPbyEkv48E78Zag20oThcM5OTk5OTk5OTqaSSkK6F/5c0kawiw3uoMkxt8X8741uBPglHSAuhBpvOFP94Uz+ZRDvmOWb0fKhvTz/s0tG0RqKCkVbfBdpHT8LJ8ifJn/IOu1cieO8znauSrw3+EzdNWoAPH7UIF9+Wk0ZrLmq3/nE8G+ajaP/AWMpzcHYC8nMMjTq1SnhdGCLpcMl+sKbf3z5O17t5HFaRTrYN7/haTNAmWXa9b6dXqLd9HmO9PVZrMLRuwXOYNqwc4ZjOvzHUU7U2yRujatrk6QAGAGIQNSRVZYxdtBZUj9Li5glJt5eAzIuwU8ybhM8hK/K90WzSsBAJTyumoctJCmTqPcdGmTioDqD0YMYhGhSoP1H5bdIbMlH3NHSa87NtlU10bbwa49gzvJebsqVPQEROdTF9nbg7hLWs3usQsyWfYd3pvVGguIcgbB8ozEOp5iXLFw9aDRc4eLLnZJK7zhsUpO4lpm6Cp22/x+e0WQ6boBddlDaFJwqervraKp6phhgKQCC37HHs/5kx7TRWK1iZrT9E/4y2bpyyJLhjmB4YCG48fBBFhLGtuRmpx/OWY5qCEoge5LhRTYLsz0kLVXI6+aA4K+L+u0mcOTcDlMdH0jSHIHgkTCRWQXsz4oZDlAZfSdlswIa6LwMFVATG+xo6c86iTyf4sTJzQ4W+7nlDJzJS/t8eCkOsLSPBUH6MMvUKe4AiQ+vwnI+YneXFh9aTKcxvoC0hbGtTM/BrozhkiuJ27455ZqAlFS7g05hfFDe1fXY00bhOdVNptOYexUETByBDAtdGmcmPakJPW4iHCPBghVVP1V2CxMWLYu7UZErNvkxIgWCsX3dOgTYtiEAQhATuqatoJOGvALj+yqM0QFyaCIz4ztdY2uLz8qWsxeFH8kDZLETTxNJeR+irfqIRON4x8M1Fx/xASL3HmM18r+t7kx+6i84/ny/xW1fgBlvFNMHi8YAXIsi15bvYQWm8Afszs7vbNBntIa+3TlX1ZCBMgHztEpD1yE10cZ1i2+8svFFdFbHGRbrKpy/9DeKU9QJpJr3QcvONZBGfCL//JkmP35cC1SQXdzMNuUucIIW3FepjUwLivXqDnbfycsTU4L8N8FJfIbIoKkh2Mxf3fngnnUvUZOjiWw71VtxrW0rCoE3muIlCc+hCll7qpT2E+oxdGtRCG8oGA02C6R32hBNbhUR08rGYANVtQasW5AMzav15QMZH7Dc7vusX9Ct0o6E9oOQdeVn+aBDVcblbE8l8JqtLB7388nMIa2hWGV23ZC9LhOY7BverKiSyt9Y56q4kz4BW3hipmL8smW6cLdsSeIRC8vRpzb3exTL8RF5LRimtQYk7en+VThKg2ht/b1bCpWhbYzvqhk51KWsnJF5dD2/nsrxXZgByl820y0gUHRQidjwXEWJ+jBNRDAg9RnDf5S9Ay6YePuOZB2Ge71uJz5HPYCbYHZwV65nqgdGncS8ETHq0HlSxdcdhQ/b1aZvB65XT0DqZtXj1SzSFiWk3IKf4+YxlbD9cQAZESfqU3Ko6FsLuF1PaimBAcGIKfEATwAATDsHsJ8q6w0BmzP1wFMSDFBRYVg3Q73JdruXh048ykJjJh1G6msitaVbkOGH3x0x3HSHCwbjPEm7DFG8avv0Iibhd3wveRMlTo+lzxQ+6luFmsjPEDB4M2TA5j1nIU2P7hfBh79e19JcgcMvbC5nIZQ54T2mYZf9DGAQNMbJSwFU8wcjhj8JJhV7XTzKZroKgopMcDLN4AVbO64wpp6o0yKYls3WQlwQ4a1/RXtST7t9zZFqA+2xW5SQBQHcV9B4nCZM61bupV82hV2YBI1vRClCqJJVauEK3wryB9RyIbNZDaUoO88x3ygjtW0kHXf+9jYw2vavUGCVvPJDIJ0sTQ97nEsCygMw5rRJdiOepKisfGQQTMwL+djlA0F9cot/yAXJw0aezZoCD+n/EALbjuRpPA51OJwOfb6N7UYmf456kfbtwuYVXva2Sm/6cgw238Ttq1JSVr3TxnXjt6OvVge5Mn1EKgp5a21duIT/9kxRwKRM134QjPO6UrA4zf6AHN6pUBFYCcb0d1Qmknol1pgOBuJsnVcmZAXB8xKcXDH1wMGuAYkhXGGi/mCYCCl2MN62DO8h6FeERK0ciYckFS5yQJEMk6Gn9meSxtopWY/+0x/j61CIvqD/QD7mvY8/SjO8cNwzt/qA5ekU6EgrPKotj/VfcEb/FtkQDaoGcfU4vCJS5WnMNsJSthPLKDlO9gNNHlaaHK3jSd/bgjJ4fbdzjFiQzEUE6KksSRo1j9nzBSSCGCUp7AcwyS9LmOyylwbhoRZr3eVK/MUtgdyyYA0dfaS2D/QdSyuOl8F9ZeVKG+sLA2J2wvqgG7HPUL2LJ2MXaqwCgkNv1NdzNryRR0t64BuKaNhR8XiFLn9C4Udluy6tEyUnzvC+4B4dLL6MUCCJ2TEXv3nA6SeCdMUrMy1pe5FACzpv4riXcCGJA6a6ygOJikS5C6rgti8F7n1ohBOQfO7Ca/6jvp5bn186fT94Rb2xOmTaPW7FsnsIubeSxPy9dSNKD4cOaheuoklXP3R+WECYArX7ah15jNTEbjDu7sF1O6VcNQvNwDLNVWMA6iYC9DgyD+1gZYIDc3ZjsVvKcv4S1rmAvhhIM/PNqmMWEz58sCYIPDtckatpKFLpQ8HeIQr0E5pCDNNBvXDNhPBiWLiue6xi7WCpqPIam2G/OgoiD2iX6R4HSA548Z/kU7cE6XDbuQX0DqYaK0hxLxSJoT0NRU+LsQMKsYUCCLU6msoT0bEnlsFuAfZ+tZ0b1xh1sRWiialzIDG5Eae+gOZs6gPW/PHjnvx+WAL2cAZ2so8I4jAeTEA6CvWZRciIwOOayhft6qCeJsB7LTbjSs6+iULMWOpHdDpMkMDtlIoIZqyIX915TEQbMM9fl1ue/InINK0ps739ttYfgMqIpoqpeTg3Chj0NGu7cSyAcdOV6iCa3zvQMpe2JFtaldkuYaghNPIvkRAaVjP3nDj+bUbH4KnB7d20oI2gsuWXXQzMxYv0amvJsY84uCkPbSH5NXxZmDlPCjVeZVKr1s75nqWdOvHc6+H0ruu2QYMrFp8r4nGKdd2AoHOQThRwtm0yxNFiflv6hETwn/e9D7AAFT8vjC+KM9EOWtJJTPSrUhGW0yQlNrkNc21IPlf+s1AzSIJi4QbcN4GLMEqN8annj0MApNGFNUXp38txJ0auxJkLPau0Th573wSr+bmcUD8bpugAEAsgzBHq96mnYrx9Ipz69eYgqZh18K2y6lvG8kX+EA46xhIqCrDIAALvY/sLqRBSujvN0y9oTZIiYj4RTwr/C2S2z8Cv/YyEuyFNyhX9KdxTcG5TYCU3k0KpkxRhBRpEV2nQhy6l4jE2qcYL7o877UsovEiGHfJ/99a3X3dkCl0GxDyCFkg/C06gOhCAHb71I2Y1Z9I0Et1ALu8TFsMLQnc+NdhBSNdHKPE/PABQr5hBsiYACo2DaaYou3X/CUaKzuMQLHhbr/YGuqVdRt8fe7bFdJmhTfpJQL9eHi+lodq42tpzxHsR7U3RWFUEmKIQ9xxMkzIwy6OZouuofEEc2cX6r/IkN5aThNNJvRGaymJyHYakGOz9ppc9/hMn4JUs2MrKSakF/HvNJbDAd6BSmYqZwEsu1gkJ2BhvWha4HcXpYtNdjM5dyyOpHX3Wxj5Tn8BkJDUpSy10WKdaZRc2I23N7lHMbEDOOvWznZCNPS6LQpiGwE0XyMvlMbu3pcpOZZ2SVJuFM48GPn4aeoQWZqfUZBtKu6c1pPROxZmRHZKXzPIZb64TFxJ9wakeFzAsj1+HfpCmUkR3M4bOQyak16A4M3S1zp9DBJPgPhVgmquXq+5A+FcwGCVf7Iv5yQPZS+nGkEFjdF1sU1Pee79zZlvsIlTuXCqidcQUO7lpjpkXD2nAqf8cKrHazZ5Ogi9MMW4MekNfLwHk/ePAm6vaYcsnm4VVcD+r6fAAHNcUYFMSpOxAdhJkcLdFLkriZC97z0Y9QzucbHixRye0x06nOunJsPSX4xxOdX0uUzD9hfPXKpWDUpRaaXWcQPBWVOVp4Hz8QNUWpb1Lb5GSjEw2vXGx4AGj4yADJi8tS/eEtlxmkCSBrkifQ4oT9N/Il/ApvH9h39VihEvhCpLCaBW+iUjatfKTjJSsrvTQkuJKfM0c5ygedKuVuayB1gyEMD9vi7eNHRdioAAAm6aobYKaRIcnFviSEMNgkkKDOK6F4hUMkodYsTMeJZJGjlLxzHYEDHU4KnF1zpdXBpucieGMpagUDlX5+i89gRgaAKODJI5IyoaUniQ07rDh+57jsXXlvXK0vSYFBFNMdO5IWRkBKGrqSYuDD2f6HOdUOH08HAuOEEod4sCBRtNYihBeUQn04KZ/7nOdJ/MksvRMV3atwZddwN43nauwIRVpHyUmsUGH+L224/b2mM7OxQCkEQACcFsmPPdS0Qq7S2g2oOvRnPMiHT8LA/yOG3d+/YhVXKBQnO6zVKilBQOLOyYaQ3Y1f4lLP+syn4TqwuzHcGFvpfXbSk0ATiyOKnSN0eBZ0Yg9cL1D5POHruGiL+dWKzjKRGhKvc0hMxYWCqRQ4T3vc7L71ZFN6U+EddSK0+8eKayPKfMdT0Za+KMlUJCbUvuvU1lk820ttr/5HFIDht6KfFxOP4jQ20WrLKNn32lQehqvABojx0CmbSLqtubLmJPQJF4WQ01OZf0KQjhEz8UEhX/8vCtY37E8iNosDRniZoDCM3VuNuQNSP19CetURNMudPK9gPBho80Xxl5BILkRHQtvft+Buh0ouK9doPN00qTIJs4uCfRt+aA8WgiyhdvP4llAqvzTpB/yT1wvuNEBE99QRK4kc221AKdadnDWbr/1V52bPDe3iHkNMyIZlRhK1XpTOIbbcDKck1x7+tGazwqVuLjh4vUo+CeFcfpfPf3I/YXggopXujvKeAZtoGruaPwgGuZskrFcf6dxUnWWpvamUVsWQbH8XRZ5+zIvKU5MWsl7bER44z0vNE0GkVGq6UPXylZw2xvyXFeapyimOg7wS0n/g1i+RqE1SXMQVYIqhU4LUl0CrLTl4T6CwLSqVuOBVsOsaParIrNNNeyFoteqX3QxzcDhs/SbpFRp0ycg83NfaDbmt9pm8YR3/IGClX+hw9svv3L4qXhWvqhbrJbqP0PMQq19moF8Y2oUnLD4meBsDFmievJB7VWLPuLIhydjplPZKtFcpTQpvfTvJ5dg/Ac8zevSjlHCpK7I2VP7J2evj1MZVI7oQWRPXcZQUHHASQB9aJDDeT+HCkbILbjyuD5aG1CeJObvXAe4hpyK9egqbNQTNCEgxxW5YOhKCp1OewaC4a6ebnVn1lgzSV91uxHlgmHkWXhGdqm26Q40yRFnGMRlCnGAHAuoYvPbFhWdYvuKKRa6ba+gjl51mcN1Z/vpjuaQr6dVrpnCZsyIueaK9CtRCNznQH0ePThSJH2WTUKRhzNBxPGtji6aVJ1hVZrur7fxG3CoOCeSUldu32+MoZbG0eKNcjR8lABTElG6NWhjvb1db2WqoePY1O4/HT7Ok/mxUh4zd+4CfEsVipg0JTh52PRe03/khi0UMWWWdEoh+FBG4mVQ3AcqMBRy/WsxQL55QtE/033Obo2Pz3afkFr7qiO8SRuPmcNpI1Ckf7tWPfRaWHE1vFxr2Yuq+fAaytOR1lPsiQFLtWKOzSLg4J9Bvt2acx5htjdGS18Yc/yaX0HgD8vT1E3j/yq6/8TGThhSWnYnZ/HgDeyH1innrUp3M5bKz/ZfrpebuA1UxkO4xwRANC3j6mhwV4NmmtYsFQ7zOC6HWUpUquZc0sP02ehAD0gAAwEPhB1NmrrDCDeAdGFn7SMmhcWJrjTo6AACbs2JS2N9jQmAAAA=" alt="Konsola TakeAny.AI: widok Agent Flow — agent połączony z backendem LLM, ingressem i narzędziami" width="1200" height="883" loading="lazy" style="display:block;width:100%;height:auto"></figure>
+    </div>
+  </div>
+</section>
+
+<section class="section" data-screen-label="02 Co robi agent">
+  <div class="container">
+    <header class="section-head">
+      <span class="section-num" style="display:inline-flex;flex-wrap:wrap;align-items:center;gap:9px"><span>02 ·</span><svg class="icn icn-20" aria-hidden="true"><use href="#i-dash"></use></svg><span>Co robi agent</span></span>
+      <h2>Od surowego pakietu przetargowego <strong>do gotowego draftu ze źródłami</strong></h2>
+      <p class="sub" style="max-width:78ch">Pięć obszarów pracy agenta: <strong style="font-weight:600">parsowanie plików, odpowiedzi z Twojej dokumentacji, decyzja Go / No-Go, ochrona tajemnic handlowych i dobór modeli pod koszt</strong>.</p>
+    </header>
+    <div class="uc-caps uc-rail">
+      <div class="uc-card" style="gap:12px">
+        <span style="display:flex;align-items:center;gap:9px;font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--lit-deep)"><span style="width:5px;height:5px;border-radius:50%;background:var(--lit);flex:none"></span>Parsowanie plików</span>
+        <h3 style="margin:0;font-size:22px;font-weight:400;letter-spacing:-0.022em;line-height:1.2;color:var(--ink);text-wrap:pretty">Wczytuj zapytania z Excela, Worda i PDF bez utraty struktury</h3>
+        <p style="margin:0;font-size:15px;line-height:1.55;color:var(--muted);text-wrap:pretty">Zapytania przetargowe i kwestionariusze bezpieczeństwa bywają skomplikowane — zawierają dziesiątki zakładek, ukryte kolumny i specyficzne formularze.</p>
+        <details class="uc-more"><summary>Szczegóły</summary><ul class="uc-bul">
+          <li><strong>Praca na oryginalnych plikach:</strong> Agent TakeAny.AI analizuje pliki Excel (XLSX), Word (DOCX) oraz dokumenty PDF, zachowując ich oryginalny układ i formatowanie.</li>
+          <li><strong>Automatyczne mapowanie:</strong> System sam rozpoznaje miejsce pytania i wpisuje gotowe propozycje odpowiedzi w odpowiednie komórki arkusza.</li>
+          <li><strong>Bezpieczne otwieranie załączników:</strong> Pliki pochodzące od zamawiających są parsowane w odizolowanym środowisku Firecracker MicroVM, co całkowicie chroni Twoją sieć przed złośliwym oprogramowaniem i atakami typu Prompt Injection.</li>
+        </ul></details>
+      </div>
+      <div class="uc-card" style="gap:12px">
+        <span style="display:flex;align-items:center;gap:9px;font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--lit-deep)"><span style="width:5px;height:5px;border-radius:50%;background:var(--lit);flex:none"></span>Baza wiedzy &amp; RAG</span>
+        <h3 style="margin:0;font-size:22px;font-weight:400;letter-spacing:-0.022em;line-height:1.2;color:var(--ink);text-wrap:pretty">Udzielaj precyzyjnych odpowiedzi z gwarancją powołania się na źródła</h3>
+        <p style="margin:0;font-size:15px;line-height:1.55;color:var(--muted);text-wrap:pretty">W przetargach technicznych błąd w parametrach oznacza wykluczenie oferty lub kary finansowe. Standardowe generatory tekstu potrafią zmyślać fakty.</p>
+        <details class="uc-more"><summary>Szczegóły</summary><ul class="uc-bul">
+          <li><strong>100% zgodności z faktami (Strict RAG):</strong> Agent generuje odpowiedzi wyłącznie na podstawie Twoich zatwierdzonych dokumentów, dawnych wygranych ofert, specyfikacji produktów oraz certyfikatów (ISO, SOC2).</li>
+          <li><strong>Precyzyjne odnośniki do źródeł:</strong> Każda propozycja odpowiedzi zawiera dokładny odnośnik do dokumentu źródłowego oraz numeru strony, z której pobrano informację.</li>
+          <li><strong>Pętla weryfikacji:</strong> Jeśli w bazie brakuje informacji na trudne pytanie, AI nie zgaduje — oznacza komórkę i przekazuje zapytanie do inżyniera lub działu prawnego.</li>
+        </ul></details>
+      </div>
+      <div class="uc-card" style="gap:12px">
+        <span style="display:flex;align-items:center;gap:9px;font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--lit-deep)"><span style="width:5px;height:5px;border-radius:50%;background:var(--lit);flex:none"></span>Analiza ryzyka</span>
+        <h3 style="margin:0;font-size:22px;font-weight:400;letter-spacing:-0.022em;line-height:1.2;color:var(--ink);text-wrap:pretty">Oceniaj opłacalność przetargu w kilka minut zamiast kilku dni (Go / No-Go)</h3>
+        <p style="margin:0;font-size:15px;line-height:1.55;color:var(--muted);text-wrap:pretty">Zanim Twój zespół spędzi dziesiątki godzin na przygotowywaniu oferty, dowiedz się, czy warto przystąpić do przetargu.</p>
+        <details class="uc-more"><summary>Szczegóły</summary><ul class="uc-bul">
+          <li><strong>Szybka analiza wymagań formalnych:</strong> Agent prześwietla wielostronicową dokumentację i wyciąga krytyczne wymogi techniczne oraz formalne.</li>
+          <li><strong>Wykrywanie ryzyk i kar:</strong> AI automatycznie flaguje nietypowe zapisy prawne, nierealne terminy realizacji oraz wysokie kary umowne.</li>
+          <li><strong>Podsumowanie decyzyjne:</strong> Otrzymujesz zwięzłą analizę zgodności oferty, co ułatwia Zarządowi podjęcie szybkiej i uzasadnionej decyzji biznesowej.</li>
+        </ul></details>
+      </div>
+      <div class="uc-card" style="gap:12px">
+        <span style="display:flex;align-items:center;gap:9px;font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--lit-deep)"><span style="width:5px;height:5px;border-radius:50%;background:var(--lit);flex:none"></span>Suwerenność danych</span>
+        <h3 style="margin:0;font-size:22px;font-weight:400;letter-spacing:-0.022em;line-height:1.2;color:var(--ink);text-wrap:pretty">Chroń tajemnice handlowe i ceny dzięki pełnej suwerenności danych (Air-Gap)</h3>
+        <p style="margin:0;font-size:15px;line-height:1.55;color:var(--muted);text-wrap:pretty">Dane zawarte w RFP to najcenniejsza własność firmy: marże, architektura systemów, cenniki oraz unikalne know-how.</p>
+        <details class="uc-more"><summary>Szczegóły</summary><ul class="uc-bul">
+          <li><strong>Praca w trybie air-gap i on-premise:</strong> Cały proces analizy i generowania odpowiedzi może odbywać się lokalnie na Twojej własnej infrastrukturze.</li>
+          <li><strong>Zero wycieków do chmury:</strong> Twoje dane przetargowe i strategie cenowe nigdy nie trafią do zewnętrznych modeli publicznych ani nie posłużą do ich trenowania.</li>
+          <li><strong>Podwójna zapora bezpieczeństwa:</strong> Wbudowane filtry blokują próby wyciągnięcia poufnych danych z Twojej bazy wiedzy.</li>
+        </ul></details>
+      </div>
+      <div class="uc-card" style="gap:12px">
+        <span style="display:flex;align-items:center;gap:9px;font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--lit-deep)"><span style="width:5px;height:5px;border-radius:50%;background:var(--lit);flex:none"></span>Wybór modeli i koszty</span>
+        <h3 style="margin:0;font-size:22px;font-weight:400;letter-spacing:-0.022em;line-height:1.2;color:var(--ink);text-wrap:pretty">Wybieraj dowolne modele — od darmowych Open Weight po najtańsze API</h3>
+        <p style="margin:0;font-size:15px;line-height:1.55;color:var(--muted);text-wrap:pretty">Analiza setek pytań w obszernych dokumentach nie musi oznaczać wysokich rachunków za tokeny. Platforma TakeAny.AI daje pełną elastyczność w doborze modeli AI (model agnostic).</p>
+        <details class="uc-more"><summary>Szczegóły</summary><ul class="uc-bul">
+          <li><strong>Modele Open Weight i open source (0 PLN za tokeny):</strong> Uruchamiaj darmowe, lokalne modele (np. Llama, Mistral, Qwen przez Ollama lub vLLM) bezpośrednio w swojej infrastrukturze.</li>
+          <li><strong>Dopasowanie modelu do poziomu pytania:</strong> Kieruj proste pytania formalne do szybkich i tanich modeli lokalnych, a najdroższe komercyjne LLM rezerwuj tylko dla najbardziej zawiłych kwestii architektonicznych.</li>
+          <li><strong>Brak opłat za kroki (0% step tax) i brak marży (BYOK):</strong> Płacisz wyłącznie za ukończony plik końcowy, korzystając z własnych kluczy API bez żadnych narzutów dostawcy.</li>
+        </ul></details>
+      </div>
+    </div>
+    <div class="rail-nav" style="display:flex;align-items:center;justify-content:center;gap:20px;margin-top:26px">
+      <button type="button" data-rail-nav="prev" aria-label="Poprzednie" style="width:44px;height:44px;flex:0 0 44px;border-radius:999px;border:1px solid var(--ink);background:var(--ink);color:var(--paper);cursor:pointer;font-family:var(--font-mono);font-size:16px;display:flex;align-items:center;justify-content:center;transition:opacity .2s">←</button>
+      <div data-rail-dots="" style="display:flex;align-items:center;gap:8px"></div>
+      <button type="button" data-rail-nav="next" aria-label="Następne" style="width:44px;height:44px;flex:0 0 44px;border-radius:999px;border:1px solid var(--ink);background:var(--ink);color:var(--paper);cursor:pointer;font-family:var(--font-mono);font-size:16px;display:flex;align-items:center;justify-content:center;transition:opacity .2s">→</button>
+    </div>
+  </div>
+</section>
+
+<section class="section" data-screen-label="03 Korzyści">
+  <div class="container">
+    <header class="section-head">
+      <span class="section-num" style="display:inline-flex;flex-wrap:wrap;align-items:center;gap:9px"><span>03 ·</span><svg class="icn icn-20" aria-hidden="true"><use href="#i-cost"></use></svg><span>Korzyści biznesowe</span></span>
+      <h2>Co się zmienia, <strong>gdy ofertę składa agent</strong></h2>
+    </header>
+    <div class="cmp">
+      <div class="cmp-row cmp-head" style="padding:12px 0">
+        <span>Tradycyjne przygotowanie RFP</span>
+        <span style="color:var(--lit-deep)">Automatyzacja z platformą TakeAny.AI</span>
+        <span>Efekt biznesowy</span>
+      </div>
+      <div class="cmp-row"><div class="k">Czas trwania: 2–3 tygodnie angażowania inżynierów i prawników.</div><div class="a">Gotowy draft w kilka godzin, wymaga jedynie weryfikacji.</div><div class="e">Do 80% krótszy czas przygotowania oferty.</div></div>
+      <div class="cmp-row"><div class="k">Ryzyko halucynacji: generatory tekstu zmyślają parametry techniczne.</div><div class="a">Gwarancja źródeł (Strict RAG): każdą odpowiedź można zweryfikować z dokumentem źródłowym.</div><div class="e">Zero błędów technicznych i brak kar umownych.</div></div>
+      <div class="cmp-row"><div class="k">Ryzyko wycieku danych: wysyłanie cenników i specyfikacji do chmury SaaS.</div><div class="a">Pełne air-gap / on-premise: dane przetwarzane lokalnie w Firecracker MicroVM.</div><div class="e">100% ochrony tajemnic handlowych i cenników.</div></div>
+      <div class="cmp-row"><div class="k">Koszty API: narastające opłaty za każdy krok i pętlę decyzyjną.</div><div class="a">0% step tax i Open Weight: stała opłata i możliwość pracy na darmowych modelach lokalnych.</div><div class="e">Przewidywalne i minimalne koszty operacyjne.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-strip plum" data-screen-label="04 CTA">
+  <div class="container cta-grid">
+    <div><h2>Analizuj szybciej, odpowiadaj pewniej <strong>i wygrywaj więcej przetargów</strong></h2></div>
+    <div class="cta-bts">
+      <a class="btn btn-lg ta-btn-light" href="/pl/get-started">Rozpocznij <span class="arrow">→</span></a>
+      <a class="cta-link" href="/pl/pricing" style="display:inline-flex;align-items:center;align-self:center;gap:6px;padding:10px 4px;font-size:16px;font-weight:500;color:#fff;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px;background:none;border:0">Zobacz cennik →</a>
+    </div>
+  </div>
+</section>
+
+<footer data-screen-label="Footer">
+  <div class="container">
+    <div class="foot-top" style="grid-template-columns:1.25fr 1fr 1.35fr 0.9fr">
+      <div class="foot-brand">
+        <a class="wordmark" href="/pl/" aria-label="TakeAny.AI"><x-import component-from-global-scope="TakeAnyAIDesignSystem_365327.Logo" height="36px" hint-size="189px,36px"></x-import></a>
+        <details class="lang-picker" style="position:relative;margin-top:14px;width:max-content">
+          <summary style="display:flex;align-items:center;gap:8px;cursor:pointer;list-style:none;font-size:14px;color:var(--ink);padding:6px 0"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><circle cx="8" cy="8" r="6.2"></circle><path d="M1.9 8h12.2"></path><path d="M8 1.8c1.7 1.7 2.6 3.8 2.6 6.2S9.7 12.5 8 14.2C6.3 12.5 5.4 10.4 5.4 8S6.3 3.5 8 1.8Z"></path></svg><span>Polski</span><svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" style="margin-left:2px;opacity:.7"><path d="M3 4.8 6 7.8l3-3"></path></svg></summary>
+          <div role="group" aria-label="Language" style="position:absolute;left:0;bottom:calc(100% + 8px);z-index:20;min-width:168px;background:var(--paper);border:1px solid var(--line);border-radius:4px;box-shadow:0 6px 20px rgba(0,0,0,.08);overflow:hidden;display:flex;flex-direction:column">
+            <a href="/en/use-cases/rfp-automation" hreflang="en" style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 12px;font-size:14px;color:var(--muted);text-decoration:none;background:transparent">English</a>
+            <a href="/pl/use-cases/rfp-automation" hreflang="pl" style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 12px;font-size:14px;color:var(--ink);text-decoration:none;background:var(--paper-3)">Polski<span style="font-size:11px;font-family:var(--font-mono)">✓</span></a>
+          </div>
+        </details>
+        <p>Warstwa kontroli dla agentów AI. Działa na Twojej infrastrukturze.</p>
+      </div>
+      <div class="foot-col">
+        <h6>Produkt</h6>
+        <ul>
+          <li><a href="/pl/product">Przegląd</a></li>
+          <li><a href="/pl/use-cases">Zastosowania</a></li>
+          <li><a href="/pl/product#security">Bezpieczeństwo</a></li>
+          <li><a href="/pl/product#cost">Kontrola kosztów</a></li>
+          <li><a href="/pl/product#models">Swoboda wyboru modeli</a></li>
+          <li><a href="/pl/pricing">Cennik</a></li>
+          <li><a href="/pl/how-we-differ">Czym się różnimy</a></li>
+          <li><a href="/pl/alternative-n8n">Alternatywa dla n8n</a></li>
+          <li><a href="/pl/alternative-dify">Alternatywa dla Dify.ai</a></li>
+          <li><a href="/pl/alternative-flowise-langflow">Alternatywa dla Flowise / Langflow</a></li>
+          <li><a href="/pl/alternative-lindy">Alternatywa dla Lindy.ai</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h6>Zastosowania</h6>
+        <ul>
+          <li><a href="/pl/use-cases/model-freedom">Testowanie modeli open-weight (vLLM / Ollama)</a></li>
+          <li><a href="/pl/use-cases/self-hosted-rag-assistant">Lokalny RAG na poufnych plikach</a></li>
+          <li><a href="/pl/use-cases/chatbot-widget">Odpowiedzi na pytania klientów z Twoich treści</a></li>
+          <li><a href="/pl/use-cases/local-gpu-inference">Uruchamianie i przyspieszanie lokalnych GPU</a></li>
+          <li><a href="/pl/use-cases/ai-for-erp-crm">Wzmocnienie systemów ERP i CRM</a></li>
+          <li><a href="/pl/use-cases/rfp-automation">Automatyzacja procesów RFI i RFP</a></li>
+          <li><a href="/pl/use-cases/build-ai-agents">Sandbox dla agentów przeglądających sieć</a></li>
+          <li><a href="/pl/use-cases/build-ai-agents">Zgodność z EU AI Act</a></li>
+          <li><a href="/pl/use-cases/white-label-ai">Zarabiaj na AI pod własną marką</a></li>
+          <li><a href="/pl/get-started#form">Twój pomysł na AI <span class="arrow">→</span></a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h6>Zacznij</h6>
+        <ul>
+          <li><a href="/pl/get-started">Rozpocznij</a></li>
+          <li><a href="/en/docs">Dokumentacja</a></li>
+          <li><a href="/pl/blog">Blog</a></li>
+          <li><a href="/pl/get-started#talk">Porozmawiaj z nami</a></li>
+          <li><a href="/pl/partners">Partnerstwa</a></li>
+        </ul>
+      </div>
+    </div>
+    <div style="margin:8px 0 28px;min-height:64px;background:var(--surface-plum);border-radius:14px;padding:10px 12px 10px 20px;display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px">
+      <img src="/_ds/takeany-ai-design-system-365327f4-89d8-418c-be14-ea19a91e4fcb/assets/logo/takeany-logo-ube-butter.svg" alt="TakeAny.AI" width="137" height="26" style="height:26px;width:auto;display:block">
+      <span style="width:1px;height:28px;background:rgba(255,255,255,.2)"></span>
+      <div style="position:relative;flex:1 1 360px;min-width:0">
+        <button type="button" onClick="{{ abToggle }}" aria-expanded="{{ abOpenStr }}" style="width:100%;max-width:640px;display:flex;align-items:center;gap:10px;min-height:44px;padding:0 16px;border:1px solid rgba(255,255,255,.3);border-radius:999px;background:transparent;color:#fff;font-size:14.5px;cursor:pointer;text-align:left">
+          <span style="font-family:var(--font-mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-on-plum-muted);white-space:nowrap">Zastosowanie</span>
+          <span style="flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ abCur.full }}</span>
+          <span style="color:var(--text-on-plum-muted)">{{ abCaret }}</span>
+        </button>
+        <ul style="display:{{ abListDisplay }};position:absolute;left:0;bottom:52px;width:100%;max-width:640px;margin:0;padding:0;list-style:none;background:#fff;border:1px solid var(--ink);border-radius:16px;overflow:hidden;z-index:30">
+          <sc-for list="{{ abItems }}" as="it" hint-placeholder-count="5">
+            <li style="border-bottom:1px solid var(--line)"><a href="{{ it.href }}" onClick="{{ it.pick }}" style="display:grid;grid-template-columns:34px minmax(0,1fr);gap:10px;align-items:baseline;min-height:52px;padding:14px 18px;color:var(--ink);text-decoration:none;background:{{ it.bg }}" style-hover="background:var(--ube-lavender-50)"><span style="font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;color:var(--lit-deep)">{{ it.n }}</span><span style="font-size:15px;line-height:1.35">{{ it.full }}</span></a></li>
+          </sc-for>
+        </ul>
+      </div>
+      <a class="btn btn-accent" href="/pl/get-started#form" style="margin-left:auto">Zrealizuj swój pomysł na AI <span class="arrow">→</span></a>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 TakeAny.AI</span>
+      <span><a href="/llms.txt">llms.txt</a> · <a href="/pl/legal#prywatnosc">Prywatność</a> · <a href="/pl/legal#regulamin">Regulamin</a> · <a href="/pl/legal#dpa">DPA</a> · <a href="#" data-cookie-settings="">Ustawienia cookies</a></span>
+    </div>
+  </div>
+</footer>
+
+
+<a id="backTop" href="#" aria-label="Powrót na górę strony" title="Powrót na górę strony" style="position:fixed;right:22px;bottom:28px;z-index:70;display:flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:50%;background:var(--paper);border:1px solid var(--line);color:var(--muted);text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,.06);opacity:0;pointer-events:none;transform:translateY(10px);transition:opacity 200ms ease,transform 200ms ease,color 160ms ease,border-color 160ms ease" onMouseEnter="this.style.color='var(--ink)';this.style.borderColor='var(--ink)'" onMouseLeave="this.style.color='var(--muted)';this.style.borderColor='var(--line)'"><svg width="15" height="15" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 11.5V2.5"></path><path d="M3 6.3 7 2.3l4 4"></path></svg></a>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() { return { ...this.__rv0(), ...this.__ab() }; }
+  __ab() {
+    const L = [
+          { n: '01', full: 'Uruchom RAG na dokumentach, które nie mogą opuścić firmy', href: '/pl/use-cases/self-hosted-rag-assistant' },
+          { n: '02', full: 'Zamień zakupione serwery GPU w bezpieczną platformę AI', href: '/pl/use-cases/local-gpu-inference' },
+          { n: '03', full: 'Wpuść agentów do ERP nawet gdy jest leciwe i bez API', href: '/pl/use-cases/ai-for-erp-crm' },
+          { n: '04', full: 'Żongluj modelami LLM, niech open-weight walczą z frontier labs', href: '/pl/use-cases/model-freedom' },
+          { n: '05', full: 'Sprzedawaj AI swoim klientom pod własną marką', href: '/pl/use-cases/white-label-ai' },
+          { n: '06', full: 'Zrealizuj swój pomysł na AI', href: '/pl/get-started#form', hl: true }
+        ];
+    const ab = this.state.ab || 0, open = !!this.state.abOpen;
+    return {
+      abCur: L[ab], abOpenStr: open ? 'true' : 'false', abCaret: open ? '▴' : '▾', abListDisplay: open ? 'block' : 'none',
+      abToggle: () => this.setState(s => ({ abOpen: !s.abOpen })),
+      abItems: L.map((x, k) => ({ ...x, bg: x.hl ? 'var(--ube-lavender-100)' : k === ab ? 'var(--ube-lavender-50)' : '#fff', pick: () => this.setState({ ab: k, abOpen: false }) }))
+    };
+  }
+  state = { navOpen: false };
+  componentDidMount() { document.documentElement.lang = 'pl'; }
+  __rv0() {
+    const navOpen = this.state.navOpen;
+    return {
+      toggleMobileNav: () => this.setState(s => ({ navOpen: !s.navOpen })),
+      mobileMenuStyle: { opacity: navOpen ? 1 : 0, pointerEvents: navOpen ? 'auto' : 'none' }
+    };
+  }
+}
+</script>
+</body>
+</html>

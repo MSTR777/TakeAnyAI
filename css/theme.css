@@ -1,0 +1,366 @@
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100;
+/* fonts.css */
+/* Geist + Geist Mono (Google Fonts) — the faces used across getaamp.com.
+   Newsreader is the blog long-read serif. */
+200;300;400;500;600;700;800;900&family=Geist+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&display=swap");
+
+/* colors.css */
+/* TakeAny.AI — color tokens (Ube theme).
+   White page, achromatic ink. Accent elements come from the ube family:
+   Soft Ube Lavender (tints, highlights), Deep Rich Ube Plum (depth, our column, bands)
+   and Electric Amethyst (luminous signal: dots, ticks, the one glowing CTA).
+   Lilac-grey hairlines and sunken fills tie the neutrals to the accents.
+   Butter is the single warm counterpoint. Green is kept as a base token only. */
+:root{
+  /* ink — achromatic (aamp source values) */
+  --ink-950:#0A0A0A;
+  --ink-900:#1F1F1F;
+  --ink-500:#6B6B6B;
+  --ink-400:#9A9A9A;
+  /* ube — soft lavender */
+  --ube-lavender-50:#F7F3FC;
+  --ube-lavender-100:#EEE6F8;
+  --ube-lavender-200:#DCCCF0;
+  --ube-lavender-300:#C8B3E6;
+  /* ube — deep rich plum */
+  --ube-plum-700:#5C2A6B;
+  --ube-plum-800:#4A2058;
+  --ube-plum-900:#3B1747;
+  /* aubergine night — negative logo background (10 Night glow) */
+  --aubergine-950:#1E0F24;
+  /* electric amethyst — luminous accent */
+  --amethyst-400:#A970FF;
+  --amethyst-500:#8B3DFF;
+  --amethyst-600:#7426E8;
+  /* matching neutrals — lilac grey */
+  --lilac-50:#FAF8FC;
+  --lilac-100:#F2EEF7;
+  --lilac-200:#ECE7F2;
+  --lilac-300:#E7E2EE;
+  /* warm counterpoint — butter */
+  --butter-300:#F5E6A3;
+  --butter-100:#FBF5DA;
+  /* optional warm accents (earlier exploration) */
+  --ochre-700:#8A6219;
+  --ochre-500:#B8862B;
+  --ochre-300:#D9B56A;
+  --ochre-100:#F3E7CC;
+  --orange-700:#A84B17;
+  --orange-500:#D9692B;
+  --orange-300:#EDA374;
+  --orange-100:#F8E2D3;
+  /* paper */
+  --paper-0:#FFFFFF;
+  /* legacy green (base only, not wired) */
+  --green-500:#17A05C;
+  --green-700:#0E7A44;
+  --green-100:#DFF1E4;
+  /* blocked state only */
+  --red-600:#C7442E;
+  --red-700:#B3261E;
+
+  /* base aliases (contract names from the source CSS) */
+  --ink:var(--ink-950);
+  --ink-2:var(--ink-900);
+  --muted:var(--ink-500);
+  --muted-2:var(--ink-400);
+  --line:var(--lilac-300);
+  --line-2:var(--lilac-200);
+  --line-card:var(--lilac-200);
+  --paper:var(--paper-0);
+  --paper-2:var(--lilac-50);
+  --paper-3:var(--lilac-100);
+  --paper-warm:var(--paper-0);
+  --lit:var(--amethyst-500);
+  --lit-t:var(--ube-lavender-100);
+  --lit-deep:var(--amethyst-600);
+  --lit-line:var(--ube-lavender-200);
+  --pos:var(--ube-plum-700);
+  --pos-tint:var(--ube-lavender-50);
+  --pos-line:var(--ube-lavender-200);
+  --pos-hover:var(--ube-lavender-100);
+  --warn:var(--red-600);
+
+  /* semantic */
+  --surface-page:var(--paper);
+  --surface-card:var(--paper);
+  --surface-sunken:var(--paper-2);
+  --surface-hover:var(--paper-3);
+  --surface-inverse:var(--ink);
+  --surface-accent:var(--lit-t);
+  --surface-plum:var(--ube-plum-700);
+  --surface-night:var(--aubergine-950);
+  --text-strong:var(--ink);
+  --text-body:var(--ink-2);
+  --text-muted:var(--muted);
+  --text-faint:var(--muted-2);
+  --text-on-inverse:#FFFFFF;
+  --text-on-inverse-muted:var(--muted-2);
+  --text-on-plum-muted:var(--ube-lavender-300);
+  --text-accent:var(--lit-deep);
+  --text-plum:var(--ube-plum-700);
+  --text-danger:var(--red-700);
+  --highlight:var(--ube-lavender-200);
+  --highlight-warm:var(--butter-300);
+  --accent-ochre:var(--ochre-500);
+  --accent-ochre-text:var(--ochre-700);
+  --accent-ochre-tint:var(--ochre-100);
+  --accent-orange:var(--orange-500);
+  --accent-orange-text:var(--orange-700);
+  --accent-orange-tint:var(--orange-100);
+  --border-subtle:var(--line);
+  --border-card:var(--line-card);
+  --border-strong:var(--ink);
+  --border-accent:var(--lit);
+  --focus-ring:var(--ink);
+  /* luminous effects — amethyst glow, use once per screen */
+  --glow-ring:0 0 0 5px rgba(139,61,255,0.16); /* @kind other */
+  --glow-cta:0 10px 30px -10px rgba(139,61,255,0.55); /* @kind other */
+  --glow-field:radial-gradient(closest-side,rgba(169,112,255,0.28),rgba(200,179,230,0.14) 55%,transparent); /* @kind other */
+}
+
+/* typography.css */
+:root{
+  --font-sans:'Geist',-apple-system,system-ui,"Helvetica Neue",Arial,sans-serif;
+  --font-mono:'Geist Mono',ui-monospace,"SF Mono",Menlo,monospace;
+  --font-serif:'Newsreader',Georgia,serif;
+  --font-features:"ss01" on,"cv11" on;
+
+  /* display scale (fluid, from source) */
+  --fs-hero:clamp(46px,6.6vw,92px); /* @kind font */
+  --fs-page-h1:clamp(40px,5.6vw,76px); /* @kind font */
+  --fs-h2:clamp(32px,4.2vw,52px); /* @kind font */
+  --fs-cta:clamp(36px,5vw,64px); /* @kind font */
+  --fs-intro:clamp(21px,2.3vw,29px); /* @kind font */
+  --fs-h3:24px; /* @kind font */
+  --fs-h4:19px; /* @kind font */
+  --fs-lede:19px; /* @kind font */
+  --fs-body-lg:17px; /* @kind font */
+  --fs-body:15px; /* @kind font */
+  --fs-body-sm:14px; /* @kind font */
+  --fs-small:13px; /* @kind font */
+  --fs-mono:11px; /* @kind font */
+  --fs-mono-sm:10px; /* @kind font */
+
+  --lh-tight:0.97; /* @kind font */
+  --lh-head:1.05; /* @kind font */
+  --lh-snug:1.3; /* @kind font */
+  --lh-body:1.55; /* @kind font */
+
+  --tr-hero:-0.044em; /* @kind font */
+  --tr-h1:-0.04em; /* @kind font */
+  --tr-h2:-0.036em; /* @kind font */
+  --tr-h3:-0.02em; /* @kind font */
+  --tr-body:-0.005em; /* @kind font */
+  --tr-mono:0.16em; /* @kind font */
+  --tr-mono-tight:0.10em; /* @kind font */
+  --tr-mono-wide:0.18em; /* @kind font */
+}
+
+/* spacing.css */
+:root{
+  /* layout */
+  --container:1280px; /* @kind spacing */
+  --gutter:24px; /* @kind spacing */
+  --nav-h:64px; /* @kind spacing */
+  --band-y:88px; /* @kind spacing */
+  --top-h:60px; /* @kind spacing */
+  --side-w:288px; /* @kind spacing */
+  --toc-w:232px; /* @kind spacing */
+
+  /* spacing scale — values as they appear in the source, not snapped */
+  --space-1:4px;
+  --space-2:8px;
+  --space-3:12px;
+  --space-4:16px;
+  --space-5:20px;
+  --space-6:24px;
+  --space-7:28px;
+  --space-8:32px;
+  --space-10:40px;
+  --space-12:48px;
+  --space-14:56px;
+  --space-16:64px;
+  --space-19:76px;
+  --space-24:96px;
+
+  /* radii */
+  --radius-xs:3px;
+  --radius-sm:4px;
+  --radius-field:6px;
+  --radius-md:10px;
+  --radius-card:16px;
+  --radius-pill:999px;
+  --radius:var(--radius-sm);
+
+  /* elevation — used in exactly two places */
+  --shadow-form:0 28px 60px -40px rgba(10,10,10,0.4);
+  --shadow-shot:0 1px 0 var(--line),0 40px 80px -48px rgba(10,10,10,0.5);
+  --shadow-drawer:0 24px 48px -24px rgba(10,10,10,0.4);
+
+  /* motion */
+  --ease:ease; /* @kind other */
+  --dur-fast:120ms; /* @kind other */
+  --dur-base:160ms; /* @kind other */
+  --dur-slow:200ms; /* @kind other */
+
+  /* rules */
+  --rule:1px; /* @kind spacing */
+  --rule-chapter:2px; /* @kind spacing */
+  --chapter-tick:92px; /* @kind spacing */
+}
+
+/* icons.css */
+/* Icon layer — Lucide grammar on a 24 grid, one amethyst accent per icon.
+   Strokes compensate optically by size instead of scaling. */
+:root{--icn-accent:var(--lit);--icn-ink:var(--ink);--icn-warn:var(--warn)}
+.icn{width:24px;height:24px;display:inline-block;vertical-align:middle;flex:0 0 auto;color:var(--icn-ink);fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
+.icn-16{width:16px;height:16px;stroke-width:2}
+.icn-20{width:20px;height:20px;stroke-width:2}
+.icn-24{width:24px;height:24px;stroke-width:1.75}
+.icn-32{width:32px;height:32px;stroke-width:1.6}
+.icn-48{width:48px;height:48px;stroke-width:1.35}
+.icn-64{width:64px;height:64px;stroke-width:1.2}
+.icn-quiet{color:var(--muted)}
+.icn-lit{color:var(--icn-accent)}
+.icn-warn{color:var(--icn-warn)}
+.icn-on-dark{color:#fff}
+
+/* takeany-theme.css */
+/* TakeAny.AI — theme layer for the site page markup.
+   Load order on every page:
+   DS css/site.css → assets/site-base.css (base layout) → DS tokens → DS icons.css → this file.
+   Legacy class families keep their layout; the Ube tokens and DS treatments apply on top. */
+
+body{background:var(--surface-page)}
+
+/* ---------- nav ---------- */
+.nav-wrap{background:rgba(255,255,255,0.84);border-bottom-color:var(--line)}
+.subnav-wrap{background:rgba(255,255,255,0.9)}
+.subnav a{border-radius:var(--radius-pill)}
+.subnav a.active{color:#fff;background:var(--ink)}
+.mobile-menu{background:rgba(255,255,255,0.98)}
+.nav-toggle{border-radius:var(--radius-pill)}
+
+/* ---------- logo (SVG wordmark) ---------- */
+.wordmark{display:inline-flex;align-items:center;line-height:0}
+.wordmark .ta-logo{height:32px}
+.foot-brand .wordmark{margin-bottom:0}
+.foot-brand .wordmark .ta-logo{height:36px}
+
+/* ---------- buttons: pill, ink primary, one glowing accent ---------- */
+.btn{border-radius:var(--radius-pill)}
+.btn-primary{background:var(--ink);color:#fff}
+.btn-primary:hover{background:var(--ink-2);color:#fff}
+.btn-outline{border-color:var(--ink)}
+.btn-outline:hover{background:var(--ink);color:#fff}
+.btn-accent{background:var(--amethyst-500);color:#fff;box-shadow:var(--glow-cta)}
+.btn-accent:hover{background:var(--amethyst-600);color:#fff}
+
+/* ---------- labels ---------- */
+.eyebrow .dot{background:var(--lit);box-shadow:var(--glow-ring)}
+.section-num{border:0;border-top:1px solid var(--ink);border-radius:0;padding:8px 0 0;background:transparent;color:var(--muted);min-width:0;width:max-content;display:inline-flex;letter-spacing:0.08em;font-weight:400}
+
+/* ---------- rules ---------- */
+.section,.hero,.page-head,.gs-hero,.cta-strip{border-bottom-color:var(--line)}
+
+/* ---------- cards: white, lilac hairline, 16px ---------- */
+.uc-card{background:var(--paper);border:1px solid var(--line-card);border-radius:var(--radius-card)}
+.uc-card:hover{border-color:var(--lit)}
+.uc-foot{background:var(--paper);border:1px solid var(--line-card);border-radius:var(--radius-card)}
+.why-grid{gap:12px}
+.why-card{border-top:0;background:var(--paper);border:1px solid var(--line-card);border-radius:var(--radius-card);padding:22px 22px 26px}
+.why-card .when{color:var(--lit-deep)}
+.why-card.feature{background:var(--lit-t);border-color:var(--lit-line);margin-left:0;padding:24px 22px 28px}
+.why-card.feature .text{color:var(--ube-plum-900)}
+.why-card.feature .when{color:var(--lit-deep)}
+.sec-grid,.feat-grid,.cost-grid,.limits,.brief-grid{border-radius:var(--radius-card);overflow:hidden;border-color:var(--line)}
+.router,.ph,.gs-form-card{border-radius:var(--radius-card)}
+.showcase .frame,.cmp-wrap{border-radius:var(--radius-card);overflow:hidden}
+.field input,.field select,.field textarea{border-radius:var(--radius-field)}
+
+/* ---------- comparison: our column in plum ---------- */
+.cmp.teaser{--pos:var(--ube-plum-700);--pos-tint:var(--ube-lavender-50);--pos-line:var(--ube-lavender-200)}
+.cmp .col-takeany{background:var(--pos-tint);box-shadow:inset 1px 0 0 var(--pos-line),inset -1px 0 0 var(--pos-line)}
+.cmp thead th.col-takeany{background:var(--pos);color:#fff;box-shadow:inset 1px 0 0 var(--pos),inset -1px 0 0 var(--pos)}
+.cmp tbody tr:hover td.col-takeany{background:var(--pos-hover)}
+.cmp thead th.col-takeany .co{color:var(--text-on-plum-muted)}
+
+/* ---------- partners band: plum ---------- */
+.partners{background:var(--surface-plum);border-top:0}
+.partners::before{display:none}
+.partners .section-num{border-top-color:#fff;color:var(--text-on-plum-muted)}
+.partners p.lede{color:var(--text-on-plum-muted)}
+
+/* ---------- illustration caption ---------- */
+.av-fig{position:relative;overflow:hidden;line-height:0}
+.av-fig .av{display:block;width:100%;height:auto}
+.av-cap{margin-top:14px;font-family:var(--font-mono);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:10px;line-height:1.4}
+.av-cap b{color:var(--lit-deep);font-weight:500}
+.av-cap i{width:8px;height:8px;border-radius:50%;background:var(--lit);flex:none;font-style:normal}
+
+/* ---------- v2 masthead: plum hero with stacked logo + customer-insight quotes ---------- */
+.ta-bar{position:fixed;left:0;right:0;top:0;background:rgba(92,42,107,0.95);border-bottom:0;transform:translateY(-100%);transition:transform 200ms ease}
+body.ta-scrolled .ta-bar,body.mm-open .ta-bar{transform:none}
+.ta-bar .nav-links a{color:var(--ube-lavender-100)}
+.ta-bar .nav-links a:hover{color:#fff}
+.ta-bar .nav-toggle,.ta-mast .nav-toggle{background:transparent;border-color:rgba(255,255,255,0.32);border-radius:var(--radius-pill);width:44px;height:44px}
+.ta-bar .nav-toggle span,.ta-mast .nav-toggle span{background:#fff}
+.ta-btn-light{background:#fff;color:var(--ink);border-color:#fff;border-radius:var(--radius-pill)}
+.ta-btn-light:hover{background:var(--ube-lavender-100);border-color:var(--ube-lavender-100);color:var(--ink)}
+.ta-btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,0.4);border-radius:var(--radius-pill)}
+.ta-btn-ghost:hover{background:rgba(255,255,255,0.1);color:#fff}
+.ta-mast .btn-lg{padding:13px 22px;font-size:15.5px}
+.ta-mast{background:var(--surface-plum);color:#fff;padding:28px 0 64px}
+.ta-mast-grid{display:grid;grid-template-columns:240px minmax(0,1fr);column-gap:48px;align-items:start}
+.ta-mast-logo{grid-column:1;grid-row:1 / 3;display:block;line-height:0}
+.ta-mast-logo img{height:228px;width:auto;display:block}
+.ta-mast-nav{grid-column:2;grid-row:1;display:flex;justify-content:flex-end;align-items:center;gap:28px}
+.ta-mast-links{display:flex;align-items:center;gap:28px}
+.ta-mast-links a{font-size:15px;font-weight:500;color:var(--ube-lavender-100)}
+.ta-mast-links a:hover{color:#fff}
+.ta-mast-copy{grid-column:2;grid-row:2;margin-top:44px;min-width:0}
+.ta-eyebrow{font-family:var(--font-mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-on-plum-muted);display:inline-flex;align-items:center;gap:10px}
+.ta-eyebrow .dot,.ta-q-label .dot{width:6px;height:6px;border-radius:50%;background:var(--amethyst-400);flex:none}
+.ta-eyebrow .dot{box-shadow:0 0 0 5px rgba(169,112,255,0.22)}
+.ta-h1{margin:22px 0 0;font-size:clamp(46px,6.6vw,88px);line-height:0.97;letter-spacing:-0.044em;color:#fff;font-weight:400}
+.ta-h1 span{display:block}
+.ta-h1 span:first-child{font-weight:200}
+.ta-h1 span:last-child{font-weight:800}
+.ta-lede{margin:26px 0 0;max-width:58ch;font-size:19px;line-height:1.5;color:var(--ube-lavender-100);text-wrap:pretty}
+.ta-lede strong{color:#fff;font-weight:600}
+.ta-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.ta-quotes{grid-column:3;grid-row:2;margin-top:44px;min-height:340px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.14);border-radius:var(--radius-card);padding:24px 28px 22px;display:flex;flex-direction:column}
+.ta-q-head{display:flex;justify-content:space-between;align-items:center;gap:12px;font-family:var(--font-mono);font-size:10.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-on-plum-muted)}
+.ta-q-label{display:inline-flex;align-items:center;gap:10px}
+.ta-q{margin:28px 0 0;display:grid;grid-template-columns:34px minmax(0,1fr);column-gap:8px;transition:opacity 180ms ease}
+.ta-q-mark{font-size:64px;line-height:0.8;font-weight:800;color:var(--amethyst-400)}
+.ta-q-body{display:flex;flex-direction:column;gap:14px}
+.ta-q blockquote{margin:0;font-size:30px;font-weight:500;line-height:1.18;letter-spacing:-0.025em;color:#fff;text-wrap:balance}
+.ta-q figcaption{font-family:var(--font-mono);font-size:10.5px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-on-plum-muted)}
+.ta-q-ctrl{margin-top:auto;padding-top:24px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.ta-q-dots{display:flex;align-items:center;gap:2px}
+.ta-q-dots button{width:28px;height:44px;border:0;padding:0;background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.ta-q-dots button span{display:block;height:8px;border-radius:999px;transition:width 160ms ease,background 120ms ease}
+.ta-q-arrows{display:flex;gap:8px}
+.ta-q-arrows button{width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,0.32);background:transparent;color:#fff;font-size:16px;cursor:pointer;transition:background 120ms ease}
+.ta-q-arrows button:hover{background:rgba(255,255,255,0.1)}
+@media (max-width:1100px){
+  .ta-mast-grid{grid-template-columns:168px minmax(0,1fr)}
+  .ta-mast-logo img{height:168px}
+  .ta-mast-nav{grid-column:2}
+  .ta-quotes{grid-column:1 / -1;grid-row:3;margin-top:40px;min-height:0}
+}
+@media (max-width:820px){
+  .ta-mast{padding:16px 0 32px}
+  .ta-mast-grid{grid-template-columns:minmax(0,1fr) auto}
+  .ta-mast-logo{grid-row:1}
+  .ta-mast-logo img{height:112px}
+  .ta-mast-links,.ta-mast-nav>.btn{display:none}
+  .ta-mast-nav{grid-column:2;align-self:start}
+  .ta-mast-copy{grid-column:1 / -1;grid-row:2;margin-top:28px}
+  .ta-quotes{grid-row:3;margin-top:28px;padding:20px 20px 14px}
+  .ta-q blockquote{font-size:24px}
+  .ta-ctas .btn{flex:1 1 100%;justify-content:center}
+}
+

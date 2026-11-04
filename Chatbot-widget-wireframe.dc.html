@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<script src="/support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<script>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[hreflang]');if(!a)return;var l=a.getAttribute('hreflang')==='pl'?'pl':'en';var x=';path=/;max-age=31536000;SameSite=Lax';document.cookie='nf_lang='+l+x;document.cookie='nf_country='+(l==='pl'?'pl':'zz')+x;},true);</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100;200;300;400;500;600;700;800;900&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/theme.css">
+<script src="/_ds/takeany-ai-design-system-365327f4-89d8-418c-be14-ea19a91e4fcb/_ds_bundle.js"></script>
+<style>.acc-switch{display:none!important}</style>
+<script>
+(function(){
+  if (window.__takeanyNav) return; window.__takeanyNav = 1;
+  document.addEventListener('click', function(e){
+    var t = e.target && e.target.closest && e.target.closest('#navToggle');
+    if (t){ e.preventDefault(); document.body.classList.toggle('mm-open'); return; }
+    var link = e.target && e.target.closest && e.target.closest('.mobile-menu a');
+    if (link) document.body.classList.remove('mm-open');
+  });
+  window.addEventListener('resize', function(){ if (window.innerWidth > 820) document.body.classList.remove('mm-open'); }, {passive:true});
+})();
+</script>
+</helmet>
+
+<div style="padding:26px;background:#FFFFFF;border:1px solid #E7E2EE;border-radius:20px;font-family:var(--font-sans);display:flex;justify-content:center">
+
+  <div style="width:100%;max-width:380px;display:flex;flex-direction:column;gap:14px">
+
+    <div style="border:1.6px solid var(--plan-ink);border-radius:16px;background:#FFFFFF;overflow:hidden;box-shadow:0 16px 40px -20px rgba(26,26,26,.3)">
+
+      <div style="display:flex;align-items:center;gap:10px;padding:13px 14px;border-bottom:1.4px solid #DED8E6">
+        <span style="width:28px;height:28px;border:1.6px solid var(--plan-ink);border-radius:50%;display:flex;align-items:center;justify-content:center;flex:none">
+          <span style="width:9px;height:9px;border-radius:50%;background:var(--plan-ink)"></span>
+        </span>
+        <span style="display:flex;flex-direction:column;gap:5px;flex:1;min-width:0">
+          <span style="display:block;height:8px;width:52%;border-radius:4px;background:var(--plan-ink)"></span>
+          <span style="display:flex;align-items:center;gap:5px">
+            <span style="width:6px;height:6px;border-radius:50%;background:var(--lit)"></span>
+            <span style="display:block;height:5px;width:78px;border-radius:3px;background:#C9C1D4"></span>
+          </span>
+        </span>
+        <span style="display:flex;gap:8px;flex:none">
+          <span style="width:12px;height:1.6px;background:#9A9A9A;display:block"></span>
+          <span style="width:11px;height:11px;position:relative;display:block">
+            <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="#9A9A9A" stroke-width="1.6" stroke-linecap="round"><path d="M2.5 2.5 9.5 9.5M9.5 2.5 2.5 9.5"></path></svg>
+          </span>
+        </span>
+      </div>
+
+      <div style="padding:16px 14px;display:flex;flex-direction:column;gap:12px;background:#FFFFFF">
+
+        <span style="align-self:flex-end;width:74%;background:var(--plan-ink);border-radius:12px 12px 4px 12px;padding:10px 11px;display:flex;flex-direction:column;gap:6px">
+          <span style="display:block;height:5px;width:92%;border-radius:3px;background:#FFFFFF"></span>
+          <span style="display:block;height:5px;width:58%;border-radius:3px;background:#FFFFFF;opacity:.55"></span>
+        </span>
+
+        <span style="align-self:flex-start;width:88%;background:var(--plan-fill);border-radius:12px 12px 12px 4px;padding:11px 12px;display:flex;flex-direction:column;gap:6px">
+          <span style="display:block;height:5px;width:96%;border-radius:3px;background:#9A9A9A"></span>
+          <span style="display:block;height:5px;width:88%;border-radius:3px;background:#9A9A9A"></span>
+          <span style="display:block;height:5px;width:72%;border-radius:3px;background:#9A9A9A"></span>
+          <span style="display:block;height:5px;width:44%;border-radius:3px;background:#B5ADC0"></span>
+        </span>
+
+        <span style="display:flex;flex-direction:column;gap:7px;padding-left:2px">
+          <span style="font-family:var(--font-mono);font-size:9px;letter-spacing:.11em;text-transform:uppercase;color:#8A8A8A">Sources</span>
+          <span style="display:flex;gap:6px;flex-wrap:wrap">
+            <sc-for list="{{ sources }}" as="s" hint-placeholder-count="3">
+              <span style="display:inline-flex;align-items:center;gap:6px;border:1.4px solid var(--lit);border-radius:999px;padding:4px 9px">
+                <span style="width:7px;height:8px;border:1.3px solid var(--lit);border-radius:1px;display:block"></span>
+                <span style="display:block;height:4px;width:{{ s }};border-radius:2px;background:#8A8A8A"></span>
+              </span>
+            </sc-for>
+          </span>
+        </span>
+
+        <span style="align-self:flex-start;display:flex;align-items:center;gap:5px;background:var(--plan-fill);border-radius:12px;padding:10px 12px">
+          <span style="width:5px;height:5px;border-radius:50%;background:#9A9A9A"></span>
+          <span style="width:5px;height:5px;border-radius:50%;background:#B5ADC0"></span>
+          <span style="width:5px;height:5px;border-radius:50%;background:#D3CCDD"></span>
+        </span>
+      </div>
+
+      <div style="display:flex;align-items:center;gap:10px;padding:12px 12px;border-top:1.4px solid #DED8E6;background:#FFFFFF">
+        <span style="flex:1;border:1.4px solid #DED8E6;border-radius:999px;padding:10px 13px;display:flex;align-items:center">
+          <span style="display:block;height:5px;width:60%;border-radius:3px;background:#C9C1D4"></span>
+        </span>
+        <span style="width:32px;height:32px;border-radius:50%;background:var(--plan-ink);display:flex;align-items:center;justify-content:center;flex:none">
+          <svg width="13" height="13" viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 10V2"></path><path d="M2.6 5.4 6 2l3.4 3.4"></path></svg>
+        </span>
+      </div>
+    </div>
+
+    <div style="align-self:flex-end;display:flex;align-items:center;gap:9px;border:1.6px solid var(--plan-ink);background:var(--lit-t);border-radius:999px;padding:9px 14px">
+      <span style="width:16px;height:12px;border:1.5px solid var(--lit);border-radius:3px;display:block"></span>
+      <span style="display:block;height:6px;width:56px;border-radius:3px;background:var(--plan-ink)"></span>
+    </div>
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:460,&quot;height&quot;:560},&quot;sources&quot;:{&quot;editor&quot;:null,&quot;default&quot;:[&quot;46px&quot;,&quot;34px&quot;,&quot;28px&quot;],&quot;tsType&quot;:&quot;string[]&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    return { sources: this.props.sources ?? ['46px', '34px', '28px'] };
+  }
+}
+
+</script>
+</body>
+</html>

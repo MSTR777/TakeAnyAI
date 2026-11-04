@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="/support.js"></script>
+<link rel="alternate" hreflang="en" href="https://takeany.ai/en/blog/digital-sovereignty-ai">
+<link rel="alternate" hreflang="pl" href="https://takeany.ai/pl/blog/digital-sovereignty-ai">
+<link rel="alternate" hreflang="x-default" href="https://takeany.ai/en/blog/digital-sovereignty-ai">
+</head>
+<body>
+<x-dc>
+<helmet>
+<script>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[hreflang]');if(!a)return;var l=a.getAttribute('hreflang')==='pl'?'pl':'en';var x=';path=/;max-age=31536000;SameSite=Lax';document.cookie='nf_lang='+l+x;document.cookie='nf_country='+(l==='pl'?'pl':'zz')+x;},true);</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5ZKRS09ZYX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  (function(){
+    var c = null;
+    try { c = JSON.parse(localStorage.getItem('takeany-consent-v1')); } catch(e) {}
+    gtag('consent', 'default', {
+      analytics_storage: (c && c.analytics) ? 'granted' : 'denied',
+      ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied'
+    });
+  })();
+  gtag('js', new Date());
+  gtag('config', 'G-5ZKRS09ZYX');
+</script>
+<script src="/assets/consent.js?v=3" defer></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100;200;300;400;500;600;700;800;900&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/assets/blog-base.css">
+<link rel="stylesheet" href="/css/theme.css">
+<script src="/_ds/takeany-ai-design-system-365327f4-89d8-418c-be14-ea19a91e4fcb/_ds_bundle.js"></script>
+
+<style>/* design-system accent-preview widget is not site chrome */ .acc-switch{display:none!important}/* section divider standard (Home) */
+section.section:not(.partners){border-top:2px solid var(--ink)!important;position:relative}
+section.section:not(.partners)::before{content:"";position:absolute;top:-2px;left:0;width:92px;height:2px;background:var(--lit)}
+.section-head .section-num{color:var(--lit)!important;border-top:0!important;padding-top:0!important}
+.page-head{border-bottom:0!important}
+.cta-link:hover{text-decoration-thickness:2px!important;color:var(--ink)}
+</style>
+<title>A Practical Guide: How to Build Sovereign AI in Your Company | TakeAny.AI</title>
+<meta name="description" content="A practical guide: how to build sovereign AI in your company. How hyperscalers and the US CLOUD Act expose your trade secrets, why data ownership pays off long-term, and how on-premise LLM orchestration keeps you aligned with current EU law.">
+<meta name="keywords" content="sovereign AI, digital sovereignty, data sovereignty, on-premise LLM, US CLOUD Act, EU AI Act, sovereign cloud, geopatriation, TakeAny.AI, AI orchestration, GDPR, data ownership, practical guide">
+<meta name="author" content="TakeAny.AI">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<link rel="canonical" href="https://takeany.ai/en/blog/digital-sovereignty-ai">
+
+<meta property="og:site_name" content="TakeAny.AI">
+<meta property="og:type" content="article">
+<meta property="og:title" content="A Practical Guide: How to Build Sovereign AI in Your Company">
+<meta property="og:description" content="A practical guide: how to build sovereign AI in your company. How hyperscalers and the US CLOUD Act expose your trade secrets, and how to build AI that stays put.">
+<meta property="og:url" content="https://takeany.ai/en/blog/digital-sovereignty-ai">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="pl_PL">
+<meta property="og:image" content="https://takeany.ai/assets/docs/mission-control-2.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://takeany.ai/assets/docs/mission-control-2.png">
+<meta name="twitter:title" content="A Practical Guide: How to Build Sovereign AI in Your Company">
+<meta name="twitter:description" content="A practical guide: how to build sovereign AI in your company.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://takeany.ai/en/#organization",
+      "name": "TakeAny.AI",
+      "url": "https://takeany.ai/en/",
+      "description": "TakeAny.AI builds an air-gapped, self-hosted control plane for autonomous LLM agents."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://takeany.ai/en/#website",
+      "name": "TakeAny.AI",
+      "url": "https://takeany.ai/en/",
+      "inLanguage": "en",
+      "publisher": { "@id": "https://takeany.ai/en/#organization" }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://takeany.ai/en/#software",
+      "name": "TakeAny.AI",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Linux (KVM required)",
+      "url": "https://takeany.ai/en/",
+      "description": "Air-gapped, self-hosted control plane for autonomous LLM agents with Firecracker microVM isolation, three-role RBAC with per-agent grants, dual-boundary safety firewalls and 14 audit log domains.",
+      "featureList": [
+        "100% air-gapped data sovereignty",
+        "Local model support (vLLM, Ollama, LocalAI, TGI)",
+        "Firecracker microVM isolation boundary",
+        "35 discrete RBAC permissions",
+        "Dual-boundary LLM safety firewalls",
+        "14 log domains for retrieval and token audit"
+      ],
+      "author": { "@id": "https://takeany.ai/en/#organization" }
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "https://takeany.ai/en/blog/digital-sovereignty-ai#post",
+      "headline": "A Practical Guide: How to Build Sovereign AI in Your Company",
+      "description": "A practical guide: how to build sovereign AI in your company. Covers US CLOUD Act exposure, current EU law alignment, and the on-premise LLM model.",
+      "author": { "@id": "https://takeany.ai/en/#organization" },
+      "publisher": { "@id": "https://takeany.ai/en/#organization" },
+      "isPartOf": { "@type": "Blog", "@id": "https://takeany.ai/en/blog#blog", "name": "TakeAny.AI Blog", "url": "https://takeany.ai/en/blog" },
+      "about": { "@id": "https://takeany.ai/en/#software" },
+      "mentions": { "@id": "https://takeany.ai/en/#software" },
+      "articleSection": "Digital sovereignty",
+      "timeRequired": "PT8M",
+      "wordCount": 2655,
+      "image": "https://takeany.ai/assets/docs/mission-control-2.png",
+      "speakable": { "@type": "SpeakableSpecification", "cssSelector": ["h1", ".tldr", ".faq"] },
+      "datePublished": "2026-08-02",
+      "dateModified": "2026-08-02",
+      "inLanguage": "en",
+      "mainEntityOfPage": { "@type": "WebPage", "@id": "https://takeany.ai/en/blog/digital-sovereignty-ai", "isPartOf": { "@id": "https://takeany.ai/en/#website" } },
+      "keywords": "digital sovereignty, on-premise LLM, US CLOUD Act, EU AI Act, sovereign cloud"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://takeany.ai/en/blog/digital-sovereignty-ai#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is digital data sovereignty?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Data sovereignty means your data is subject only to the law of the jurisdiction your business operates in — not the law of a foreign country where your cloud vendor happens to be headquartered. That's a stronger claim than data residency, which only describes where a server physically sits." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is data in a European hyperscaler data center safe from the US CLOUD Act?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Not fully. The US CLOUD Act lets US authorities compel US-headquartered companies to hand over data regardless of where it's physically stored. A server in Germany owned by an American company remains reachable by a US warrant." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does on-premise LLM deployment help with EU AI Act compliance?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. On-premise deployment gives you full control over data, logs and audit trail — exactly what the EU AI Act requires of high-risk systems: technical documentation, human oversight, and the ability to demonstrate compliance across the processing lifecycle." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is data sovereignty only relevant for large companies and the public sector?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. While governments and regulated sectors are the largest buyers today, sovereignty requirements are increasingly flowing down the supply chain. Smaller companies that want to win tenders and land contracts with larger clients need the same thing." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<script>
+(function(){
+  function upd(){ var b=document.getElementById('backTop'); if(!b) return;
+    var on = window.scrollY > 600;
+    b.style.opacity = on ? '1' : '0';
+    b.style.pointerEvents = on ? 'auto' : 'none';
+    b.style.transform = on ? 'translateY(0)' : 'translateY(10px)';
+  }
+  window.addEventListener('scroll', upd, {passive:true});
+  window.addEventListener('resize', upd, {passive:true});
+  document.addEventListener('click', function(e){
+    var a = e.target && e.target.closest && e.target.closest('#backTop');
+    if (a) { e.preventDefault(); window.scrollTo({top:0, behavior:'smooth'}); }
+  });
+  setInterval(upd, 500);
+})();
+</script>
+<style>.lang-picker summary::-webkit-details-marker{display:none}.lang-picker summary::marker{content:""}.lang-picker[open] summary svg:last-of-type{transform:rotate(180deg)}.lang-picker a:hover{background:var(--paper-3);color:var(--ink)}</style>
+<script>
+(function(){
+  if (window.__takeanyNav) return; window.__takeanyNav = 1;
+  document.addEventListener('click', function(e){
+    var t = e.target && e.target.closest && e.target.closest('#navToggle');
+    if (t){ e.preventDefault(); document.body.classList.toggle('mm-open'); return; }
+    var link = e.target && e.target.closest && e.target.closest('.mobile-menu a');
+    if (link) document.body.classList.remove('mm-open');
+  });
+  window.addEventListener('resize', function(){ if (window.innerWidth > 820) document.body.classList.remove('mm-open'); }, {passive:true});
+})();
+</script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&display=swap">
+<style>
+/* editorial article typography (Newsreader) */
+.page-head .echo-sig{display:none}
+.blog .page-head h1{font-family:'Newsreader',Georgia,serif;font-weight:400;font-size:clamp(38px,5.4vw,64px);line-height:1.06;letter-spacing:-0.02em;max-width:26ch}
+.blog .page-head h1 strong{font-weight:600}
+.page-head .lede{font-family:'Newsreader',Georgia,serif;font-style:italic;font-size:23px;line-height:1.5;color:#4A4A4A;max-width:60ch}
+article{max-width:690px}
+article p{font-family:'Newsreader',Georgia,serif;font-size:21px;line-height:1.62;color:#1F1F1F;margin-bottom:24px;text-wrap:pretty}
+article > p:first-of-type{font-size:23px;line-height:1.55;color:var(--ink)}
+article ul li,article ol li{font-family:'Newsreader',Georgia,serif;font-size:20px;line-height:1.6;color:#1F1F1F}
+article ul li{padding-left:26px;margin-bottom:14px}
+article h2{font-family:'Newsreader',Georgia,serif;font-weight:600;font-size:clamp(28px,3.2vw,34px);line-height:1.14;letter-spacing:-0.012em;margin:62px 0 16px}
+article h3{font-family:'Newsreader',Georgia,serif;font-weight:600;font-size:23px;letter-spacing:-0.01em;margin:40px 0 10px}
+article h2 + p,article h3 + p{margin-top:0}
+.tldr ul li,.faq details p,.callout p{font-family:'Newsreader',Georgia,serif;font-size:18px;line-height:1.6}
+.faq summary{font-family:'Newsreader',Georgia,serif;font-size:20px;font-weight:600}
+.pullquote{border-left:0;padding-left:0;text-align:center;border-top:1px solid var(--line-warm);border-bottom:1px solid var(--line-warm);padding:32px 0}
+.pullquote p{font-family:'Newsreader',Georgia,serif;font-size:28px;font-style:italic;line-height:1.32;letter-spacing:-0.01em}
+.related-card h4,.post-body h3,.featured-copy h2{font-family:'Newsreader',Georgia,serif;font-weight:600}
+.blog .page-head{padding-top:64px}
+/* reading progress */
+.read-prog{position:fixed;top:0;left:0;right:0;height:2px;z-index:80;pointer-events:none}
+.read-prog-bar{display:block;height:100%;width:0;background:var(--lit);transition:width 90ms linear}
+@media (max-width:560px){
+  .blog .page-head .lede{font-size:20px}
+  article p{font-size:19.5px}
+  article > p:first-of-type{font-size:21px}
+  article ul li,article ol li{font-size:18.5px}
+}
+</style>
+<script>
+(function(){
+  var bar=null;
+  function upd(){
+    bar=bar||document.querySelector('.read-prog-bar');
+    var a=document.querySelector('article');
+    if(!bar||!a)return;
+    var s=a.offsetTop, e=a.offsetTop+a.offsetHeight-window.innerHeight, y=window.pageYOffset;
+    var p=e>s?(y-s)/(e-s):0;
+    bar.style.width=(Math.max(0,Math.min(1,p))*100).toFixed(2)+'%';
+  }
+  window.addEventListener('scroll',upd,{passive:true});
+  window.addEventListener('resize',upd,{passive:true});
+  document.addEventListener('DOMContentLoaded',upd);
+  setTimeout(upd,300);
+})();
+</script>
+<style>/* mobile pass: shared fixes */
+@media (max-width:720px){
+  html,body{overflow-x:clip}
+  .section-head{display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:12px!important}
+  .section-head > *{grid-column:auto!important;max-width:100%!important;margin-left:0!important;min-width:0}
+  footer .foot-top{grid-template-columns:1fr 1fr!important;gap:32px 20px!important}
+  footer .foot-brand{grid-column:1 / -1}
+  footer .foot-col{min-width:0}
+  footer .foot-col a{display:inline-block;padding:4px 0;overflow-wrap:anywhere}
+  footer .btn{margin-left:0!important}
+  .exp-sum{min-height:44px}
+  .pr-grid,.pr-incl,.pr-addons,.pr-faq,.lic-steps{grid-template-columns:minmax(0,1fr)!important}
+  .pr-grid > *,.pr-incl > *,.pr-addons > *,.pr-faq > *,.uc-card{min-width:0;overflow-wrap:anywhere}
+  #licensing-brief [style*="grid-template-columns"]{grid-template-columns:minmax(0,1fr)!important}
+  #licensing-brief *{min-width:0;overflow-wrap:anywhere}
+}
+@media (max-width:420px){
+  .nav-cta{gap:8px}
+  .nav-cta .btn{padding-left:14px!important;padding-right:14px!important;font-size:13px!important}
+}
+</style>
+</helmet>
+<div class="read-prog" aria-hidden="true"><span class="read-prog-bar"></span></div>
+<div class="nav-wrap" data-screen-label="Nav">
+  <div class="container nav">
+    <a class="wordmark" href="/en/" aria-label="TakeAny.AI"><x-import component-from-global-scope="TakeAnyAIDesignSystem_365327.Logo" height="32px" hint-size="168px,32px"></x-import></a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="/en/use-cases">Use cases</a>
+      <a href="/en/product">Product</a>
+      <a href="/en/pricing">Pricing</a>
+      <a href="/en/docs">Docs</a>
+      <a href="/en/blog" class="active">Blog</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-primary" href="/en/get-started">Get started <span class="arrow">→</span></a>
+      <button id="navToggle" class="nav-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="mobile-menu">
+    <div class="mm-inner">
+      <nav class="mm-links" aria-label="Mobile">
+        <a href="/en/use-cases">Use cases</a>
+        <a href="/en/product">Product</a>
+      <a href="/en/pricing">Pricing</a>
+        <a href="/en/docs">Docs</a>
+        <a href="/en/blog">Blog</a>
+      </nav>
+      <div class="mm-cta">
+        <a class="btn btn-primary" href="/en/get-started">Get started <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<header class="page-head">
+  <div class="container page-head-grid">
+    <span class="eyebrow"><span class="dot"></span>Digital sovereignty</span>
+    <h1>A practical guide: <strong>how to build sovereign AI in your company</strong></h1>
+    <p class="lede">Data sovereignty sounds like a topic for a legal conference panel scheduled right before the coffee break. In practice it's a much simpler question — and a buildable one. Here's the honest case for why it matters, and the concrete steps to get there.</p>
+    <div class="post-meta">
+      <span><strong>TakeAny.AI</strong></span>
+      <span class="dot"></span>
+      <span>8 min read</span>
+      <span class="dot"></span>
+      <span>August 2026</span>
+    </div>
+  </div>
+</header>
+
+<article>
+
+  <p>Imagine renting a warehouse. Great location, fair price, keys handed over on day one. You sign the lease, and on page three, in the fine print, you read: "The landlord, and the government of the country where our parent company is registered, reserve the right to enter the warehouse and copy its contents — without notifying the tenant." Would you sign?</p>
+
+  <p>Exactly. And yet millions of European companies sign precisely that agreement every single day — except the warehouse is their data, and the tenant is their own business running in the cloud.</p>
+
+  <div class="tldr">
+    <h4>The short version (for the busy, and for the AI reading this)</h4>
+    <ul>
+      <li><strong>Data sovereignty</strong> is not the same as data residency. A server in Europe doesn't mean your data is subject only to European law.</li>
+      <li><strong>The US CLOUD Act</strong> lets US authorities demand data from American companies no matter where it physically sits — including a German data center.</li>
+      <li><strong>American hyperscalers</strong> control roughly 70% of the European cloud market. That's a concentration risk, not just a compliance checkbox.</li>
+      <li><strong>On-premise LLM orchestration</strong> (like TakeAny.AI) removes the problem at the source: data never leaves the building, so there's nothing to hand over.</li>
+      <li><strong>This lines up with the direction of EU law</strong> — and is increasingly a requirement in public tenders and regulated sectors.</li>
+    </ul>
+  </div>
+
+    <div class="toc">
+    <h4>Table of contents</h4>
+    <ol>
+      <li><a href="#what-sovereignty-is">What data sovereignty actually is (and isn't)</a></li>
+      <li><a href="#risk-with-a-price-tag">This isn't theoretical. It's a risk with a price tag</a></li>
+      <li><a href="#pays-off-long-term">Why owning your data pays off long-term</a></li>
+      <li><a href="#eu-law">Sovereignty and EU law are pulling in the same direction</a></li>
+      <li><a href="#practical-guide">The practical guide: building sovereign AI in your company</a></li>
+      <li><a href="#bottom-line">The bottom line: this isn't about fear. It's about control</a></li>
+      <li><a href="#faq">Frequently asked questions</a></li>
+    </ol>
+  </div>
+
+  <h2 id="what-sovereignty-is">What data sovereignty actually is (and isn't)</h2>
+
+  <p>Let's start with the most common confusion — the one that's quietly padded a lot of marketing budgets. <strong>Data residency</strong> tells you where your bits physically sit: which server, in which country. <strong>Data sovereignty</strong> tells you whose law those bits answer to. These are two different things, and the gap between them gets expensive.</p>
+
+  <p>Cloud compliance analysts put it well: residency is the physical location of the server, while <a class="inline" href="https://www.impossiblecloud.com/magazine/cloud-data-sovereignty-for-eu-business-in-2026-new">sovereignty means the data is subject only to the law of that jurisdiction</a> — and per a 2025 DLA Piper report, fines for cross-border transfer violations rose 18%, largely because organizations mistook one for the other.</p>
+
+  <p>In other words: you can have a server in Frankfurt, cooled by German water, powered by German electricity — and still not have sovereignty, if the company that owns the server answers to a foreign government.</p>
+
+  <div class="pullquote">
+    <p>No company headquartered in the United States can guarantee the US government will never compel it to hand over your data.</p>
+  </div>
+
+  <p>That's not a scare tactic — it's simply how US law works, and it's worth pinning above every IT director's desk: for critical data, an American-owned vendor can never fully remove that exposure, wherever its servers happen to sit.</p>
+
+  <h2 id="risk-with-a-price-tag">This isn't theoretical. It's a risk with a price tag</h2>
+
+  <p>"Sure, sure," you might say, "but nobody's coming for our screw-order data." Maybe not. The problem is sovereignty was never about whether someone <em>will</em> come. It's about whether they <em>can</em> — and what happens when they do.</p>
+
+  <p>Take a real example. In July 2025, Indian energy company Nayara Energy claimed that <a class="inline" href="https://www.datacenterdynamics.com/en/news/europe-spending-on-sovereign-cloud-infrastructure-to-triple-from-2025-2027-gartner/">Microsoft cut off its cloud services</a> because of EU sanctions on a related entity. Imagine waking up one morning to find your CRM, email and invoicing systems simply stop working — not from an outage, but from a decision made somewhere far away, one you had no say in. That's not a movie plot. That's vendor risk.</p>
+
+  <h3>Where it actually hurts</h3>
+
+  <ul>
+    <li><strong>Trade secrets.</strong> Your pricing model, your key account list, your formulas, your R&D roadmap — if they pass through someone else's cloud and someone else's LLM, they leave your control. And a leaked trade secret can't be un-leaked.</li>
+    <li><strong>Competitive edge.</strong> The prompt your sales team uses to mine ten years of CRM history is your know-how. Sending it to a third-party API is like dictating your own strategy through an open window.</li>
+    <li><strong>Business continuity.</strong> When your ability to operate depends on a vendor subject to a foreign sanctions regime, "uptime" stops being a technical concern and becomes a geopolitical one.</li>
+  </ul>
+
+  <figure>
+    <div class="fig-frame">
+      <svg font-family="Geist, sans-serif" viewBox="0 0 760 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Chart: about 70 percent of the European cloud market is held by three American hyperscalers">
+        
+        <rect width="760" height="300" fill="#FFFFFF"/>
+        <text x="40" y="46" font-size="19" font-weight="500" fill="#0A0A0A" letter-spacing="-0.5">Who controls the European cloud?</text>
+        <text x="40" y="70" font-size="12" letter-spacing="0.04em" fill="#6B6B6B">MARKET SHARE — EUROPEAN CLOUD, 2026</text>
+
+        <rect x="40" y="108" width="680" height="50" fill="#F7F5FA" stroke="#E6E6E6"/>
+        <rect x="40" y="108" width="476" height="50" fill="#0A0A0A"/>
+        <text x="60" y="139" font-size="17" font-weight="600" fill="#FFFFFF">≈70%</text>
+        <text x="152" y="139" font-size="13.5" font-weight="500" fill="#FFFFFF">AWS · Microsoft Azure · Google Cloud (US-owned)</text>
+        <text x="536" y="139" font-size="13.5" font-weight="500" fill="#6B6B6B">≈30% everyone else</text>
+
+        <line x1="40" y1="196" x2="720" y2="196" stroke="#E6E6E6" stroke-width="1"/>
+        <text x="40" y="228" font-size="14" fill="#0A0A0A" font-weight="600">Three vendors. One jurisdiction. Your data.</text>
+        <text x="40" y="252" font-size="13" fill="#6B6B6B">Concentration risk: untangling existing workloads is a multi-year project, not a weekend one.</text>
+      </svg>
+    </div>
+    <figcaption>
+      Figure 1 — Three American hyperscalers (AWS, Azure, Google Cloud) hold roughly 70% of the European cloud market.
+      <span class="src">Source: Dataconomy, "Why European workloads are leaving US cloud in 2026" (June 2026) — <a href="https://dataconomy.com/2026/06/08/why-european-workloads-are-leaving-us-cloud-in-2026/">dataconomy.com</a></span>
+    </figcaption>
+  </figure>
+
+  <h2 id="pays-off-long-term">Why owning your data pays off long-term</h2>
+
+  <p>Sovereignty is easy to sell through fear ("watch out, they're listening!"). We don't do that at TakeAny.AI — because the real argument is much better, and it's simply: <strong>this pays off</strong>.</p>
+
+  <p>The market is already voting with its budget. Gartner projects <a class="inline" href="https://www.gartner.com/en/newsroom/press-releases/2026-02-09-gartner-says-worldwide-sovereign-cloud-iaas-spending-will-total-us-dollars-80-billion-in-2026">global sovereign cloud spending will hit $80 billion in 2026, a 35.6% jump</a>. Europe's growth is even sharper — from $6.9B in 2025 to $12.6B in 2026, an 83% increase, with Europe set to overtake North America in 2027.</p>
+
+  <figure>
+    <div class="fig-frame">
+      <svg font-family="Geist, sans-serif" viewBox="0 0 760 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bar chart: European sovereign cloud spend grows from 6.9 billion dollars in 2025 to 23.1 billion in 2027">
+        
+        <rect width="760" height="320" fill="#FFFFFF"/>
+        <text x="40" y="46" font-size="19" font-weight="500" fill="#0A0A0A" letter-spacing="-0.5">Europe is betting on sovereign cloud</text>
+        <text x="40" y="70" font-size="12" letter-spacing="0.04em" fill="#6B6B6B">SOVEREIGN CLOUD IAAS SPEND, EUROPE ($BN)</text>
+
+        <line x1="40" y1="270" x2="720" y2="270" stroke="#E6E6E6" stroke-width="1"/>
+
+        <rect x="120" y="206" width="120" height="64" fill="#DED8E6"/>
+        <text x="180" y="197" text-anchor="middle" font-size="16" font-weight="600" fill="#6B6B6B">6.9</text>
+        <text x="180" y="292" text-anchor="middle" font-size="13" font-weight="500" fill="#0A0A0A">2025</text>
+
+        <rect x="320" y="154" width="120" height="116" fill="#4A4A4A"/>
+        <text x="380" y="145" text-anchor="middle" font-size="16" font-weight="600" fill="#0A0A0A">12.6</text>
+        <text x="380" y="292" text-anchor="middle" font-size="13" font-weight="500" fill="#0A0A0A">2026</text>
+
+        <rect x="520" y="58" width="120" height="212" fill="#0A0A0A"/>
+        <text x="580" y="49" text-anchor="middle" font-size="16" font-weight="600" fill="#0A0A0A">23.1</text>
+        <text x="580" y="292" text-anchor="middle" font-size="13" font-weight="500" fill="#0A0A0A">2027</text>
+
+        <text x="380" y="124" text-anchor="middle" font-size="11" font-weight="600" fill="#0A0A0A">+83% YoY</text>
+        <text x="580" y="34" text-anchor="middle" font-size="11" font-weight="600" fill="#0A0A0A">Europe &gt; North America</text>
+      </svg>
+    </div>
+    <figcaption>
+      Figure 2 — European sovereign cloud spending is nearly doubling year over year, and is projected to overtake North America in 2027.
+      <span class="src">Source: Gartner, "Worldwide Sovereign Cloud IaaS Spending Will Total $80 Billion in 2026" (Feb 2026) — <a href="https://www.gartner.com/en/newsroom/press-releases/2026-02-09-gartner-says-worldwide-sovereign-cloud-iaas-spending-will-total-us-dollars-80-billion-in-2026">gartner.com</a></span>
+    </figcaption>
+  </figure>
+
+  <p>Gartner calls this shift <strong>"geopatriation"</strong> — data and applications moving back from global clouds to local ones. The forecast: by 2029, companies will move <a class="inline" href="https://www.computerworld.com/article/4129552/gartner-european-spending-on-sovereign-cloud-iaas-to-nearly-double-in-2026.html">about 20% of existing workloads from hyperscalers to local providers</a>, driven by sovereignty concerns specifically.</p>
+
+  <p>What does that mean for you, if you're not a government or a major bank? Three very concrete things:</p>
+
+  <ul>
+    <li><strong>You win tenders.</strong> Public sector buyers increasingly write sovereignty clauses directly into specifications. If you don't meet them, you don't get to bid.</li>
+    <li><strong>You get into supply chains.</strong> Large customers in regulated sectors are starting to require sovereignty from their own vendors. Companies that treat this as "a public-sector thing" <a class="inline" href="https://labs.cloudsecurityalliance.org/research/eu-tech-sovereignty-cloud-ai-enterprise-risk-v1-0-csa-styled/">will find themselves at a disadvantage in procurement and contracting in regulated industries</a>.</li>
+    <li><strong>You cut the cost of risk.</strong> A single dependency on one American hyperscaler is increasingly showing up as an audit finding in EU financial-sector reviews — a problem you now have to solve.</li>
+  </ul>
+
+  <h2 id="eu-law">Sovereignty and EU law are pulling in the same direction</h2>
+
+  <p>Here's the best part. Usually "regulatory compliance" means more work, more cost, and another lawyer on retainer. With sovereignty, it's the opposite: by doing the thing that's good for your business, you happen to end up aligned with the direction the whole of European law is moving in.</p>
+
+  <p>A quick tour of the landscape (no jargon, promise):</p>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>Regulation</th><th>What it does</th><th>Why on-premise helps</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>EU Data Act</td><td>Mandates data portability and eliminates vendor lock-in; fully applicable since 2025.</td><td>Keeping data in-house means there's nothing to "unstick" yourself from.</td></tr>
+        <tr><td>EU AI Act</td><td>Requires documentation, human oversight and audit trails for high-risk systems.</td><td>Full log and audit visibility, because everything happens on your own ground.</td></tr>
+        <tr><td>GDPR</td><td>Protects personal data; penalties for improper transfers keep rising.</td><td>Data never leaves the jurisdiction, so the transfer problem disappears.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>None of this is a future problem — it already applies today</h3>
+
+  <div class="callout">
+    <span class="k">Already in force, right now</span>
+    <p>GDPR has governed personal data transfers since 2018. The EU Data Act's portability and lock-in rules became fully applicable in 2025. The EU AI Act's human-oversight and documentation duties for high-risk systems, and its Article 4 AI-literacy obligation, are already live.</p>
+    <p>You don't need to wait for a future ruling or a new package to act on this. The obligations that matter for a sovereignty decision are already binding today.</p>
+  </div>
+
+  <p>The takeaway is both simple and convenient: an architecture that keeps data, logs and the model with you satisfies these requirements <em>by definition</em>, not as a bolted-on module afterward. Sovereignty isn't a compliance tax — it's a shortcut to compliance.</p>
+
+  <figure>
+    <div class="fig-frame">
+      <svg font-family="Geist, sans-serif" viewBox="0 0 760 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram of three sovereignty tiers: EU-based, hyperscaler sovereign variant, and full on-premise isolation">
+        
+        <rect width="760" height="300" fill="#FFFFFF"/>
+        <text x="40" y="46" font-size="19" font-weight="500" fill="#0A0A0A" letter-spacing="-0.5">Not every "sovereign cloud" is sovereign</text>
+        <text x="40" y="70" font-size="12" letter-spacing="0.04em" fill="#6B6B6B">CLOUD ACT EXPOSURE BY DEPLOYMENT TIER</text>
+
+        <rect x="40" y="94" width="680" height="56" fill="#FAF8FC" stroke="#E6E6E6"/>
+        <text x="60" y="115" font-size="14.5" font-weight="600" fill="#0A0A0A">"EU-based" — server in the EU, non-EU owner</text>
+        <text x="60" y="135" font-size="12.5" fill="#6B6B6B">GDPR-compliant on paper, legally exposed to extraterritorial warrants.</text>
+        <text x="700" y="126" text-anchor="end" font-size="11" font-weight="600" fill="#0A0A0A">HIGH EXPOSURE</text>
+
+        <rect x="40" y="156" width="680" height="56" fill="#FAF8FC" stroke="#E6E6E6"/>
+        <text x="60" y="177" font-size="14.5" font-weight="600" fill="#0A0A0A">Hyperscaler "sovereign" variant — US parent company</text>
+        <text x="60" y="197" font-size="12.5" fill="#6B6B6B">EU residency, but residual CLOUD Act exposure. Typically a 10–30% price premium.</text>
+        <text x="700" y="188" text-anchor="end" font-size="11" font-weight="600" fill="#0A0A0A">PARTIAL</text>
+
+        <rect x="40" y="218" width="680" height="56" fill="#0A0A0A"/>
+        <text x="60" y="239" font-size="14.5" font-weight="600" fill="#FFFFFF">On-premise / full isolation — data never leaves the building</text>
+        <text x="60" y="259" font-size="12.5" fill="#9A9A9A">The only tier that genuinely eliminates CLOUD Act exposure. This is where TakeAny.AI runs.</text>
+        <text x="700" y="250" text-anchor="end" font-size="11" font-weight="600" fill="#FFFFFF">FULL SOVEREIGNTY</text>
+      </svg>
+    </div>
+    <figcaption>
+      Figure 3 — A hyperscaler's "sovereign cloud" typically leaves residual CLOUD Act exposure via its US parent. Full sovereignty requires isolation or on-premise deployment.
+      <span class="src">Source: SoftwareSeni, "The European Sovereign Cloud Provider Landscape in 2026" (April 2026) — <a href="https://www.softwareseni.com/the-european-sovereign-cloud-provider-landscape-in-2026-who-exists-and-what-they-offer/">softwareseni.com</a></span>
+    </figcaption>
+  </figure>
+
+  <h2 id="practical-guide">The practical guide: building sovereign AI in your company</h2>
+
+  <p>Enough theory. Here's the concrete path we walk clients through — from "we want AI but we're worried about our data" to "we have AI and we sleep fine." No ripping out existing IT, no rewriting anything.</p>
+
+  <ol>
+    <li><strong>Inventory where your data actually lives.</strong> Start with the question: which system, in which cloud, under whose jurisdiction? This exercise alone is usually a discovery in itself — few people realize their "European" cloud has an American owner.</li>
+    <li><strong>Separate critical data from the rest.</strong> Not everything needs the same regime. Trade secrets, personal data, R&D and knowledge locked in legacy systems are candidates for full sovereignty. The cafeteria menu can stay in the cloud.</li>
+    <li><strong>Choose an on-premise deployment model for the AI layer.</strong> The simplest path: run your LLM and RAG orchestration locally — on your own server, or even a workstation. Data goes into the model and comes back out without ever leaving your network.</li>
+    <li><strong>Use BYOLLM instead of one external API.</strong> "Bring Your Own LLM" means matching the model to the task — local (Mistral, Llama) where confidentiality matters, remote where there's no sensitive data. Flexibility without lock-in.</li>
+    <li><strong>Turn on observability and audit trails from day one.</strong> Full logs of every model call aren't just compliance — they're your black box when someone asks "where did that answer come from?" With on-premise, this comes naturally, because it all happens on your ground.</li>
+    <li><strong>Control token costs locally.</strong> Sovereignty is also budget sovereignty. Keeping orchestration in-house means you see every token and set limits, instead of waiting for a surprise invoice.</li>
+    <li><strong>Document it as a sales advantage.</strong> Once you have sovereign AI — say so. In tenders and security questionnaires, "our data never leaves our own infrastructure" is a sentence that wins contracts.</li>
+  </ol>
+
+  <div class="pullquote">
+    <p>Sovereignty isn't about doing everything yourself. It's about having strategic options.</p>
+  </div>
+
+  <h2 id="bottom-line">The bottom line: this isn't about fear. It's about control</h2>
+
+  <p>European companies aren't fleeing hyperscalers because someone scared them. They're leaving because they did the math. Data sovereignty has moved off legal-conference agendas and become <a class="inline" href="https://dataconomy.com/2026/06/08/why-european-workloads-are-leaving-us-cloud-in-2026/">a procurement decision made every week across the continent</a>. Regulation is heading the same way. The market is heading the same way. The question isn't "if" — it's "when, for you."</p>
+
+  <p>Good news: you don't need to replace your ERP from 1998, or rewrite a CRM with no API. You just need to add an AI layer that stays with you. Your systems already hold decades of business knowledge — TakeAny.AI amplifies it. Safely, on your own ground.</p>
+
+  <h2 id="faq">Frequently asked questions</h2>
+  <div class="faq">
+    <details>
+      <summary>What's the difference between data sovereignty and data residency?</summary>
+      <p>Residency describes where data physically sits (country, server). Sovereignty describes whose law it's subject to. A server in Germany owned by an American company gives you European residency, but not full sovereignty — because the owner still answers to US law.</p>
+    </details>
+    <details>
+      <summary>Is data in a European data center protected from the US CLOUD Act?</summary>
+      <p>Not necessarily. The US CLOUD Act lets US authorities demand data from American companies regardless of where it's physically stored. If the provider has a US parent, residual exposure remains even though the server sits in the EU.</p>
+    </details>
+    <details>
+      <summary>Does on-premise LLM deployment help with EU AI Act compliance?</summary>
+      <p>Yes. Local deployment gives you full control over data, logs and audit trail — exactly what the EU AI Act requires of high-risk systems: documentation, human oversight, and the ability to demonstrate compliance across the whole processing lifecycle.</p>
+    </details>
+    <details>
+      <summary>Is sovereignty only relevant for large companies and the public sector?</summary>
+      <p>No. While governments and regulated sectors are the largest buyers today, sovereignty requirements are increasingly flowing down the supply chain. Smaller companies that want to win tenders and land contracts with larger clients need the same thing.</p>
+    </details>
+  </div>
+
+  <div class="callout" id="about-takeany">
+    <span class="k">About TakeAny.AI</span>
+    <p><strong>TakeAny.AI</strong> is an air-gapped, self-hosted control plane for autonomous LLM agents. It runs as a single Go binary against a local SQLite database, so agents, models, documents and logs all stay inside your perimeter — against local model engines (vLLM, Ollama, LocalAI, TGI) or cloud APIs, with zero outbound telemetry.</p>
+    <p>Running the whole control plane on your own hardware is what makes sovereignty verifiable rather than contractual. See <a class="inline" href="/en/product">what TakeAny.AI controls host-side</a>, the <a class="inline" href="/en/docs">architecture and three-role RBAC model with per-agent grants</a>, or <a class="inline" href="/en/how-we-differ">how it differs from workflow-automation platforms</a>.</p>
+  </div>
+
+  <div class="related">
+    <h3>Related articles</h3>
+    <div class="related-grid">
+      <a class="related-card" href="/en/blog/true-cost-of-llm">
+        <span class="rk">Cost of AI in business</span>
+        <h4>What Does AI Actually Cost Your Business? The Real TCO of LLMs</h4>
+        <p>Tokens cost pennies. That doesn't mean AI is cheap — how agents can burn a year's budget in four months.</p>
+        <span class="rd">Read more →</span>
+      </a>
+      <a class="related-card" href="/en/blog">
+        <span class="rk">TakeAny.AI blog</span>
+        <h4>See all articles</h4>
+        <p>Sovereignty, cost and agent architecture — practical knowledge for teams building resilient AI deployments.</p>
+        <span class="rd">Browse the blog →</span>
+      </a>
+    </div>
+  </div>
+
+</article>
+
+<section class="cta-strip plum">
+  <div class="container cta-grid">
+    <h2>Amplify everything. <strong>Compromise nothing</strong></h2>
+    <p class="sub">Agents get the power. You keep the keys.</p>
+    <div class="cta-bts">
+      <a class="btn btn-lg ta-btn-light" href="/en/get-started">Get started <span class="arrow">→</span></a>
+      <a class="cta-link" href="/en/get-started#talk" style="display:inline-flex;align-items:center;align-self:center;gap:6px;padding:10px 4px;font-size:16px;font-weight:500;color:#fff;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px;background:none;border:0">Talk to us</a>
+    </div>
+  </div>
+</section>
+
+<footer data-screen-label="Footer">
+  <div class="container">
+    <div class="foot-top" style="grid-template-columns:1.25fr 1fr 1.35fr 0.9fr">
+      <div class="foot-brand">
+        <a class="wordmark" href="/en/" aria-label="TakeAny.AI"><x-import component-from-global-scope="TakeAnyAIDesignSystem_365327.Logo" height="36px" hint-size="189px,36px"></x-import></a>
+        <details class="lang-picker" style="position:relative;margin-top:14px;width:max-content">
+          <summary style="display:flex;align-items:center;gap:8px;cursor:pointer;list-style:none;font-size:14px;color:var(--ink);padding:6px 0"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><circle cx="8" cy="8" r="6.2"></circle><path d="M1.9 8h12.2"></path><path d="M8 1.8c1.7 1.7 2.6 3.8 2.6 6.2S9.7 12.5 8 14.2C6.3 12.5 5.4 10.4 5.4 8S6.3 3.5 8 1.8Z"></path></svg><span>English</span><svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" style="margin-left:2px;opacity:.7"><path d="M3 4.8 6 7.8l3-3"></path></svg></summary>
+          <div role="group" aria-label="Language" style="position:absolute;left:0;bottom:calc(100% + 8px);z-index:20;min-width:168px;background:var(--paper);border:1px solid var(--line);border-radius:4px;box-shadow:0 6px 20px rgba(0,0,0,.08);overflow:hidden;display:flex;flex-direction:column">
+            <a href="/en/blog/digital-sovereignty-ai" hreflang="en" style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 12px;font-size:14px;color:var(--ink);text-decoration:none;background:var(--paper-3)">English<span style="font-size:11px;font-family:var(--font-mono)">✓</span></a>
+            <a href="/pl/blog/digital-sovereignty-ai" hreflang="pl" style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 12px;font-size:14px;color:var(--muted);text-decoration:none;background:transparent">Polski</a>
+          </div>
+        </details>
+        <p>The control layer for AI agents. Runs on your infrastructure.</p>
+      </div>
+      <div class="foot-col">
+        <h6>Product</h6>
+        <ul>
+          <li><a href="/en/product">Overview</a></li>
+          <li><a href="/en/use-cases">Use cases</a></li>
+          <li><a href="/en/product#security">Security</a></li>
+          <li><a href="/en/product#cost">Cost control</a></li>
+          <li><a href="/en/product#models">Model Selection</a></li>
+          <li><a href="/en/pricing">Pricing</a></li>
+          <li><a href="/en/how-we-differ">How we differ</a></li>
+          <li><a href="/en/alternative-n8n">TakeAny.AI vs n8n</a></li>
+          <li><a href="/en/alternative-dify">TakeAny.AI vs Dify.ai</a></li>
+          <li><a href="/en/alternative-flowise-langflow">TakeAny.AI vs Flowise / Langflow</a></li>
+          <li><a href="/en/alternative-lindy">TakeAny.AI vs Lindy.ai</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h6>Use cases</h6>
+        <ul>
+          <li><a href="/en/use-cases/model-freedom">Testing Open-Weight LLMs (vLLM / Ollama)</a></li>
+          <li><a href="/en/use-cases/self-hosted-rag-assistant">Building Local RAG on Confidential Files</a></li>
+          <li><a href="/en/use-cases/chatbot-widget">Answering Customer Questions from Your Content</a></li>
+          <li><a href="/en/use-cases/local-gpu-inference">Unboxing &amp; Accelerating Local GPUs</a></li>
+          <li><a href="/en/use-cases/ai-for-erp-crm">Supercharging ERP &amp; CRM Systems</a></li>
+          <li><a href="/en/use-cases/rfp-automation">Automating Technical RFI &amp; RFP Workflows</a></li>
+          <li><a href="/en/use-cases/build-ai-agents">Sandboxing Web Browsing Agents</a></li>
+          <li><a href="/en/use-cases/build-ai-agents">Enforcing EU AI Act</a></li>
+          <li><a href="/en/use-cases/white-label-ai">Earning on AI Under Your Own Brand</a></li>
+          <li><a href="/en/get-started#form">Your AI idea <span class="arrow">→</span></a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h6>Get going</h6>
+        <ul>
+          <li><a href="/en/get-started">Get started</a></li>
+          <li><a href="/en/docs">Docs</a></li>
+          <li><a href="/en/blog">Blog</a></li>
+          <li><a href="/en/get-started#talk">Talk to us</a></li>
+          <li><a href="/en/partners">Partnerships</a></li>
+        </ul>
+      </div>
+    </div>
+    <div style="margin:8px 0 28px;min-height:64px;background:var(--surface-plum);border-radius:14px;padding:10px 12px 10px 20px;display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px">
+      <img src="/_ds/takeany-ai-design-system-365327f4-89d8-418c-be14-ea19a91e4fcb/assets/logo/takeany-logo-ube-butter.svg" alt="TakeAny.AI" width="137" height="26" style="height:26px;width:auto;display:block">
+      <span style="width:1px;height:28px;background:rgba(255,255,255,.2)"></span>
+      <div style="position:relative;flex:1 1 360px;min-width:0">
+        <button type="button" onClick="{{ abToggle }}" aria-expanded="{{ abOpenStr }}" style="width:100%;max-width:640px;display:flex;align-items:center;gap:10px;min-height:44px;padding:0 16px;border:1px solid rgba(255,255,255,.3);border-radius:999px;background:transparent;color:#fff;font-size:14.5px;cursor:pointer;text-align:left">
+          <span style="font-family:var(--font-mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-on-plum-muted);white-space:nowrap">Use AI to</span>
+          <span style="flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ abCur.full }}</span>
+          <span style="color:var(--text-on-plum-muted)">{{ abCaret }}</span>
+        </button>
+        <ul style="display:{{ abListDisplay }};position:absolute;left:0;bottom:52px;width:100%;max-width:640px;margin:0;padding:0;list-style:none;background:#fff;border:1px solid var(--ink);border-radius:16px;overflow:hidden;z-index:30">
+          <sc-for list="{{ abItems }}" as="it" hint-placeholder-count="5">
+            <li style="border-bottom:1px solid var(--line)"><a href="{{ it.href }}" onClick="{{ it.pick }}" style="display:grid;grid-template-columns:34px minmax(0,1fr);gap:10px;align-items:baseline;min-height:52px;padding:14px 18px;color:var(--ink);text-decoration:none;background:{{ it.bg }}" style-hover="background:var(--ube-lavender-50)"><span style="font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;color:var(--lit-deep)">{{ it.n }}</span><span style="font-size:15px;line-height:1.35">{{ it.full }}</span></a></li>
+          </sc-for>
+        </ul>
+      </div>
+      <a class="btn btn-accent" href="/en/get-started#form" style="margin-left:auto">Deliver Your AI idea <span class="arrow">→</span></a>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 TakeAny.AI</span>
+      <span><a href="/llms.txt">llms.txt</a> · <a href="/en/legal#privacy">Privacy</a> · <a href="/en/legal#terms">Terms</a> · <a href="/en/legal#dpa">DPA</a> · <a href="#" data-cookie-settings="">Cookie settings</a></span>
+    </div>
+  </div>
+</footer>
+
+<a id="backTop" href="#" aria-label="Back to top" title="Back to top" style="position:fixed;right:22px;bottom:28px;z-index:70;display:flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:50%;background:var(--paper);border:1px solid var(--line);color:var(--muted);text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,.06);opacity:0;pointer-events:none;transform:translateY(10px);transition:opacity 200ms ease,transform 200ms ease,color 160ms ease,border-color 160ms ease" onMouseEnter="this.style.color='var(--ink)';this.style.borderColor='var(--ink)'" onMouseLeave="this.style.color='var(--muted)';this.style.borderColor='var(--line)'"><svg width="15" height="15" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 11.5V2.5"></path><path d="M3 6.3 7 2.3l4 4"></path></svg></a>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() { return { ...this.__rv0(), ...this.__ab() }; }
+  __ab() {
+    const L = [
+          { n: '01', full: 'Run RAG on documents that can’t leave the building', href: '/en/use-cases/self-hosted-rag-assistant' },
+          { n: '02', full: 'Turn the GPU servers you bought into a secure AI platform', href: '/en/use-cases/local-gpu-inference' },
+          { n: '03', full: 'Let agents into your ERP even when it is ageing and has no API', href: '/en/use-cases/ai-for-erp-crm' },
+          { n: '04', full: 'Juggle LLM models, let open-weight take on the frontier labs', href: '/en/use-cases/model-freedom' },
+          { n: '05', full: 'Sell AI to your clients under your own brand', href: '/en/use-cases/white-label-ai' },
+          { n: '06', full: 'Deliver Your AI idea', href: '/en/get-started#form', hl: true }
+        ];
+    const ab = this.state.ab || 0, open = !!this.state.abOpen;
+    return {
+      abCur: L[ab], abOpenStr: open ? 'true' : 'false', abCaret: open ? '▴' : '▾', abListDisplay: open ? 'block' : 'none',
+      abToggle: () => this.setState(s => ({ abOpen: !s.abOpen })),
+      abItems: L.map((x, k) => ({ ...x, bg: x.hl ? 'var(--ube-lavender-100)' : k === ab ? 'var(--ube-lavender-50)' : '#fff', pick: () => this.setState({ ab: k, abOpen: false }) }))
+    };
+  }
+  state = { navOpen: false };
+  componentDidMount() {
+    document.documentElement.lang = 'en';
+    document.body.classList.add('blog');
+  }
+  __rv0() {
+    const navOpen = this.state.navOpen;
+    return {
+      toggleMobileNav: () => this.setState(s => ({ navOpen: !s.navOpen })),
+      mobileMenuStyle: { opacity: navOpen ? 1 : 0, pointerEvents: navOpen ? 'auto' : 'none' }
+    };
+  }
+}
+</script>
+</body>
+</html>

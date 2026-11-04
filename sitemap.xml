@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://takeany.ai/pl/</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://takeany.ai/pl/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://takeany.ai/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://takeany.ai/en/"/>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://takeany.ai/en/</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://takeany.ai/pl/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://takeany.ai/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://takeany.ai/en/"/>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://takeany.ai/pl/product</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://takeany.ai/pl/product"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://takeany.ai/en/product"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://takeany.ai/en/product"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://takeany.ai/en/product</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://takeany.ai/pl/product"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://takeany.ai/en/product"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://takeany.ai/en/product"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://takeany.ai/pl/how-we-differ</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://takeany.ai/pl/how-we-differ"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://takeany.ai/en/how-we-differ"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://takeany.ai/en/how-we-differ"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://takeany.ai/en/how-we-differ</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://takeany.ai/pl/how-we-differ"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://takeany.ai/en/how-we-differ"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://takeany.ai/en/how-we-differ"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://takeany.ai/pl/use-cases</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://takeany.ai/pl/use-cases"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://takeany.ai/en/use-cases"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://takeany.ai/en/use-cases"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://takeany.ai/en/use-cases</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://takeany.ai/pl/use-cases"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://takeany.ai/en/use-cases"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://takeany.ai/en/use-cases"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://takeany.ai/pl/use-cases/build-ai-agents</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://takeany.ai/pl/use-cases/build-ai-agents"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://takeany.ai/en/use-cases/build-ai-agents"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://takeany.ai/en/use-cases/build-ai-agents"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://takeany.ai/en/use-cases/build-ai-agents</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://takeany.ai/pl/use-cases/build-ai-agents"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://takeany.ai/en/use-cases/build-ai-agents"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://takeany.ai/en/use-cases/build-ai-agents"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://takeany.ai/pl/use-cases/self-hosted-rag-assistant</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://takeany.ai/pl/use-cases/self-hosted-rag-assistant"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://takeany.ai/en/use-cases/self-hosted-rag-assistant"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://takeany.ai/en/use-cases/self-hosted-rag-assistant"/>
+    <changefreq>null</changefreq>
+    <priority>null</priority>
+  </url>
+  <url>
+    <loc>https://takeany.ai/en/use-cases/self-hosted-rag-assistant</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://takeany.ai/pl/use-cases/self-hosted-rag-assistant"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://takeany.ai/en/use-cases/self-hosted-rag-assistant"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://takeany.ai/en/use-cases/self-hosted-rag-assistant"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://takeany.ai/pl/use-cases/chatbot-widget</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://takeany.ai/pl/use-cases/chatbot-widget"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://takeany.ai/en/use-cases/chatbot-widget"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://takeany.ai/en/use-cases/chatbot-widget"/>
+    <changefreq>null</changefreq>
+    <priority>null</priority>
+  </url>
+  <url>
+    <loc>https://takeany.ai/en/use-cases/chatbot-widget</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://takeany.ai/pl/use-cases/chatbot-widget"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://takeany.ai/en/use-cases/chatbot-widget"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://takeany.ai/en/use-cases/chatbot-widget"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://takeany.ai/pl/use-cases/local-gpu-inference</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://takeany.ai/pl/use-cases/local-gpu-inference"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://takeany.ai/en/use-cases/local-gpu-inference"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://takeany.ai/en/use-cases/local-gpu-inference"/>
+    <changefreq>null</changefreq>
+    <priority>null</priority>
+  </url>
+  <url>
+    <loc>https://takeany.ai/en/use-cases/local-gpu-inference</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://takeany.ai/pl/use-cases/local-gpu-inference"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://takeany.ai/en/use-cases/local-gpu-inference"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://takeany.ai/en/use-cases/local-gpu-inference"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://takeany.ai/pl/use-cases/ai-for-erp-crm</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://takeany.ai/pl/use-cases/ai-for-erp-crm"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://takeany.ai/en/use-cases/ai-for-erp-crm"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://takeany.ai/en/use-cases/ai-for-erp-crm"/>
+    <changefreq>null</changefreq>
+    <priority>null</priority>
+  </url>
+  <url>
+    <loc>https://takeany.ai/en/use-cases/ai-for-erp-crm</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://takeany.ai/pl/use-cases/ai-for-erp-crm"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://takeany.ai/en/use-cases/ai-for-erp-crm"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://takeany.ai/en/use-cases/ai-for-erp-crm"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://takeany.ai/pl/use-cases/rfp-automation</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://takeany.ai/pl/use-cases/rfp-automation"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://takeany.ai/en/use-cases/rfp-automation"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://takeany.ai/en/use-cases/rfp-automation"/>
+    <changefreq>null</changefreq>
+    <priority>null</priority>
+  </url>
+  <url>
+    <loc>https://takeany.ai/en/use-cases/rfp-automation</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://takeany.ai/pl/use-cases/rfp-automation"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://takeany.ai/en/use-cases/rfp-automation"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://takeany.ai/en/use-cases/rfp-automation"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://takeany.ai/pl/use-cases/model-freedom</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://takeany.ai/pl/use-cases/model-freedom"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://takeany.ai/en/use-cases/model-freedom"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://takeany.ai/en/use-cases/model-freedom"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://takeany.ai/en/use-cases/model-freedom</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://takeany.ai/pl/use-cases/model-freedom"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://takeany.ai/en/use-cases/model-freedom"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://takeany.ai/en/use-cases/model-freedom"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://takeany.ai/pl/use-cases/self-hosted-workflow-automation</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://takeany.ai/pl/use-cases/self-hosted-workflow-automation"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://takeany.ai/en/use-cases/self-hosted-workflow-automation"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://takeany.ai/en/use-cases/self-hosted-workflow-automation"/>
+    <changefreq>null</changefreq>
+    <priority>null</priority>
+  </url>
+  <url>
+    <loc>https://takeany.ai/en/use-cases/self-hosted-workflow-automation</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://takeany.ai/pl/use-cases/self-hosted-workflow-automation"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://takeany.ai/en/use-cases/self-hosted-workflow-automation"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://takeany.ai/en/use-cases/self-hosted-workflow-automation"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://takeany.ai/pl/pricing</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://takeany.ai/pl/pricing"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://takeany.ai/en/pricing"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://takeany.ai/en/pricing"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://takeany.ai/en/pricing</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://takeany.ai/pl/pricing"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://takeany.ai/en/pricing"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://takeany.ai/en/pricing"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://takeany.ai/en/docs</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://takeany.ai/en/docs"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://takeany.ai/en/docs"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://takeany.ai/pl/get-started</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://takeany.ai/pl/get-started"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://takeany.ai/en/get-started"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://takeany.ai/en/get-started"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://takeany.ai/en/get-started</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://takeany.ai/pl/get-started"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://takeany.ai/en/get-started"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://takeany.ai/en/get-started"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://takeany.ai/pl/blog</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://takeany.ai/pl/blog"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://takeany.ai/en/blog"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://takeany.ai/en/blog"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://takeany.ai/en/blog</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://takeany.ai/pl/blog"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://takeany.ai/en/blog"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://takeany.ai/en/blog"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://takeany.ai/pl/blog/guardrails-prompt-injection</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://takeany.ai/pl/blog/guardrails-prompt-injection"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://takeany.ai/en/blog/guardrails-prompt-injection"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://takeany.ai/en/blog/guardrails-prompt-injection"/>
+    <changefreq>null</changefreq>
+    <priority>null</priority>
+  </url>
+  <url>
+    <loc>https://takeany.ai/en/blog/guardrails-prompt-injection</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://takeany.ai/pl/blog/guardrails-prompt-injection"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://takeany.ai/en/blog/guardrails-prompt-injection"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://takeany.ai/en/blog/guardrails-prompt-injection"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://takeany.ai/pl/blog/why-sandboxes-matter-for-ai-agents</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://takeany.ai/pl/blog/why-sandboxes-matter-for-ai-agents"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://takeany.ai/en/blog/why-sandboxes-matter-for-ai-agents"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://takeany.ai/en/blog/why-sandboxes-matter-for-ai-agents"/>
+    <changefreq>null</changefreq>
+    <priority>null</priority>
+  </url>
+  <url>
+    <loc>https://takeany.ai/en/blog/why-sandboxes-matter-for-ai-agents</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://takeany.ai/pl/blog/why-sandboxes-matter-for-ai-agents"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://takeany.ai/en/blog/why-sandboxes-matter-for-ai-agents"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://takeany.ai/en/blog/why-sandboxes-matter-for-ai-agents"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://takeany.ai/pl/blog/true-cost-of-llm</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://takeany.ai/pl/blog/true-cost-of-llm"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://takeany.ai/en/blog/true-cost-of-llm"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://takeany.ai/en/blog/true-cost-of-llm"/>
+    <changefreq>null</changefreq>
+    <priority>null</priority>
+  </url>
+  <url>
+    <loc>https://takeany.ai/en/blog/true-cost-of-llm</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://takeany.ai/pl/blog/true-cost-of-llm"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://takeany.ai/en/blog/true-cost-of-llm"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://takeany.ai/en/blog/true-cost-of-llm"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://takeany.ai/pl/blog/digital-sovereignty-ai</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://takeany.ai/pl/blog/digital-sovereignty-ai"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://takeany.ai/en/blog/digital-sovereignty-ai"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://takeany.ai/en/blog/digital-sovereignty-ai"/>
+    <changefreq>null</changefreq>
+    <priority>null</priority>
+  </url>
+  <url>
+    <loc>https://takeany.ai/en/blog/digital-sovereignty-ai</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://takeany.ai/pl/blog/digital-sovereignty-ai"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://takeany.ai/en/blog/digital-sovereignty-ai"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://takeany.ai/en/blog/digital-sovereignty-ai"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://takeany.ai/pl/alternative-n8n</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://takeany.ai/pl/alternative-n8n"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://takeany.ai/en/alternative-n8n"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://takeany.ai/en/alternative-n8n"/>
+    <changefreq>null</changefreq>
+    <priority>null</priority>
+  </url>
+  <url>
+    <loc>https://takeany.ai/en/alternative-n8n</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://takeany.ai/pl/alternative-n8n"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://takeany.ai/en/alternative-n8n"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://takeany.ai/en/alternative-n8n"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://takeany.ai/pl/alternative-dify</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://takeany.ai/pl/alternative-dify"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://takeany.ai/en/alternative-dify"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://takeany.ai/en/alternative-dify"/>
+    <changefreq>null</changefreq>
+    <priority>null</priority>
+  </url>
+  <url>
+    <loc>https://takeany.ai/en/alternative-dify</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://takeany.ai/pl/alternative-dify"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://takeany.ai/en/alternative-dify"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://takeany.ai/en/alternative-dify"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://takeany.ai/pl/alternative-flowise-langflow</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://takeany.ai/pl/alternative-flowise-langflow"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://takeany.ai/en/alternative-flowise-langflow"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://takeany.ai/en/alternative-flowise-langflow"/>
+    <changefreq>null</changefreq>
+    <priority>null</priority>
+  </url>
+  <url>
+    <loc>https://takeany.ai/en/alternative-flowise-langflow</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://takeany.ai/pl/alternative-flowise-langflow"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://takeany.ai/en/alternative-flowise-langflow"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://takeany.ai/en/alternative-flowise-langflow"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://takeany.ai/pl/alternative-lindy</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://takeany.ai/pl/alternative-lindy"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://takeany.ai/en/alternative-lindy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://takeany.ai/en/alternative-lindy"/>
+    <changefreq>null</changefreq>
+    <priority>null</priority>
+  </url>
+  <url>
+    <loc>https://takeany.ai/en/alternative-lindy</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://takeany.ai/pl/alternative-lindy"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://takeany.ai/en/alternative-lindy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://takeany.ai/en/alternative-lindy"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://takeany.ai/pl/legal</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://takeany.ai/pl/legal"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://takeany.ai/en/legal"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://takeany.ai/en/legal"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://takeany.ai/en/legal</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://takeany.ai/pl/legal"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://takeany.ai/en/legal"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://takeany.ai/en/legal"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://takeany.ai/pl/use-cases/white-label-ai</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://takeany.ai/pl/use-cases/white-label-ai"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://takeany.ai/en/use-cases/white-label-ai"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://takeany.ai/en/use-cases/white-label-ai"/>
+    <changefreq>null</changefreq>
+    <priority>null</priority>
+  </url>
+  <url>
+    <loc>https://takeany.ai/en/use-cases/white-label-ai</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://takeany.ai/pl/use-cases/white-label-ai"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://takeany.ai/en/use-cases/white-label-ai"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://takeany.ai/en/use-cases/white-label-ai"/>
+    <changefreq>null</changefreq>
+    <priority>null</priority>
+  </url>
+  <url>
+    <loc>https://takeany.ai/pl/partners</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://takeany.ai/pl/partners"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://takeany.ai/en/partners"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://takeany.ai/en/partners"/>
+    <changefreq>null</changefreq>
+    <priority>null</priority>
+  </url>
+  <url>
+    <loc>https://takeany.ai/en/partners</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://takeany.ai/pl/partners"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://takeany.ai/en/partners"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://takeany.ai/en/partners"/>
+    <changefreq>null</changefreq>
+    <priority>null</priority>
+  </url>
+</urlset>

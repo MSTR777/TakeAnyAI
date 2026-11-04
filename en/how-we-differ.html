@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="/support.js"></script>
+<link rel="alternate" hreflang="en" href="https://takeany.ai/en/how-we-differ">
+<link rel="alternate" hreflang="pl" href="https://takeany.ai/pl/how-we-differ">
+<link rel="alternate" hreflang="x-default" href="https://takeany.ai/en/how-we-differ">
+</head>
+<body>
+<x-dc>
+<helmet>
+<script>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[hreflang]');if(!a)return;var l=a.getAttribute('hreflang')==='pl'?'pl':'en';var x=';path=/;max-age=31536000;SameSite=Lax';document.cookie='nf_lang='+l+x;document.cookie='nf_country='+(l==='pl'?'pl':'zz')+x;},true);</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5ZKRS09ZYX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  (function(){
+    var c = null;
+    try { c = JSON.parse(localStorage.getItem('takeany-consent-v1')); } catch(e) {}
+    gtag('consent', 'default', {
+      analytics_storage: (c && c.analytics) ? 'granted' : 'denied',
+      ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied'
+    });
+  })();
+  gtag('js', new Date());
+  gtag('config', 'G-5ZKRS09ZYX');
+</script>
+<script src="/assets/consent.js?v=3" defer></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100;200;300;400;500;600;700;800;900&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/theme.css">
+<script src="/_ds/takeany-ai-design-system-365327f4-89d8-418c-be14-ea19a91e4fcb/_ds_bundle.js"></script>
+<style>/* design-system accent-preview widget is not site chrome */ .acc-switch{display:none!important}/* section divider standard (Home) */
+section.section:not(.partners){border-top:2px solid var(--ink)!important;position:relative}
+section.section:not(.partners)::before{content:"";position:absolute;top:-2px;left:0;width:92px;height:2px;background:var(--lit)}
+.section-head .section-num{color:var(--lit)!important;border-top:0!important;padding-top:0!important}
+.page-head{border-bottom:0!important}
+.cta-link:hover{text-decoration-thickness:2px!important;color:var(--ink)}
+</style>
+<title>How TakeAny.AI differs from other AI solutions on the market | TakeAny.AI</title>
+<meta name="description" content="TakeAny.AI compared with orchestration platforms (Lindy, Make, Dify, Flowise, n8n), open-weight models and runners (Ollama, Bielik, PLLuM) and chat/RAG ecosystems: Firecracker microVM isolation, air-gap mode and BYOK with no markup.">
+<link rel="canonical" href="https://takeany.ai/en/how-we-differ">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TakeAny.AI">
+<meta property="og:title" content="How TakeAny.AI differs from other AI solutions on the market | TakeAny.AI">
+<meta property="og:description" content="TakeAny.AI compared with orchestration platforms (Lindy, Make, Dify, Flowise, n8n), open-weight models and runners (Ollama, Bielik, PLLuM) and chat/RAG ecosystems: Firecracker microVM isolation, air-gap mode and BYOK with no markup.">
+<meta property="og:url" content="https://takeany.ai/en/how-we-differ">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="pl_PL">
+<meta property="og:image" content="https://takeany.ai/assets/docs/mission-control-2.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="TakeAny.AI vs orchestration platforms, open-weight models and RAG chats: the market matrix">
+<meta name="twitter:description" content="TakeAny.AI compared with orchestration platforms (Lindy, Make, Dify, Flowise, n8n), open-weight models and runners (Ollama, Bielik, PLLuM) and chat/RAG ecosystems: Firecracker microVM isolation, air-gap mode and BYOK with no markup.">
+<meta name="twitter:image" content="https://takeany.ai/assets/docs/mission-control-2.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "url": "https://takeany.ai/en/how-we-differ",
+      "name": "How does TakeAny.AI differ from other solutions on the market?",
+      "description": "Market matrix: TakeAny.AI against orchestration platforms, open-weight models, Ollama and chat/RAG ecosystems.",
+      "isPartOf": {
+        "@id": "https://takeany.ai/#website"
+      },
+      "about": {
+        "@id": "https://takeany.ai/#software"
+      },
+      "mentions": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "n8n"
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "make.com"
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "Lindy"
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "Dify"
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "Flowise"
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "Ollama"
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "Open WebUI"
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "AnythingLLM"
+        }
+      ],
+      "inLanguage": "en"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://takeany.ai/#software",
+      "name": "TakeAny.AI",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Linux (KVM required)",
+      "url": "https://takeany.ai/en/",
+      "description": "Air-gapped, self-hosted control plane for autonomous LLM agents with Firecracker microVM isolation, three-role RBAC with per-agent grants, dual-boundary safety firewalls and 14 audit log domains.",
+      "featureList": [
+        "100% air-gapped data sovereignty",
+        "Local model support (vLLM, Ollama, LocalAI, TGI)",
+        "Agent and ingress separation",
+        "Firecracker microVM isolation boundary",
+        "35 discrete RBAC permissions",
+        "Dual-boundary LLM safety firewalls",
+        "14 log domains for retrieval and token audit",
+        "Bring your own key (BYOK) architecture"
+      ],
+      "author": {
+        "@id": "https://takeany.ai/#organization"
+      },
+      "publisher": {
+        "@id": "https://takeany.ai/#organization"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://takeany.ai/en/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "How we differ",
+          "item": "https://takeany.ai/en/how-we-differ"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<script>
+(function(){
+  function upd(){ var b=document.getElementById('backTop'); if(!b) return;
+    var on = window.scrollY > 600;
+    b.style.opacity = on ? '1' : '0';
+    b.style.pointerEvents = on ? 'auto' : 'none';
+    b.style.transform = on ? 'translateY(0)' : 'translateY(10px)';
+  }
+  window.addEventListener('scroll', upd, {passive:true});
+  window.addEventListener('resize', upd, {passive:true});
+  document.addEventListener('click', function(e){
+    var a = e.target && e.target.closest && e.target.closest('#backTop');
+    if (a) { e.preventDefault(); window.scrollTo({top:0, behavior:'smooth'}); }
+  });
+  setInterval(upd, 500);
+})();
+</script>
+<style>.lang-picker summary::-webkit-details-marker{display:none}.lang-picker summary::marker{content:""}.lang-picker[open] summary svg:last-of-type{transform:rotate(180deg)}.lang-picker a:hover{background:var(--paper-3);color:var(--ink)}
+.section-head>.section-num{width:auto!important;max-width:100%!important;min-width:0!important;white-space:normal!important;overflow-wrap:anywhere}
+.section-head>*{min-width:0}
+</style>
+<script>
+(function(){
+  if (window.__takeanyNav) return; window.__takeanyNav = 1;
+  document.addEventListener('click', function(e){
+    var t = e.target && e.target.closest && e.target.closest('#navToggle');
+    if (t){ e.preventDefault(); document.body.classList.toggle('mm-open'); return; }
+    var link = e.target && e.target.closest && e.target.closest('.mobile-menu a');
+    if (link) document.body.classList.remove('mm-open');
+  });
+  window.addEventListener('resize', function(){ if (window.innerWidth > 820) document.body.classList.remove('mm-open'); }, {passive:true});
+})();
+</script>
+<style>.rm-btn{display:none}
+@media (max-width:760px){
+.rm-p:not(.rm-open)>.rm-hide{display:none!important}
+.rm-p:not(.rm-open)>.rm-clamp,.rm-c:not(.rm-open){display:-webkit-box!important;-webkit-box-orient:vertical;-webkit-line-clamp:5;overflow:hidden}
+.rm-btn{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;justify-self:start;grid-column:1/-1;width:auto;margin:0;padding:8px 0;background:none;border:0;cursor:pointer;font-family:var(--font-mono);font-size:12px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px}
+.rm-btn::after{content:"↓";display:inline-block;text-decoration:none;color:var(--lit)}
+.rm-p.rm-open>.rm-btn::after,.rm-c.rm-open+.rm-btn::after{content:"↑"}
+}</style>
+<script>
+(function(){
+  if (window.__takeanyRM) return; window.__takeanyRM = 1;
+  var mq = window.matchMedia('(max-width:760px)');
+  var pl = (document.documentElement.lang || '').indexOf('pl') === 0;
+  var L = pl ? ['Rozwiń', 'Zwiń'] : ['Show more', 'Show less'];
+  var SKIP = 'nav,footer,form,details,summary,table,.page-head,.hero,.mobile-menu,.nav-wrap,.subnav-wrap,.cta-strip,.tldr,.faq,.foot-top,.foot-bottom,.rm-btn,[data-rm-skip]';
+  var MEDIA = 'img,figure,svg,video,iframe,h1,h2,h3,h4,button,input,select,textarea,a.btn';
+  function len(e){ return (e.textContent || '').replace(/\s+/g, ' ').trim().length; }
+  function addBtn(target, after){
+    var b = document.createElement('button');
+    b.type = 'button'; b.className = 'rm-btn'; b.textContent = L[0]; b.setAttribute('aria-expanded', 'false');
+    b.addEventListener('click', function(){
+      var o = target.classList.toggle('rm-open');
+      b.textContent = o ? L[1] : L[0]; b.setAttribute('aria-expanded', o ? 'true' : 'false');
+      if (!o) { var r = target.getBoundingClientRect(); if (0 > r.top) window.scrollBy(0, r.top - 90); }
+    });
+    if (after) after.parentNode.insertBefore(b, after.nextSibling); else target.appendChild(b);
+  }
+  function scan(){
+    if (!mq.matches || document.querySelector('.read-prog')) return;
+    var groups = new Map();
+    document.querySelectorAll('body p, body ul, body ol').forEach(function(e){
+      if (e.closest(SKIP) || e.closest('.rm-p') || e.classList.contains('rm-c')) return;
+      var p = e.parentElement; if (!p || p.getAttribute('data-rm')) return;
+      if (!groups.has(p)) groups.set(p, []);
+      groups.get(p).push(e);
+    });
+    groups.forEach(function(blocks, p){
+      var total = 0; blocks.forEach(function(b){ total += len(b); });
+      if (blocks.length >= 2 && total > 600) {
+        var first = null, hide = [], hidden = 0;
+        [].slice.call(p.children).forEach(function(k){
+          var t = k.tagName.toUpperCase();
+          var textish = /^(P|UL|OL|BLOCKQUOTE)$/.test(t) || (t === 'DIV' && !k.querySelector(MEDIA) && len(k) > 0);
+          if (!textish) return;
+          if (!first) { first = k; return; }
+          hide.push(k); hidden += len(k);
+        });
+        p.setAttribute('data-rm', '1');
+        if (hidden >= 150) {
+          p.classList.add('rm-p');
+          hide.forEach(function(k){ k.classList.add('rm-hide'); });
+          if (first && first.tagName.toUpperCase() === 'P' && len(first) > 300) first.classList.add('rm-clamp');
+          addBtn(p);
+          return;
+        }
+      }
+      blocks.forEach(function(b){
+        if (b.tagName.toUpperCase() === 'P' && len(b) > 300) { b.classList.add('rm-c'); addBtn(b, b); }
+      });
+    });
+  }
+  var t = 0;
+  function queue(){ clearTimeout(t); t = setTimeout(scan, 150); }
+  new MutationObserver(queue).observe(document.documentElement, { childList: true, subtree: true });
+  if (mq.addEventListener) mq.addEventListener('change', queue);
+  document.addEventListener('DOMContentLoaded', queue);
+  window.addEventListener('load', queue);
+})();
+</script>
+<style>
+.more-s{list-style:none}.more-s::-webkit-details-marker{display:none}.more-s::marker{content:""}
+.more-d:not([open]) .more-p{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.more-l::after{content:"More…"}.more-d[open] .more-l{display:none}
+.more-s:hover .more-l{color:var(--lit-deep)}
+.hero-more:not([open]) .more-p{display:block;-webkit-line-clamp:unset}.hero-more .more-l{display:none}.hero-more .more-s{cursor:default}
+.mx{min-width:1060px}
+.mx-hint{display:none;margin:0 0 12px;font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+@media (min-width:761px) and (max-width:1100px){.mx-hint{display:block}}
+.mx col.c-param{width:190px}.mx col.c-takeany{width:250px}.mx col.c-other{width:auto}
+.mx th,.mx td{padding:18px 20px;font-size:14px;line-height:1.5}
+.mx tbody th.param{font-size:14px;font-weight:600;color:var(--ink);background:var(--paper)}
+.mx td,.mx .col-takeany{font-weight:400}
+.mx td strong{display:block;font-weight:600;color:var(--ink)}
+.mx .mx-rest{display:none;margin-top:6px}
+.mx tr:has(.mx-tg:checked) .mx-rest{display:block}
+.mx-dim{display:block}
+.mx-more{display:inline-flex;margin-top:10px;cursor:pointer;font-size:13.5px;font-weight:500;color:var(--ink);text-decoration:underline;text-underline-offset:4px}
+.mx-more:hover{text-decoration-thickness:2px}
+.mx-tg{position:absolute;opacity:0;width:1px;height:1px;pointer-events:none}
+.mx-tg:focus-visible+.mx-ml{outline:2px solid var(--ink);outline-offset:2px}
+.mx-ml::after{content:"More…"}.mx-tg:checked+.mx-ml::after{content:"Show less"}
+.mx td.other{color:var(--muted)}
+.mx thead th{vertical-align:bottom;padding-top:20px;padding-bottom:16px}
+.mx thead th .co{font-size:11.5px;line-height:1.4;margin-top:6px}
+.gains-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+.alt-card:hover{border-color:var(--ink)!important}.alt-card:hover .alt-go{text-decoration-thickness:2px}
+.alt-grid{grid-template-columns:repeat(6,minmax(0,1fr))}.alt-card{grid-column:span 2}.alt-card:nth-child(n+4){grid-column:span 3}
+@media (max-width:1100px){.alt-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.alt-card,.alt-card:nth-child(n+4){grid-column:auto}.alt-card:last-child{grid-column:1/-1}}
+@media (max-width:560px){.alt-grid{grid-template-columns:1fr}.alt-card:last-child{grid-column:auto}.alt-vs{font-size:26px!important}}
+.mx.ox{min-width:720px}.ox col.c-param{width:240px}.ox col.c-takeany,.ox col.c-other{width:auto}.mx.ox td.col-takeany{font-weight:500;color:var(--ink)}
+#ollama{scroll-margin-top:80px}
+:root{--ill-canvas:#FFFFFF;--ill-plate:#FFFFFF;--ill-ink:#1A1A1A;--ill-ink-2:#5C5C5C;--ill-label:#8A8A8A;--ill-line:#E7E2EE;--ill-line-2:#D3CCDD;--ill-lit:#8B3DFF;--ill-lit-deep:#7426E8}
+.ill-fig{margin:0}.ill{display:block;width:100%;height:auto}.ill text{font-family:var(--font-mono,'Geist Mono',ui-monospace,monospace)}
+.ill-shadow{filter:drop-shadow(0 24px 48px rgba(26,26,26,.06))}
+.ill .plate{fill:var(--ill-plate);stroke:var(--ill-line);stroke-width:1}.ill .panel{fill:var(--ill-plate);stroke:var(--ill-ink);stroke-width:2}.ill .panel-2{fill:var(--ill-plate);stroke:var(--ill-line-2);stroke-width:1}
+.ill .panel-lit{fill:#F7F3FC;stroke:var(--ill-lit);stroke-width:1.5}.ill .perimeter{fill:none;stroke:var(--ill-lit);stroke-width:1.5}.ill .perimeter-open{fill:none;stroke:var(--ill-line-2);stroke-width:1.25;stroke-dasharray:5 4}.ill .knockout{fill:var(--ill-plate)}
+.ill .link{fill:none;stroke:var(--ill-ink);stroke-width:1.25}.ill .link-opt{fill:none;stroke:var(--ill-line-2);stroke-width:1;stroke-dasharray:4 4}.ill .cut{stroke:var(--ill-ink);stroke-width:1.6;fill:none}.ill .node{fill:var(--ill-ink)}
+.ill .lbl{font-size:13px;letter-spacing:.1em;fill:var(--ill-label)}.ill .lbl-lit{font-size:13px;letter-spacing:.1em;fill:var(--lit-deep)}.ill .lbl-ink{font-size:13px;letter-spacing:.1em;fill:var(--ill-ink)}.ill .val{font-size:22px;letter-spacing:-.01em;fill:var(--ill-ink)}.ill .mono-sm{font-size:11px;letter-spacing:.12em;fill:var(--ill-label)}
+.ill .pic{fill:none;stroke:var(--ill-ink);stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;color:var(--ill-ink);--icn-accent:var(--ill-lit)}
+.st-ill .ill-port{display:none}
+@media (max-width:600px){.st-ill .ill-wide{display:none}.st-ill .ill-port{display:block}}
+@media (max-width:760px){
+.more-d:not(.hero-more),.sec-more{margin-top:24px!important}.more-d:not([open]) .more-p{-webkit-line-clamp:3}
+.hero-more:not([open]) .more-p{display:-webkit-box;-webkit-line-clamp:4}.hero-more:not([open]) .more-l{display:inline}.hero-more .more-s{cursor:pointer}
+.mx-wrap{border:0!important;border-radius:0!important;overflow:visible!important}
+.mx{min-width:0!important;display:block}
+.mx colgroup,.mx thead{display:none}
+.mx tbody,.mx tr,.mx th,.mx td{display:block;width:auto}
+.mx tr{border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-bottom:14px;background:var(--paper)}
+.mx tbody th.param{display:flex!important;align-items:center;justify-content:space-between;gap:12px;background:var(--ink)!important;color:var(--paper);font-family:var(--font-mono);font-size:11.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:13px 16px;border:0}
+.mx td{padding:14px 16px;border-bottom:1px solid var(--line);font-size:15px}
+.mx tr td:last-child{border-bottom:0}
+.mx tbody th.param .mx-more{margin:0;color:var(--paper);font-family:var(--font-sans);font-size:13px;letter-spacing:0;text-transform:none;flex:none}
+.mx td::before{content:attr(data-label);display:block;margin-bottom:6px;font-family:var(--font-mono);font-size:10.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.mx td.col-takeany{box-shadow:none;background:var(--paper-2)}
+.mx td.col-takeany::before{color:var(--ink)}
+.mx tbody tr:hover td{background:inherit}.mx tbody tr:hover td.col-takeany{background:var(--paper-2)}
+.gains-grid{grid-template-columns:1fr!important}
+}
+</style>
+<style>/* mobile pass: shared fixes */
+@media (max-width:720px){
+  html,body{overflow-x:clip}
+  .section-head{display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:12px!important}
+  .section-head > *{grid-column:auto!important;max-width:100%!important;margin-left:0!important;min-width:0}
+  footer .foot-top{grid-template-columns:1fr 1fr!important;gap:32px 20px!important}
+  footer .foot-brand{grid-column:1 / -1}
+  footer .foot-col{min-width:0}
+  footer .foot-col a{display:inline-block;padding:4px 0;overflow-wrap:anywhere}
+  footer .btn{margin-left:0!important}
+  .exp-sum{min-height:44px}
+  .pr-grid,.pr-incl,.pr-addons,.pr-faq,.lic-steps{grid-template-columns:minmax(0,1fr)!important}
+  .pr-grid > *,.pr-incl > *,.pr-addons > *,.pr-faq > *,.uc-card{min-width:0;overflow-wrap:anywhere}
+  #licensing-brief [style*="grid-template-columns"]{grid-template-columns:minmax(0,1fr)!important}
+  #licensing-brief *{min-width:0;overflow-wrap:anywhere}
+}
+@media (max-width:420px){
+  .nav-cta{gap:8px}
+  .nav-cta .btn{padding-left:14px!important;padding-right:14px!important;font-size:13px!important}
+}
+</style>
+</helmet>
+
+<div class="nav-wrap" data-screen-label="Nav">
+  <div class="container nav">
+    <a class="wordmark" href="/en/" aria-label="TakeAny.AI"><x-import component-from-global-scope="TakeAnyAIDesignSystem_365327.Logo" height="32px" hint-size="168px,32px"></x-import></a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="/en/use-cases">Use cases</a>
+      <a href="/en/product">Product</a>
+      <a href="/en/pricing">Pricing</a>
+      <a href="/en/docs">Docs</a>
+        <a href="/en/blog">Blog</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-primary" href="/en/get-started">Get started <span class="arrow">→</span></a>
+      <button id="navToggle" class="nav-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="mobile-menu">
+    <div class="mm-inner">
+      <nav class="mm-links" aria-label="Mobile">
+        <a href="/en/use-cases">Use cases</a>
+        <a href="/en/product">Product</a>
+        <a href="/en/pricing">Pricing</a>
+        <a href="/en/docs">Docs</a>
+        <a href="/en/blog">Blog</a>
+      </nav>
+      <div class="mm-cta">
+        <a class="btn btn-primary" href="/en/get-started">Get started <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<header class="page-head" data-screen-label="01 Thesis">
+  <div class="container page-head-grid">
+    <span class="eyebrow"><span class="dot"></span>How we differ</span>
+    <h1>How does TakeAny.AI differ <strong>from other solutions on the market?</strong></h1>
+    <details class="more-d hero-more" style="display:block;margin-top:32px"><summary class="more-s" style="display:flex;flex-direction:column;gap:8px;cursor:pointer"><p class="lede more-p" style="margin:0">Discover the architectural and business differences between the fully ready TakeAny.AI control plane, cloud-based SaaS solutions and open prototyping frameworks. Explore why enterprises are moving from the R&amp;D phase to production-grade, sovereign AI systems.</p><span class="more-l" style="font-size:14.5px;font-weight:500;color:var(--ink);text-decoration:underline;text-underline-offset:4px"></span></summary></details>
+  </div>
+</header>
+
+<section class="section" id="comparison" data-screen-label="02 Market matrix">
+  <div class="container">
+    <header class="section-head">
+      <span class="section-num">01 · Market matrix</span>
+      <h2>Detailed market <strong>comparison</strong></h2>
+    </header>
+    <p class="mx-hint">Scroll the table sideways →</p>
+    <div class="cmp-wrap mx-wrap" data-screen-label="Matrix">
+      <table class="cmp mx">
+        <colgroup><col class="c-param"><col class="c-takeany"><col class="c-other"><col class="c-other"><col class="c-other"></colgroup>
+        <thead>
+          <tr>
+            <th class="param" scope="col">Dimension</th>
+            <th class="col-takeany" scope="col">TakeAny.AI<span class="co">Agent Control Plane</span></th>
+            <th class="other" scope="col">Orchestration platforms<span class="co">SaaS: Lindy, Make · OS: Dify, Flowise · workflow: n8n</span></th>
+            <th class="other" scope="col">Open-weight &amp; local AI<span class="co">Open-weight, Ollama · e.g. Bielik, PLLuM, Hermes</span></th>
+            <th class="other" scope="col">Chat &amp; RAG ecosystems<span class="co">e.g. Open WebUI, AnythingLLM</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row" class="param"><span class="mx-dim">Main role in the system</span><label class="mx-more"><input type="checkbox" class="mx-tg" aria-label="Show details: Main role in the system"><span class="mx-ml"></span></label></th><td class="col-takeany" data-label="TakeAny.AI"><strong>Ready-to-use engine and orchestration platform (Agent Control Plane).</strong><span class="mx-rest">Provides an isolated environment for autonomous AI agents to operate.</span></td><td class="other" data-label="Orchestration platforms"><strong>Workflows and prototypes.</strong><span class="mx-rest">Creating cloud-based workflows, prototyping and task automation.</span></td><td class="other" data-label="Open-weight &amp; local AI"><strong>Model runner and local models.</strong><span class="mx-rest">Infrastructure tools and locally optimised language models. They serve raw text.</span></td><td class="other" data-label="Chat &amp; RAG ecosystems"><strong>RAG interfaces and knowledge chats.</strong><span class="mx-rest">They provide the end-user visual layer.</span></td></tr>
+          <tr><th scope="row" class="param"><span class="mx-dim">Environment &amp; deployment model</span><label class="mx-more"><input type="checkbox" class="mx-tg" aria-label="Show details: Environment &amp; deployment model"><span class="mx-ml"></span></label></th><td class="col-takeany" data-label="TakeAny.AI"><strong>Single Go binary.</strong><span class="mx-rest">Native on-premise operation. Local SQLite database.</span></td><td class="other" data-label="Orchestration platforms"><strong>Cloud SaaS or Docker and Node.js.</strong><span class="mx-rest">Fully cloud-based SaaS services or environments based on Docker and Node.js scripts.</span></td><td class="other" data-label="Open-weight &amp; local AI"><strong>CLI or Docker on GPU servers.</strong><span class="mx-rest">Command-line binaries (CLI) or Docker containers requiring dedicated servers with GPU resources.</span></td><td class="other" data-label="Chat &amp; RAG ecosystems"><strong>Cloud SaaS or web ecosystem.</strong><span class="mx-rest">External cloud-based environments (SaaS) or complex web and development ecosystems.</span></td></tr>
+          <tr><th scope="row" class="param"><span class="mx-dim">Data sovereignty (EU AI Act)</span><label class="mx-more"><input type="checkbox" class="mx-tg" aria-label="Show details: Data sovereignty (EU AI Act)"><span class="mx-ml"></span></label></th><td class="col-takeany" data-label="TakeAny.AI"><strong>100% data sovereignty (native air-gap mode).</strong><span class="mx-rest">Zero external telemetry, protecting ERP/CRM environments from leaks.</span></td><td class="other" data-label="Orchestration platforms"><strong>No native sovereignty.</strong><span class="mx-rest">Typical cloud models do not guarantee native sovereignty, and sensitive data is sent to external data centres.</span></td><td class="other" data-label="Open-weight &amp; local AI"><strong>Total privacy.</strong><span class="mx-rest">Weights are processed on your own hardware. The engines themselves lack logic to protect traffic from external attacks.</span></td><td class="other" data-label="Chat &amp; RAG ecosystems"><strong>Basic compliance.</strong><span class="mx-rest">Cloud-based solutions mostly require full trust in the hosting provider's procedures.</span></td></tr>
+          <tr><th scope="row" class="param"><span class="mx-dim">Code &amp; integration isolation (sandbox)</span><label class="mx-more"><input type="checkbox" class="mx-tg" aria-label="Show details: Code &amp; integration isolation (sandbox)"><span class="mx-ml"></span></label></th><td class="col-takeany" data-label="TakeAny.AI"><strong>Hardware-level isolation.</strong><span class="mx-rest">Processes run inside closed Firecracker microVM virtual machines.</span></td><td class="other" data-label="Orchestration platforms"><strong>Shared environments, no isolation.</strong><span class="mx-rest">Standard shared cloud environments or operationally non-isolated Node/Docker containers.</span></td><td class="other" data-label="Open-weight &amp; local AI"><strong>None.</strong><span class="mx-rest">Engines like Ollama are solely for inference and are not designed for the safe execution of external code.</span></td><td class="other" data-label="Chat &amp; RAG ecosystems"><strong>Predefined plugins only.</strong><span class="mx-rest">No built-in isolation like Firecracker microVM.</span></td></tr>
+          <tr><th scope="row" class="param"><span class="mx-dim">Prompt protection &amp; LLM security</span><label class="mx-more"><input type="checkbox" class="mx-tg" aria-label="Show details: Prompt protection &amp; LLM security"><span class="mx-ml"></span></label></th><td class="col-takeany" data-label="TakeAny.AI"><strong>Dual safety firewalls (guardrails).</strong><span class="mx-rest">Automatic filters for sensitive data and PII before the request reaches the model.</span></td><td class="other" data-label="Orchestration platforms"><strong>Basic mechanisms, e.g. human-in-the-loop.</strong><span class="mx-rest">Usually basic defence mechanisms, or external services have to be installed.</span></td><td class="other" data-label="Open-weight &amp; local AI"><strong>Depends solely on the model.</strong><span class="mx-rest">The security model depends entirely on the features of the language model selected by the administrator.</span></td><td class="other" data-label="Chat &amp; RAG ecosystems"><strong>No native dual API barriers.</strong><span class="mx-rest">They typically rely on system prompt configuration and basic RBAC.</span></td></tr>
+          <tr><th scope="row" class="param"><span class="mx-dim">Pricing model &amp; maintenance costs</span><label class="mx-more"><input type="checkbox" class="mx-tg" aria-label="Show details: Pricing model &amp; maintenance costs"><span class="mx-ml"></span></label></th><td class="col-takeany" data-label="TakeAny.AI"><strong>0% markup on requests (BYOK) and no step fees.</strong><span class="mx-rest">No hidden commissions on calls in an execution-based model.</span></td><td class="other" data-label="Orchestration platforms"><strong>Monthly credit packages.</strong><span class="mx-rest">Constant accrual of a step tax on every call.</span></td><td class="other" data-label="Open-weight &amp; local AI"><strong>No markup, but costly hardware.</strong><span class="mx-rest">The software is free and has no middleman margins. Server infrastructure and team maintenance costs are substantial.</span></td><td class="other" data-label="Chat &amp; RAG ecosystems"><strong>Message-pool and per-user fees.</strong><span class="mx-rest">Complicated, hard-to-estimate fees for message pools and per-user access margins.</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="sub sec-more" style="margin:32px 0 0;max-width:860px">The table compares TakeAny.AI with other market categories on dimensions known from classic standards and pricing models, e.g. environment, security and pricing model.</p>
+  </div>
+</section>
+
+<section class="section" id="stack" data-screen-label="03 Full stack">
+  <div class="container">
+    <header class="section-head">
+      <span class="section-num">02 · Full production stack</span>
+      <h2>Collaboration instead of competition. <strong>The full production stack</strong></h2>
+    </header>
+    <figure class="ill-fig st-ill" style="margin:0">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="fs-guard" viewBox="0 0 24 24"><path d="M12 2.8 19.4 5.6v5.6c0 4.6-3.1 8.4-7.4 10-4.3-1.6-7.4-5.4-7.4-10V5.6Z"></path><path d="M8.6 12l2.4 2.4 4.6-4.8" stroke="var(--icn-accent)"></path></symbol><symbol id="fs-rbac" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.4"></circle><path d="M3.4 19.6c.6-3.4 2.9-5.4 5.6-5.4 1.6 0 3 .7 4 1.9"></path><rect x="15.2" y="13.4" width="6" height="5.6" rx="1.2" stroke="var(--icn-accent)"></rect><path d="M16.6 13.4v-1.5a1.6 1.6 0 0 1 3.2 0v1.5" stroke="var(--icn-accent)"></path></symbol><symbol id="fs-vm" viewBox="0 0 24 24"><path d="M12 2.8 20 7.2v9.6L12 21.2 4 16.8V7.2Z"></path><path d="M4 7.2l8 4.4 8-4.4"></path><path d="M12 11.6v9.6" stroke="var(--icn-accent)"></path></symbol><symbol id="fs-log" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2.4"></rect><path d="M8.5 8h7" stroke="var(--icn-accent)"></path><path d="M8.5 12h7M8.5 16h4"></path></symbol></defs></svg>
+<svg class="ill ill-wide" viewBox="0 0 1120 452" role="img" aria-labelledby="fs-t" style="overflow:visible"><title id="fs-t">Company systems pass tasks to TakeAny.AI, which acts and controls: input and output guardrails, 35 RBAC permissions, Firecracker microVM isolation and an audit trail in 14 log domains. TakeAny.AI sends a filtered prompt to a local model runner (Ollama, vLLM) with Bielik, Qwen and Mistral models, which replies with raw text. Data stays in the company.</title><rect class="plate ill-shadow" x="0.5" y="0.5" width="1119" height="451" rx="18"></rect>
+<rect class="perimeter" x="24" y="44" width="1072" height="386" rx="12"></rect><rect class="knockout" x="40" y="34" width="340" height="20"></rect><text class="lbl-lit" x="48" y="49">YOUR INFRASTRUCTURE · AIR-GAP MODE</text>
+<text class="lbl" x="52" y="104">COMPANY SYSTEMS</text>
+<rect class="panel-2" x="52" y="124" width="200" height="44" rx="22"></rect><text class="lbl-ink" x="152" y="151" text-anchor="middle" style="font-size:12px">USERS</text><path class="link" d="M252 146H306"></path><rect class="node" x="250" y="144" width="4" height="4"></rect><path class="link" d="M301 141l5 5-5 5"></path>
+<rect class="panel-2" x="52" y="184" width="200" height="44" rx="22"></rect><text class="lbl-ink" x="152" y="211" text-anchor="middle" style="font-size:12px">ERP / CRM</text><path class="link" d="M252 206H306"></path><rect class="node" x="250" y="204" width="4" height="4"></rect><path class="link" d="M301 201l5 5-5 5"></path>
+<rect class="panel-2" x="52" y="244" width="200" height="44" rx="22"></rect><text class="lbl-ink" x="152" y="271" text-anchor="middle" style="font-size:12px">COMPANY DATA</text><path class="link" d="M252 266H306"></path><rect class="node" x="250" y="264" width="4" height="4"></rect><path class="link" d="M301 261l5 5-5 5"></path>
+<rect class="panel" x="312" y="100" width="456" height="296" rx="12"></rect>
+<text class="lbl-lit" x="336" y="130">ACTION AND CONTROL</text><text class="val" x="336" y="166">TakeAny.AI</text><text class="mono-sm" x="744" y="163" text-anchor="end">AGENT CONTROL PLANE</text>
+<rect class="panel-2" x="336" y="186" width="196" height="90" rx="10"></rect><use href="#fs-guard" class="pic" x="352" y="200" width="28" height="28"></use><text class="mono-sm" x="516" y="216" text-anchor="end">01</text><text class="lbl-ink" x="352" y="248" style="font-size:12px;letter-spacing:.06em">GUARDRAILS</text><text class="lbl-ink" x="352" y="264" style="font-size:12px;letter-spacing:.06em">INPUT AND OUTPUT</text>
+<rect class="panel-2" x="556" y="186" width="196" height="90" rx="10"></rect><use href="#fs-rbac" class="pic" x="572" y="200" width="28" height="28"></use><text class="mono-sm" x="736" y="216" text-anchor="end">02</text><text class="lbl-ink" x="572" y="248" style="font-size:12px;letter-spacing:.06em">35 RBAC</text><text class="lbl-ink" x="572" y="264" style="font-size:12px;letter-spacing:.06em">PERMISSIONS</text>
+<rect class="panel-2" x="336" y="290" width="196" height="90" rx="10"></rect><use href="#fs-vm" class="pic" x="352" y="304" width="28" height="28"></use><text class="mono-sm" x="516" y="320" text-anchor="end">03</text><text class="lbl-ink" x="352" y="352" style="font-size:12px;letter-spacing:.06em">ISOLATION</text><text class="lbl-ink" x="352" y="368" style="font-size:12px;letter-spacing:.06em">FIRECRACKER MICROVM</text>
+<rect class="panel-2" x="556" y="290" width="196" height="90" rx="10"></rect><use href="#fs-log" class="pic" x="572" y="304" width="28" height="28"></use><text class="mono-sm" x="736" y="320" text-anchor="end">04</text><text class="lbl-ink" x="572" y="352" style="font-size:12px;letter-spacing:.06em">AUDIT</text><text class="lbl-ink" x="572" y="368" style="font-size:12px;letter-spacing:.06em">14 LOG DOMAINS</text>
+<text class="mono-sm" x="810" y="208" text-anchor="middle">PROMPT</text><path class="link" d="M768 220H846"></path><rect class="node" x="766" y="218" width="4" height="4"></rect><path class="link" d="M841 215l5 5-5 5"></path>
+<text class="mono-sm" x="810" y="316" text-anchor="middle">TEXT</text><path class="link" d="M852 296H774"></path><rect class="node" x="850" y="294" width="4" height="4"></rect><path class="link" d="M779 291l-5 5 5 5"></path>
+<rect class="panel-2" x="852" y="100" width="220" height="296" rx="12"></rect>
+<text class="lbl" x="872" y="130">THINKING</text><text class="val" x="872" y="166">Model runner</text><text class="mono-sm" x="872" y="190">OLLAMA · vLLM</text>
+<rect class="plate" x="872" y="212" width="180" height="34" rx="17"></rect><text class="lbl-ink" x="962" y="234" text-anchor="middle" style="font-size:11.5px">BIELIK</text><rect class="plate" x="872" y="256" width="180" height="34" rx="17"></rect><text class="lbl-ink" x="962" y="278" text-anchor="middle" style="font-size:11.5px">QWEN</text><rect class="plate" x="872" y="300" width="180" height="34" rx="17"></rect><text class="lbl-ink" x="962" y="322" text-anchor="middle" style="font-size:11.5px">MISTRAL</text>
+<text class="mono-sm" x="872" y="364">RAW TEXT, NO</text><text class="mono-sm" x="872" y="380">SYSTEM KNOWLEDGE</text>
+<text class="lbl-lit" x="52" y="418" style="font-size:11.5px">DATA STAYS IN THE COMPANY</text>
+</svg>
+<svg class="ill ill-port" viewBox="0 0 340 488" role="img" aria-labelledby="fs-tm" style="overflow:visible"><title id="fs-tm">Company systems pass tasks to TakeAny.AI, which acts and controls: input and output guardrails, 35 RBAC permissions, Firecracker microVM isolation and an audit trail in 14 log domains. TakeAny.AI sends a filtered prompt to a local model runner (Ollama, vLLM) with Bielik, Qwen and Mistral models, which replies with raw text. Data stays in the company.</title><rect class="plate ill-shadow" x="0.5" y="0.5" width="339" height="487" rx="14"></rect>
+<rect class="perimeter" x="8" y="20" width="324" height="456" rx="9"></rect><rect class="knockout" x="16" y="14" width="198" height="12"></rect><text class="lbl-lit" x="22" y="23" style="font-size:9px;letter-spacing:.08em">YOUR INFRASTRUCTURE · AIR-GAP</text>
+<text class="lbl" x="18" y="44" style="font-size:8.5px;letter-spacing:.1em">COMPANY SYSTEMS</text>
+<rect class="panel-2" x="18" y="52" width="97.3" height="26" rx="13"></rect><text class="lbl-ink" x="66.7" y="69" text-anchor="middle" style="font-size:9px;letter-spacing:.06em">USERS</text><path class="link" d="M66.7 78V100"></path><rect class="node" x="65.2" y="96.5" width="3" height="3"></rect>
+<rect class="panel-2" x="121" y="52" width="97.3" height="26" rx="13"></rect><text class="lbl-ink" x="169.7" y="69" text-anchor="middle" style="font-size:9px;letter-spacing:.06em">ERP / CRM</text><path class="link" d="M169.7 78V100"></path><rect class="node" x="168.2" y="96.5" width="3" height="3"></rect>
+<rect class="panel-2" x="224" y="52" width="97.3" height="26" rx="13"></rect><text class="lbl-ink" x="272.7" y="69" text-anchor="middle" style="font-size:9px;letter-spacing:.06em">COMPANY DATA</text><path class="link" d="M272.7 78V100"></path><rect class="node" x="271.2" y="96.5" width="3" height="3"></rect>
+<rect class="panel" x="18" y="100" width="304" height="196" rx="9"></rect>
+<text class="lbl-lit" x="30" y="118" style="font-size:9px;letter-spacing:.08em">ACTION AND CONTROL</text><text class="val" x="30" y="142" style="font-size:18px">TakeAny.AI</text><text class="mono-sm" x="310" y="140" text-anchor="end" style="font-size:8.5px;letter-spacing:.08em">AGENT CONTROL PLANE</text>
+<rect class="panel-2" x="30" y="154" width="136" height="62" rx="7"></rect><use href="#fs-guard" class="pic" x="40" y="163" width="18" height="18" style="stroke-width:2"></use><text class="mono-sm" x="156" y="175" text-anchor="end" style="font-size:8.5px">01</text><text class="lbl-ink" x="40" y="196" style="font-size:9px;letter-spacing:.04em">GUARDRAILS</text><text class="lbl-ink" x="40" y="208" style="font-size:9px;letter-spacing:.04em">INPUT AND OUTPUT</text>
+<rect class="panel-2" x="174" y="154" width="136" height="62" rx="7"></rect><use href="#fs-rbac" class="pic" x="184" y="163" width="18" height="18" style="stroke-width:2"></use><text class="mono-sm" x="300" y="175" text-anchor="end" style="font-size:8.5px">02</text><text class="lbl-ink" x="184" y="196" style="font-size:9px;letter-spacing:.04em">35 RBAC</text><text class="lbl-ink" x="184" y="208" style="font-size:9px;letter-spacing:.04em">PERMISSIONS</text>
+<rect class="panel-2" x="30" y="224" width="136" height="62" rx="7"></rect><use href="#fs-vm" class="pic" x="40" y="233" width="18" height="18" style="stroke-width:2"></use><text class="mono-sm" x="156" y="245" text-anchor="end" style="font-size:8.5px">03</text><text class="lbl-ink" x="40" y="266" style="font-size:9px;letter-spacing:.04em">ISOLATION</text><text class="lbl-ink" x="40" y="278" style="font-size:9px;letter-spacing:.04em">FIRECRACKER MICROVM</text>
+<rect class="panel-2" x="174" y="224" width="136" height="62" rx="7"></rect><use href="#fs-log" class="pic" x="184" y="233" width="18" height="18" style="stroke-width:2"></use><text class="mono-sm" x="300" y="245" text-anchor="end" style="font-size:8.5px">04</text><text class="lbl-ink" x="184" y="266" style="font-size:9px;letter-spacing:.04em">AUDIT</text><text class="lbl-ink" x="184" y="278" style="font-size:9px;letter-spacing:.04em">14 LOG DOMAINS</text>
+<path class="link" d="M130 296V336"></path><rect class="node" x="128.5" y="294.5" width="3" height="3"></rect><path class="link" d="M126 331l4 5 4-5"></path><text class="mono-sm" x="122" y="322" text-anchor="end" style="font-size:8.5px">PROMPT</text>
+<path class="link" d="M210 340V300"></path><rect class="node" x="208.5" y="338.5" width="3" height="3"></rect><path class="link" d="M206 305l4-5 4 5"></path><text class="mono-sm" x="218" y="322" style="font-size:8.5px">TEXT</text>
+<rect class="panel-2" x="18" y="340" width="304" height="112" rx="9"></rect>
+<text class="lbl" x="30" y="358" style="font-size:9px;letter-spacing:.08em">THINKING</text><text class="val" x="30" y="381" style="font-size:16px">Model runner</text><text class="mono-sm" x="310" y="379" text-anchor="end" style="font-size:8.5px;letter-spacing:.08em">OLLAMA · vLLM</text>
+<rect class="plate" x="30" y="392" width="88" height="24" rx="12"></rect><text class="lbl-ink" x="74" y="408" text-anchor="middle" style="font-size:9px;letter-spacing:.06em">BIELIK</text><rect class="plate" x="126" y="392" width="88" height="24" rx="12"></rect><text class="lbl-ink" x="170" y="408" text-anchor="middle" style="font-size:9px;letter-spacing:.06em">QWEN</text><rect class="plate" x="222" y="392" width="88" height="24" rx="12"></rect><text class="lbl-ink" x="266" y="408" text-anchor="middle" style="font-size:9px;letter-spacing:.06em">MISTRAL</text>
+<text class="mono-sm" x="30" y="438" style="font-size:8.5px;letter-spacing:.08em">RAW TEXT, NO SYSTEM KNOWLEDGE</text>
+<text class="lbl-lit" x="18" y="468" style="font-size:9px;letter-spacing:.08em">DATA STAYS IN THE COMPANY</text>
+</svg>
+</figure>
+    <details class="more-d" style="display:block;margin-top:32px;max-width:860px"><summary class="more-s" style="display:flex;flex-direction:column;gap:8px;cursor:pointer"><p class="sub more-p" style="margin:0">A common mistake engineers and developers make when automating an enterprise is writing manual integration scripts on open-source models (like Bielik running in Ollama) and treating them as competitors to TakeAny.AI. In reality, this is a complementary technology stack (Full Air-Gap Stack): the model thinks, TakeAny.AI acts and controls.</p><span class="more-l" style="font-size:14.5px;font-weight:500;color:var(--ink);text-decoration:underline;text-underline-offset:4px"></span></summary>
+      <div style="display:flex;flex-direction:column;gap:14px;margin-top:16px;max-width:760px;font-size:16px;line-height:1.6;color:var(--ink-2)"><p style="margin:0"><strong style="color:var(--ink);font-weight:600">Thinking: open-weight models and engines (Ollama, Qwen, Mistral).</strong> Their sole task is to provide raw text quickly and locally, without any knowledge of the system architecture and without checking the security of the application logic.</p><p style="margin:0"><strong style="color:var(--ink);font-weight:600">Action and control: the TakeAny.AI platform (Agent Control Plane).</strong> It removes the Day-1 Operational Gap burden of infrastructure management. It retrieves generated commands, runs them in an isolated Firecracker microVM hardware environment, enforces 35 granular access permissions (RBAC), protects company secrets from leaking and records an audit trail in 14 log domains.</p></div>
+    </details>
+  </div>
+</section>
+
+<section class="section" id="gains" data-screen-label="04 What you gain">
+  <div class="container">
+    <header class="section-head">
+      <span class="section-num">03 · Executive summary</span>
+      <h2>What you gain <strong>by implementing TakeAny.AI</strong></h2>
+    </header>
+    <div class="why-grid gains-grid">
+      <div class="why-card" style="display:flex;flex-direction:column;gap:12px;padding-right:32px">
+        <span class="when">01 · CFO / CEO</span>
+        <h3 style="margin:0;font-size:21px;font-weight:500;letter-spacing:-0.02em;line-height:1.2;color:var(--ink);text-wrap:balance">Increased control for business</h3>
+        <p style="margin:0;font-size:15.5px;line-height:1.55;color:var(--muted);text-wrap:pretty">Predictable costs and savings of up to 70% by eliminating the step tax and using a native BYOK model with zero hidden commissions for external cloud providers.</p>
+      </div>
+      <div class="why-card" style="display:flex;flex-direction:column;gap:12px;padding-right:32px">
+        <span class="when">02 · Zero lock-in</span>
+        <h3 style="margin:0;font-size:21px;font-weight:500;letter-spacing:-0.02em;line-height:1.2;color:var(--ink);text-wrap:balance">No vendor lock-in</h3>
+        <p style="margin:0;font-size:15.5px;line-height:1.55;color:var(--muted);text-wrap:pretty">Test and switch newer models, run e.g. in Ollama or vLLM in air-gap mode, from a single panel with one click. No expensive DevOps teams and no rewriting of working code.</p>
+      </div>
+      <div class="why-card" style="display:flex;flex-direction:column;gap:12px;padding-right:32px">
+        <span class="when">03 · ERP / CRM</span>
+        <h3 style="margin:0;font-size:21px;font-weight:500;letter-spacing:-0.02em;line-height:1.2;color:var(--ink);text-wrap:balance">Safe experimentation with company data</h3>
+        <p style="margin:0;font-size:15.5px;line-height:1.55;color:var(--muted);text-wrap:pretty">Stable operation of extensive and sensitive ERP/CRM-class systems. Test any model without the risk of violating GDPR.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="head-to-head" data-screen-label="05 Comparisons">
+  <div class="container">
+    <header class="section-head">
+      <span class="section-num">04 · Head to head</span>
+      <h2>Comparisons <strong>with specific tools</strong></h2>
+    </header>
+    <div class="alt-grid" style="display:grid;gap:16px">
+      <a class="alt-card" href="/en/alternative-n8n" style="display:flex;flex-direction:column;gap:14px;padding:28px 28px 24px;border:1px solid var(--line);border-radius:14px;background:var(--paper);color:var(--ink);text-decoration:none;transition:border-color 160ms ease">
+        <span class="alt-vs" style="font-size:30px;font-weight:600;letter-spacing:-0.03em;line-height:1.1;color:var(--ink);text-wrap:balance">TakeAny.AI <span style="font-weight:400;color:var(--lit-deep)">vs.</span> n8n</span>
+        <h3 style="margin:0;font-size:17px;font-weight:500;letter-spacing:-0.015em;line-height:1.3;color:var(--ink-2);text-wrap:balance">A control plane for agents, not a step meter.</h3>
+        <p style="margin:0;flex:1;font-size:15px;line-height:1.55;color:var(--muted);text-wrap:pretty">microVM isolation, air-gap mode and billing per completed run instead of per loop step.</p>
+        <span class="alt-go" style="display:inline-flex;align-items:center;gap:6px;font-size:14.5px;font-weight:500;color:var(--ink);text-decoration:underline;text-underline-offset:4px">See the comparison <span class="arrow">→</span></span>
+      </a>
+      <a class="alt-card" href="/en/alternative-dify" style="display:flex;flex-direction:column;gap:14px;padding:28px 28px 24px;border:1px solid var(--line);border-radius:14px;background:var(--paper);color:var(--ink);text-decoration:none;transition:border-color 160ms ease">
+        <span class="alt-vs" style="font-size:30px;font-weight:600;letter-spacing:-0.03em;line-height:1.1;color:var(--ink);text-wrap:balance">TakeAny.AI <span style="font-weight:400;color:var(--lit-deep)">vs.</span> Dify.ai</span>
+        <h3 style="margin:0;font-size:17px;font-weight:500;letter-spacing:-0.015em;line-height:1.3;color:var(--ink-2);text-wrap:balance">Past the prototype, into governed production.</h3>
+        <p style="margin:0;flex:1;font-size:15px;line-height:1.55;color:var(--muted);text-wrap:pretty">A single Go binary, personal data protection and hardware isolation for regulated environments.</p>
+        <span class="alt-go" style="display:inline-flex;align-items:center;gap:6px;font-size:14.5px;font-weight:500;color:var(--ink);text-decoration:underline;text-underline-offset:4px">See the comparison <span class="arrow">→</span></span>
+      </a>
+      <a class="alt-card" href="/en/alternative-flowise-langflow" style="display:flex;flex-direction:column;gap:14px;padding:28px 28px 24px;border:1px solid var(--line);border-radius:14px;background:var(--paper);color:var(--ink);text-decoration:none;transition:border-color 160ms ease">
+        <span class="alt-vs" style="font-size:30px;font-weight:600;letter-spacing:-0.03em;line-height:1.1;color:var(--ink);text-wrap:balance">TakeAny.AI <span style="font-weight:400;color:var(--lit-deep)">vs.</span> Flowise / Langflow</span>
+        <h3 style="margin:0;font-size:17px;font-weight:500;letter-spacing:-0.015em;line-height:1.3;color:var(--ink-2);text-wrap:balance">Auditable throughout.</h3>
+        <p style="margin:0;flex:1;font-size:15px;line-height:1.55;color:var(--muted);text-wrap:pretty">A production environment instead of a visual layer on LangChain: full audit logs and 0% token markup.</p>
+        <span class="alt-go" style="display:inline-flex;align-items:center;gap:6px;font-size:14.5px;font-weight:500;color:var(--ink);text-decoration:underline;text-underline-offset:4px">See the comparison <span class="arrow">→</span></span>
+      </a>
+      <a class="alt-card" href="/en/alternative-lindy" style="display:flex;flex-direction:column;gap:14px;padding:28px 28px 24px;border:1px solid var(--line);border-radius:14px;background:var(--paper);color:var(--ink);text-decoration:none;transition:border-color 160ms ease">
+        <span class="alt-vs" style="font-size:30px;font-weight:600;letter-spacing:-0.03em;line-height:1.1;color:var(--ink);text-wrap:balance">TakeAny.AI <span style="font-weight:400;color:var(--lit-deep)">vs.</span> Lindy.ai</span>
+        <h3 style="margin:0;font-size:17px;font-weight:500;letter-spacing:-0.015em;line-height:1.3;color:var(--ink-2);text-wrap:balance">Digital coworkers that stay inside your infrastructure.</h3>
+        <p style="margin:0;flex:1;font-size:15px;line-height:1.55;color:var(--muted);text-wrap:pretty">Deployment on your own infrastructure, air-gap mode and no credit limits.</p>
+        <span class="alt-go" style="display:inline-flex;align-items:center;gap:6px;font-size:14.5px;font-weight:500;color:var(--ink);text-decoration:underline;text-underline-offset:4px">See the comparison <span class="arrow">→</span></span>
+      </a>
+      <a class="alt-card" href="#ollama" style="display:flex;flex-direction:column;gap:14px;padding:28px 28px 24px;border:1px solid var(--line);border-radius:14px;background:var(--paper);color:var(--ink);text-decoration:none;transition:border-color 160ms ease">
+        <span class="alt-vs" style="font-size:30px;font-weight:600;letter-spacing:-0.03em;line-height:1.1;color:var(--ink);text-wrap:balance">TakeAny.AI <span style="font-weight:400;color:var(--lit-deep)">vs.</span> Ollama</span>
+        <h3 style="margin:0;font-size:17px;font-weight:500;letter-spacing:-0.015em;line-height:1.3;color:var(--ink-2);text-wrap:balance">Model runner and agent control plane work together.</h3>
+        <p style="margin:0;flex:1;font-size:15px;line-height:1.55;color:var(--muted);text-wrap:pretty">Ollama serves model weights; TakeAny.AI executes, isolates and audits. Comparison below.</p>
+        <span class="alt-go" style="display:inline-flex;align-items:center;gap:6px;font-size:14.5px;font-weight:500;color:var(--ink);text-decoration:underline;text-underline-offset:4px">See the comparison <span class="arrow">→</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="ollama" data-screen-label="06 TakeAny.AI vs Ollama">
+  <div class="container">
+    <header class="section-head">
+      <span class="section-num">05 · TakeAny.AI vs Ollama</span>
+      <h2>Model runner and agent control plane. <strong>Together, not instead</strong></h2>
+    </header>
+    <div class="cmp-wrap mx-wrap">
+      <table class="cmp mx ox">
+        <colgroup><col class="c-param"><col class="c-takeany"><col class="c-other"></colgroup>
+        <thead>
+          <tr>
+            <th class="param" scope="col">Criterion</th>
+            <th class="col-takeany" scope="col">TakeAny.AI<span class="co">Agent Control Plane</span></th>
+            <th class="other" scope="col">Ollama<span class="co">Model Runner</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row" class="param"><span class="mx-dim">Architectural role</span></th><td class="col-takeany" data-label="TakeAny.AI">Agent orchestration, execution and control</td><td class="other" data-label="Ollama">Running and serving LLM weights (inference)</td></tr>
+          <tr><th scope="row" class="param"><span class="mx-dim">Code execution / sandbox</span></th><td class="col-takeany" data-label="TakeAny.AI">Native Firecracker microVM (hardware-level)</td><td class="other" data-label="Ollama">None (Ollama does not execute code)</td></tr>
+          <tr><th scope="row" class="param"><span class="mx-dim">LLM security</span></th><td class="col-takeany" data-label="TakeAny.AI">Dual safety firewalls (prompt guard and PII)</td><td class="other" data-label="Ollama">None (relies entirely on the selected model)</td></tr>
+          <tr><th scope="row" class="param"><span class="mx-dim">Tools &amp; access control (RBAC)</span></th><td class="col-takeany" data-label="TakeAny.AI">35 granular permissions for tools and databases</td><td class="other" data-label="Ollama">None (exposes the raw /api/generate endpoint)</td></tr>
+          <tr><th scope="row" class="param"><span class="mx-dim">Auditability</span></th><td class="col-takeany" data-label="TakeAny.AI">14 audit log domains in local SQLite (EU AI Act ready)</td><td class="other" data-label="Ollama">Basic HTTP / Docker container logs</td></tr>
+          <tr><th scope="row" class="param"><span class="mx-dim">Deployment model</span></th><td class="col-takeany" data-label="TakeAny.AI">Single Go binary, local SQLite (air-gap ready)</td><td class="other" data-label="Ollama">CLI binary / Docker</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <details class="more-d" style="display:block;margin-top:32px;max-width:860px"><summary class="more-s" style="display:flex;flex-direction:column;gap:8px;cursor:pointer"><p class="sub more-p" style="margin:0">A common mistake in designing local AI systems is treating Ollama as a ready-made engine for building agents. Ollama is a great, lightweight tool for serving model weights, but by itself it cannot safely execute code, manage RBAC permissions, run browser task loops or protect against data leaks. TakeAny.AI is not a competitor to Ollama: it is a management layer (Control Plane) that can use an Ollama server as a local model provider and adds a rigorous B2B production environment around it.</p><span class="more-l" style="font-size:14.5px;font-weight:500;color:var(--ink);text-decoration:underline;text-underline-offset:4px"></span></summary>
+      <div style="display:flex;flex-direction:column;gap:14px;margin-top:16px;max-width:760px;font-size:16px;line-height:1.6;color:var(--ink-2)"><p style="margin:0">Combining TakeAny.AI and Ollama creates a 100% sovereign, isolated (air-gap) AI stack inside your server room. Ollama ensures that queries and company data do not leak to commercial cloud providers. TakeAny.AI ensures that code and automations generated by the local model do not damage internal servers or transmit unauthorised data within the local network.</p></div>
+    </details>
+  </div>
+</section>
+
+<section class="cta-strip plum" data-screen-label="07 CTA">
+  <div class="container cta-grid">
+    <div>
+      <h2>Test the difference <strong>yourself</strong></h2>
+    </div>
+    <div class="cta-bts">
+      <a class="btn btn-lg ta-btn-light" href="/en/get-started">Get started <span class="arrow">→</span></a>
+      <a class="cta-link" href="/en/get-started#talk" style="display:inline-flex;align-items:center;align-self:center;gap:6px;padding:10px 4px;font-size:16px;font-weight:500;color:#fff;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px;background:none;border:0">Talk to us</a>
+    </div>
+  </div>
+</section>
+
+<footer data-screen-label="Footer">
+  <div class="container">
+    <div class="foot-top" style="grid-template-columns:1.25fr 1fr 1.35fr 0.9fr">
+      <div class="foot-brand">
+        <a class="wordmark" href="/en/" aria-label="TakeAny.AI"><x-import component-from-global-scope="TakeAnyAIDesignSystem_365327.Logo" height="36px" hint-size="189px,36px"></x-import></a>
+        <details class="lang-picker" style="position:relative;margin-top:14px;width:max-content">
+          <summary style="display:flex;align-items:center;gap:8px;cursor:pointer;list-style:none;font-size:14px;color:var(--ink);padding:6px 0"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><circle cx="8" cy="8" r="6.2"></circle><path d="M1.9 8h12.2"></path><path d="M8 1.8c1.7 1.7 2.6 3.8 2.6 6.2S9.7 12.5 8 14.2C6.3 12.5 5.4 10.4 5.4 8S6.3 3.5 8 1.8Z"></path></svg><span>English</span><svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" style="margin-left:2px;opacity:.7"><path d="M3 4.8 6 7.8l3-3"></path></svg></summary>
+          <div role="group" aria-label="Language" style="position:absolute;left:0;bottom:calc(100% + 8px);z-index:20;min-width:168px;background:var(--paper);border:1px solid var(--line);border-radius:4px;box-shadow:0 6px 20px rgba(0,0,0,.08);overflow:hidden;display:flex;flex-direction:column">
+            <a href="/en/how-we-differ" hreflang="en" style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 12px;font-size:14px;color:var(--ink);text-decoration:none;background:var(--paper-3)">English<span style="font-size:11px;font-family:var(--font-mono)">✓</span></a>
+            <a href="/pl/how-we-differ" hreflang="pl" style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 12px;font-size:14px;color:var(--muted);text-decoration:none;background:transparent">Polski</a>
+          </div>
+        </details>
+        <p>The control layer for AI agents. Runs on your infrastructure.</p>
+      </div>
+      <div class="foot-col">
+        <h6>Product</h6>
+        <ul>
+          <li><a href="/en/product">Overview</a></li>
+          <li><a href="/en/use-cases">Use cases</a></li>
+          <li><a href="/en/product#security">Security</a></li>
+          <li><a href="/en/product#cost">Cost control</a></li>
+          <li><a href="/en/product#models">Model Selection</a></li>
+          <li><a href="/en/pricing">Pricing</a></li>
+          <li><a href="/en/how-we-differ">How we differ</a></li>
+          <li><a href="/en/alternative-n8n">TakeAny.AI vs n8n</a></li>
+          <li><a href="/en/alternative-dify">TakeAny.AI vs Dify.ai</a></li>
+          <li><a href="/en/alternative-flowise-langflow">TakeAny.AI vs Flowise / Langflow</a></li>
+          <li><a href="/en/alternative-lindy">TakeAny.AI vs Lindy.ai</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h6>Use cases</h6>
+        <ul>
+          <li><a href="/en/use-cases/model-freedom">Testing Open-Weight LLMs (vLLM / Ollama)</a></li>
+          <li><a href="/en/use-cases/self-hosted-rag-assistant">Building Local RAG on Confidential Files</a></li>
+          <li><a href="/en/use-cases/chatbot-widget">Answering Customer Questions from Your Content</a></li>
+          <li><a href="/en/use-cases/local-gpu-inference">Unboxing &amp; Accelerating Local GPUs</a></li>
+          <li><a href="/en/use-cases/ai-for-erp-crm">Supercharging ERP &amp; CRM Systems</a></li>
+          <li><a href="/en/use-cases/rfp-automation">Automating Technical RFI &amp; RFP Workflows</a></li>
+          <li><a href="/en/use-cases/build-ai-agents">Sandboxing Web Browsing Agents</a></li>
+          <li><a href="/en/use-cases/build-ai-agents">Enforcing EU AI Act</a></li>
+          <li><a href="/en/use-cases/white-label-ai">Earning on AI Under Your Own Brand</a></li>
+          <li><a href="/en/get-started#form">Your AI idea <span class="arrow">→</span></a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h6>Get going</h6>
+        <ul>
+          <li><a href="/en/get-started">Get started</a></li>
+          <li><a href="/en/docs">Docs</a></li>
+          <li><a href="/en/blog">Blog</a></li>
+          <li><a href="/en/get-started#talk">Talk to us</a></li>
+          <li><a href="/en/partners">Partnerships</a></li>
+        </ul>
+      </div>
+    </div>
+    <div style="margin:8px 0 28px;min-height:64px;background:var(--surface-plum);border-radius:14px;padding:10px 12px 10px 20px;display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px">
+      <img src="/_ds/takeany-ai-design-system-365327f4-89d8-418c-be14-ea19a91e4fcb/assets/logo/takeany-logo-ube-butter.svg" alt="TakeAny.AI" width="137" height="26" style="height:26px;width:auto;display:block">
+      <span style="width:1px;height:28px;background:rgba(255,255,255,.2)"></span>
+      <div style="position:relative;flex:1 1 360px;min-width:0">
+        <button type="button" onClick="{{ abToggle }}" aria-expanded="{{ abOpenStr }}" style="width:100%;max-width:640px;display:flex;align-items:center;gap:10px;min-height:44px;padding:0 16px;border:1px solid rgba(255,255,255,.3);border-radius:999px;background:transparent;color:#fff;font-size:14.5px;cursor:pointer;text-align:left">
+          <span style="font-family:var(--font-mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-on-plum-muted);white-space:nowrap">Use AI to</span>
+          <span style="flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ abCur.full }}</span>
+          <span style="color:var(--text-on-plum-muted)">{{ abCaret }}</span>
+        </button>
+        <ul style="display:{{ abListDisplay }};position:absolute;left:0;bottom:52px;width:100%;max-width:640px;margin:0;padding:0;list-style:none;background:#fff;border:1px solid var(--ink);border-radius:16px;overflow:hidden;z-index:30">
+          <sc-for list="{{ abItems }}" as="it" hint-placeholder-count="5">
+            <li style="border-bottom:1px solid var(--line)"><a href="{{ it.href }}" onClick="{{ it.pick }}" style="display:grid;grid-template-columns:34px minmax(0,1fr);gap:10px;align-items:baseline;min-height:52px;padding:14px 18px;color:var(--ink);text-decoration:none;background:{{ it.bg }}" style-hover="background:var(--ube-lavender-50)"><span style="font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;color:var(--lit-deep)">{{ it.n }}</span><span style="font-size:15px;line-height:1.35">{{ it.full }}</span></a></li>
+          </sc-for>
+        </ul>
+      </div>
+      <a class="btn btn-accent" href="/en/get-started#form" style="margin-left:auto">Deliver Your AI idea <span class="arrow">→</span></a>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 TakeAny.AI</span>
+      <span><a href="/llms.txt">llms.txt</a> · <a href="/en/legal#privacy">Privacy</a> · <a href="/en/legal#terms">Terms</a> · <a href="/en/legal#dpa">DPA</a> · <a href="#" data-cookie-settings="">Cookie settings</a></span>
+    </div>
+  </div>
+</footer>
+
+
+<a id="backTop" href="#" aria-label="Back to top" title="Back to top" style="position:fixed;right:22px;bottom:28px;z-index:70;display:flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:50%;background:var(--paper);border:1px solid var(--line);color:var(--muted);text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,.06);opacity:0;pointer-events:none;transform:translateY(10px);transition:opacity 200ms ease,transform 200ms ease,color 160ms ease,border-color 160ms ease" onMouseEnter="this.style.color='var(--ink)';this.style.borderColor='var(--ink)'" onMouseLeave="this.style.color='var(--muted)';this.style.borderColor='var(--line)'"><svg width="15" height="15" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 11.5V2.5"></path><path d="M3 6.3 7 2.3l4 4"></path></svg></a>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() { return { ...this.__rv0(), ...this.__ab() }; }
+  __ab() {
+    const L = [
+          { n: '01', full: 'Run RAG on documents that can’t leave the building', href: '/en/use-cases/self-hosted-rag-assistant' },
+          { n: '02', full: 'Turn the GPU servers you bought into a secure AI platform', href: '/en/use-cases/local-gpu-inference' },
+          { n: '03', full: 'Let agents into your ERP even when it is ageing and has no API', href: '/en/use-cases/ai-for-erp-crm' },
+          { n: '04', full: 'Juggle LLM models, let open-weight take on the frontier labs', href: '/en/use-cases/model-freedom' },
+          { n: '05', full: 'Sell AI to your clients under your own brand', href: '/en/use-cases/white-label-ai' },
+          { n: '06', full: 'Deliver Your AI idea', href: '/en/get-started#form', hl: true }
+        ];
+    const ab = this.state.ab || 0, open = !!this.state.abOpen;
+    return {
+      abCur: L[ab], abOpenStr: open ? 'true' : 'false', abCaret: open ? '▴' : '▾', abListDisplay: open ? 'block' : 'none',
+      abToggle: () => this.setState(s => ({ abOpen: !s.abOpen })),
+      abItems: L.map((x, k) => ({ ...x, bg: x.hl ? 'var(--ube-lavender-100)' : k === ab ? 'var(--ube-lavender-50)' : '#fff', pick: () => this.setState({ ab: k, abOpen: false }) }))
+    };
+  }
+  state = { navOpen: false };
+  componentDidMount() {
+    document.documentElement.lang = 'en';
+  }
+  __rv0() {
+    const navOpen = this.state.navOpen;
+    return {
+      toggleMobileNav: () => this.setState(s => ({ navOpen: !s.navOpen })),
+      mobileMenuStyle: { opacity: navOpen ? 1 : 0, pointerEvents: navOpen ? 'auto' : 'none' }
+    };
+  }
+}
+</script>
+</body>
+</html>

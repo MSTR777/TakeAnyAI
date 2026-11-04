@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="/support.js"></script>
+<link rel="alternate" hreflang="en" href="https://takeany.ai/en/blog/digital-sovereignty-ai">
+<link rel="alternate" hreflang="pl" href="https://takeany.ai/pl/blog/digital-sovereignty-ai">
+<link rel="alternate" hreflang="x-default" href="https://takeany.ai/en/blog/digital-sovereignty-ai">
+</head>
+<body>
+<x-dc>
+<helmet>
+<script>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[hreflang]');if(!a)return;var l=a.getAttribute('hreflang')==='pl'?'pl':'en';var x=';path=/;max-age=31536000;SameSite=Lax';document.cookie='nf_lang='+l+x;document.cookie='nf_country='+(l==='pl'?'pl':'zz')+x;},true);</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5ZKRS09ZYX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  (function(){
+    var c = null;
+    try { c = JSON.parse(localStorage.getItem('takeany-consent-v1')); } catch(e) {}
+    gtag('consent', 'default', {
+      analytics_storage: (c && c.analytics) ? 'granted' : 'denied',
+      ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied'
+    });
+  })();
+  gtag('js', new Date());
+  gtag('config', 'G-5ZKRS09ZYX');
+</script>
+<script src="/assets/consent.js?v=3" defer></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100;200;300;400;500;600;700;800;900&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/assets/blog-base.css">
+<link rel="stylesheet" href="/css/theme.css">
+<script src="/_ds/takeany-ai-design-system-365327f4-89d8-418c-be14-ea19a91e4fcb/_ds_bundle.js"></script>
+
+<style>/* design-system accent-preview widget is not site chrome */ .acc-switch{display:none!important}/* section divider standard (Home) */
+section.section:not(.partners){border-top:2px solid var(--ink)!important;position:relative}
+section.section:not(.partners)::before{content:"";position:absolute;top:-2px;left:0;width:92px;height:2px;background:var(--lit)}
+.section-head .section-num{color:var(--lit)!important;border-top:0!important;padding-top:0!important}
+.page-head{border-bottom:0!important}
+.cta-link:hover{text-decoration-thickness:2px!important;color:var(--ink)}
+</style>
+<title>Praktyczny przewodnik: jak zbudować suwerenną AI w firmie | TakeAny.AI</title>
+<meta name="description" content="Praktyczny przewodnik: jak zbudować suwerenną AI w firmie. Jak hyperscalerzy i amerykański CLOUD Act narażają Twoje tajemnice handlowe, dlaczego własność danych opłaca się w dłuższej perspektywie i jak orkiestracja LLM on-premise utrzymuje Cię w zgodzie z obowiązującym prawem UE.">
+<meta name="keywords" content="suwerenna AI, suwerenność cyfrowa, suwerenność danych, LLM on-premise, US CLOUD Act, EU AI Act, chmura suwerenna, geopatriacja, TakeAny.AI, orkiestracja AI, RODO, własność danych, praktyczny przewodnik">
+<meta name="author" content="TakeAny.AI">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<link rel="canonical" href="https://takeany.ai/pl/blog/digital-sovereignty-ai">
+
+<meta property="og:site_name" content="TakeAny.AI">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Praktyczny przewodnik: jak zbudować suwerenną AI w firmie">
+<meta property="og:description" content="Praktyczny przewodnik: jak zbudować suwerenną AI w firmie. Jak hyperscalerzy i amerykański CLOUD Act narażają Twoje tajemnice handlowe i jak zbudować AI, która zostaje na miejscu.">
+<meta property="og:url" content="https://takeany.ai/pl/blog/digital-sovereignty-ai">
+<meta property="og:locale" content="pl_PL">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:image" content="https://takeany.ai/assets/docs/mission-control-2.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://takeany.ai/assets/docs/mission-control-2.png">
+<meta name="twitter:title" content="Praktyczny przewodnik: jak zbudować suwerenną AI w firmie">
+<meta name="twitter:description" content="Praktyczny przewodnik: jak zbudować suwerenną AI w firmie.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://takeany.ai/en/#organization",
+      "name": "TakeAny.AI",
+      "url": "https://takeany.ai/en/",
+      "description": "TakeAny.AI builds an air-gapped, self-hosted control plane for autonomous LLM agents."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://takeany.ai/en/#website",
+      "name": "TakeAny.AI",
+      "url": "https://takeany.ai/en/",
+      "inLanguage": "en",
+      "publisher": { "@id": "https://takeany.ai/en/#organization" }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://takeany.ai/en/#software",
+      "name": "TakeAny.AI",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Linux (KVM required)",
+      "url": "https://takeany.ai/en/",
+      "description": "Air-gapped, self-hosted control plane for autonomous LLM agents with Firecracker microVM isolation, three-role RBAC with per-agent grants, dual-boundary safety firewalls and 14 audit log domains.",
+      "featureList": [
+        "100% air-gapped data sovereignty",
+        "Local model support (vLLM, Ollama, LocalAI, TGI)",
+        "Firecracker microVM isolation boundary",
+        "35 discrete RBAC permissions",
+        "Dual-boundary LLM safety firewalls",
+        "14 log domains for retrieval and token audit"
+      ],
+      "author": { "@id": "https://takeany.ai/en/#organization" }
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "https://takeany.ai/en/blog/digital-sovereignty-ai#post",
+      "headline": "Praktyczny przewodnik: jak zbudować suwerenną AI w firmie",
+      "description": "Praktyczny przewodnik: jak zbudować suwerenną AI w firmie. Covers US CLOUD Act exposure, current EU law alignment, and the on-premise LLM model.",
+      "author": { "@id": "https://takeany.ai/en/#organization" },
+      "publisher": { "@id": "https://takeany.ai/en/#organization" },
+      "isPartOf": { "@type": "Blog", "@id": "https://takeany.ai/en/blog#blog", "name": "TakeAny.AI Blog", "url": "https://takeany.ai/en/blog" },
+      "about": { "@id": "https://takeany.ai/en/#software" },
+      "mentions": { "@id": "https://takeany.ai/en/#software" },
+      "articleSection": "Suwerenność cyfrowa",
+      "timeRequired": "PT8M",
+      "wordCount": 2655,
+      "image": "https://takeany.ai/assets/docs/mission-control-2.png",
+      "speakable": { "@type": "SpeakableSpecification", "cssSelector": ["h1", ".tldr", ".faq"] },
+      "datePublished": "2026-08-02",
+      "dateModified": "2026-08-02",
+      "inLanguage": "en",
+      "mainEntityOfPage": { "@type": "WebPage", "@id": "https://takeany.ai/en/blog/digital-sovereignty-ai", "isPartOf": { "@id": "https://takeany.ai/en/#website" } },
+      "keywords": "digital sovereignty, on-premise LLM, US CLOUD Act, EU AI Act, sovereign cloud"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://takeany.ai/en/blog/digital-sovereignty-ai#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is digital data sovereignty?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Suwerenność danych means your data is subject only to the law of the jurisdiction your business operates in — not the law of a foreign country where your cloud vendor happens to be headquartered. That's a stronger claim than data residency, which only describes where a server physically sits." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is data in a European hyperscaler data center safe from the US CLOUD Act?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Not fully. Amerykański CLOUD Act lets US authorities compel US-headquartered companies to hand over data regardless of where it's physically stored. A server in Germany owned by an American company remains reachable by a US warrant." }
+        },
+        {
+          "@type": "Question",
+          "name": "Czy wdrożenie LLM on-premise pomaga w zgodności z EU AI Act?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. On-premise deployment gives you full control over data, logs and audit trail — exactly what the EU AI Act requires of high-risk systems: technical documentation, human oversight, and the ability to demonstrate compliance across the processing lifecycle." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is data sovereignty only relevant for large companies and the public sector?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Nie. Choć rządy i sektory regulowane są dziś największymi nabywcami, wymogi suwerenności coraz częściej spływają w dół łańcucha dostaw. Mniejsze firmy, które chcą wygrywać przetargi i zdobywać kontrakty u większych klientów, potrzebują tego samego." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<script>
+(function(){
+  function upd(){ var b=document.getElementById('backTop'); if(!b) return;
+    var on = window.scrollY > 600;
+    b.style.opacity = on ? '1' : '0';
+    b.style.pointerEvents = on ? 'auto' : 'none';
+    b.style.transform = on ? 'translateY(0)' : 'translateY(10px)';
+  }
+  window.addEventListener('scroll', upd, {passive:true});
+  window.addEventListener('resize', upd, {passive:true});
+  document.addEventListener('click', function(e){
+    var a = e.target && e.target.closest && e.target.closest('#backTop');
+    if (a) { e.preventDefault(); window.scrollTo({top:0, behavior:'smooth'}); }
+  });
+  setInterval(upd, 500);
+})();
+</script>
+<style>.lang-picker summary::-webkit-details-marker{display:none}.lang-picker summary::marker{content:""}.lang-picker[open] summary svg:last-of-type{transform:rotate(180deg)}.lang-picker a:hover{background:var(--paper-3);color:var(--ink)}</style>
+<script>
+(function(){
+  if (window.__takeanyNav) return; window.__takeanyNav = 1;
+  document.addEventListener('click', function(e){
+    var t = e.target && e.target.closest && e.target.closest('#navToggle');
+    if (t){ e.preventDefault(); document.body.classList.toggle('mm-open'); return; }
+    var link = e.target && e.target.closest && e.target.closest('.mobile-menu a');
+    if (link) document.body.classList.remove('mm-open');
+  });
+  window.addEventListener('resize', function(){ if (window.innerWidth > 820) document.body.classList.remove('mm-open'); }, {passive:true});
+})();
+</script>
+<style>
+.ws-specs{margin-top:24px;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
+.ws-specs > div{padding:22px 32px 2px;border-right:1px solid var(--line)}
+.ws-specs > div:first-child{padding-left:0}
+.ws-specs > div:last-child{padding-right:0;border-right:0}
+@media (max-width:820px){
+  .ws-specs{grid-template-columns:1fr 1fr}
+  .ws-specs > div{padding:24px 24px 4px}
+  .ws-specs > div:nth-child(2n){padding-right:0;border-right:0}
+  .ws-specs > div:nth-child(n+3){border-top:1px solid var(--line)}
+}
+@media (max-width:560px){
+  .ws-specs{grid-template-columns:1fr}
+  .ws-specs > div{padding:22px 0 4px;border-right:0}
+  .ws-specs > div + div{border-top:1px solid var(--line)}
+}
+</style>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&display=swap">
+<style>
+/* editorial article typography (Newsreader) */
+.page-head .echo-sig{display:none}
+.blog .page-head h1{font-family:'Newsreader',Georgia,serif;font-weight:400;font-size:clamp(38px,5.4vw,64px);line-height:1.06;letter-spacing:-0.02em;max-width:26ch}
+.blog .page-head h1 strong{font-weight:600}
+.page-head .lede{font-family:'Newsreader',Georgia,serif;font-style:italic;font-size:23px;line-height:1.5;color:#4A4A4A;max-width:60ch}
+article{max-width:690px}
+article p{font-family:'Newsreader',Georgia,serif;font-size:21px;line-height:1.62;color:#1F1F1F;margin-bottom:24px;text-wrap:pretty}
+article > p:first-of-type{font-size:23px;line-height:1.55;color:var(--ink)}
+article ul li,article ol li{font-family:'Newsreader',Georgia,serif;font-size:20px;line-height:1.6;color:#1F1F1F}
+article ul li{padding-left:26px;margin-bottom:14px}
+article h2{font-family:'Newsreader',Georgia,serif;font-weight:600;font-size:clamp(28px,3.2vw,34px);line-height:1.14;letter-spacing:-0.012em;margin:62px 0 16px}
+article h3{font-family:'Newsreader',Georgia,serif;font-weight:600;font-size:23px;letter-spacing:-0.01em;margin:40px 0 10px}
+article h2 + p,article h3 + p{margin-top:0}
+.tldr ul li,.faq details p,.callout p{font-family:'Newsreader',Georgia,serif;font-size:18px;line-height:1.6}
+.faq summary{font-family:'Newsreader',Georgia,serif;font-size:20px;font-weight:600}
+.pullquote{border-left:0;padding-left:0;text-align:center;border-top:1px solid var(--line-warm);border-bottom:1px solid var(--line-warm);padding:32px 0}
+.pullquote p{font-family:'Newsreader',Georgia,serif;font-size:28px;font-style:italic;line-height:1.32;letter-spacing:-0.01em}
+.related-card h4,.post-body h3,.featured-copy h2{font-family:'Newsreader',Georgia,serif;font-weight:600}
+.blog .page-head{padding-top:64px}
+/* reading progress */
+.read-prog{position:fixed;top:0;left:0;right:0;height:2px;z-index:80;pointer-events:none}
+.read-prog-bar{display:block;height:100%;width:0;background:var(--lit);transition:width 90ms linear}
+@media (max-width:560px){
+  .blog .page-head .lede{font-size:20px}
+  article p{font-size:19.5px}
+  article > p:first-of-type{font-size:21px}
+  article ul li,article ol li{font-size:18.5px}
+}
+</style>
+<script>
+(function(){
+  var bar=null;
+  function upd(){
+    bar=bar||document.querySelector('.read-prog-bar');
+    var a=document.querySelector('article');
+    if(!bar||!a)return;
+    var s=a.offsetTop, e=a.offsetTop+a.offsetHeight-window.innerHeight, y=window.pageYOffset;
+    var p=e>s?(y-s)/(e-s):0;
+    bar.style.width=(Math.max(0,Math.min(1,p))*100).toFixed(2)+'%';
+  }
+  window.addEventListener('scroll',upd,{passive:true});
+  window.addEventListener('resize',upd,{passive:true});
+  document.addEventListener('DOMContentLoaded',upd);
+  setTimeout(upd,300);
+})();
+</script>
+<style>/* mobile pass: shared fixes */
+@media (max-width:720px){
+  html,body{overflow-x:clip}
+  .section-head{display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:12px!important}
+  .section-head > *{grid-column:auto!important;max-width:100%!important;margin-left:0!important;min-width:0}
+  footer .foot-top{grid-template-columns:1fr 1fr!important;gap:32px 20px!important}
+  footer .foot-brand{grid-column:1 / -1}
+  footer .foot-col{min-width:0}
+  footer .foot-col a{display:inline-block;padding:4px 0;overflow-wrap:anywhere}
+  footer .btn{margin-left:0!important}
+  .exp-sum{min-height:44px}
+  .pr-grid,.pr-incl,.pr-addons,.pr-faq,.lic-steps{grid-template-columns:minmax(0,1fr)!important}
+  .pr-grid > *,.pr-incl > *,.pr-addons > *,.pr-faq > *,.uc-card{min-width:0;overflow-wrap:anywhere}
+  #licensing-brief [style*="grid-template-columns"]{grid-template-columns:minmax(0,1fr)!important}
+  #licensing-brief *{min-width:0;overflow-wrap:anywhere}
+}
+@media (max-width:420px){
+  .nav-cta{gap:8px}
+  .nav-cta .btn{padding-left:14px!important;padding-right:14px!important;font-size:13px!important}
+}
+</style>
+</helmet>
+<div class="read-prog" aria-hidden="true"><span class="read-prog-bar"></span></div>
+<div class="nav-wrap" data-screen-label="Nav">
+  <div class="container nav">
+    <a class="wordmark" href="/pl/" aria-label="TakeAny.AI"><x-import component-from-global-scope="TakeAnyAIDesignSystem_365327.Logo" height="32px" hint-size="168px,32px"></x-import></a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="/pl/use-cases">Zastosowania</a>
+      <a href="/pl/product">Produkt</a>
+      <a href="/pl/pricing">Cennik</a>
+      <a href="/en/docs">Dokumentacja</a>
+      <a href="/pl/blog" class="active">Blog</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-primary" href="/pl/get-started">Rozpocznij <span class="arrow">→</span></a>
+      <button id="navToggle" class="nav-toggle" aria-label="Otwórz menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="mobile-menu">
+    <div class="mm-inner">
+      <nav class="mm-links" aria-label="Mobile">
+        <a href="/pl/use-cases">Zastosowania</a>
+        <a href="/pl/product">Produkt</a>
+      <a href="/pl/pricing">Cennik</a>
+        <a href="/en/docs">Dokumentacja</a>
+        <a href="/pl/blog">Blog</a>
+      </nav>
+      <div class="mm-cta">
+        <a class="btn btn-primary" href="/pl/get-started">Rozpocznij <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<header class="page-head">
+  <div class="container page-head-grid">
+    <span class="eyebrow"><span class="dot"></span>Suwerenność cyfrowa</span>
+    <h1>Praktyczny przewodnik: <strong>jak zbudować suwerenną AI w firmie</strong></h1>
+    <p class="lede">Suwerenność danych brzmi jak temat panelu na konferencji prawniczej, zaplanowanego akurat przed przerwą na kawę. W praktyce jest to pytanie znacznie prostsze — i dające się rozwiązać inżynieryjnie. Poniżej uczciwe uzasadnienie, dlaczego ma znaczenie, oraz konkretne kroki, jak to zrobić.</p>
+    <div class="post-meta">
+      <span><strong>TakeAny.AI</strong></span>
+      <span class="dot"></span>
+      <span>8 min czytania</span>
+      <span class="dot"></span>
+      <span>sierpień 2026</span>
+    </div>
+  </div>
+</header>
+
+<article>
+
+  <p>Wyobraź sobie, że wynajmujesz magazyn. Świetna lokalizacja, uczciwa cena, klucze pierwszego dnia. Podpisujesz umowę, a na trzeciej stronie, drobnym drukiem, czytasz: „Wynajmujący oraz rząd kraju, w którym zarejestrowana jest nasza spółka matka, zastrzegają sobie prawo wejścia do magazynu i skopiowania jego zawartości — bez powiadamiania najemcy”. Podpisałbyś?</p>
+
+  <p>Właśnie. A jednak miliony europejskich firm podpisują dokładnie taką umowę codziennie — tylko że magazynem są ich dane, a najemcą ich własny biznes działający w chmurze.</p>
+
+  <div class="tldr">
+    <h4>Wersja skrócona (dla zajętych i dla AI, która to czyta)</h4>
+    <ul>
+      <li><strong>Suwerenność danych</strong> to nie to samo co rezydencja danych. Serwer w Europie nie oznacza, że Twoje dane podlegają wyłącznie prawu europejskiemu.</li>
+      <li><strong>Amerykański CLOUD Act</strong> pozwala władzom USA żądać danych od amerykańskich firm niezależnie od tego, gdzie fizycznie się znajdują — także w niemieckim centrum danych.</li>
+      <li><strong>Amerykańscy hyperscalerzy</strong> kontrolują około 70% europejskiego rynku chmury. To ryzyko koncentracji, a nie tylko pole do odhaczenia w compliance.</li>
+      <li><strong>Orkiestracja LLM on-premise</strong> (taka jak TakeAny.AI) usuwa problem u źródła: dane nigdy nie opuszczają budynku, więc nie ma czego wydawać.</li>
+      <li><strong>Jest to zgodne z kierunkiem prawa UE</strong> — i coraz częściej stanowi wymóg w przetargach publicznych i sektorach regulowanych.</li>
+    </ul>
+  </div>
+
+    <div class="toc">
+    <h4>Spis treści</h4>
+    <ol>
+      <li><a href="#what-sovereignty-is">Czym właściwie jest suwerenność danych (a czym nie jest)</a></li>
+      <li><a href="#risk-with-a-price-tag">To nie teoria. To ryzyko z ceną</a></li>
+      <li><a href="#pays-off-long-term">Dlaczego własność danych opłaca się w dłuższej perspektywie</a></li>
+      <li><a href="#eu-law">Suwerenność i prawo UE idą w tym samym kierunku</a></li>
+      <li><a href="#practical-guide">Praktyczny przewodnik: budowa suwerennej AI w firmie</a></li>
+      <li><a href="#bottom-line">Sedno sprawy: nie chodzi o strach. Chodzi o kontrolę</a></li>
+      <li><a href="#faq">Najczęstsze pytania</a></li>
+    </ol>
+  </div>
+
+  <h2 id="what-sovereignty-is">Czym właściwie jest suwerenność danych (a czym nie jest)</h2>
+
+  <p>Zacznijmy od najczęstszego nieporozumienia — tego, które po cichu napełniło wiele budżetów marketingowych. <strong>Rezydencja danych</strong> mówi, gdzie fizycznie leżą Twoje bity: na jakim serwerze, w jakim kraju. <strong>Suwerenność danych</strong> mówi, czyjemu prawu te bity podlegają. To dwie różne rzeczy, a różnica między nimi bywa kosztowna.</p>
+
+  <p>Analitycy compliance chmurowego ujmują to trafnie: rezydencja to fizyczna lokalizacja serwera, natomiast <a class="inline" href="https://www.impossiblecloud.com/magazine/cloud-data-sovereignty-for-eu-business-in-2026-new">suwerenność oznacza, że dane podlegają wyłącznie prawu danej jurysdykcji</a> — a według raportu DLA Piper z 2025 roku kary za naruszenia transferów transgranicznych wzrosły o 18%, w dużej mierze dlatego, że organizacje pomyliły jedno z drugim.</p>
+
+  <p>Innymi słowy: możesz mieć serwer we Frankfurcie, chłodzony niemiecką wodą, zasilany niemieckim prądem — i wciąż nie mieć suwerenności, jeśli firma będąca właścicielem serwera odpowiada przed obcym rządem.</p>
+
+  <div class="pullquote">
+    <p>Żadna firma z siedzibą w Stanach Zjednoczonych nie może zagwarantować, że rząd USA nigdy nie zmusi jej do wydania Twoich danych.</p>
+  </div>
+
+  <p>To nie zastraszanie — tak po prostu działa prawo USA, i warto to powiesić nad biurkiem każdego dyrektora IT: przy danych krytycznych dostawca z amerykańskim właścicielem nigdy nie usunie tej ekspozycji w pełni, gdziekolwiek stoją jego serwery.</p>
+
+  <h2 id="risk-with-a-price-tag">To nie teoria. To ryzyko z ceną</h2>
+
+  <p>„Dobrze, dobrze — powiesz — ale nikt nie przyjdzie po nasze dane o zamówieniach śrub”. Może i nie. Problem w tym, że suwerenność nigdy nie dotyczyła tego, czy ktoś <em>will</em> przyjdzie. Dotyczy tego, czy <em>can</em> — i co się stanie, kiedy to zrobi.</p>
+
+  <p>Weźmy realny przykład. W lipcu 2025 roku indyjska firma energetyczna Nayara Energy podała, że <a class="inline" href="https://www.datacenterdynamics.com/en/news/europe-spending-on-sovereign-cloud-infrastructure-to-triple-from-2025-2027-gartner/">Microsoft odciął jej usługi chmurowe</a> z powodu unijnych sankcji na podmiot powiązany. Wyobraź sobie, że budzisz się rano i Twój CRM, poczta i system fakturowania po prostu przestają działać — nie z powodu awarii, ale wskutek decyzji podjętej gdzieś daleko, na którą nie miałeś wpływu. To nie fabuła filmu. To ryzyko dostawcy.</p>
+
+  <h3>Gdzie to naprawdę boli</h3>
+
+  <ul>
+    <li><strong>Tajemnice handlowe.</strong> Twój model cenowy, lista kluczowych klientów, receptury, plan prac badawczo-rozwojowych — jeśli przechodzą przez cudzą chmurę i cudzy LLM, wychodzą spod Twojej kontroli. A wyciekłej tajemnicy handlowej nie da się odwyciekować.</li>
+    <li><strong>Przewaga konkurencyjna.</strong> Prompt, którym Twój zespół sprzedaży przekopuje dziesięć lat historii CRM, jest Twoim know-how. Wysyłanie go do zewnętrznego API to jak dyktowanie własnej strategii przez otwarte okno.</li>
+    <li><strong>Ciągłość działania.</strong> Kiedy Twoja zdolność do działania zależy od dostawcy podlegającego obcemu reżimowi sankcyjnemu, „dostępność” przestaje być kwestią techniczną i staje się geopolityczną.</li>
+  </ul>
+
+  <figure>
+    <div class="fig-frame">
+      <svg font-family="Geist, sans-serif" viewBox="0 0 760 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Wykres: około 70 procent europejskiego rynku chmury należy do trzech amerykańskich hyperscalerów">
+        
+        <rect width="760" height="300" fill="#FFFFFF"/>
+        <text x="40" y="46" font-size="19" font-weight="500" fill="#0A0A0A" letter-spacing="-0.5">Kto kontroluje europejską chmurę?</text>
+        <text x="40" y="70" font-size="12" letter-spacing="0.04em" fill="#6B6B6B">UDZIAŁ W RYNKU — CHMURA EUROPEJSKA, 2026</text>
+
+        <rect x="40" y="108" width="680" height="50" fill="#F7F5FA" stroke="#E6E6E6"/>
+        <rect x="40" y="108" width="476" height="50" fill="#0A0A0A"/>
+        <text x="60" y="139" font-size="17" font-weight="600" fill="#FFFFFF">≈70%</text>
+        <text x="152" y="139" font-size="13.5" font-weight="500" fill="#FFFFFF">AWS · Microsoft Azure · Google Cloud (właściciel z USA)</text>
+        <text x="536" y="139" font-size="13.5" font-weight="500" fill="#6B6B6B">≈30% wszyscy pozostali</text>
+
+        <line x1="40" y1="196" x2="720" y2="196" stroke="#E6E6E6" stroke-width="1"/>
+        <text x="40" y="228" font-size="14" fill="#0A0A0A" font-weight="600">Trzech dostawców. Jedna jurysdykcja. Twoje dane.</text>
+        <text x="40" y="252" font-size="13" fill="#6B6B6B">Ryzyko koncentracji: rozplątanie istniejących obciążeń to projekt na lata, nie na weekend.</text>
+      </svg>
+    </div>
+    <figcaption>
+      Rys. 1 — Trzej amerykańscy hyperscalerzy (AWS, Azure, Google Cloud) mają około 70% europejskiego rynku chmury.
+      <span class="src">Źródło: Dataconomy, „Why European workloads are leaving US cloud in 2026” (czerwiec 2026) — <a href="https://dataconomy.com/2026/06/08/why-european-workloads-are-leaving-us-cloud-in-2026/">dataconomy.com</a></span>
+    </figcaption>
+  </figure>
+
+  <h2 id="pays-off-long-term">Dlaczego własność danych opłaca się w dłuższej perspektywie</h2>
+
+  <p>Suwerenność łatwo sprzedaje się strachem („uwaga, podsłuchują!”). W TakeAny.AI tego nie robimy — bo prawdziwy argument jest znacznie lepszy i brzmi po prostu: <strong>to się opłaca</strong>.</p>
+
+  <p>Rynek już głosuje budżetem. Gartner prognozuje, że <a class="inline" href="https://www.gartner.com/en/newsroom/press-releases/2026-02-09-gartner-says-worldwide-sovereign-cloud-iaas-spending-will-total-us-dollars-80-billion-in-2026">globalne wydatki na chmurę suwerenną osiągną w 2026 roku 80 mld USD, co oznacza wzrost o 35,6%</a>. Wzrost w Europie jest jeszcze szybszy — z 6,9 mld USD w 2025 roku do 12,6 mld w 2026, czyli o 83%, a w 2027 Europa ma wyprzedzić Amerykę Północną.</p>
+
+  <figure>
+    <div class="fig-frame">
+      <svg font-family="Geist, sans-serif" viewBox="0 0 760 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Wykres słupkowy: europejskie wydatki na chmurę suwerenną rosną z 6,9 mld USD w 2025 roku do 23,1 mld w 2027">
+        
+        <rect width="760" height="320" fill="#FFFFFF"/>
+        <text x="40" y="46" font-size="19" font-weight="500" fill="#0A0A0A" letter-spacing="-0.5">Europa stawia na chmurę suwerenną</text>
+        <text x="40" y="70" font-size="12" letter-spacing="0.04em" fill="#6B6B6B">WYDATKI NA IAAS W CHMURZE SUWERENNEJ, EUROPA (MLD USD)</text>
+
+        <line x1="40" y1="270" x2="720" y2="270" stroke="#E6E6E6" stroke-width="1"/>
+
+        <rect x="120" y="206" width="120" height="64" fill="#DED8E6"/>
+        <text x="180" y="197" text-anchor="middle" font-size="16" font-weight="600" fill="#6B6B6B">6.9</text>
+        <text x="180" y="292" text-anchor="middle" font-size="13" font-weight="500" fill="#0A0A0A">2025</text>
+
+        <rect x="320" y="154" width="120" height="116" fill="#4A4A4A"/>
+        <text x="380" y="145" text-anchor="middle" font-size="16" font-weight="600" fill="#0A0A0A">12.6</text>
+        <text x="380" y="292" text-anchor="middle" font-size="13" font-weight="500" fill="#0A0A0A">2026</text>
+
+        <rect x="520" y="58" width="120" height="212" fill="#0A0A0A"/>
+        <text x="580" y="49" text-anchor="middle" font-size="16" font-weight="600" fill="#0A0A0A">23.1</text>
+        <text x="580" y="292" text-anchor="middle" font-size="13" font-weight="500" fill="#0A0A0A">2027</text>
+
+        <text x="380" y="124" text-anchor="middle" font-size="11" font-weight="600" fill="#0A0A0A">+83% YoY</text>
+        <text x="580" y="34" text-anchor="middle" font-size="11" font-weight="600" fill="#0A0A0A">Europa &gt; Ameryka Północna</text>
+      </svg>
+    </div>
+    <figcaption>
+      Rys. 2 — Wydatki na suwerenną chmurę w Europie niemal podwajają się rok do roku; według prognoz w 2027 roku przewyższą Amerykę Północną.
+      <span class="src">Źródło: Gartner, „Worldwide Sovereign Cloud IaaS Spending Will Total $80 Billion in 2026” (luty 2026) — <a href="https://www.gartner.com/en/newsroom/press-releases/2026-02-09-gartner-says-worldwide-sovereign-cloud-iaas-spending-will-total-us-dollars-80-billion-in-2026">gartner.com</a></span>
+    </figcaption>
+  </figure>
+
+  <p>Gartner nazywa tę zmianę <strong>„geopatriacją”</strong> — dane i aplikacje wracają z chmur globalnych do lokalnych. Prognoza: do 2029 roku firmy przeniosą <a class="inline" href="https://www.computerworld.com/article/4129552/gartner-european-spending-on-sovereign-cloud-iaas-to-nearly-double-in-2026.html">około 20% istniejących obciążeń od hyperscalerów do dostawców lokalnych</a>, napędzane właśnie kwestiami suwerenności.</p>
+
+  <p>Co to znaczy dla Ciebie, jeśli nie jesteś rządem ani dużym bankiem? Trzy bardzo konkretne rzeczy:</p>
+
+  <ul>
+    <li><strong>Wygrywasz przetargi.</strong> Zamawiający publiczni coraz częściej wpisują klauzule suwerenności wprost do specyfikacji. Jeśli ich nie spełniasz, nie startujesz.</li>
+    <li><strong>Wchodzisz do łańcuchów dostaw.</strong> Duzi klienci z sektorów regulowanych zaczynają wymagać suwerenności od własnych dostawców. Firmy, które traktują to jako „sprawę sektora publicznego”, <a class="inline" href="https://labs.cloudsecurityalliance.org/research/eu-tech-sovereignty-cloud-ai-enterprise-risk-v1-0-csa-styled/">znajdą się na gorszej pozycji w zakupach i kontraktowaniu w branżach regulowanych</a>.</li>
+    <li><strong>Obniżasz koszt ryzyka.</strong> Pojedyncza zależność od jednego amerykańskiego hyperscalera coraz częściej pojawia się jako ustalenie audytu w przeglądach unijnego sektora finansowego — problem, który trzeba rozwiązać.</li>
+  </ul>
+
+  <h2 id="eu-law">Suwerenność i prawo UE idą w tym samym kierunku</h2>
+
+  <p>Najlepsze jest to, że zwykle „zgodność z regulacjami” oznacza więcej pracy, więcej kosztów i kolejnego prawnika na stałym zleceniu. Przy suwerenności jest odwrotnie: robiąc to, co jest dobre dla Twojego biznesu, przy okazji trafiasz w kierunek, w którym zmierza całe prawo europejskie.</p>
+
+  <p>Krótki przegląd krajobrazu (bez żargonu, obiecujemy):</p>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>Regulacja</th><th>Czego dotyczy</th><th>Dlaczego on-premise pomaga</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>EU Data Act</td><td>Nakazuje przenoszalność danych i eliminuje uzależnienie od dostawcy; w pełni stosowany od 2025 roku.</td><td>Trzymanie danych u siebie oznacza, że nie ma się od czego „odklejać”.</td></tr>
+        <tr><td>EU AI Act</td><td>Wymaga dokumentacji, nadzoru człowieka i śladu audytowego dla systemów wysokiego ryzyka.</td><td>Pełna widoczność logów i audytu, bo wszystko dzieje się na Twoim gruncie.</td></tr>
+        <tr><td>GDPR</td><td>Chroni dane osobowe; kary za nieprawidłowe transfery rosną.</td><td>Dane nigdy nie opuszczają jurysdykcji, więc problem transferu znika.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>To nie jest problem przyszłości — obowiązuje już dziś</h3>
+
+  <div class="callout">
+    <span class="k">Obowiązuje już teraz</span>
+    <p>RODO reguluje transfery danych osobowych od 2018 roku. Przepisy EU Data Act o przenoszalności i uzależnieniu od dostawcy zaczęły w pełni obowiązywać w 2025. Obowiązki EU AI Act dotyczące nadzoru człowieka i dokumentacji systemów wysokiego ryzyka oraz obowiązek kompetencji AI z art. 4 już działają.</p>
+    <p>Nie musisz czekać na przyszłe orzeczenie ani nowy pakiet, żeby zacząć działać. Obowiązki istotne dla decyzji o suwerenności są wiążące już dziś.</p>
+  </div>
+
+  <p>Wniosek jest prosty i wygodny zarazem: architektura, która trzyma dane, logi i model u Ciebie, spełnia te wymogi <em>z definicji</em>, a nie jako moduł doklejony później. Suwerenność nie jest podatkiem od zgodności — jest skrótem do zgodności.</p>
+
+  <figure>
+    <div class="fig-frame">
+      <svg font-family="Geist, sans-serif" viewBox="0 0 760 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram trzech poziomów suwerenności: serwer w UE, suwerenny wariant hyperscalera i pełna izolacja on-premise">
+        
+        <rect width="760" height="300" fill="#FFFFFF"/>
+        <text x="40" y="46" font-size="19" font-weight="500" fill="#0A0A0A" letter-spacing="-0.5">Nie każda „chmura suwerenna” jest suwerenna</text>
+        <text x="40" y="70" font-size="12" letter-spacing="0.04em" fill="#6B6B6B">EKSPOZYCJA NA CLOUD ACT WEDŁUG MODELU WDROŻENIA</text>
+
+        <rect x="40" y="94" width="680" height="56" fill="#FAF8FC" stroke="#E6E6E6"/>
+        <text x="60" y="115" font-size="14.5" font-weight="600" fill="#0A0A0A">„Serwer w UE” — serwer w Unii, właściciel spoza Unii</text>
+        <text x="60" y="135" font-size="12.5" fill="#6B6B6B">Zgodne z RODO na papierze, prawnie narażone na nakazy eksterytorialne.</text>
+        <text x="700" y="126" text-anchor="end" font-size="11" font-weight="600" fill="#0A0A0A">WYSOKA EKSPOZYCJA</text>
+
+        <rect x="40" y="156" width="680" height="56" fill="#FAF8FC" stroke="#E6E6E6"/>
+        <text x="60" y="177" font-size="14.5" font-weight="600" fill="#0A0A0A">„Suwerenny” wariant hyperscalera — spółka matka w USA</text>
+        <text x="60" y="197" font-size="12.5" fill="#6B6B6B">Rezydencja w UE, ale pozostaje resztkowa ekspozycja na CLOUD Act. Zwykle 10–30% dopłaty do ceny.</text>
+        <text x="700" y="188" text-anchor="end" font-size="11" font-weight="600" fill="#0A0A0A">CZĘŚCIOWA</text>
+
+        <rect x="40" y="218" width="680" height="56" fill="#0A0A0A"/>
+        <text x="60" y="239" font-size="14.5" font-weight="600" fill="#FFFFFF">On-premise / pełna izolacja — dane nigdy nie opuszczają budynku</text>
+        <text x="60" y="259" font-size="12.5" fill="#9A9A9A">Jedyny poziom, który realnie eliminuje ekspozycję na CLOUD Act. Tu właśnie działa TakeAny.AI.</text>
+        <text x="700" y="250" text-anchor="end" font-size="11" font-weight="600" fill="#FFFFFF">PEŁNA SUWERENNOŚĆ</text>
+      </svg>
+    </div>
+    <figcaption>
+      Rys. 3 — „Suwerenna chmura” hyperscalera zwykle pozostawia ryzyko CLOUD Act przez amerykańską spółkę matkę. Pełna suwerenność wymaga izolacji lub wdrożenia on-premise.
+      <span class="src">Źródło: SoftwareSeni, „The European Sovereign Cloud Provider Landscape in 2026” (kwiecień 2026) — <a href="https://www.softwareseni.com/the-european-sovereign-cloud-provider-landscape-in-2026-who-exists-and-what-they-offer/">softwareseni.com</a></span>
+    </figcaption>
+  </figure>
+
+  <h2 id="practical-guide">Praktyczny przewodnik: budowa suwerennej AI w firmie</h2>
+
+  <p>Dość teorii. Oto konkretna ścieżka, którą przechodzimy z klientami — od „chcemy AI, ale martwimy się o nasze dane” do „mamy AI i śpimy spokojnie”. Bez wyrywania istniejącego IT, bez przepisywania czegokolwiek.</p>
+
+  <ol>
+    <li><strong>Zrób inwentaryzację tego, gdzie naprawdę żyją Twoje dane.</strong> Zacznij od pytania: który system, w jakiej chmurze, pod czyją jurysdykcją? Samo to ćwiczenie zwykle bywa odkryciem — mało kto zdaje sobie sprawę, że jego „europejska” chmura ma amerykańskiego właściciela.</li>
+    <li><strong>Oddziel dane krytyczne od reszty.</strong> Nie wszystko wymaga tego samego reżimu. Tajemnice handlowe, dane osobowe, prace badawczo-rozwojowe i wiedza zamknięta w starszych systemach to kandydaci do pełnej suwerenności. Menu stołówki może zostać w chmurze.</li>
+    <li><strong>Wybierz model wdrożenia on-premise dla warstwy AI.</strong> Najprostsza droga: uruchom orkiestrację LLM i RAG lokalnie — na własnym serwerze albo nawet na stacji roboczej. Dane wchodzą do modelu i z niego wracają, nie opuszczając Twojej sieci.</li>
+    <li><strong>Używaj BYOLLM zamiast jednego zewnętrznego API.</strong> „Bring Your Own LLM” oznacza dobieranie modelu do zadania — lokalny (Mistral, Llama) tam, gdzie liczy się poufność, zdalny tam, gdzie nie ma danych wrażliwych. Elastyczność bez uzależnienia od dostawcy.</li>
+    <li><strong>Włącz obserwowalność i ślad audytowy od pierwszego dnia.</strong> Pełne logi każdego wywołania modelu to nie tylko zgodność — to Twoja czarna skrzynka, gdy ktoś zapyta „skąd wzięła się ta odpowiedź?”. Przy on-premise przychodzi to naturalnie, bo wszystko dzieje się na Twoim gruncie.</li>
+    <li><strong>Kontroluj koszty tokenów lokalnie.</strong> Suwerenność to także suwerenność budżetu. Trzymanie orkiestracji u siebie oznacza, że widzisz każdy token i ustawiasz limity, zamiast czekać na fakturę-niespodziankę.</li>
+    <li><strong>Udokumentuj to jako przewagę sprzedażową.</strong> Gdy już masz suwerenną AI — powiedz o tym. W przetargach i ankietach bezpieczeństwa zdanie „nasze dane nigdy nie opuszczają naszej infrastruktury” wygrywa kontrakty.</li>
+  </ol>
+
+  <div class="pullquote">
+    <p>Suwerenność nie polega na robieniu wszystkiego samemu. Polega na posiadaniu strategicznych opcji.</p>
+  </div>
+
+  <h2 id="bottom-line">Sedno sprawy: nie chodzi o strach. Chodzi o kontrolę</h2>
+
+  <p>Europejskie firmy nie uciekają od hyperscalerów dlatego, że ktoś je nastraszył. Odchodzą, bo policzyły. Suwerenność danych zeszła z agend konferencji prawniczych i stała się <a class="inline" href="https://dataconomy.com/2026/06/08/why-european-workloads-are-leaving-us-cloud-in-2026/">decyzją zakupową podejmowaną co tydzień na całym kontynencie</a>. Regulacje idą w tę samą stronę. Rynek idzie w tę samą stronę. Pytanie nie brzmi „czy”, lecz „kiedy u Ciebie”.</p>
+
+  <p>Dobra wiadomość: nie musisz wymieniać ERP z 1998 roku ani przepisywać CRM bez API. Wystarczy dodać warstwę AI, która zostaje u Ciebie. Twoje systemy przechowują już dekady wiedzy biznesowej — TakeAny.AI ją wzmacnia. Bezpiecznie, na Twoim gruncie.</p>
+
+  <h2 id="faq">Najczęstsze pytania</h2>
+  <div class="faq">
+    <details>
+      <summary>Jaka jest różnica między suwerennością danych a rezydencją danych?</summary>
+      <p>Rezydencja opisuje, gdzie dane fizycznie się znajdują (kraj, serwer). Suwerenność opisuje, czyjemu prawu podlegają. Serwer w Niemczech należący do amerykańskiej firmy daje europejską rezydencję, ale nie pełną suwerenność — bo właściciel wciąż odpowiada przed prawem USA.</p>
+    </details>
+    <details>
+      <summary>Czy dane w europejskim centrum danych są chronione przed amerykańskim CLOUD Act?</summary>
+      <p>Niekoniecznie. Amerykański CLOUD Act pozwala władzom USA żądać danych od amerykańskich firm niezależnie od tego, gdzie są fizycznie przechowywane. Jeśli dostawca ma spółkę matkę w USA, resztkowa ekspozycja pozostaje, mimo że serwer stoi w UE.</p>
+    </details>
+    <details>
+      <summary>Czy wdrożenie LLM on-premise pomaga w zgodności z EU AI Act?</summary>
+      <p>Tak. Wdrożenie lokalne daje pełną kontrolę nad danymi, logami i śladem audytowym — dokładnie to, czego EU AI Act wymaga od systemów wysokiego ryzyka: dokumentacji, nadzoru człowieka i możliwości wykazania zgodności w całym cyklu przetwarzania.</p>
+    </details>
+    <details>
+      <summary>Czy suwerenność dotyczy tylko dużych firm i sektora publicznego?</summary>
+      <p>Nie. Choć rządy i sektory regulowane są dziś największymi nabywcami, wymogi suwerenności coraz częściej spływają w dół łańcucha dostaw. Mniejsze firmy, które chcą wygrywać przetargi i zdobywać kontrakty u większych klientów, potrzebują tego samego.</p>
+    </details>
+  </div>
+
+  <div class="callout" id="about-takeany">
+    <span class="k">O TakeAny.AI</span>
+    <p><strong>TakeAny.AI</strong> to samodzielnie hostowana warstwa kontroli dla autonomicznych agentów LLM, działająca w trybie air-gap. Uruchamia się jako jeden binarny plik Go na lokalnej bazie SQLite, więc agenci, modele, dokumenty i logi zostają w Twojej infrastrukturze — na lokalnych silnikach modeli (vLLM, Ollama, LocalAI, TGI) lub API w chmurze, z zerową telemetrią wychodzącą.</p>
+    <p>Uruchomienie całej warstwy kontroli na własnym sprzęcie sprawia, że suwerenność jest weryfikowalna, a nie tylko umowna. Zobacz <a class="inline" href="/pl/product">co TakeAny.AI kontroluje po stronie hosta</a>, the <a class="inline" href="/en/docs">architektura i model RBAC z trzema rolami oraz uprawnieniami per agent</a>, or <a class="inline" href="/pl/how-we-differ">czym różni się od platform do automatyzacji przepływów</a>.</p>
+  </div>
+
+  <div class="related">
+    <h3>Powiązane artykuły</h3>
+    <div class="related-grid">
+      <a class="related-card" href="/pl/blog/true-cost-of-llm">
+        <span class="rk">Koszty AI w biznesie</span>
+        <h4>Ile naprawdę kosztuje AI w Twojej firmie? Realne TCO modeli LLM</h4>
+        <p>Tokeny kosztują grosze. To nie znaczy, że AI jest tania — jak agenci potrafią przepalić roczny budżet w cztery miesiące.</p>
+        <span class="rd">Czytaj dalej →</span>
+      </a>
+      <a class="related-card" href="/pl/blog">
+        <span class="rk">Blog TakeAny.AI</span>
+        <h4>Wszystkie artykuły</h4>
+        <p>Suwerenność, koszty i architektura agentów — praktyczna wiedza dla zespołów budujących odporne wdrożenia AI.</p>
+        <span class="rd">Przejdź do bloga →</span>
+      </a>
+    </div>
+  </div>
+
+</article>
+
+<section class="cta-strip plum">
+  <div class="container cta-grid">
+    <h2>Wzmacniaj wszystko. <strong>Nie idź na kompromisy</strong></h2>
+    <p class="sub">Agenci dostają moc. Klucze zostają u Ciebie.</p>
+    <div class="cta-bts">
+      <a class="btn btn-lg ta-btn-light" href="/pl/get-started">Rozpocznij <span class="arrow">→</span></a>
+      <a class="cta-link" href="/pl/get-started#talk" style="display:inline-flex;align-items:center;align-self:center;gap:6px;padding:10px 4px;font-size:16px;font-weight:500;color:#fff;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px;background:none;border:0">Porozmawiaj z nami</a>
+    </div>
+  </div>
+</section>
+
+<footer data-screen-label="Footer">
+  <div class="container">
+    <div class="foot-top" style="grid-template-columns:1.25fr 1fr 1.35fr 0.9fr">
+      <div class="foot-brand">
+        <a class="wordmark" href="/pl/" aria-label="TakeAny.AI"><x-import component-from-global-scope="TakeAnyAIDesignSystem_365327.Logo" height="36px" hint-size="189px,36px"></x-import></a>
+        <details class="lang-picker" style="position:relative;margin-top:14px;width:max-content">
+          <summary style="display:flex;align-items:center;gap:8px;cursor:pointer;list-style:none;font-size:14px;color:var(--ink);padding:6px 0"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><circle cx="8" cy="8" r="6.2"></circle><path d="M1.9 8h12.2"></path><path d="M8 1.8c1.7 1.7 2.6 3.8 2.6 6.2S9.7 12.5 8 14.2C6.3 12.5 5.4 10.4 5.4 8S6.3 3.5 8 1.8Z"></path></svg><span>Polski</span><svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" style="margin-left:2px;opacity:.7"><path d="M3 4.8 6 7.8l3-3"></path></svg></summary>
+          <div role="group" aria-label="Language" style="position:absolute;left:0;bottom:calc(100% + 8px);z-index:20;min-width:168px;background:var(--paper);border:1px solid var(--line);border-radius:4px;box-shadow:0 6px 20px rgba(0,0,0,.08);overflow:hidden;display:flex;flex-direction:column">
+            <a href="/en/blog/digital-sovereignty-ai" hreflang="en" style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 12px;font-size:14px;color:var(--muted);text-decoration:none;background:transparent">English</a>
+            <a href="/pl/blog/digital-sovereignty-ai" hreflang="pl" style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 12px;font-size:14px;color:var(--ink);text-decoration:none;background:var(--paper-3)">Polski<span style="font-size:11px;font-family:var(--font-mono)">✓</span></a>
+          </div>
+        </details>
+        <p>Warstwa kontroli dla agentów AI. Działa na Twojej infrastrukturze.</p>
+      </div>
+      <div class="foot-col">
+        <h6>Produkt</h6>
+        <ul>
+          <li><a href="/pl/product">Przegląd</a></li>
+          <li><a href="/pl/use-cases">Zastosowania</a></li>
+          <li><a href="/pl/product#security">Bezpieczeństwo</a></li>
+          <li><a href="/pl/product#cost">Kontrola kosztów</a></li>
+          <li><a href="/pl/product#models">Swoboda wyboru modeli</a></li>
+          <li><a href="/pl/pricing">Cennik</a></li>
+          <li><a href="/pl/how-we-differ">Czym się różnimy</a></li>
+          <li><a href="/pl/alternative-n8n">Alternatywa dla n8n</a></li>
+          <li><a href="/pl/alternative-dify">Alternatywa dla Dify.ai</a></li>
+          <li><a href="/pl/alternative-flowise-langflow">Alternatywa dla Flowise / Langflow</a></li>
+          <li><a href="/pl/alternative-lindy">Alternatywa dla Lindy.ai</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h6>Zastosowania</h6>
+        <ul>
+          <li><a href="/pl/use-cases/model-freedom">Testowanie modeli open-weight (vLLM / Ollama)</a></li>
+          <li><a href="/pl/use-cases/self-hosted-rag-assistant">Lokalny RAG na poufnych plikach</a></li>
+          <li><a href="/pl/use-cases/chatbot-widget">Odpowiedzi na pytania klientów z Twoich treści</a></li>
+          <li><a href="/pl/use-cases/local-gpu-inference">Uruchamianie i przyspieszanie lokalnych GPU</a></li>
+          <li><a href="/pl/use-cases/ai-for-erp-crm">Wzmocnienie systemów ERP i CRM</a></li>
+          <li><a href="/pl/use-cases/rfp-automation">Automatyzacja procesów RFI i RFP</a></li>
+          <li><a href="/pl/use-cases/build-ai-agents">Sandbox dla agentów przeglądających sieć</a></li>
+          <li><a href="/pl/use-cases/build-ai-agents">Zgodność z EU AI Act</a></li>
+          <li><a href="/pl/use-cases/white-label-ai">Zarabiaj na AI pod własną marką</a></li>
+          <li><a href="/pl/get-started#form">Twój pomysł na AI <span class="arrow">→</span></a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h6>Zacznij</h6>
+        <ul>
+          <li><a href="/pl/get-started">Rozpocznij</a></li>
+          <li><a href="/en/docs">Dokumentacja</a></li>
+          <li><a href="/pl/blog">Blog</a></li>
+          <li><a href="/pl/get-started#talk">Porozmawiaj z nami</a></li>
+          <li><a href="/pl/partners">Partnerstwa</a></li>
+        </ul>
+      </div>
+    </div>
+    <div style="margin:8px 0 28px;min-height:64px;background:var(--surface-plum);border-radius:14px;padding:10px 12px 10px 20px;display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px">
+      <img src="/_ds/takeany-ai-design-system-365327f4-89d8-418c-be14-ea19a91e4fcb/assets/logo/takeany-logo-ube-butter.svg" alt="TakeAny.AI" width="137" height="26" style="height:26px;width:auto;display:block">
+      <span style="width:1px;height:28px;background:rgba(255,255,255,.2)"></span>
+      <div style="position:relative;flex:1 1 360px;min-width:0">
+        <button type="button" onClick="{{ abToggle }}" aria-expanded="{{ abOpenStr }}" style="width:100%;max-width:640px;display:flex;align-items:center;gap:10px;min-height:44px;padding:0 16px;border:1px solid rgba(255,255,255,.3);border-radius:999px;background:transparent;color:#fff;font-size:14.5px;cursor:pointer;text-align:left">
+          <span style="font-family:var(--font-mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-on-plum-muted);white-space:nowrap">Zastosowanie</span>
+          <span style="flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ abCur.full }}</span>
+          <span style="color:var(--text-on-plum-muted)">{{ abCaret }}</span>
+        </button>
+        <ul style="display:{{ abListDisplay }};position:absolute;left:0;bottom:52px;width:100%;max-width:640px;margin:0;padding:0;list-style:none;background:#fff;border:1px solid var(--ink);border-radius:16px;overflow:hidden;z-index:30">
+          <sc-for list="{{ abItems }}" as="it" hint-placeholder-count="5">
+            <li style="border-bottom:1px solid var(--line)"><a href="{{ it.href }}" onClick="{{ it.pick }}" style="display:grid;grid-template-columns:34px minmax(0,1fr);gap:10px;align-items:baseline;min-height:52px;padding:14px 18px;color:var(--ink);text-decoration:none;background:{{ it.bg }}" style-hover="background:var(--ube-lavender-50)"><span style="font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;color:var(--lit-deep)">{{ it.n }}</span><span style="font-size:15px;line-height:1.35">{{ it.full }}</span></a></li>
+          </sc-for>
+        </ul>
+      </div>
+      <a class="btn btn-accent" href="/pl/get-started#form" style="margin-left:auto">Zrealizuj swój pomysł na AI <span class="arrow">→</span></a>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 TakeAny.AI</span>
+      <span><a href="/llms.txt">llms.txt</a> · <a href="/pl/legal#prywatnosc">Prywatność</a> · <a href="/pl/legal#regulamin">Regulamin</a> · <a href="/pl/legal#dpa">DPA</a> · <a href="#" data-cookie-settings="">Ustawienia cookies</a></span>
+    </div>
+  </div>
+</footer>
+
+<a id="backTop" href="#" aria-label="Powrót na górę strony" title="Powrót na górę strony" style="position:fixed;right:22px;bottom:28px;z-index:70;display:flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:50%;background:var(--paper);border:1px solid var(--line);color:var(--muted);text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,.06);opacity:0;pointer-events:none;transform:translateY(10px);transition:opacity 200ms ease,transform 200ms ease,color 160ms ease,border-color 160ms ease" onMouseEnter="this.style.color='var(--ink)';this.style.borderColor='var(--ink)'" onMouseLeave="this.style.color='var(--muted)';this.style.borderColor='var(--line)'"><svg width="15" height="15" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 11.5V2.5"></path><path d="M3 6.3 7 2.3l4 4"></path></svg></a>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() { return { ...this.__rv0(), ...this.__ab() }; }
+  __ab() {
+    const L = [
+          { n: '01', full: 'Uruchom RAG na dokumentach, które nie mogą opuścić firmy', href: '/pl/use-cases/self-hosted-rag-assistant' },
+          { n: '02', full: 'Zamień zakupione serwery GPU w bezpieczną platformę AI', href: '/pl/use-cases/local-gpu-inference' },
+          { n: '03', full: 'Wpuść agentów do ERP nawet gdy jest leciwe i bez API', href: '/pl/use-cases/ai-for-erp-crm' },
+          { n: '04', full: 'Żongluj modelami LLM, niech open-weight walczą z frontier labs', href: '/pl/use-cases/model-freedom' },
+          { n: '05', full: 'Sprzedawaj AI swoim klientom pod własną marką', href: '/pl/use-cases/white-label-ai' },
+          { n: '06', full: 'Zrealizuj swój pomysł na AI', href: '/pl/get-started#form', hl: true }
+        ];
+    const ab = this.state.ab || 0, open = !!this.state.abOpen;
+    return {
+      abCur: L[ab], abOpenStr: open ? 'true' : 'false', abCaret: open ? '▴' : '▾', abListDisplay: open ? 'block' : 'none',
+      abToggle: () => this.setState(s => ({ abOpen: !s.abOpen })),
+      abItems: L.map((x, k) => ({ ...x, bg: x.hl ? 'var(--ube-lavender-100)' : k === ab ? 'var(--ube-lavender-50)' : '#fff', pick: () => this.setState({ ab: k, abOpen: false }) }))
+    };
+  }
+  state = { navOpen: false };
+  componentDidMount() {
+    document.documentElement.lang = 'en';
+    document.body.classList.add('blog');
+  }
+  __rv0() {
+    const navOpen = this.state.navOpen;
+    return {
+      toggleMobileNav: () => this.setState(s => ({ navOpen: !s.navOpen })),
+      mobileMenuStyle: { opacity: navOpen ? 1 : 0, pointerEvents: navOpen ? 'auto' : 'none' }
+    };
+  }
+}
+</script>
+</body>
+</html>
