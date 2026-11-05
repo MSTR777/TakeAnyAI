@@ -44,9 +44,58 @@
 .uc-rel{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .uc-how{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:48px;align-items:center}
 .uc-figslot{border:1px solid var(--line);border-radius:var(--radius);background:var(--paper);min-height:280px;display:flex;align-items:center;justify-content:center;padding:24px}
+.uc-rail{display:flex!important;grid-template-columns:none!important;column-gap:20px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x proximity;scroll-padding-left:var(--gutter);scroll-padding-right:var(--gutter);-webkit-overflow-scrolling:touch;scrollbar-width:none;margin:0 calc(var(--gutter) * -1);padding:2px var(--gutter) 8px}
+.uc-rail::-webkit-scrollbar{display:none}
+.cta-strip .cta-grid{grid-template-columns:minmax(0,1.2fr) minmax(0,auto)}
+.cta-strip .cta-bts{flex-wrap:wrap}
+@media (max-width:1100px){.cta-strip .cta-grid{grid-template-columns:minmax(0,1fr);gap:26px}}
+.uc-rail>.uc-card{flex:0 0 380px;scroll-snap-align:start}
+@media (max-width:760px){.uc-rail>.uc-card{flex:0 0 86%}}
+.uc-card:hover{border-color:var(--lit-deep,#7426E8)}
+[data-rail-nav]:hover:not(:disabled){background:var(--lit-deep,#7426E8)!important;border-color:var(--lit-deep,#7426E8)!important;color:var(--paper)!important}
+[data-rail-nav]:disabled{opacity:.25;cursor:default!important}
+[data-rail-dots] button{width:8px;height:8px;padding:0;border:0;border-radius:999px;background:var(--muted);opacity:.3;cursor:pointer;transition:width .25s,opacity .25s,background .25s}
+[data-rail-dots] button[aria-current="true"]{width:24px;opacity:1;background:var(--ink)}
+.page-head .lede strong{color:var(--lit-deep,#7426E8)}
+.section-head .sub strong{color:var(--lit-deep,#7426E8)}
+a:hover .arrow{color:var(--lit-deep,#7426E8)}
+.uc-bul{list-style:none;margin:4px 0 0;padding:0;display:flex;flex-direction:column;gap:12px}
+.uc-bul li{font-size:15px;line-height:1.55;color:var(--muted);text-wrap:pretty}
+.uc-bul strong{color:var(--ink);font-weight:500}
+.uc-quote{margin-top:32px;padding:26px 30px;border:1px solid var(--line);border-radius:var(--radius);background:var(--paper)}
+.uc-quote h4{margin:0 0 10px;font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;color:var(--lit-deep)}
+.uc-quote p{margin:0;max-width:86ch;font-size:16px;line-height:1.6;color:var(--muted);text-wrap:pretty}
 @media (max-width:1000px){.uc-caps,.uc-rel{grid-template-columns:1fr}.uc-how{grid-template-columns:1fr;gap:28px}}
 @media (max-width:720px){.section-head .section-num{width:auto!important;max-width:100%!important;min-width:0!important;white-space:normal!important;overflow-wrap:anywhere}
 .section-head>*{min-width:0}}
+:root{--ill-canvas:#FFFFFF;--ill-plate:#FFFFFF;--ill-ink:#1A1A1A;--ill-ink-2:#5C5C5C;--ill-label:#8A8A8A;--ill-line:#E7E2EE;--ill-line-2:#D3CCDD;--ill-lit:#8B3DFF;--ill-lit-deep:#7426E8}
+.ill-fig{margin:0}.ill{display:block;width:100%;height:auto}.ill text{font-family:var(--font-mono,'Geist Mono',ui-monospace,monospace)}
+.ill-shadow{filter:drop-shadow(0 24px 48px rgba(26,26,26,.06))}
+.ill .plate{fill:var(--ill-plate);stroke:var(--ill-line);stroke-width:1}.ill .panel{fill:var(--ill-plate);stroke:var(--ill-ink);stroke-width:2}.ill .panel-2{fill:var(--ill-plate);stroke:var(--ill-line-2);stroke-width:1}
+.ill .panel-lit{fill:#EEE6F8;stroke:var(--ill-lit);stroke-width:1.5}.ill .perimeter{fill:none;stroke:var(--ill-lit);stroke-width:1.5}.ill .perimeter-open{fill:none;stroke:var(--ill-line-2);stroke-width:1.25;stroke-dasharray:5 4}.ill .knockout{fill:var(--ill-plate)}
+.ill .link{fill:none;stroke:var(--ill-ink);stroke-width:1.25}.ill .link-opt{fill:none;stroke:var(--ill-line-2);stroke-width:1;stroke-dasharray:4 4}.ill .cut{stroke:var(--ill-ink);stroke-width:1.6;fill:none}.ill .node{fill:var(--ill-ink)}
+.ill .lbl{font-size:13px;letter-spacing:.1em;fill:var(--ill-label)}.ill .lbl-lit{font-size:13px;letter-spacing:.1em;fill:var(--lit-deep)}.ill .lbl-ink{font-size:13px;letter-spacing:.1em;fill:var(--ill-ink)}.ill .val{font-size:22px;letter-spacing:-.01em;fill:var(--ill-ink)}.ill .mono-sm{font-size:11px;letter-spacing:.12em;fill:var(--ill-label)}
+.ill .pic{fill:none;stroke:var(--ill-ink);stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;color:var(--ill-ink);--icn-accent:var(--ill-lit)}
+.page-head.has-ill .echo-sig{display:none}
+.uc-ill{margin:40px 0 0;max-width:520px}
+.uc-ill .ill-port{display:none}
+@media (min-width:1080px){.page-head.has-ill .uc-ill-wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,460px);column-gap:56px;align-items:center}.page-head.has-ill .uc-ill{margin:0}.page-head.has-ill h1{font-size:clamp(38px,3.9vw,56px)!important}}
+.uc-ill-slot{margin:0;max-width:none;width:100%}
+@media (max-width:760px){.uc-ill .ill-wide{display:none}.uc-ill .ill-port{display:block}
+.page-head.has-ill{padding:24px 0 28px}
+.page-head.has-ill .uc-crumb{margin:0 0 10px!important}
+.page-head.has-ill h1{font-size:clamp(30px,8.4vw,40px)!important;margin-top:12px!important;line-height:1.06!important}
+.page-head.has-ill .lede{font-size:16.5px!important;line-height:1.45!important;margin-top:12px!important}
+.page-head.has-ill .lede + .lede,.page-head.has-ill .uc-ill-wrap ul{display:none!important}
+.page-head.has-ill .hero-cta{margin-top:16px!important;gap:10px!important}
+.page-head.has-ill .hero-cta .btn-lg{padding:12px 20px!important;font-size:15px!important}
+.uc-ill{margin:18px 0 0;max-width:340px}
+.page-head.has-ill .uc-ill-wrap{display:flex;flex-direction:column}
+.page-head.has-ill .uc-ill-wrap>div{display:contents}
+.page-head.has-ill .uc-ill-wrap>div>*{order:1}
+.page-head.has-ill .uc-ill-wrap .uc-ill{order:2;margin:18px 0 0}
+.page-head.has-ill .uc-ill-wrap .lede,.page-head.has-ill .uc-ill-wrap .hero-cta{order:3}
+.page-head.has-ill .uc-ill-wrap .lede{margin-top:18px!important}}
 :root{--icn-accent:#8B3DFF;--icn-ink:#1A1A1A}
 .icn{width:24px;height:24px;display:inline-block;vertical-align:middle;flex:0 0 auto;color:var(--icn-ink);fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
 .icn-20{width:20px;height:20px;stroke-width:2}
@@ -232,6 +281,15 @@ section.section:not(.partners)::before{content:"";position:absolute;top:-2px;lef
   .nav-cta .btn{padding-left:14px!important;padding-right:14px!important;font-size:13px!important}
 }
 </style>
+<style>/* 01 collage (from Home "Kiedy to ma sens") */
+summary::-webkit-details-marker{display:none}.exp-sum::marker{content:""}
+.exp[open] .exp-plus{transform:rotate(45deg)}.exp-sum:hover .exp-plus{border-color:var(--ink)}
+[data-aha-grid]{grid-template-columns:repeat(3,minmax(0,1fr))}
+[data-aha-feat]{grid-column:span 2;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+[data-aha-wide]{grid-column:span 2}
+@media (max-width:1000px){[data-aha-grid]{grid-template-columns:repeat(2,minmax(0,1fr))}[data-aha-wide]{grid-column:auto}[data-aha-feat]{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:720px){[data-aha-grid]{grid-template-columns:minmax(0,1fr)}[data-aha-feat],[data-aha-wide]{grid-column:auto}[data-aha-card]{padding:22px 20px!important}.exp-sum{min-height:44px}.exp-plus{width:32px!important;height:32px!important}}
+</style>
 </helmet>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
 <symbol id="i-sec" viewBox="0 0 24 24"><path d="M8 3.6v16.8M16 3.6v16.8"></path><path d="M2.6 12h18.8M18.4 9.2 21.4 12l-3 2.8" stroke="var(--icn-accent)"></path></symbol>
@@ -242,9 +300,9 @@ section.section:not(.partners)::before{content:"";position:absolute;top:-2px;lef
 </defs></svg>
 
 
-<div class="nav-wrap" data-screen-label="Nav">
+<div class="nav-wrap ta-nav" data-screen-label="Nav">
   <div class="container nav">
-    <a class="wordmark" href="/en/" aria-label="TakeAny.AI"><x-import component-from-global-scope="TakeAnyAIDesignSystem_365327.Logo" height="32px" hint-size="168px,32px"></x-import></a>
+    <a class="wordmark" href="/en/" aria-label="TakeAny.AI"><x-import component-from-global-scope="TakeAnyAIDesignSystem_365327.Logo" tone="butter" height="32px" hint-size="168px,32px"></x-import></a>
     <nav class="nav-links" aria-label="Primary">
       <a href="/en/use-cases" class="active">Use cases</a>
       <a href="/en/product">Product</a>
@@ -253,7 +311,7 @@ section.section:not(.partners)::before{content:"";position:absolute;top:-2px;lef
       <a href="/en/blog">Blog</a>
     </nav>
     <div class="nav-cta">
-      <a class="btn btn-primary" href="/en/get-started">Get started <span class="arrow">→</span></a>
+      <a class="btn ta-btn-light" href="/en/get-started">Get started <span class="arrow">→</span></a>
       <button id="navToggle" class="nav-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -273,122 +331,175 @@ section.section:not(.partners)::before{content:"";position:absolute;top:-2px;lef
   </div>
 </div>
 
-<header class="page-head" data-screen-label="01 Hero">
-  <div class="container">
+<header class="page-head has-ill" data-screen-label="00 Hero">
+  <div class="container uc-ill-wrap">
+<div>
     <p class="uc-crumb"><a href="/en/use-cases">Use cases</a> <span aria-hidden="true">/</span> <span style="color:var(--ink)">Local GPU inference</span></p>
-    <span class="eyebrow"><span class="dot"></span>Hardware ROI and open-weight inference</span>
     <h1 style="max-width:26ch">Amplify your local GPU investment <strong>from day one</strong></h1>
-    <p class="lede" style="max-width:76ch">Native integration for Ollama, vLLM and local open weights, with 0% platform markup.</p>
-    <p class="lede" style="max-width:76ch;font-size:17px;color:var(--muted)">You bought the NVIDIA cluster or the GPU workstations. Now the team needs a platform that turns raw compute into production workflows. TakeAny.AI bridges local open-weight models — Llama, DeepSeek, Mistral — with governed agent execution, so you skip SaaS token markups and get predictable return on physical infrastructure.</p>
     <div class="hero-cta" style="margin-top:30px">
       <a class="btn btn-primary btn-lg" href="/en/get-started">Get started <span class="arrow">→</span></a>
       <a class="cta-link" href="/en/product" style="display:inline-flex;align-items:center;align-self:center;gap:6px;padding:10px 4px;font-size:16px;font-weight:500;color:var(--ink);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px;background:none;border:0">See the platform</a>
     </div>
-    <ul style="list-style:none;margin:28px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:10px 28px;font-family:var(--font-mono);font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)">
-      <li style="display:flex;align-items:center;gap:9px"><span style="width:5px;height:5px;border-radius:50%;background:var(--lit);flex:none"></span>vLLM · Ollama · LocalAI · TGI</li>
-      <li style="display:flex;align-items:center;gap:9px"><span style="width:5px;height:5px;border-radius:50%;background:var(--lit);flex:none"></span>0% token markup</li>
-      <li style="display:flex;align-items:center;gap:9px"><span style="width:5px;height:5px;border-radius:50%;background:var(--lit);flex:none"></span>Llama · DeepSeek · Mistral</li>
-      <li style="display:flex;align-items:center;gap:9px"><span style="width:5px;height:5px;border-radius:50%;background:var(--lit);flex:none"></span>No egress required</li>
-    </ul>
   </div>
+<figure class="uc-ill" style="min-width:0;width:100%;aspect-ratio:1 / 1;border-radius:16px;overflow:hidden;background:#F2EFE7"><img src="/assets/gpu-hero.jpg" alt="Server rack with GPU servers connected to TakeAny.AI" width="1376" height="768" style="display:block;width:100%;height:100%;object-fit:cover;object-position:90% 50%"></figure>
+</div>
 </header>
 
-<section class="section" data-screen-label="02 What you get">
+<section class="section" data-screen-label="01 Challenge">
   <div class="container">
     <header class="section-head">
-      <span class="section-num" style="display:inline-flex;flex-wrap:wrap;align-items:center;gap:9px"><span>01 ·</span><svg class="icn icn-20" aria-hidden="true"><use href="#i-cost"></use></svg><span>What you get</span></span>
-      <h2>Why teams run this <strong>on TakeAny.AI</strong></h2>
+      <span class="section-num">01 · After the purchase</span>
+      <h2>The GPU servers are in the rack. <strong>Now what?</strong></h2>
+      <div class="sub" style="max-width:76ch;display:flex;flex-direction:column;gap:12px">
+        <p style="margin:0;font-size:16px;line-height:1.6;color:var(--muted);text-wrap:pretty">You bought the NVIDIA cluster or the GPU workstations. Now the team needs a platform that turns raw compute into production workflows. TakeAny.AI bridges local open-weight models — Llama, DeepSeek, Mistral — with governed agent execution, so you skip SaaS token markups and get predictable return on physical infrastructure.</p>
+      </div>
     </header>
-    <div class="uc-caps">
-      <div class="uc-card" style="gap:12px">
-        <h3 style="margin:0;font-size:21px;font-weight:400;letter-spacing:-0.022em;line-height:1.2;color:var(--ink);text-wrap:pretty">Your engines, spoken natively</h3>
-        <p style="margin:0;font-size:15px;line-height:1.55;color:var(--muted);text-wrap:pretty">Point TakeAny.AI at a vLLM, Ollama, LocalAI or TGI endpoint on your own hardware. No gateway, no broker, no per-token platform fee.</p>
-      </div>
-      <div class="uc-card" style="gap:12px">
-        <h3 style="margin:0;font-size:21px;font-weight:400;letter-spacing:-0.022em;line-height:1.2;color:var(--ink);text-wrap:pretty">Marginal cost of a run approaches zero</h3>
-        <p style="margin:0;font-size:15px;line-height:1.55;color:var(--muted);text-wrap:pretty">Once the hardware is paid for, an agent run costs electricity and time. There is no usage meter between you and your own GPUs.</p>
-      </div>
-      <div class="uc-card" style="gap:12px">
-        <h3 style="margin:0;font-size:21px;font-weight:400;letter-spacing:-0.022em;line-height:1.2;color:var(--ink);text-wrap:pretty">Mix owned and rented compute</h3>
-        <p style="margin:0;font-size:15px;line-height:1.55;color:var(--muted);text-wrap:pretty">Route the sensitive workloads to local weights and the rest to a frontier API, per agent, under one policy layer.</p>
-      </div>
+    <div data-aha-grid="" data-rm-skip="" style="display:grid;gap:16px;margin-top:40px">
+        <div data-aha-card="" style="display:flex;flex-direction:column;gap:14px;min-width:0;padding:28px 28px 24px;border:1px solid #ECE7F2;border-radius:16px;background:#fff">
+          <h3 style="margin:2px 0 0;font-size:clamp(26px,2.4vw,30px);font-weight:400;letter-spacing:-0.03em;line-height:1.12;color:var(--ink);text-wrap:balance;padding-right:44px"><span style="font-weight:300;color:var(--muted)">Idle cards in the rack</span> <span style="color:var(--lit);font-weight:400">vs</span> <strong style="font-weight:700">An AI platform from day one</strong></h3>
+          <details class="exp" style="margin-top:-40px;position:relative">
+            <summary class="exp-sum" aria-label="Challenge · TakeAny.AI answer" style="display:flex;align-items:center;justify-content:flex-end;min-height:0;height:26px;cursor:pointer;list-style:none">
+              <span class="exp-plus" aria-hidden="true" style="flex:none;display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border:1px solid var(--line);border-radius:50%;background:#fff;font-size:14px;line-height:1;color:var(--ink);transition:transform .18s ease">+</span>
+            </summary>
+            <div style="display:flex;flex-direction:column;gap:14px;padding-top:22px">
+              <div style="display:flex;flex-direction:column;gap:5px"><span style="font-family:var(--font-mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-2)">Challenge</span><p style="margin:0;font-size:15px;line-height:1.55;color:var(--muted)">The servers are installed and paid for, but without a dedicated management platform IT has no way to issue secure API endpoints to developers and analysts. Every day of delay lowers the return on the infrastructure.</p></div>
+              <div style="display:flex;flex-direction:column;gap:5px"><span style="font-family:var(--font-mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--lit-deep)">TakeAny.AI answer</span><p style="margin:0;font-size:15px;line-height:1.55;color:var(--ink-2)">TakeAny.AI turns raw GPU servers into a multi-tenant, secure AI platform in 1 day, with ready API endpoints and agent interfaces for the whole company.</p></div>
+            </div>
+          </details>
+        </div>
+        <div data-aha-feat="" style="display:grid;gap:0;min-width:0;border:1px solid #ECE7F2;border-radius:16px;overflow:hidden;background:#fff">
+          <div data-aha-card="" style="display:flex;flex-direction:column;gap:14px;min-width:0;padding:28px 28px 24px;background:#fff">
+          <h3 style="margin:2px 0 0;font-size:clamp(30px,3.2vw,42px);font-weight:400;letter-spacing:-0.03em;line-height:1.12;color:var(--ink);text-wrap:balance;padding-right:44px"><span style="font-weight:300;color:var(--muted)">Months of MLOps work</span> <span style="color:var(--lit);font-weight:400">vs</span> <strong style="font-weight:700">One binary</strong></h3>
+          <details class="exp" style="margin-top:-40px;position:relative">
+            <summary class="exp-sum" aria-label="Challenge · TakeAny.AI answer" style="display:flex;align-items:center;justify-content:flex-end;min-height:0;height:26px;cursor:pointer;list-style:none">
+              <span class="exp-plus" aria-hidden="true" style="flex:none;display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border:1px solid var(--line);border-radius:50%;background:#fff;font-size:14px;line-height:1;color:var(--ink);transition:transform .18s ease">+</span>
+            </summary>
+            <div style="display:flex;flex-direction:column;gap:14px;padding-top:22px">
+              <div style="display:flex;flex-direction:column;gap:5px"><span style="font-family:var(--font-mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-2)">Challenge</span><p style="margin:0;font-size:15px;line-height:1.55;color:var(--muted)">Building your own multi-tenant environment on Kubernetes clusters means months of engineering, stitching together open-source tools and hiring dedicated DevOps/MLOps specialists.</p></div>
+              <div style="display:flex;flex-direction:column;gap:5px"><span style="font-family:var(--font-mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--lit-deep)">TakeAny.AI answer</span><p style="margin:0;font-size:15px;line-height:1.55;color:var(--ink-2)">A single Go binary with an embedded SQLite database runs the full orchestration environment directly on your server or workstation, without Kubernetes clusters.</p></div>
+            </div>
+          </details>
+          </div>
+          <div style="display:flex;flex-direction:column;justify-content:space-between;gap:28px;min-height:280px;padding:28px;background:#5C2A6B;color:#fff">
+            <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--text-on-plum-muted)">Platform token markup</span>
+            <div style="display:flex;flex-direction:column;gap:10px">
+              <span style="font-size:clamp(72px,8vw,112px);font-weight:800;letter-spacing:-0.05em;line-height:0.9;color:#fff">0%</span>
+              <span style="font-size:16px;line-height:1.45;color:var(--ube-lavender-100)">vLLM · Ollama · SGLang · TGI on your NVIDIA and AMD cards</span>
+            </div>
+          </div>
+        </div>
+        <div data-aha-card="" data-aha-wide="" style="display:flex;flex-direction:column;gap:14px;min-width:0;padding:28px 28px 24px;border:1px solid #ECE7F2;border-radius:16px;background:#fff">
+          <h3 style="margin:2px 0 0;font-size:clamp(26px,2.4vw,30px);font-weight:400;letter-spacing:-0.03em;line-height:1.12;color:var(--ink);text-wrap:balance;padding-right:44px"><span style="font-weight:300;color:var(--muted)">One card, many teams</span> <span style="color:var(--lit);font-weight:400">vs</span> <strong style="font-weight:700">RBAC and task isolation</strong></h3>
+          <details class="exp" style="margin-top:-40px;position:relative">
+            <summary class="exp-sum" aria-label="Challenge · TakeAny.AI answer" style="display:flex;align-items:center;justify-content:flex-end;min-height:0;height:26px;cursor:pointer;list-style:none">
+              <span class="exp-plus" aria-hidden="true" style="flex:none;display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border:1px solid var(--line);border-radius:50%;background:#fff;font-size:14px;line-height:1;color:var(--ink);transition:transform .18s ease">+</span>
+            </summary>
+            <div style="display:flex;flex-direction:column;gap:14px;padding-top:22px">
+              <div style="display:flex;flex-direction:column;gap:5px"><span style="font-family:var(--font-mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-2)">Challenge</span><p style="margin:0;font-size:15px;line-height:1.55;color:var(--muted)">Without permissions (RBAC) and task isolation, giving one team a GPU risks it locking up all the VRAM, and you lose control over which data and prompts reach the models.</p></div>
+              <div style="display:flex;flex-direction:column;gap:5px"><span style="font-family:var(--font-mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--lit-deep)">TakeAny.AI answer</span><p style="margin:0;font-size:15px;line-height:1.55;color:var(--ink-2)">RBAC assigns priorities, limits and permissions to departments, projects and users, and every agent run executes in its own Firecracker MicroVM.</p></div>
+            </div>
+          </details>
+        </div>
+        <div style="display:flex;flex-direction:column;justify-content:space-between;gap:20px;min-width:0;min-height:200px;padding:28px;border-radius:16px;background:#EEE6F8">
+          <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#3B1747">From delivery to production</span>
+          <span style="font-size:clamp(56px,6vw,84px);font-weight:800;letter-spacing:-0.05em;line-height:0.9;color:#3B1747">1 day</span>
+        </div>
     </div>
   </div>
 </section>
 
-<section class="section" data-screen-label="03 How it works">
+<section class="section" data-screen-label="02 Solution">
   <div class="container">
     <header class="section-head">
-      <span class="section-num" style="display:inline-flex;flex-wrap:wrap;align-items:center;gap:9px"><span>02 ·</span><svg class="icn icn-20" aria-hidden="true"><use href="#i-dash"></use></svg><span>How it works</span></span>
-      <h2>Three steps, <strong>one perimeter</strong></h2>
+      <span class="section-num" style="display:inline-flex;flex-wrap:wrap;align-items:center;gap:9px"><span>02 ·</span><svg class="icn icn-20" aria-hidden="true"><use href="#i-dash"></use></svg><span>Solution</span></span>
+      <h2>TakeAny.AI turns raw GPU servers into a multi-tenant, secure AI platform <strong>in 1 day</strong></h2>
     </header>
     <div class="uc-how">
       <div>
         <div style="display:grid;grid-template-columns:44px 1fr;gap:18px;padding:22px 0;border-top:1px solid var(--line)">
           <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;color:var(--muted);padding-top:5px">01</span>
           <div style="display:flex;flex-direction:column;gap:7px">
-            <h3 style="margin:0;font-size:19px;font-weight:500;letter-spacing:-0.015em;line-height:1.25;color:var(--ink)">Serve the weights</h3>
-            <p style="margin:0;font-size:15px;line-height:1.55;color:var(--muted)">Run the model on your GPUs with the engine your team already uses.</p>
+            <h3 style="margin:0;font-size:19px;font-weight:500;letter-spacing:-0.015em;line-height:1.25;color:var(--ink)">Hardware in production immediately (Day-1 Readiness)</h3>
+            <p style="margin:0;font-size:15px;line-height:1.55;color:var(--muted);text-wrap:pretty">TakeAny.AI turns raw GPU servers into a multi-tenant, secure AI platform in just 1 day, without standing up complex Kubernetes clusters.</p>
           </div>
         </div>
         <div style="display:grid;grid-template-columns:44px 1fr;gap:18px;padding:22px 0;border-top:1px solid var(--line)">
           <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;color:var(--muted);padding-top:5px">02</span>
           <div style="display:flex;flex-direction:column;gap:7px">
-            <h3 style="margin:0;font-size:19px;font-weight:500;letter-spacing:-0.015em;line-height:1.25;color:var(--ink)">Register the endpoint</h3>
-            <p style="margin:0;font-size:15px;line-height:1.55;color:var(--muted)">TakeAny.AI treats a local engine exactly as it treats a hosted API.</p>
+            <h3 style="margin:0;font-size:19px;font-weight:500;letter-spacing:-0.015em;line-height:1.25;color:var(--ink)">One binary, zero external dependencies</h3>
+            <p style="margin:0;font-size:15px;line-height:1.55;color:var(--muted);text-wrap:pretty">A single Go binary with an embedded SQLite database runs the full orchestration environment directly on your server or workstation.</p>
           </div>
         </div>
         <div style="display:grid;grid-template-columns:44px 1fr;gap:18px;padding:22px 0;border-top:1px solid var(--line)">
           <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;color:var(--muted);padding-top:5px">03</span>
           <div style="display:flex;flex-direction:column;gap:7px">
-            <h3 style="margin:0;font-size:19px;font-weight:500;letter-spacing:-0.015em;line-height:1.25;color:var(--ink)">Assign models per agent</h3>
-            <p style="margin:0;font-size:15px;line-height:1.55;color:var(--muted)">Each agent gets the model its data classification allows.</p>
+            <h3 style="margin:0;font-size:19px;font-weight:500;letter-spacing:-0.015em;line-height:1.25;color:var(--ink)">Ready APIs and agents for the whole company</h3>
+            <p style="margin:0;font-size:15px;line-height:1.55;color:var(--muted);text-wrap:pretty">Give developers, analysts and business teams access to compute through secure API endpoints and ready agent interfaces.</p>
           </div>
         </div>
       </div>
-      <div class="uc-figslot"><span style="font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-2)">Illustration to come</span></div>
-    </div>
-    <div class="uc-foot" style="margin-top:24px">
-      <span>Infrastructure · MLOps · Platform engineering · CTO office</span>
-      <span class="right">Same perimeter, same audit trail.</span>
+      <figure class="ill-fig" style="margin:0;min-width:0;width:100%;max-width:460px;justify-self:start"><svg class="ill" viewBox="0 0 520 470" role="img" aria-labelledby="ug2-t" style="overflow:visible"><title id="ug2-t">Layers on your server: raw GPUs, TakeAny.AI as the control plane, a ready AI environment and production inference for chat, agents and API.</title>
+<rect class="plate ill-shadow" x="0.5" y="0.5" width="519" height="469" rx="18"></rect>
+<rect class="perimeter" x="20" y="30" width="480" height="418" rx="10"></rect><rect class="knockout" x="36" y="20" width="196" height="20"></rect><text class="lbl-lit" x="44" y="35">YOUR INFRASTRUCTURE</text>
+<text class="lbl" x="36" y="66">04 · PRODUCTION INFERENCE</text>
+<rect class="panel-2" x="36" y="76" width="140" height="34" rx="17"></rect><text class="lbl-ink" x="106" y="98" text-anchor="middle" style="font-size:12px">CHAT</text>
+<rect class="panel-2" x="190" y="76" width="140" height="34" rx="17"></rect><text class="lbl-ink" x="260" y="98" text-anchor="middle" style="font-size:12px">AGENTS</text>
+<rect class="panel-2" x="344" y="76" width="140" height="34" rx="17"></rect><text class="lbl-ink" x="414" y="98" text-anchor="middle" style="font-size:12px">API</text>
+<path class="link" d="M106 110V134"></path><rect class="node" x="104" y="108" width="4" height="4"></rect><rect class="node" x="104" y="132" width="4" height="4"></rect><path class="link" d="M260 110V134"></path><rect class="node" x="258" y="108" width="4" height="4"></rect><rect class="node" x="258" y="132" width="4" height="4"></rect><path class="link" d="M414 110V134"></path><rect class="node" x="412" y="108" width="4" height="4"></rect><rect class="node" x="412" y="132" width="4" height="4"></rect>
+<rect class="panel-2" x="36" y="134" width="448" height="72" rx="10"></rect><text class="lbl" x="52" y="156">03 · READY AI ENVIRONMENT</text>
+<rect x="52" y="168" width="84" height="26" rx="13" fill="none" stroke="var(--ill-line-2)"></rect><text class="lbl-ink" x="94" y="185" text-anchor="middle" style="font-size:11px">RAG</text>
+<rect x="146" y="168" width="116" height="26" rx="13" fill="none" stroke="var(--ill-line-2)"></rect><text class="lbl-ink" x="204" y="185" text-anchor="middle" style="font-size:11px">WORKFLOWS</text>
+<rect x="272" y="168" width="116" height="26" rx="13" fill="none" stroke="var(--ill-line-2)"></rect><text class="lbl-ink" x="330" y="185" text-anchor="middle" style="font-size:11px">GUARDRAILS</text>
+<path class="link" d="M106 206V232"></path><rect class="node" x="104" y="204" width="4" height="4"></rect><rect class="node" x="104" y="230" width="4" height="4"></rect><path class="link" d="M260 206V232"></path><rect class="node" x="258" y="204" width="4" height="4"></rect><rect class="node" x="258" y="230" width="4" height="4"></rect><path class="link" d="M414 206V232"></path><rect class="node" x="412" y="204" width="4" height="4"></rect><rect class="node" x="412" y="230" width="4" height="4"></rect>
+<rect class="panel" x="36" y="232" width="448" height="72" rx="10"></rect><text class="lbl-lit" x="56" y="256">02 · CONTROL PLANE</text><text class="val" x="56" y="288">TakeAny.AI</text><text class="mono-sm" x="464" y="286" text-anchor="end">RBAC · LIMITS · LOGS · MICROVM</text>
+<path class="link" d="M102 304V326"></path><rect class="node" x="100" y="302" width="4" height="4"></rect><rect class="node" x="100" y="324" width="4" height="4"></rect><path class="link" d="M206 304V326"></path><rect class="node" x="204" y="302" width="4" height="4"></rect><rect class="node" x="204" y="324" width="4" height="4"></rect><path class="link" d="M310 304V326"></path><rect class="node" x="308" y="302" width="4" height="4"></rect><rect class="node" x="308" y="324" width="4" height="4"></rect><path class="link" d="M414 304V326"></path><rect class="node" x="412" y="302" width="4" height="4"></rect><rect class="node" x="412" y="324" width="4" height="4"></rect>
+<rect class="panel-lit" x="36" y="326" width="448" height="104" rx="10"></rect><text class="lbl-lit" x="56" y="348">01 · YOUR RAW GPUS</text><text class="mono-sm" x="464" y="348" text-anchor="end" style="fill:var(--lit-deep)">NVIDIA · AMD</text>
+<rect class="panel-2" x="56" y="358" width="92" height="52" rx="6"></rect><circle cx="80" cy="386" r="13" fill="none" stroke="var(--ill-ink)" stroke-width="1.4"></circle><circle cx="80" cy="386" r="3" fill="var(--ill-ink)"></circle><path d="M102 374h34M102 381h34M102 388h34" stroke="var(--ill-line-2)" stroke-width="1.4"></path><text class="mono-sm" x="102" y="404" style="font-size:10px">GPU 0</text><rect class="panel-2" x="160" y="358" width="92" height="52" rx="6"></rect><circle cx="184" cy="386" r="13" fill="none" stroke="var(--ill-ink)" stroke-width="1.4"></circle><circle cx="184" cy="386" r="3" fill="var(--ill-ink)"></circle><path d="M206 374h34M206 381h34M206 388h34" stroke="var(--ill-line-2)" stroke-width="1.4"></path><text class="mono-sm" x="206" y="404" style="font-size:10px">GPU 1</text><rect class="panel-2" x="264" y="358" width="92" height="52" rx="6"></rect><circle cx="288" cy="386" r="13" fill="none" stroke="var(--ill-ink)" stroke-width="1.4"></circle><circle cx="288" cy="386" r="3" fill="var(--ill-ink)"></circle><path d="M310 374h34M310 381h34M310 388h34" stroke="var(--ill-line-2)" stroke-width="1.4"></path><text class="mono-sm" x="310" y="404" style="font-size:10px">GPU 2</text><rect class="panel-2" x="368" y="358" width="92" height="52" rx="6"></rect><circle cx="392" cy="386" r="13" fill="none" stroke="var(--ill-ink)" stroke-width="1.4"></circle><circle cx="392" cy="386" r="3" fill="var(--ill-ink)"></circle><path d="M414 374h34M414 381h34M414 388h34" stroke="var(--ill-line-2)" stroke-width="1.4"></path><text class="mono-sm" x="414" y="404" style="font-size:10px">GPU 3</text>
+</svg></figure>
     </div>
   </div>
 </section>
 
-<section class="section" data-screen-label="04 Related">
+<section class="section" data-screen-label="03 Benefits">
   <div class="container">
     <header class="section-head">
-      <span class="section-num">03 · Related</span>
-      <h2>Teams that run this <strong>usually run these too</strong></h2>
+      <span class="section-num" style="display:inline-flex;flex-wrap:wrap;align-items:center;gap:9px"><span>03 ·</span><svg class="icn icn-20" aria-hidden="true"><use href="#i-cost"></use></svg><span>Benefits</span></span>
+      <h2>What you gain <strong>on your own hardware</strong></h2>
+      <p class="sub" style="max-width:76ch">Native integration for Ollama, vLLM and local open weights, with 0% platform markup.</p>
     </header>
-    <div class="uc-rel">
-      <a href="/en/use-cases/self-hosted-rag-assistant" class="uc-card" style="gap:12px;text-decoration:none;justify-content:flex-start">
-        <span style="display:flex;align-items:center;gap:9px;font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)"><span style="width:5px;height:5px;border-radius:50%;background:var(--lit);flex:none"></span>02 · RAG assistant</span>
-        <h3 style="margin:0;font-size:20px;font-weight:400;letter-spacing:-0.022em;line-height:1.22;color:var(--ink);text-wrap:pretty">Enterprise RAG where your data never leaves the perimeter.</h3>
-      </a>
-      <a href="/en/use-cases/model-freedom" class="uc-card" style="gap:12px;text-decoration:none;justify-content:flex-start">
-        <span style="display:flex;align-items:center;gap:9px;font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)"><span style="width:5px;height:5px;border-radius:50%;background:var(--lit);flex:none"></span>06 · Model Selection</span>
-        <h3 style="margin:0;font-size:20px;font-weight:400;letter-spacing:-0.022em;line-height:1.22;color:var(--ink);text-wrap:pretty">Plug in any model or provider without rewriting your workflows.</h3>
-      </a>
-      <a href="/en/use-cases/build-ai-agents" class="uc-card" style="gap:12px;text-decoration:none;justify-content:flex-start">
-        <span style="display:flex;align-items:center;gap:9px;font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)"><span style="width:5px;height:5px;border-radius:50%;background:var(--lit);flex:none"></span>01 · Building AI agents</span>
-        <h3 style="margin:0;font-size:20px;font-weight:400;letter-spacing:-0.022em;line-height:1.22;color:var(--ink);text-wrap:pretty">Build and deploy enterprise AI agents with total host control.</h3>
-      </a>
+    <div data-rm-skip="" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden">
+      <div style="background:#fff;padding:30px 28px;display:flex;flex-direction:column;gap:14px;min-width:0">
+        <span style="display:flex;align-items:center;gap:9px;font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--lit-deep)"><span style="width:5px;height:5px;border-radius:50%;background:var(--lit);flex:none"></span>01 · Security</span>
+        <h3 style="margin:0;font-size:22px;font-weight:400;letter-spacing:-0.022em;line-height:1.2;color:var(--ink);text-wrap:pretty">Permissions per department, isolation per run</h3>
+        <p style="margin:0;font-size:15px;line-height:1.55;color:var(--muted);text-wrap:pretty">RBAC splits GPU capacity across departments and projects. Agent code runs in KVM/Firecracker microVMs, and input and output firewalls stop data leaks.</p>
+        <span style="margin-top:auto;padding-top:14px;border-top:1px solid var(--line);font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)">RBAC · Firecracker · I/O firewalls</span>
+      </div>
+      <div style="background:#fff;padding:30px 28px;display:flex;flex-direction:column;gap:14px;min-width:0">
+        <span style="display:flex;align-items:center;gap:9px;font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--lit-deep)"><span style="width:5px;height:5px;border-radius:50%;background:var(--lit);flex:none"></span>02 · Economics</span>
+        <h3 style="margin:0;font-size:22px;font-weight:400;letter-spacing:-0.022em;line-height:1.2;color:var(--ink);text-wrap:pretty">You pay for your hardware, not for tokens</h3>
+        <p style="margin:0;font-size:15px;line-height:1.55;color:var(--muted);text-wrap:pretty">0% token markup and no per-step fees. Full air-gap with no telemetry, and 14 log domains for Compliance.</p>
+        <span style="margin-top:auto;padding-top:14px;border-top:1px solid var(--line);font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)">0% step tax · GDPR · EU AI Act · NIS2 · DORA</span>
+      </div>
+      <div style="background:#fff;padding:30px 28px;display:flex;flex-direction:column;gap:14px;min-width:0">
+        <span style="display:flex;align-items:center;gap:9px;font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--lit-deep)"><span style="width:5px;height:5px;border-radius:50%;background:var(--lit);flex:none"></span>03 · Integration</span>
+        <h3 style="margin:0;font-size:22px;font-weight:400;letter-spacing:-0.022em;line-height:1.2;color:var(--ink);text-wrap:pretty">Any engine, any card</h3>
+        <p style="margin:0;font-size:15px;line-height:1.55;color:var(--muted);text-wrap:pretty">NVIDIA and AMD, open-weight models swapped without downtime. Selected queries go to the cloud only when you decide.</p>
+        <span style="margin-top:auto;padding-top:14px;border-top:1px solid var(--line);font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)">vLLM · Ollama · SGLang · TGI</span>
+      </div>
     </div>
-    <a href="/en/use-cases" class="uc-foot" style="margin-top:16px;text-decoration:none">
-      <span>Considering another use case?</span>
-      <span class="right">See all seven <span class="arrow">→</span></span>
-    </a>
   </div>
 </section>
 
-<section class="cta-strip plum" data-screen-label="05 Close">
+<section class="cta-strip plum" data-screen-label="04 CTA">
   <div class="container cta-grid">
-    <div><h2>Run it <strong>where you can defend it</strong></h2></div>
+    <div><h2>Turn your GPU servers <strong>into a ready AI platform today</strong></h2></div>
     <div class="cta-bts">
       <a class="btn btn-lg ta-btn-light" href="/en/get-started">Get started <span class="arrow">→</span></a>
-      <a class="cta-link" href="/en/pricing" style="display:inline-flex;align-items:center;align-self:center;gap:6px;padding:10px 4px;font-size:16px;font-weight:500;color:#fff;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px;background:none;border:0">See pricing →</a>
+      <a class="cta-link" href="/en/docs" style="display:inline-flex;align-items:center;align-self:center;gap:6px;padding:10px 4px;font-size:16px;font-weight:500;color:#fff;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px;background:none;border:0">Docs →</a>
     </div>
+  </div>
+  <div class="container" style="margin-top:32px">
+    <p style="margin:0;max-width:56ch;font-size:22px;font-weight:400;letter-spacing:-0.015em;line-height:1.45;color:#fff;text-wrap:pretty">Book a <strong style="font-weight:600;color:#F5E6A3">20-minute technical demo</strong>. We will show you how to install the TakeAny.AI binary on your GPU server and run your first secure agent in 15 minutes.</p>
   </div>
 </section>
 

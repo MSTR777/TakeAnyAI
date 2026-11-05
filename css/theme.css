@@ -364,3 +364,10 @@ body.ta-scrolled .ta-bar,body.mm-open .ta-bar{transform:none}
   .ta-ctas .btn{flex:1 1 100%;justify-content:center}
 }
 
+
+/* ---------- site-wide plum nav (inner pages) ---------- */
+.nav-wrap.ta-nav{background:rgba(92,42,107,0.96);border-bottom-color:transparent}
+.ta-nav .nav-links a{color:var(--ube-lavender-100)}
+.ta-nav .nav-links a:hover,.ta-nav .nav-links a.active{color:#fff}
+.ta-nav .nav-toggle{background:transparent;border-color:rgba(255,255,255,0.32);border-radius:var(--radius-pill);width:44px;height:44px}
+.ta-nav .nav-toggle span{background:#fff}
