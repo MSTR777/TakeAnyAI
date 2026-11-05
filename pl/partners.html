@@ -524,6 +524,7 @@ section.section:not(.partners)::before{content:"";position:absolute;top:-2px;lef
       </sc-if>
       <sc-if value="{{ formNotSubmitted }}" hint-placeholder-val="{{ true }}">
         <form onSubmit="{{ handleSubmit }}">
+<div aria-hidden="true" style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden"><label>Website<input type="text" name="website" tabindex="-1" autocomplete="off"></input></label></div>
           <div class="cf-row">
           <div class="cf-field">
             <label for="pa-fn">Imię *</label>
@@ -694,10 +695,14 @@ class Component extends DCLogic {
   }
   state = { navOpen: false, firstname: '', lastname: '', email: '', company: '', message: '', partnerType: '', partnerTier: '', consent: false, submitting: false, submitted: false, error: '' };
   componentDidMount() {
+    this._mountedAt = Date.now();
     document.documentElement.lang = 'pl';
   }
   async handleSubmit(e) {
     e.preventDefault();
+    // anti-spam: honeypot field + minimum fill time (HubSpot CAPTCHA can't be used with API submissions)
+    const hpEl = e.target && e.target.elements && e.target.elements.website;
+    if ((hpEl && hpEl.value) || Date.now() - (this._mountedAt || 0) < 3000) { this.setState({ submitting: false, submitted: true, error: '' }); return; }
     if (!this.state.email || !this.state.firstname || !this.state.company || !this.state.message || !this.state.partnerType) {
       this.setState({ error: 'Uzupełnij wymagane pola.' });
       return;
