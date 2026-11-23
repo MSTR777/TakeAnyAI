@@ -418,7 +418,7 @@ section.section:not(.partners)::before{content:"";position:absolute;top:-2px;lef
 <section class="section" data-screen-label="01 Architektura agenta">
   <div class="container">
     <header class="section-head">
-      <span class="section-num" style="display:inline-flex;flex-wrap:wrap;align-items:center;gap:9px"><span>01 ·</span><svg class="icn icn-20" aria-hidden="true"><use href="#i-dash"></use></svg><span>Architektura agenta</span></span>
+      <span class="section-num" style="display:inline-flex;flex-wrap:wrap;align-items:center;gap:9px"><svg class="icn icn-20" aria-hidden="true"><use href="#i-dash"></use></svg><span>Architektura agenta</span></span>
       <h2>Pełny kontekst biznesowy dla AI: buduj agentów orkiestrujących <strong>bazy danych, ontologie, skrypty i złożone przepływy pracy</strong></h2>
       <p class="sub" style="max-width:76ch">Tradycyjne buildery no-code ograniczają sztuczną inteligencję do prostego wyszukiwania w plikach PDF i naliczają opłaty za każdy krok. <strong style="font-weight:600">TakeAny.AI Agent Builder dostarcza środowisko orkiestracyjne do projektowania produkcyjnych agentów AI</strong>. Łączy pełny ekosystem danych organizacji — od nieustrukturyzowanej wiedzy, przez tabelaryczne zestawy danych (Data Lake) i produkty analityczne, aż po formalne ontologie biznesowe. Pozwala bezpiecznie łączyć elastyczność modeli LLM z deterministycznym kodem Python/Starlark oraz pełnym podglądem zależności na wizualnym grafie przepływu.</p>
     </header>
@@ -460,7 +460,7 @@ section.section:not(.partners)::before{content:"";position:absolute;top:-2px;lef
 <section class="section" data-screen-label="02 Dlaczego TakeAny.AI">
   <div class="container">
     <header class="section-head">
-      <span class="section-num" style="display:inline-flex;flex-wrap:wrap;align-items:center;gap:9px"><span>02 ·</span><svg class="icn icn-20" aria-hidden="true"><use href="#i-cost"></use></svg><span>Dlaczego TakeAny.AI</span></span>
+      <span class="section-num" style="display:inline-flex;flex-wrap:wrap;align-items:center;gap:9px"><svg class="icn icn-20" aria-hidden="true"><use href="#i-cost"></use></svg><span>Dlaczego TakeAny.AI</span></span>
       <h2>Autonomia agenta bez rachunku za każdą pętlę <strong>i bez ryzyka dla firmowych systemów</strong></h2>
       <p class="sub" style="max-width:76ch">Pięć własności platformy, które decydują o tym, czy agenta da się utrzymać w produkcji: <strong style="font-weight:600">koszt, izolacja kodu, ochrona danych, niezależność od dostawcy i nadzór</strong>.</p>
     </header>
@@ -505,7 +505,7 @@ section.section:not(.partners)::before{content:"";position:absolute;top:-2px;lef
         <span style="display:flex;align-items:center;gap:9px;font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--lit-deep)"><span style="width:5px;height:5px;border-radius:50%;background:var(--lit);flex:none"></span>Enterprise governance &amp; compliance</span>
         <h3 style="margin:0;font-size:23px;font-weight:400;letter-spacing:-0.022em;line-height:1.2;color:var(--ink);text-wrap:pretty">Bądź gotowy na audyt i EU AI Act: pełna kontrola uprawnień oraz ścieżka audytowa każdej decyzji</h3>
         <details class="uc-more"><summary>Szczegóły</summary><ul class="uc-bul">
-          <li><strong>Granularny dostęp RBAC:</strong> Przydzielaj dostęp do agentów, baz wiedzy i skryptów w oparciu o 35 poziomów uprawnień.</li>
+          <li><strong>Granularny dostęp RBAC:</strong> Nadawaj role na konkretnych agentów, bazy wiedzy i skrypty, a grupy mapuj z SSO i SCIM.</li>
           <li><strong>Centralny rejestr zdarzeń:</strong> Panel Mission Control rejestruje szczegółowe logi audytowe w 14 domenach — od wywołań narzędzi, przez zapytania SQL, po decyzje zapór bezpieczeństwa.</li>
         </ul></details>
         <p class="uc-val">Wartość dla klienta: Zgodność z regulacjami EU AI Act, RODO, DORA oraz NIS2 bez potrzeby dokupowania zewnętrznych narzędzi nadzoru.</p>
@@ -552,6 +552,7 @@ section.section:not(.partners)::before{content:"";position:absolute;top:-2px;lef
           <li><a href="/pl/product">Przegląd</a></li>
           <li><a href="/pl/use-cases">Zastosowania</a></li>
           <li><a href="/pl/product#security">Bezpieczeństwo</a></li>
+          <li><a href="/pl/product#access">Tożsamość i dostęp</a></li>
           <li><a href="/pl/product#cost">Kontrola kosztów</a></li>
           <li><a href="/pl/product#models">Swoboda wyboru modeli</a></li>
           <li><a href="/pl/pricing">Cennik</a></li>
@@ -599,7 +600,7 @@ section.section:not(.partners)::before{content:"";position:absolute;top:-2px;lef
         </button>
         <ul style="display:{{ abListDisplay }};position:absolute;left:0;bottom:52px;width:100%;max-width:640px;margin:0;padding:0;list-style:none;background:#fff;border:1px solid var(--ink);border-radius:16px;overflow:hidden;z-index:30">
           <sc-for list="{{ abItems }}" as="it" hint-placeholder-count="5">
-            <li style="border-bottom:1px solid var(--line)"><a href="{{ it.href }}" onClick="{{ it.pick }}" style="display:grid;grid-template-columns:34px minmax(0,1fr);gap:10px;align-items:baseline;min-height:52px;padding:14px 18px;color:var(--ink);text-decoration:none;background:{{ it.bg }}" style-hover="background:var(--ube-lavender-50)"><span style="font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;color:var(--lit-deep)">{{ it.n }}</span><span style="font-size:15px;line-height:1.35">{{ it.full }}</span></a></li>
+            <li style="border-bottom:1px solid var(--line)"><a href="{{ it.href }}" onClick="{{ it.pick }}" style="display:grid;grid-template-columns:minmax(0,1fr);gap:10px;align-items:baseline;min-height:52px;padding:14px 18px;color:var(--ink);text-decoration:none;background:{{ it.bg }}" style-hover="background:var(--ube-lavender-50)"><span style="font-size:15px;line-height:1.35">{{ it.full }}</span></a></li>
           </sc-for>
         </ul>
       </div>

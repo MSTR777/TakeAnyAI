@@ -352,7 +352,7 @@ section.section:not(.partners)::before{content:"";position:absolute;top:-2px;lef
 <section class="section" id="who" data-screen-label="02 Who it is for">
   <div class="container">
     <header class="section-head">
-      <span class="section-num">01 · Who it’s for</span>
+      <span class="section-num">Who it’s for</span>
       <h2>Who is <strong>this program for?</strong></h2>
       <p class="sub">We are looking for partners who understand business and can turn technology into value for their clients.</p>
     </header>
@@ -379,7 +379,7 @@ section.section:not(.partners)::before{content:"";position:absolute;top:-2px;lef
 <section class="section" id="benefits" data-screen-label="03 Benefits">
   <div class="container">
     <header class="section-head">
-      <span class="section-num">02 · Benefits</span>
+      <span class="section-num">Benefits</span>
       <h2>What you gain as <strong>an TakeAny.AI Partner</strong></h2>
       <p class="sub">Our partnership model is simple and transparent. No hidden costs, full predictability.</p>
     </header>
@@ -423,7 +423,7 @@ section.section:not(.partners)::before{content:"";position:absolute;top:-2px;lef
 <section class="section" id="white-label" data-screen-label="04 White label">
   <div class="container">
     <header class="section-head">
-      <span class="section-num">03 · White label</span>
+      <span class="section-num">White label</span>
       <h2>Sell AI <strong>under your own brand</strong></h2>
     </header>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:40px 64px;align-items:center">
@@ -455,7 +455,7 @@ section.section:not(.partners)::before{content:"";position:absolute;top:-2px;lef
 <section class="section" id="tiers" data-screen-label="05 Partnership tiers">
   <div class="container">
     <header class="section-head">
-      <span class="section-num">04 · Partnership tiers</span>
+      <span class="section-num">Partnership tiers</span>
       <h2>Two clear partnership tiers. <strong>Choose your model</strong></h2>
       <p class="sub">Start working with us with no revenue thresholds at the outset.</p>
     </header>
@@ -603,6 +603,7 @@ section.section:not(.partners)::before{content:"";position:absolute;top:-2px;lef
           <li><a href="/en/product">Overview</a></li>
           <li><a href="/en/use-cases">Use cases</a></li>
           <li><a href="/en/product#security">Security</a></li>
+          <li><a href="/en/product#access">Access &amp; identity</a></li>
           <li><a href="/en/product#cost">Cost control</a></li>
           <li><a href="/en/product#models">Model Selection</a></li>
           <li><a href="/en/pricing">Pricing</a></li>
@@ -650,7 +651,7 @@ section.section:not(.partners)::before{content:"";position:absolute;top:-2px;lef
         </button>
         <ul style="display:{{ abListDisplay }};position:absolute;left:0;bottom:52px;width:100%;max-width:640px;margin:0;padding:0;list-style:none;background:#fff;border:1px solid var(--ink);border-radius:16px;overflow:hidden;z-index:30">
           <sc-for list="{{ abItems }}" as="it" hint-placeholder-count="5">
-            <li style="border-bottom:1px solid var(--line)"><a href="{{ it.href }}" onClick="{{ it.pick }}" style="display:grid;grid-template-columns:34px minmax(0,1fr);gap:10px;align-items:baseline;min-height:52px;padding:14px 18px;color:var(--ink);text-decoration:none;background:{{ it.bg }}" style-hover="background:var(--ube-lavender-50)"><span style="font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;color:var(--lit-deep)">{{ it.n }}</span><span style="font-size:15px;line-height:1.35">{{ it.full }}</span></a></li>
+            <li style="border-bottom:1px solid var(--line)"><a href="{{ it.href }}" onClick="{{ it.pick }}" style="display:grid;grid-template-columns:minmax(0,1fr);gap:10px;align-items:baseline;min-height:52px;padding:14px 18px;color:var(--ink);text-decoration:none;background:{{ it.bg }}" style-hover="background:var(--ube-lavender-50)"><span style="font-size:15px;line-height:1.35">{{ it.full }}</span></a></li>
           </sc-for>
         </ul>
       </div>

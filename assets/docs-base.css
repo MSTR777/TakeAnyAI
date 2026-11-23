@@ -173,3 +173,7 @@ pre.diagram{font-size:12px;line-height:1.35;white-space:pre;color:var(--ink)}
   .perm-grid{grid-template-columns:1fr}
   .pager{grid-template-columns:1fr}
 }
+
+/* sprite crops (moved from inline styles to keep Docs light) */
+.spr{display:block;position:relative;overflow:hidden}
+.spr>img{position:absolute;left:0;width:100%;height:auto;max-width:none}

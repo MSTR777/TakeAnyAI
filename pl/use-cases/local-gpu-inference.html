@@ -427,7 +427,7 @@ summary::-webkit-details-marker{display:none}.exp-sum::marker{content:""}
 <section class="section" data-screen-label="01 Wyzwanie">
   <div class="container">
     <header class="section-head">
-      <span class="section-num">01 · Wyzwanie po zakupie</span>
+      <span class="section-num">Wyzwanie po zakupie</span>
       <h2>Serwery GPU są już w szafie rackowej. <strong>Co dalej?</strong></h2>
       <div class="sub" style="max-width:76ch;display:flex;flex-direction:column;gap:12px">
         <p style="margin:0;font-size:16px;line-height:1.6;color:var(--muted);text-wrap:pretty">Kupiłeś klaster NVIDIA albo stacje robocze z GPU. Teraz zespół potrzebuje platformy, która zamieni surową moc obliczeniową w produkcyjne przepływy. TakeAny.AI łączy lokalne modele open-weight — Llama, DeepSeek, Mistral — z nadzorowanym uruchamianiem agentów, więc omijasz narzuty SaaS na tokeny i masz przewidywalny zwrot z fizycznej infrastruktury.</p>
@@ -490,7 +490,7 @@ summary::-webkit-details-marker{display:none}.exp-sum::marker{content:""}
 <section class="section" data-screen-label="02 Rozwiązanie">
   <div class="container">
     <header class="section-head">
-      <span class="section-num" style="display:inline-flex;flex-wrap:wrap;align-items:center;gap:9px"><span>02 ·</span><svg class="icn icn-20" aria-hidden="true"><use href="#i-dash"></use></svg><span>Rozwiązanie</span></span>
+      <span class="section-num" style="display:inline-flex;flex-wrap:wrap;align-items:center;gap:9px"><svg class="icn icn-20" aria-hidden="true"><use href="#i-dash"></use></svg><span>Rozwiązanie</span></span>
       <h2>TakeAny.AI zamienia surowe serwery GPU w wielodostępną, bezpieczną platformę AI <strong>w 1 dzień</strong></h2>
     </header>
     <div class="uc-how">
@@ -542,7 +542,7 @@ summary::-webkit-details-marker{display:none}.exp-sum::marker{content:""}
 <section class="section" data-screen-label="03 Korzyści">
   <div class="container">
     <header class="section-head">
-      <span class="section-num" style="display:inline-flex;flex-wrap:wrap;align-items:center;gap:9px"><span>03 ·</span><svg class="icn icn-20" aria-hidden="true"><use href="#i-cost"></use></svg><span>Korzyści</span></span>
+      <span class="section-num" style="display:inline-flex;flex-wrap:wrap;align-items:center;gap:9px"><svg class="icn icn-20" aria-hidden="true"><use href="#i-cost"></use></svg><span>Korzyści</span></span>
       <h2>Co zyskujesz <strong>na własnym sprzęcie</strong></h2>
       <p class="sub" style="max-width:76ch">Natywna integracja z Ollama, vLLM i lokalnymi modelami open-weight, przy 0% narzutu platformy.</p>
     </header>
@@ -602,6 +602,7 @@ summary::-webkit-details-marker{display:none}.exp-sum::marker{content:""}
           <li><a href="/pl/product">Przegląd</a></li>
           <li><a href="/pl/use-cases">Zastosowania</a></li>
           <li><a href="/pl/product#security">Bezpieczeństwo</a></li>
+          <li><a href="/pl/product#access">Tożsamość i dostęp</a></li>
           <li><a href="/pl/product#cost">Kontrola kosztów</a></li>
           <li><a href="/pl/product#models">Swoboda wyboru modeli</a></li>
           <li><a href="/pl/pricing">Cennik</a></li>
@@ -649,7 +650,7 @@ summary::-webkit-details-marker{display:none}.exp-sum::marker{content:""}
         </button>
         <ul style="display:{{ abListDisplay }};position:absolute;left:0;bottom:52px;width:100%;max-width:640px;margin:0;padding:0;list-style:none;background:#fff;border:1px solid var(--ink);border-radius:16px;overflow:hidden;z-index:30">
           <sc-for list="{{ abItems }}" as="it" hint-placeholder-count="5">
-            <li style="border-bottom:1px solid var(--line)"><a href="{{ it.href }}" onClick="{{ it.pick }}" style="display:grid;grid-template-columns:34px minmax(0,1fr);gap:10px;align-items:baseline;min-height:52px;padding:14px 18px;color:var(--ink);text-decoration:none;background:{{ it.bg }}" style-hover="background:var(--ube-lavender-50)"><span style="font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;color:var(--lit-deep)">{{ it.n }}</span><span style="font-size:15px;line-height:1.35">{{ it.full }}</span></a></li>
+            <li style="border-bottom:1px solid var(--line)"><a href="{{ it.href }}" onClick="{{ it.pick }}" style="display:grid;grid-template-columns:minmax(0,1fr);gap:10px;align-items:baseline;min-height:52px;padding:14px 18px;color:var(--ink);text-decoration:none;background:{{ it.bg }}" style-hover="background:var(--ube-lavender-50)"><span style="font-size:15px;line-height:1.35">{{ it.full }}</span></a></li>
           </sc-for>
         </ul>
       </div>

@@ -495,7 +495,7 @@ section.section:not(.partners)::before{content:"";position:absolute;top:-2px;lef
 <section class="section" data-screen-label="01 Who it is for">
   <div class="container">
     <header class="section-head">
-      <span class="section-num" style="width:auto;max-width:340px;white-space:normal">01 · Why AI for your organisation</span>
+      <span class="section-num" style="width:auto;max-width:340px;white-space:normal">Why AI for your organisation</span>
       <h2>Your clients expect AI. <strong>Deliver it without investing in the technology</strong></h2>
     </header>
     <div class="uc-how">
@@ -513,7 +513,7 @@ section.section:not(.partners)::before{content:"";position:absolute;top:-2px;lef
 <section class="section" data-screen-label="02 What you get">
   <div class="container">
     <header class="section-head">
-      <span class="section-num" style="display:inline-flex;flex-wrap:wrap;align-items:center;gap:9px"><span>02 ·</span><svg class="icn icn-20" aria-hidden="true"><use href="#i-dash"></use></svg><span>What you get</span></span>
+      <span class="section-num" style="display:inline-flex;flex-wrap:wrap;align-items:center;gap:9px"><svg class="icn icn-20" aria-hidden="true"><use href="#i-dash"></use></svg><span>What you get</span></span>
       <h2>You sell and deploy. <strong>We maintain the engine</strong></h2>
       <p class="sub" style="max-width:78ch">You focus on what sets you apart: <strong style="font-weight:600">your brand, clients, domain expertise and implementation services</strong>. We provide the AI foundation.</p>
     </header>
@@ -590,7 +590,7 @@ section.section:not(.partners)::before{content:"";position:absolute;top:-2px;lef
 <section class="section" data-screen-label="03 Open source">
   <div class="container">
     <header class="section-head">
-      <span class="section-num" style="display:inline-flex;flex-wrap:wrap;align-items:center;gap:9px"><span>03 ·</span><svg class="icn icn-20" aria-hidden="true"><use href="#i-sec"></use></svg><span>Open source vs TakeAny.AI</span></span>
+      <span class="section-num" style="display:inline-flex;flex-wrap:wrap;align-items:center;gap:9px"><svg class="icn icn-20" aria-hidden="true"><use href="#i-sec"></use></svg><span>Open source vs TakeAny.AI</span></span>
       <h2>“I’ll just build it on open source”? <strong>Check the costs and risks</strong></h2>
       <p class="sub" style="max-width:78ch">You can build it on open source. <strong style="font-weight:600">Maintenance and accountability stay with you.</strong></p>
     </header>
@@ -611,7 +611,7 @@ section.section:not(.partners)::before{content:"";position:absolute;top:-2px;lef
 <section class="section" data-screen-label="04 Specification">
   <div class="container">
     <header class="section-head">
-      <span class="section-num" style="width:auto;max-width:240px;white-space:normal;display:inline-flex;flex-wrap:wrap;align-items:center;gap:9px"><span>04 ·</span><svg class="icn icn-20" aria-hidden="true"><use href="#i-prem"></use></svg><span>Specification</span></span>
+      <span class="section-num" style="width:auto;max-width:240px;white-space:normal;display:inline-flex;flex-wrap:wrap;align-items:center;gap:9px"><svg class="icn icn-20" aria-hidden="true"><use href="#i-prem"></use></svg><span>Specification</span></span>
       <h2>Your brand, <strong>our backend</strong></h2>
     </header>
     <div class="ws-specs">
@@ -652,7 +652,7 @@ section.section:not(.partners)::before{content:"";position:absolute;top:-2px;lef
 <section class="section" data-screen-label="05 FAQ">
   <div class="container">
     <header class="section-head">
-      <span class="section-num" style="width:auto;max-width:240px;white-space:normal">05 · FAQ</span>
+      <span class="section-num" style="width:auto;max-width:240px;white-space:normal">FAQ</span>
       <h2>White label AI: <strong>frequently asked questions</strong></h2>
     </header>
     <div style="display:flex;flex-direction:column;border-top:1px solid var(--ink);max-width:900px">
@@ -706,6 +706,7 @@ section.section:not(.partners)::before{content:"";position:absolute;top:-2px;lef
           <li><a href="/en/product">Overview</a></li>
           <li><a href="/en/use-cases">Use cases</a></li>
           <li><a href="/en/product#security">Security</a></li>
+          <li><a href="/en/product#access">Access &amp; identity</a></li>
           <li><a href="/en/product#cost">Cost control</a></li>
           <li><a href="/en/product#models">Model Selection</a></li>
           <li><a href="/en/pricing">Pricing</a></li>
@@ -753,7 +754,7 @@ section.section:not(.partners)::before{content:"";position:absolute;top:-2px;lef
         </button>
         <ul style="display:{{ abListDisplay }};position:absolute;left:0;bottom:52px;width:100%;max-width:640px;margin:0;padding:0;list-style:none;background:#fff;border:1px solid var(--ink);border-radius:16px;overflow:hidden;z-index:30">
           <sc-for list="{{ abItems }}" as="it" hint-placeholder-count="5">
-            <li style="border-bottom:1px solid var(--line)"><a href="{{ it.href }}" onClick="{{ it.pick }}" style="display:grid;grid-template-columns:34px minmax(0,1fr);gap:10px;align-items:baseline;min-height:52px;padding:14px 18px;color:var(--ink);text-decoration:none;background:{{ it.bg }}" style-hover="background:var(--ube-lavender-50)"><span style="font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;color:var(--lit-deep)">{{ it.n }}</span><span style="font-size:15px;line-height:1.35">{{ it.full }}</span></a></li>
+            <li style="border-bottom:1px solid var(--line)"><a href="{{ it.href }}" onClick="{{ it.pick }}" style="display:grid;grid-template-columns:minmax(0,1fr);gap:10px;align-items:baseline;min-height:52px;padding:14px 18px;color:var(--ink);text-decoration:none;background:{{ it.bg }}" style-hover="background:var(--ube-lavender-50)"><span style="font-size:15px;line-height:1.35">{{ it.full }}</span></a></li>
           </sc-for>
         </ul>
       </div>

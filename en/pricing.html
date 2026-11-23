@@ -33,7 +33,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100;200;300;400;500;600;700;800;900&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/base.css">
-<link rel="stylesheet" href="/assets/docs-base.css">
 <link rel="stylesheet" href="/css/theme.css">
 <script src="/_ds/takeany-ai-design-system-365327f4-89d8-418c-be14-ea19a91e4fcb/_ds_bundle.js"></script>
 <style>/* design-system accent-preview widget is not site chrome */ .acc-switch{display:none!important}
@@ -65,7 +64,7 @@ section.section:not(.partners)::before{content:"";position:absolute;top:-2px;lef
 .cta-link:hover{text-decoration-thickness:2px!important;color:var(--ink)}
 </style>
 <title>TakeAny.AI Pricing — Per-Execution Billing, 0% Token Markup</title>
-<meta name="description" content="TakeAny.AI pricing: €129/mo Starter, €249/mo Growth, custom Enterprise. Save 20% with annual billing. Billed per completed workflow run with no step or loop penalties and 0% LLM token markup. Every security and governance feature included on every tier.">
+<meta name="description" content="TakeAny.AI pricing: €129/mo Starter, Growth and Enterprise quoted on request. Save 20% with annual billing. Billed per completed workflow run with no step or loop penalties and 0% LLM token markup. Every security and governance feature included on every tier.">
 <link rel="canonical" href="https://takeany.ai/en/pricing">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
 <meta property="og:type" content="website">
@@ -121,7 +120,7 @@ section.section:not(.partners)::before{content:"";position:absolute;top:-2px;lef
         {
           "@type": "Question",
           "name": "What is the discount for annual billing?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Annual billing saves 20% against the monthly rate: 103 EUR per month for Starter and 199 EUR per month for Growth, invoiced once for the twelve-month term. Enterprise terms are set per contract." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Annual billing saves 20% against the monthly rate: 103 EUR per month for Starter, invoiced once for the twelve-month term. Growth and Enterprise terms are set in the quote." }
         },
         {
           "@type": "Question",
@@ -358,8 +357,8 @@ section.section:not(.partners)::before{content:"";position:absolute;top:-2px;lef
           <p style="margin:0;font-size:14.5px;line-height:1.5;color:var(--muted)">Scaling mid-market tech firms and active operational teams.</p>
         </div>
         <div style="display:flex;flex-direction:column;gap:4px;padding-bottom:20px;border-bottom:1px solid var(--line)">
-          <span style="font-size:38px;letter-spacing:-0.03em;line-height:1;color:var(--ink)">{{ growthPrice }}</span>
-          <span style="font-family:var(--font-mono);font-size:12px;color:var(--muted)">{{ priceNote }}</span>
+          <span style="font-size:38px;letter-spacing:-0.03em;line-height:1;color:var(--ink)">Ask for a quote</span>
+          <span style="font-family:var(--font-mono);font-size:12px;color:var(--muted)">sized to your deployment</span>
         </div>
         <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px">
           <li style="display:grid;grid-template-columns:14px 1fr;gap:10px;font-size:14.5px;line-height:1.5;color:var(--ink-2)"><span style="color:var(--ink)">—</span><span><strong style="font-weight:500">50,000 executions</strong> / month</span></li>
@@ -369,7 +368,7 @@ section.section:not(.partners)::before{content:"";position:absolute;top:-2px;lef
           <li style="display:grid;grid-template-columns:14px 1fr;gap:10px;font-size:14.5px;line-height:1.5;color:var(--ink-2)"><span style="color:var(--ink)">—</span><span>100% of features included</span></li>
           <li style="display:grid;grid-template-columns:14px 1fr;gap:10px;font-size:14.5px;line-height:1.5;color:var(--ink-2)"><span style="color:var(--ink)">—</span><span>EU B2B invoicing in EUR, EU GDPR</span></li>
         </ul>
-        <a class="btn btn-primary" href="/en/get-started" style="margin-top:auto">Deploy Growth plan <span class="arrow">→</span></a>
+        <a class="btn btn-primary" href="/en/get-started#talk" style="margin-top:auto">Ask for a quote <span class="arrow">→</span></a>
       </div>
 
       <div style="border:1px solid var(--line);border-radius:var(--radius);background:var(--paper);padding:28px 26px 30px;display:flex;flex-direction:column;gap:20px;min-height:100%">
@@ -435,7 +434,7 @@ section.section:not(.partners)::before{content:"";position:absolute;top:-2px;lef
           <tr>
             <th scope="row">Monthly price</th>
             <td>€129 net / mo — or €103 / mo billed annually</td>
-            <td>€249 net / mo — or €199 / mo billed annually</td>
+            <td>Ask for a quote</td>
             <td>Custom billing</td>
           </tr>
           <tr>
@@ -736,6 +735,7 @@ section.section:not(.partners)::before{content:"";position:absolute;top:-2px;lef
           <li><a href="/en/product">Overview</a></li>
           <li><a href="/en/use-cases">Use cases</a></li>
           <li><a href="/en/product#security">Security</a></li>
+          <li><a href="/en/product#access">Access &amp; identity</a></li>
           <li><a href="/en/product#cost">Cost control</a></li>
           <li><a href="/en/product#models">Model Selection</a></li>
           <li><a href="/en/pricing">Pricing</a></li>
@@ -783,7 +783,7 @@ section.section:not(.partners)::before{content:"";position:absolute;top:-2px;lef
         </button>
         <ul style="display:{{ abListDisplay }};position:absolute;left:0;bottom:52px;width:100%;max-width:640px;margin:0;padding:0;list-style:none;background:#fff;border:1px solid var(--ink);border-radius:16px;overflow:hidden;z-index:30">
           <sc-for list="{{ abItems }}" as="it" hint-placeholder-count="5">
-            <li style="border-bottom:1px solid var(--line)"><a href="{{ it.href }}" onClick="{{ it.pick }}" style="display:grid;grid-template-columns:34px minmax(0,1fr);gap:10px;align-items:baseline;min-height:52px;padding:14px 18px;color:var(--ink);text-decoration:none;background:{{ it.bg }}" style-hover="background:var(--ube-lavender-50)"><span style="font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;color:var(--lit-deep)">{{ it.n }}</span><span style="font-size:15px;line-height:1.35">{{ it.full }}</span></a></li>
+            <li style="border-bottom:1px solid var(--line)"><a href="{{ it.href }}" onClick="{{ it.pick }}" style="display:grid;grid-template-columns:minmax(0,1fr);gap:10px;align-items:baseline;min-height:52px;padding:14px 18px;color:var(--ink);text-decoration:none;background:{{ it.bg }}" style-hover="background:var(--ube-lavender-50)"><span style="font-size:15px;line-height:1.35">{{ it.full }}</span></a></li>
           </sc-for>
         </ul>
       </div>
@@ -845,7 +845,7 @@ class Component extends DCLogic {
       { q: 'What is On-Premise (On-Prem)?', a: 'On-premise means software runs on hardware physically located inside your company\u2019s data center or private server room, rather than on a vendor\u2019s public cloud. It is connected to your internal network and usually the public internet, so it can still send outbound HTTPS requests, call third-party APIs, send telemetry to software vendors, or download updates. Example: running an AI workflow orchestrator on your local server, but having it send customer prompts over the internet to a third-party LLM API.' },
       { q: 'What is Air-Gapped?', a: 'Air-gapped refers to a system with a physical or strict logical separation from any unsecured network, most notably the public internet. There is zero internet access: no inbound connections, no outbound requests, no DNS lookups, no external dependencies. 0 bytes leave the network, everything the software needs must be pre-loaded onto the local environment. Example: running TakeAny.AI against a local LLM such as Ollama or vLLM on local GPUs, with a local SQLite database and no external API calls physically possible.' },
       { q: 'How does B2B billing and invoicing work?', a: 'All subscriptions and packages are invoiced in EUR at net prices, excluding VAT. VAT is applied according to your jurisdiction and reverse-charge status. We support standard corporate procurement procedures.' },
-      { q: 'What is the discount for annual billing?', a: 'Annual billing saves 20% against the monthly rate: \u20ac103 / month for Starter and \u20ac199 / month for Growth, invoiced once for the twelve-month term. Enterprise terms are set per contract.' },
+      { q: 'What is the discount for annual billing?', a: 'Annual billing saves 20% against the monthly rate: \u20ac103 / month for Starter, invoiced once for the twelve-month term. Growth and Enterprise terms are set in the quote.' },
       { q: 'Who on the technical side uses TakeAny.AI, and what do they get?', a: 'Developers, data and DevOps engineers, and Tech Ops teams. They value: a very light virtual machine and a single binary; a fully configurable platform with advanced capabilities; developer-written logic instead of closed templates; strict local data-processing requirements kept intact.' },
       { q: 'Is TakeAny.AI usable for non-technical users?', a: 'Yes. Project managers, business operations, business teams, marketing and sales. They value: low-code to no-code work with core visual modules; simple connectors instead of running custom code; data-sovereignty requirements met — self-hosted, on-premise, air-gapped; deployment without queuing for the engineering team.' },
       { q: 'How does the support package work in practice?', a: 'Monthly Support & Optimization gives your engineering team direct, asynchronous or scheduled live video consultation with TakeAny.AI core engineers. Time is used flexibly for architectural reviews, custom tool debugging, log analysis or firewall tuning, and is scoped and quoted against your workflows.' }

@@ -408,7 +408,7 @@ section.section:not(.partners)::before{content:"";position:absolute;top:-2px;lef
 <section class="section" data-screen-label="02 Value">
   <div class="container">
     <header class="section-head">
-      <span class="section-num" style="display:inline-flex;flex-wrap:wrap;align-items:center;gap:9px"><span>01 ·</span><svg class="icn icn-20" aria-hidden="true"><use href="#i-cost"></use></svg><span>Wartość</span></span>
+      <span class="section-num" style="display:inline-flex;flex-wrap:wrap;align-items:center;gap:9px"><svg class="icn icn-20" aria-hidden="true"><use href="#i-cost"></use></svg><span>Wartość</span></span>
       <h2>Bezpieczny czatbot z Twoją bazą wiedzy. <strong>Pełna zgodność z prawem UE</strong></h2>
     </header>
     <div class="uc-caps uc-rail">
@@ -450,7 +450,7 @@ section.section:not(.partners)::before{content:"";position:absolute;top:-2px;lef
 <section class="section" data-screen-label="03 What you get">
   <div class="container">
     <header class="section-head">
-      <span class="section-num" style="display:inline-flex;flex-wrap:wrap;align-items:center;gap:9px"><span>02 ·</span><svg class="icn icn-20" aria-hidden="true"><use href="#i-cost"></use></svg><span>Co zyskujesz</span></span>
+      <span class="section-num" style="display:inline-flex;flex-wrap:wrap;align-items:center;gap:9px"><svg class="icn icn-20" aria-hidden="true"><use href="#i-cost"></use></svg><span>Co zyskujesz</span></span>
       <h2>Chatbot zbudowany z <strong>treści, nie ze skryptów</strong></h2>
     </header>
     <div class="tab-row">
@@ -522,7 +522,7 @@ section.section:not(.partners)::before{content:"";position:absolute;top:-2px;lef
 <section class="section" data-screen-label="04 How it works">
   <div class="container">
     <header class="section-head">
-      <span class="section-num" style="display:inline-flex;flex-wrap:wrap;align-items:center;gap:9px"><span>03 ·</span><svg class="icn icn-20" aria-hidden="true"><use href="#i-dash"></use></svg><span>Jak to działa</span></span>
+      <span class="section-num" style="display:inline-flex;flex-wrap:wrap;align-items:center;gap:9px"><svg class="icn icn-20" aria-hidden="true"><use href="#i-dash"></use></svg><span>Jak to działa</span></span>
       <h2>Pełny ślad audytowy <strong>i analityka każdej rozmowy</strong></h2>
     </header>
     <div class="uc-how">
@@ -585,7 +585,7 @@ section.section:not(.partners)::before{content:"";position:absolute;top:-2px;lef
 <section class="section" data-screen-label="05 Why it is secure">
   <div class="container">
     <header class="section-head">
-      <span class="section-num" style="display:inline-flex;flex-wrap:wrap;align-items:center;gap:9px"><span>04 ·</span><svg class="icn icn-20" aria-hidden="true"><use href="#i-sec"></use></svg><span>Dlaczego jest bezpieczne</span></span>
+      <span class="section-num" style="display:inline-flex;flex-wrap:wrap;align-items:center;gap:9px"><svg class="icn icn-20" aria-hidden="true"><use href="#i-sec"></use></svg><span>Dlaczego jest bezpieczne</span></span>
       <h2>Publiczny jest tylko <strong>sam widget</strong></h2>
     </header>
     <div class="tab-row">
@@ -643,7 +643,7 @@ section.section:not(.partners)::before{content:"";position:absolute;top:-2px;lef
 <section class="section" data-screen-label="06 Who this is for">
   <div class="container">
     <header class="section-head">
-      <span class="section-num">05 · Dla kogo to jest</span>
+      <span class="section-num">Dla kogo to jest</span>
       <h2>Gdzie powtarzające się pytania <strong>kosztują realny czas wsparcia</strong></h2>
     </header>
     <div class="uc-caps uc-rail">
@@ -715,6 +715,7 @@ section.section:not(.partners)::before{content:"";position:absolute;top:-2px;lef
           <li><a href="/pl/product">Przegląd</a></li>
           <li><a href="/pl/use-cases">Zastosowania</a></li>
           <li><a href="/pl/product#security">Bezpieczeństwo</a></li>
+          <li><a href="/pl/product#access">Tożsamość i dostęp</a></li>
           <li><a href="/pl/product#cost">Kontrola kosztów</a></li>
           <li><a href="/pl/product#models">Swoboda wyboru modeli</a></li>
           <li><a href="/pl/pricing">Cennik</a></li>
@@ -762,7 +763,7 @@ section.section:not(.partners)::before{content:"";position:absolute;top:-2px;lef
         </button>
         <ul style="display:{{ abListDisplay }};position:absolute;left:0;bottom:52px;width:100%;max-width:640px;margin:0;padding:0;list-style:none;background:#fff;border:1px solid var(--ink);border-radius:16px;overflow:hidden;z-index:30">
           <sc-for list="{{ abItems }}" as="it" hint-placeholder-count="5">
-            <li style="border-bottom:1px solid var(--line)"><a href="{{ it.href }}" onClick="{{ it.pick }}" style="display:grid;grid-template-columns:34px minmax(0,1fr);gap:10px;align-items:baseline;min-height:52px;padding:14px 18px;color:var(--ink);text-decoration:none;background:{{ it.bg }}" style-hover="background:var(--ube-lavender-50)"><span style="font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;color:var(--lit-deep)">{{ it.n }}</span><span style="font-size:15px;line-height:1.35">{{ it.full }}</span></a></li>
+            <li style="border-bottom:1px solid var(--line)"><a href="{{ it.href }}" onClick="{{ it.pick }}" style="display:grid;grid-template-columns:minmax(0,1fr);gap:10px;align-items:baseline;min-height:52px;padding:14px 18px;color:var(--ink);text-decoration:none;background:{{ it.bg }}" style-hover="background:var(--ube-lavender-50)"><span style="font-size:15px;line-height:1.35">{{ it.full }}</span></a></li>
           </sc-for>
         </ul>
       </div>

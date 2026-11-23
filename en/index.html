@@ -114,20 +114,20 @@
 .cta-link:hover{text-decoration-thickness:2px!important;color:var(--ink)}
 </style>
 <title>On-premise &amp; air-gapped AI agents — sovereign platform | TakeAny.AI</title>
-<meta name="description" content="Complete data sovereignty for autonomous AI agents. Run fully air-gapped with local models (vLLM, Ollama) or cloud APIs, with Firecracker microVM isolation and three-role RBAC with per-agent grants.">
+<meta name="description" content="Complete data sovereignty for autonomous AI agents. Run fully air-gapped with local models (vLLM, Ollama) or cloud APIs, with Firecracker microVM isolation and resource-scoped RBAC with SSO.">
 <link rel="canonical" href="https://takeany.ai/en/">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="TakeAny.AI">
 <meta property="og:title" content="TakeAny.AI — Air-Gapped, Self-Hosted LLM Agent Control Plane">
-<meta property="og:description" content="Complete data sovereignty for autonomous AI agents. Run fully air-gapped with local models (vLLM, Ollama) or cloud APIs, with Firecracker microVM isolation and three-role RBAC with per-agent grants.">
+<meta property="og:description" content="Complete data sovereignty for autonomous AI agents. Run fully air-gapped with local models (vLLM, Ollama) or cloud APIs, with Firecracker microVM isolation and resource-scoped RBAC with SSO.">
 <meta property="og:url" content="https://takeany.ai/en/">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="pl_PL">
 <meta property="og:image" content="https://takeany.ai/assets/photos/team-takeany.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="TakeAny.AI — Air-Gapped, Self-Hosted LLM Agent Control Plane">
-<meta name="twitter:description" content="Complete data sovereignty for autonomous AI agents. Run fully air-gapped with local models (vLLM, Ollama) or cloud APIs, with Firecracker microVM isolation and three-role RBAC with per-agent grants.">
+<meta name="twitter:description" content="Complete data sovereignty for autonomous AI agents. Run fully air-gapped with local models (vLLM, Ollama) or cloud APIs, with Firecracker microVM isolation and resource-scoped RBAC with SSO.">
 <meta name="twitter:image" content="https://takeany.ai/assets/photos/team-takeany.jpg">
 <script type="application/ld+json">
 {
@@ -157,13 +157,13 @@
       "applicationCategory": "DeveloperApplication",
       "operatingSystem": "Linux (KVM required)",
       "url": "https://takeany.ai/en/",
-      "description": "Air-gapped, self-hosted control plane for autonomous LLM agents with Firecracker microVM isolation, three-role RBAC with per-agent grants, dual-boundary safety firewalls and 14 audit log domains.",
+      "description": "Air-gapped, self-hosted control plane for autonomous LLM agents with Firecracker microVM isolation, resource-scoped RBAC with SSO, dual-boundary safety firewalls and 14 audit log domains.",
       "featureList": [
         "100% air-gapped data sovereignty",
         "Local model support (vLLM, Ollama, LocalAI, TGI)",
         "Agent and ingress separation",
         "Firecracker microVM isolation boundary",
-        "35 discrete RBAC permissions",
+        "Resource-scoped RBAC with SSO (OIDC) and SCIM",
         "Dual-boundary LLM safety firewalls",
         "14 log domains for retrieval and token audit",
         "Bring your own key (BYOK) architecture"
@@ -678,7 +678,7 @@ html[data-bul-style="dash"] [data-bul]::before{width:12px;height:1.5px;backgroun
 <section class="section" id="usecases" data-screen-label="02 Use cases">
   <div class="container">
     <header class="section-head">
-      <span class="section-num" style="width:auto;max-width:200px;white-space:normal">01 · LLM &amp; agent deployments</span>
+      <span class="section-num" style="width:auto;max-width:200px;white-space:normal">LLM &amp; agent deployments</span>
       <h2>How do you want to <strong>use AI?</strong></h2>
       <p class="sub" style="max-width:78ch">Planning to roll out AI, LLMs or ChatGPT in your company? With us you can do it safely.</p>
     </header>
@@ -725,7 +725,7 @@ html[data-bul-style="dash"] [data-bul]::before{width:12px;height:1.5px;backgroun
 <section class="section" id="when" data-screen-label="08 Use it when">
   <div class="container">
     <header class="section-head">
-      <span class="section-num">02 · When it makes sense</span>
+      <span class="section-num">When it makes sense</span>
       <h2>When your organisation <strong>has outgrown simple AI tools</strong></h2>
       <p class="sub" style="max-width:76ch">These are the key signals that your organisation has outgrown simple SaaS tools and needs a professional Control Plane environment.</p>
     </header>
@@ -810,7 +810,7 @@ html[data-bul-style="dash"] [data-bul]::before{width:12px;height:1.5px;backgroun
 <section class="section why-split" id="why-sovereignty" data-screen-label="03 Why Sovereignty">
   <div class="container">
     <header class="section-head">
-      <span class="section-num" style="width:auto;max-width:none;white-space:normal;display:inline-flex;flex-wrap:wrap;align-items:center;gap:9px"><span>03.1 · Why:</span><svg class="icn icn-20" aria-hidden="true"><use href="#i-sov"></use></svg><span>Sovereignty</span></span>
+      <span class="section-num" style="width:auto;max-width:none;white-space:normal;display:inline-flex;flex-wrap:wrap;align-items:center;gap:9px"><span>Why:</span><svg class="icn icn-20" aria-hidden="true"><use href="#i-sov"></use></svg><span>Sovereignty</span></span>
       <h2>On your infrastructure. <strong>100% data sovereignty, EU AI Act compliance</strong></h2>
     </header>
     <div class="ws-grid">
@@ -933,7 +933,7 @@ html[data-bul-style="dash"] [data-bul]::before{width:12px;height:1.5px;backgroun
 <section class="section why-split" id="why-cost" data-screen-label="04 Why Cost">
   <div class="container">
     <header class="section-head">
-      <span class="section-num" style="width:auto;max-width:none;white-space:normal;display:inline-flex;flex-wrap:wrap;align-items:center;gap:9px"><span>03.2 · Why:</span><svg class="icn icn-20" aria-hidden="true"><use href="#i-cost"></use></svg><span>Cost</span></span>
+      <span class="section-num" style="width:auto;max-width:none;white-space:normal;display:inline-flex;flex-wrap:wrap;align-items:center;gap:9px"><span>Why:</span><svg class="icn icn-20" aria-hidden="true"><use href="#i-cost"></use></svg><span>Cost</span></span>
       <h2>Full control of your AI budget: <strong>use free local models and avoid expensive cloud providers</strong></h2>
     </header>
     <div class="ws-grid">
@@ -1053,7 +1053,7 @@ html[data-bul-style="dash"] [data-bul]::before{width:12px;height:1.5px;backgroun
 <section class="section why-split" id="why-model-freedom" data-screen-label="05 Why Model Selection">
   <div class="container">
     <header class="section-head">
-      <span class="section-num" style="width:auto;max-width:none;white-space:normal;display:inline-flex;flex-wrap:wrap;align-items:center;gap:9px"><span>03.3 · Why:</span><svg class="icn icn-20" aria-hidden="true"><use href="#i-mdl"></use></svg><span>Model Selection</span></span>
+      <span class="section-num" style="width:auto;max-width:none;white-space:normal;display:inline-flex;flex-wrap:wrap;align-items:center;gap:9px"><span>Why:</span><svg class="icn icn-20" aria-hidden="true"><use href="#i-mdl"></use></svg><span>Model Selection</span></span>
       <h2>Test global and local models – <strong>including Polish LLMs, from one panel</strong></h2>
     </header>
     <div class="ws-grid">
@@ -1325,7 +1325,7 @@ html[data-bul-style="dash"] [data-bul]::before{width:12px;height:1.5px;backgroun
     <div data-who-card="">
       <div data-who-top="" style="display:grid;gap:40px 64px;align-items:start">
         <div style="display:flex;flex-direction:column;align-items:flex-start;gap:22px;min-width:0">
-          <span class="section-num" style="width:auto;max-width:100%;white-space:normal;border-top:0;padding-top:0">04 · Who it's for</span>
+          <span class="section-num" style="width:auto;max-width:100%;white-space:normal;border-top:0;padding-top:0">Who it's for</span>
           <h2 style="margin:0;font-size:clamp(32px,4vw,52px);font-weight:400;letter-spacing:-0.035em;line-height:1.08;color:var(--ink);text-wrap:balance">Industries that <strong style="font-weight:700">install our platform on-premises</strong></h2>
           <p style="margin:0;max-width:56ch;font-size:17px;line-height:1.55;color:var(--muted);text-wrap:pretty">Our customers are organisations that have outgrown simple SaaS tools and need a secure AI orchestration platform, with data sovereignty and predictable budgets.</p>
         </div>
@@ -1440,6 +1440,7 @@ html[data-bul-style="dash"] [data-bul]::before{width:12px;height:1.5px;backgroun
           <li><a href="/en/product">Overview</a></li>
           <li><a href="/en/use-cases">Use cases</a></li>
           <li><a href="/en/product#security">Security</a></li>
+          <li><a href="/en/product#access">Access &amp; identity</a></li>
           <li><a href="/en/product#cost">Cost control</a></li>
           <li><a href="/en/product#models">Model Selection</a></li>
           <li><a href="/en/pricing">Pricing</a></li>
@@ -1487,7 +1488,7 @@ html[data-bul-style="dash"] [data-bul]::before{width:12px;height:1.5px;backgroun
         </button>
         <ul style="display:{{ abListDisplay }};position:absolute;left:0;bottom:52px;width:100%;max-width:640px;margin:0;padding:0;list-style:none;background:#fff;border:1px solid var(--ink);border-radius:16px;overflow:hidden;z-index:30">
           <sc-for list="{{ abItems }}" as="it" hint-placeholder-count="5">
-            <li style="border-bottom:1px solid var(--line)"><a href="{{ it.href }}" onClick="{{ it.pick }}" style="display:grid;grid-template-columns:34px minmax(0,1fr);gap:10px;align-items:baseline;min-height:52px;padding:14px 18px;color:var(--ink);text-decoration:none;background:{{ it.bg }}" style-hover="background:var(--ube-lavender-50)"><span style="font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;color:var(--lit-deep)">{{ it.n }}</span><span style="font-size:15px;line-height:1.35">{{ it.full }}</span></a></li>
+            <li style="border-bottom:1px solid var(--line)"><a href="{{ it.href }}" onClick="{{ it.pick }}" style="display:grid;grid-template-columns:minmax(0,1fr);gap:10px;align-items:baseline;min-height:52px;padding:14px 18px;color:var(--ink);text-decoration:none;background:{{ it.bg }}" style-hover="background:var(--ube-lavender-50)"><span style="font-size:15px;line-height:1.35">{{ it.full }}</span></a></li>
           </sc-for>
         </ul>
       </div>

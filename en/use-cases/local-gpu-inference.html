@@ -348,7 +348,7 @@ summary::-webkit-details-marker{display:none}.exp-sum::marker{content:""}
 <section class="section" data-screen-label="01 Challenge">
   <div class="container">
     <header class="section-head">
-      <span class="section-num">01 · After the purchase</span>
+      <span class="section-num">After the purchase</span>
       <h2>The GPU servers are in the rack. <strong>Now what?</strong></h2>
       <div class="sub" style="max-width:76ch;display:flex;flex-direction:column;gap:12px">
         <p style="margin:0;font-size:16px;line-height:1.6;color:var(--muted);text-wrap:pretty">You bought the NVIDIA cluster or the GPU workstations. Now the team needs a platform that turns raw compute into production workflows. TakeAny.AI bridges local open-weight models — Llama, DeepSeek, Mistral — with governed agent execution, so you skip SaaS token markups and get predictable return on physical infrastructure.</p>
@@ -411,7 +411,7 @@ summary::-webkit-details-marker{display:none}.exp-sum::marker{content:""}
 <section class="section" data-screen-label="02 Solution">
   <div class="container">
     <header class="section-head">
-      <span class="section-num" style="display:inline-flex;flex-wrap:wrap;align-items:center;gap:9px"><span>02 ·</span><svg class="icn icn-20" aria-hidden="true"><use href="#i-dash"></use></svg><span>Solution</span></span>
+      <span class="section-num" style="display:inline-flex;flex-wrap:wrap;align-items:center;gap:9px"><svg class="icn icn-20" aria-hidden="true"><use href="#i-dash"></use></svg><span>Solution</span></span>
       <h2>TakeAny.AI turns raw GPU servers into a multi-tenant, secure AI platform <strong>in 1 day</strong></h2>
     </header>
     <div class="uc-how">
@@ -463,7 +463,7 @@ summary::-webkit-details-marker{display:none}.exp-sum::marker{content:""}
 <section class="section" data-screen-label="03 Benefits">
   <div class="container">
     <header class="section-head">
-      <span class="section-num" style="display:inline-flex;flex-wrap:wrap;align-items:center;gap:9px"><span>03 ·</span><svg class="icn icn-20" aria-hidden="true"><use href="#i-cost"></use></svg><span>Benefits</span></span>
+      <span class="section-num" style="display:inline-flex;flex-wrap:wrap;align-items:center;gap:9px"><svg class="icn icn-20" aria-hidden="true"><use href="#i-cost"></use></svg><span>Benefits</span></span>
       <h2>What you gain <strong>on your own hardware</strong></h2>
       <p class="sub" style="max-width:76ch">Native integration for Ollama, vLLM and local open weights, with 0% platform markup.</p>
     </header>
@@ -523,6 +523,7 @@ summary::-webkit-details-marker{display:none}.exp-sum::marker{content:""}
           <li><a href="/en/product">Overview</a></li>
           <li><a href="/en/use-cases">Use cases</a></li>
           <li><a href="/en/product#security">Security</a></li>
+          <li><a href="/en/product#access">Access &amp; identity</a></li>
           <li><a href="/en/product#cost">Cost control</a></li>
           <li><a href="/en/product#models">Model Selection</a></li>
           <li><a href="/en/pricing">Pricing</a></li>
@@ -570,7 +571,7 @@ summary::-webkit-details-marker{display:none}.exp-sum::marker{content:""}
         </button>
         <ul style="display:{{ abListDisplay }};position:absolute;left:0;bottom:52px;width:100%;max-width:640px;margin:0;padding:0;list-style:none;background:#fff;border:1px solid var(--ink);border-radius:16px;overflow:hidden;z-index:30">
           <sc-for list="{{ abItems }}" as="it" hint-placeholder-count="5">
-            <li style="border-bottom:1px solid var(--line)"><a href="{{ it.href }}" onClick="{{ it.pick }}" style="display:grid;grid-template-columns:34px minmax(0,1fr);gap:10px;align-items:baseline;min-height:52px;padding:14px 18px;color:var(--ink);text-decoration:none;background:{{ it.bg }}" style-hover="background:var(--ube-lavender-50)"><span style="font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;color:var(--lit-deep)">{{ it.n }}</span><span style="font-size:15px;line-height:1.35">{{ it.full }}</span></a></li>
+            <li style="border-bottom:1px solid var(--line)"><a href="{{ it.href }}" onClick="{{ it.pick }}" style="display:grid;grid-template-columns:minmax(0,1fr);gap:10px;align-items:baseline;min-height:52px;padding:14px 18px;color:var(--ink);text-decoration:none;background:{{ it.bg }}" style-hover="background:var(--ube-lavender-50)"><span style="font-size:15px;line-height:1.35">{{ it.full }}</span></a></li>
           </sc-for>
         </ul>
       </div>

@@ -33,7 +33,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100;200;300;400;500;600;700;800;900&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/base.css">
-<link rel="stylesheet" href="/assets/blog-base.css">
 <link rel="stylesheet" href="/css/theme.css">
 <script src="/_ds/takeany-ai-design-system-365327f4-89d8-418c-be14-ea19a91e4fcb/_ds_bundle.js"></script>
 
@@ -90,12 +89,12 @@ section.section:not(.partners)::before{content:"";position:absolute;top:-2px;lef
       "applicationCategory": "DeveloperApplication",
       "operatingSystem": "Linux (KVM required)",
       "url": "https://takeany.ai/en/",
-      "description": "Air-gapped, self-hosted control plane for autonomous LLM agents with Firecracker microVM isolation, three-role RBAC with per-agent grants, dual-boundary safety firewalls and 14 audit log domains.",
+      "description": "Air-gapped, self-hosted control plane for autonomous LLM agents with Firecracker microVM isolation, resource-scoped RBAC with SSO, dual-boundary safety firewalls and 14 audit log domains.",
       "featureList": [
         "100% air-gapped data sovereignty",
         "Local model support (vLLM, Ollama, LocalAI, TGI)",
         "Firecracker microVM isolation boundary",
-        "35 discrete RBAC permissions",
+        "Resource-scoped RBAC with SSO (OIDC) and SCIM",
         "Dual-boundary LLM safety firewalls",
         "14 log domains for retrieval and token audit"
       ],
@@ -536,7 +535,7 @@ article h2 + p,article h3 + p{margin-top:0}
   <div class="callout" id="about-takeany">
     <span class="k">About TakeAny.AI</span>
     <p><strong>TakeAny.AI</strong> is an air-gapped, self-hosted control plane for autonomous LLM agents. It runs as a single Go binary against a local SQLite database, so agents, models, documents and logs all stay inside your perimeter — against local model engines (vLLM, Ollama, LocalAI, TGI) or cloud APIs, with zero outbound telemetry.</p>
-    <p>Running the whole control plane on your own hardware is what makes sovereignty verifiable rather than contractual. See <a class="inline" href="/en/product">what TakeAny.AI controls host-side</a>, the <a class="inline" href="/en/docs">architecture and three-role RBAC model with per-agent grants</a>, or <a class="inline" href="/en/how-we-differ">how it differs from workflow-automation platforms</a>.</p>
+    <p>Running the whole control plane on your own hardware is what makes sovereignty verifiable rather than contractual. See <a class="inline" href="/en/product">what TakeAny.AI controls host-side</a>, the <a class="inline" href="/en/docs">architecture and access model: roles on specific resources, SSO and SCIM</a>, or <a class="inline" href="/en/how-we-differ">how it differs from workflow-automation platforms</a>.</p>
   </div>
 
   <div class="related">
@@ -590,6 +589,7 @@ article h2 + p,article h3 + p{margin-top:0}
           <li><a href="/en/product">Overview</a></li>
           <li><a href="/en/use-cases">Use cases</a></li>
           <li><a href="/en/product#security">Security</a></li>
+          <li><a href="/en/product#access">Access &amp; identity</a></li>
           <li><a href="/en/product#cost">Cost control</a></li>
           <li><a href="/en/product#models">Model Selection</a></li>
           <li><a href="/en/pricing">Pricing</a></li>
@@ -637,7 +637,7 @@ article h2 + p,article h3 + p{margin-top:0}
         </button>
         <ul style="display:{{ abListDisplay }};position:absolute;left:0;bottom:52px;width:100%;max-width:640px;margin:0;padding:0;list-style:none;background:#fff;border:1px solid var(--ink);border-radius:16px;overflow:hidden;z-index:30">
           <sc-for list="{{ abItems }}" as="it" hint-placeholder-count="5">
-            <li style="border-bottom:1px solid var(--line)"><a href="{{ it.href }}" onClick="{{ it.pick }}" style="display:grid;grid-template-columns:34px minmax(0,1fr);gap:10px;align-items:baseline;min-height:52px;padding:14px 18px;color:var(--ink);text-decoration:none;background:{{ it.bg }}" style-hover="background:var(--ube-lavender-50)"><span style="font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;color:var(--lit-deep)">{{ it.n }}</span><span style="font-size:15px;line-height:1.35">{{ it.full }}</span></a></li>
+            <li style="border-bottom:1px solid var(--line)"><a href="{{ it.href }}" onClick="{{ it.pick }}" style="display:grid;grid-template-columns:minmax(0,1fr);gap:10px;align-items:baseline;min-height:52px;padding:14px 18px;color:var(--ink);text-decoration:none;background:{{ it.bg }}" style-hover="background:var(--ube-lavender-50)"><span style="font-size:15px;line-height:1.35">{{ it.full }}</span></a></li>
           </sc-for>
         </ul>
       </div>

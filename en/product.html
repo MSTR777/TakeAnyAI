@@ -366,7 +366,7 @@ summary::-webkit-details-marker{display:none}
 </style>
 </helmet>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
-<symbol id="i-sec" viewBox="0 0 24 24"><path d="M8 3.6v16.8M16 3.6v16.8"></path><path d="M2.6 12h18.8M18.4 9.2 21.4 12l-3 2.8" stroke="var(--icn-accent)"></path></symbol>
+<symbol id="i-id" viewBox="0 0 24 24"><circle cx="9" cy="8.4" r="3.4"></circle><path d="M2.8 19.6c.6-3.4 3.2-5.4 6.2-5.4s5.6 2 6.2 5.4"></path><path d="M16.2 7.4h5M16.2 11.4h5M18.2 15.4h3" stroke="var(--icn-accent)"></path></symbol><symbol id="i-sec" viewBox="0 0 24 24"><path d="M8 3.6v16.8M16 3.6v16.8"></path><path d="M2.6 12h18.8M18.4 9.2 21.4 12l-3 2.8" stroke="var(--icn-accent)"></path></symbol>
 <symbol id="i-mdl" viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="2.2"></rect><rect x="10.6" y="10.6" width="2.8" height="2.8" rx="0.9" fill="currentColor" stroke="none"></rect><path d="M7 10.2H4.4M7 13.8H4.4M17 10.2h2.6M17 13.8h2.6"></path><path d="M6.4 3.6h11.2M15.4 1.8l2.2 1.8-2.2 1.8" stroke="var(--icn-accent)"></path><path d="M17.6 20.4H6.4M8.6 18.6 6.4 20.4l2.2 1.8" stroke="var(--icn-accent)"></path></symbol>
 <symbol id="i-cost" viewBox="0 0 24 24"><path d="M3 20.6h18"></path><rect x="4.4" y="9.6" width="4" height="9" rx="1.2" fill="currentColor" stroke="none"></rect><rect x="10" y="12.6" width="4" height="6" rx="1.2" fill="currentColor" stroke="none"></rect><rect x="15.6" y="15.2" width="4" height="3.4" rx="1.2" fill="currentColor" stroke="none"></rect><path d="M5 5.6 12 9l6.6 3.2M18.6 12.2l-2.9-.5M18.6 12.2l.2-2.9" stroke="var(--icn-accent)"></path></symbol>
 <symbol id="i-dash" viewBox="0 0 24 24"><rect x="2.6" y="3.6" width="18.8" height="16.8" rx="2.6"></rect><path d="M2.6 8.6h18.8"></path><rect x="5.6" y="11.4" width="5.4" height="6.4" rx="1.2" fill="currentColor" stroke="none"></rect><rect x="13.4" y="11.4" width="5" height="2.2" rx="1.1" fill="currentColor" stroke="none"></rect><rect x="13.4" y="15.6" width="5" height="2.2" rx="1.1" fill="var(--icn-accent)" stroke="none"></rect></symbol>
@@ -669,7 +669,7 @@ summary::-webkit-details-marker{display:none}
             <h3 style="margin:0;font-size:20px;font-weight:500;letter-spacing:-0.02em;line-height:1.25;color:var(--ink);text-wrap:pretty">Company data, read-only</h3>
             <span class="exp-plus" aria-hidden="true" style="flex:none;display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;margin-top:2px;border:1px solid var(--line);border-radius:50%;background:#fff;font-size:15px;line-height:1;color:var(--ink);transition:transform .18s ease">+</span>
           </summary>
-          <p style="margin:0;padding-top:14px;border-top:1px dashed var(--line);font-size:14.5px;line-height:1.55;color:var(--muted);text-wrap:pretty">DataLake datasets on DuckDB and Parquet: versioned, classified and queried by agents read-only.</p>
+          <p style="margin:0;padding-top:14px;border-top:1px dashed var(--line);font-size:14.5px;line-height:1.55;color:var(--muted);text-wrap:pretty">DataLake datasets on DuckDB and Parquet, from files or PostgreSQL: versioned, classified and queried by agents read-only.</p>
         </details>
       </div>
       <div class="why-card" style="display:flex;flex-direction:column;gap:14px">
@@ -686,10 +686,10 @@ summary::-webkit-details-marker{display:none}
         <span class="when">07 · Governance</span>
         <details class="exp" style="display:flex;flex-direction:column;gap:14px">
           <summary class="exp-sum" style="display:flex;align-items:flex-start;justify-content:space-between;gap:16px;cursor:pointer;list-style:none">
-            <h3 style="margin:0;font-size:20px;font-weight:500;letter-spacing:-0.02em;line-height:1.25;color:var(--ink);text-wrap:pretty">Roles, per-agent access and safeguards on every interface</h3>
+            <h3 style="margin:0;font-size:20px;font-weight:500;letter-spacing:-0.02em;line-height:1.25;color:var(--ink);text-wrap:pretty">Roles, SSO groups and safeguards on every interface</h3>
             <span class="exp-plus" aria-hidden="true" style="flex:none;display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;margin-top:2px;border:1px solid var(--line);border-radius:50%;background:#fff;font-size:15px;line-height:1;color:var(--ink);transition:transform .18s ease">+</span>
           </summary>
-          <p style="margin:0;padding-top:14px;border-top:1px dashed var(--line);font-size:14.5px;line-height:1.55;color:var(--muted);text-wrap:pretty">Two roles with access granted per agent, plus input and output safeguards on every interface.</p>
+          <p style="margin:0;padding-top:14px;border-top:1px dashed var(--line);font-size:14.5px;line-height:1.55;color:var(--muted);text-wrap:pretty">Roles granted on a specific resource, groups mapped from Entra ID or another OIDC provider, SCIM provisioning, OPA policies, and input and output safeguards on every interface.</p>
         </details>
       </div>
       <div class="why-card" style="display:flex;flex-direction:column;gap:14px">
@@ -711,7 +711,7 @@ summary::-webkit-details-marker{display:none}
 <section class="section" id="security" data-screen-label="03 Security">
   <div class="container">
     <header class="section-head">
-      <span class="section-num" style="display:inline-flex;flex-wrap:wrap;align-items:center;gap:9px"><span>01 ·</span><svg class="icn icn-20" aria-hidden="true"><use href="#i-sec"></use></svg><span>Compliance and security</span></span>
+      <span class="section-num" style="display:inline-flex;flex-wrap:wrap;align-items:center;gap:9px"><svg class="icn icn-20" aria-hidden="true"><use href="#i-sec"></use></svg><span>Compliance and security</span></span>
       <h2>Hard compliance <strong>with GDPR and the EU AI Act</strong></h2>
     </header>
     <div class="tab-row">
@@ -849,10 +849,171 @@ summary::-webkit-details-marker{display:none}
   </div>
 </section>
 
+<section class="section" id="access" data-screen-label="04 Access">
+  <div class="container">
+    <header class="section-head">
+      <span class="section-num" style="display:inline-flex;flex-wrap:wrap;align-items:center;gap:9px"><svg class="icn icn-20" aria-hidden="true"><use href="#i-id"></use></svg><span>Access and identity</span></span>
+      <h2>Access from your identity directory, <strong>enforced on every resource</strong></h2>
+    </header>
+    <div class="tab-row">
+      <div class="tab-rail">
+        <button type="button" onClick="{{ accessSet0 }}" aria-pressed="{{ accessActive0 }}" style="{{ accessBtn0 }}">
+          <span style="{{ accessIco0 }}">01</span>
+          <span style="text-align:left">Roles and scopes</span>
+        </button>
+        <button type="button" onClick="{{ accessSet1 }}" aria-pressed="{{ accessActive1 }}" style="{{ accessBtn1 }}">
+          <span style="{{ accessIco1 }}">02</span>
+          <span style="text-align:left">Custom roles</span>
+        </button>
+        <button type="button" onClick="{{ accessSet2 }}" aria-pressed="{{ accessActive2 }}" style="{{ accessBtn2 }}">
+          <span style="{{ accessIco2 }}">03</span>
+          <span style="text-align:left">SSO, SCIM and groups</span>
+        </button>
+        <button type="button" onClick="{{ accessSet3 }}" aria-pressed="{{ accessActive3 }}" style="{{ accessBtn3 }}">
+          <span style="{{ accessIco3 }}">04</span>
+          <span style="text-align:left">Additional policies</span>
+        </button>
+        <button type="button" onClick="{{ accessSet4 }}" aria-pressed="{{ accessActive4 }}" style="{{ accessBtn4 }}">
+          <span style="{{ accessIco4 }}">05</span>
+          <span style="text-align:left">Knowledge and files</span>
+        </button>
+        <button type="button" onClick="{{ accessSet5 }}" aria-pressed="{{ accessActive5 }}" style="{{ accessBtn5 }}">
+          <span style="{{ accessIco5 }}">06</span>
+          <span style="text-align:left">Access assistant</span>
+        </button>
+        <button type="button" onClick="{{ accessSet6 }}" aria-pressed="{{ accessActive6 }}" style="{{ accessBtn6 }}">
+          <span style="{{ accessIco6 }}">07</span>
+          <span style="text-align:left">Action approvals</span>
+        </button>
+        <div style="display:flex;gap:10px;margin-top:12px">
+          <button type="button" onClick="{{ accessPrev }}" aria-label="Previous" style="width:38px;height:38px;border-radius:999px;border:1px solid var(--line);background:var(--paper);cursor:pointer;font-family:var(--font-mono);font-size:15px;color:var(--muted)">←</button>
+          <button type="button" onClick="{{ accessNext }}" aria-label="Next" style="width:38px;height:38px;border-radius:999px;border:1px solid var(--line);background:var(--paper);cursor:pointer;font-family:var(--font-mono);font-size:15px;color:var(--muted)">→</button>
+        </div>
+      </div>
+      <div>
+      <sc-if value="{{ accessActive0 }}" hint-placeholder-val="{{ true }}">
+        <div style="display:flex;flex-direction:column;gap:16px;padding:32px 32px 34px;border:1px solid var(--line);border-radius:16px;background:var(--paper-2)">
+          <span style="font-family:var(--font-mono);font-size:11.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--lit-deep)">Access 01</span>
+          <h3 style="margin:0;font-size:27px;font-weight:400;letter-spacing:-0.026em;line-height:1.2;color:var(--ink);text-wrap:pretty">A role granted on a specific resource, not the whole system.</h3>
+          <details class="more-d" style="display:block">
+            <summary class="more-s" style="display:flex;flex-direction:column;gap:8px;cursor:pointer"><p style="margin:0;font-size:16px;line-height:1.6;color:var(--muted);text-wrap:pretty" class="more-p">An assignment links a role to a scope: one agent, workflow, knowledge source or dataset, every resource of one type including future ones, or the whole installation. You assign roles to users or groups. Permissions from several assignments add up, and each user sees only what they were given.</p><span class="more-l" style="font-size:14.5px;font-weight:500;color:var(--ink);text-decoration:underline;text-underline-offset:4px"></span></summary>
+            <div style="display:flex;flex-direction:column;gap:16px;margin-top:16px"><ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px">
+<li style="display:grid;grid-template-columns:14px 1fr;gap:11px;font-size:15.5px;line-height:1.55;color:var(--muted)"><span style="color:var(--ink)">—</span><span><strong style="color:var(--ink);font-weight:500">Panel access</strong> — signing in to the console, separate from using agents</span></li>
+<li style="display:grid;grid-template-columns:14px 1fr;gap:11px;font-size:15.5px;line-height:1.55;color:var(--muted)"><span style="color:var(--ink)">—</span><span><strong style="color:var(--ink);font-weight:500">Agent user</strong> — conversations, files and knowledge of the selected agent</span></li>
+<li style="display:grid;grid-template-columns:14px 1fr;gap:11px;font-size:15.5px;line-height:1.55;color:var(--muted)"><span style="color:var(--ink)">—</span><span><strong style="color:var(--ink);font-weight:500">Workflow runner</strong> — runs, results and input data of a workflow</span></li>
+<li style="display:grid;grid-template-columns:14px 1fr;gap:11px;font-size:15.5px;line-height:1.55;color:var(--muted)"><span style="color:var(--ink)">—</span><span><strong style="color:var(--ink);font-weight:500">Execution and content</strong> — the tools, integrations and data an agent uses on the user’s behalf</span></li>
+<li style="display:grid;grid-template-columns:14px 1fr;gap:11px;font-size:15.5px;line-height:1.55;color:var(--muted)"><span style="color:var(--ink)">—</span><span><strong style="color:var(--ink);font-weight:500">Network use</strong> — granted only on a named network access rule</span></li>
+<li style="display:grid;grid-template-columns:14px 1fr;gap:11px;font-size:15.5px;line-height:1.55;color:var(--muted)"><span style="color:var(--ink)">—</span><span><strong style="color:var(--ink);font-weight:500">Admin</strong> — full configuration of the installation</span></li>
+<li style="display:grid;grid-template-columns:14px 1fr;gap:11px;font-size:15.5px;line-height:1.55;color:var(--muted)"><span style="color:var(--ink)">—</span><span>An agent’s configuration is a ceiling. Every tool call, document and network request also needs a current grant for the person, or the ingress, the agent works for</span></li>
+</ul></div>
+          </details>
+        </div>
+      </sc-if>
+      <sc-if value="{{ accessActive1 }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;flex-direction:column;gap:16px;padding:32px 32px 34px;border:1px solid var(--line);border-radius:16px;background:var(--paper-2)">
+          <span style="font-family:var(--font-mono);font-size:11.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--lit-deep)">Access 02</span>
+          <h3 style="margin:0;font-size:27px;font-weight:400;letter-spacing:-0.026em;line-height:1.2;color:var(--ink);text-wrap:pretty">Custom roles with versions and an impact preview.</h3>
+          <details class="more-d" style="display:block">
+            <summary class="more-s" style="display:flex;flex-direction:column;gap:8px;cursor:pointer"><p style="margin:0;font-size:16px;line-height:1.6;color:var(--muted);text-wrap:pretty" class="more-p">You build a custom role from explicitly chosen actions, for example <code>agent.view</code> and <code>agent.test</code> without <code>agent.publish</code>, or clone a built-in role as a starting point. Saving a draft changes nothing. Before publishing you see the added and removed actions and the users the change affects.</p><span class="more-l" style="font-size:14.5px;font-weight:500;color:var(--ink);text-decoration:underline;text-underline-offset:4px"></span></summary>
+            <div style="display:flex;flex-direction:column;gap:16px;margin-top:16px"><ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px">
+<li style="display:grid;grid-template-columns:14px 1fr;gap:11px;font-size:15.5px;line-height:1.55;color:var(--muted)"><span style="color:var(--ink)">—</span><span>Publishing, like every security change, requires a sign-in no older than 30 minutes</span></li>
+<li style="display:grid;grid-template-columns:14px 1fr;gap:11px;font-size:15.5px;line-height:1.55;color:var(--muted)"><span style="color:var(--ink)">—</span><span>Every version is immutable, and restoring an older one creates a new, audited version</span></li>
+<li style="display:grid;grid-template-columns:14px 1fr;gap:11px;font-size:15.5px;line-height:1.55;color:var(--muted)"><span style="color:var(--ink)">—</span><span>New application actions are never added to custom roles automatically</span></li>
+<li style="display:grid;grid-template-columns:14px 1fr;gap:11px;font-size:15.5px;line-height:1.55;color:var(--muted)"><span style="color:var(--ink)">—</span><span>A change to a published role applies to all its assignments at once</span></li>
+</ul></div>
+          </details>
+        </div>
+      </sc-if>
+      <sc-if value="{{ accessActive2 }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;flex-direction:column;gap:16px;padding:32px 32px 34px;border:1px solid var(--line);border-radius:16px;background:var(--paper-2)">
+          <span style="font-family:var(--font-mono);font-size:11.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--lit-deep)">Access 03</span>
+          <h3 style="margin:0;font-size:27px;font-weight:400;letter-spacing:-0.026em;line-height:1.2;color:var(--ink);text-wrap:pretty">Active Directory, Entra ID or your IGA decides. TakeAny.AI enforces.</h3>
+          <details class="more-d" style="display:block">
+            <summary class="more-s" style="display:flex;flex-direction:column;gap:8px;cursor:pointer"><p style="margin:0;font-size:16px;line-height:1.6;color:var(--muted);text-wrap:pretty" class="more-p">Users sign in with their company account through OpenID Connect. Groups and App Roles from the identity provider’s token map to TakeAny.AI groups, and roles are assigned to groups. Membership is managed where it is today: in AD, Entra ID, your IAM or IGA system.</p><span class="more-l" style="font-size:14.5px;font-weight:500;color:var(--ink);text-decoration:underline;text-underline-offset:4px"></span></summary>
+            <div style="display:flex;flex-direction:column;gap:16px;margin-top:16px"><div role="img" aria-label="Mapping example: an Entra ID group to a TakeAny.AI group and a role on a resource" style="display:flex;flex-direction:column;gap:10px;margin-top:4px;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--paper)">
+<div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px"><span style="display:flex;flex-direction:column;gap:3px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:#fff;min-width:0;flex:1 1 150px"><span style="font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)">Group · AD / Entra ID</span><span style="font-size:14px;line-height:1.35;color:var(--ink)">Finance-Reports</span></span><span aria-hidden="true" style="flex:none;font-family:var(--font-mono);font-size:14px;color:var(--lit-deep)">→</span><span style="display:flex;flex-direction:column;gap:3px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:#fff;min-width:0;flex:1 1 150px"><span style="font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)">TakeAny.AI group</span><span style="font-size:14px;line-height:1.35;color:var(--ink)">Finance</span></span><span aria-hidden="true" style="flex:none;font-family:var(--font-mono);font-size:14px;color:var(--lit-deep)">→</span><span style="display:flex;flex-direction:column;gap:3px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:#fff;min-width:0;flex:1 1 150px"><span style="font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)">Role · scope</span><span style="font-size:14px;line-height:1.35;color:var(--ink)">Agent user · Reports agent</span></span></div>
+<div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px"><span style="display:flex;flex-direction:column;gap:3px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:#fff;min-width:0;flex:1 1 150px"><span style="font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)">App Role · Entra ID</span><span style="font-size:14px;line-height:1.35;color:var(--ink)">Reports.Reader</span></span><span aria-hidden="true" style="flex:none;font-family:var(--font-mono);font-size:14px;color:var(--lit-deep)">→</span><span style="display:flex;flex-direction:column;gap:3px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:#fff;min-width:0;flex:1 1 150px"><span style="font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)">TakeAny.AI group</span><span style="font-size:14px;line-height:1.35;color:var(--ink)">Report readers</span></span><span aria-hidden="true" style="flex:none;font-family:var(--font-mono);font-size:14px;color:var(--lit-deep)">→</span><span style="display:flex;flex-direction:column;gap:3px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:#fff;min-width:0;flex:1 1 150px"><span style="font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)">Role · scope</span><span style="font-size:14px;line-height:1.35;color:var(--ink)">Knowledge reader · Reports source</span></span></div>
+</div>
+<ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px">
+<li style="display:grid;grid-template-columns:14px 1fr;gap:11px;font-size:15.5px;line-height:1.55;color:var(--muted)"><span style="color:var(--ink)">—</span><span>Mapping by stable group ID, not by name, up to 200 mappings</span></li>
+<li style="display:grid;grid-template-columns:14px 1fr;gap:11px;font-size:15.5px;line-height:1.55;color:var(--muted)"><span style="color:var(--ink)">—</span><span>SCIM 2.0 provisions accounts and group memberships from Entra ID and other directories, independently of sign-in. Deactivation closes active connections within two seconds</span></li>
+<li style="display:grid;grid-template-columns:14px 1fr;gap:11px;font-size:15.5px;line-height:1.55;color:var(--muted)"><span style="color:var(--ink)">—</span><span>Membership confirmed at sign-in is valid for 15 minutes. Removal from a directory group withdraws access within that time at the latest</span></li>
+<li style="display:grid;grid-template-columns:14px 1fr;gap:11px;font-size:15.5px;line-height:1.55;color:var(--muted)"><span style="color:var(--ink)">—</span><span>Missing or incomplete group data blocks sign-in instead of granting default access</span></li>
+<li style="display:grid;grid-template-columns:14px 1fr;gap:11px;font-size:15.5px;line-height:1.55;color:var(--muted)"><span style="color:var(--ink)">—</span><span>The local root account works independently of the identity provider</span></li>
+</ul>
+<p style="margin:0;font-size:15px;line-height:1.6;color:var(--muted);text-wrap:pretty;padding-top:4px;border-top:1px solid var(--line)">SCIM supplies accounts and memberships only. It cannot create roles or assign permissions; those are decided in TakeAny.AI.</p></div>
+          </details>
+        </div>
+      </sc-if>
+      <sc-if value="{{ accessActive3 }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;flex-direction:column;gap:16px;padding:32px 32px 34px;border:1px solid var(--line);border-radius:16px;background:var(--paper-2)">
+          <span style="font-family:var(--font-mono);font-size:11.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--lit-deep)">Access 04</span>
+          <h3 style="margin:0;font-size:27px;font-weight:400;letter-spacing:-0.026em;line-height:1.2;color:var(--ink);text-wrap:pretty">OPA policies that can only narrow access.</h3>
+          <details class="more-d" style="display:block">
+            <summary class="more-s" style="display:flex;flex-direction:column;gap:8px;cursor:pointer"><p style="margin:0;font-size:16px;line-height:1.6;color:var(--muted);text-wrap:pretty" class="more-p">On selected agents you add rules in Rego, for example: Finance uses the agent only through browser chat, without the API or the widget. Policies can also narrow tool arguments, such as which MCP tools may be called. A policy cannot grant access; it can only restrict it.</p><span class="more-l" style="font-size:14.5px;font-weight:500;color:var(--ink);text-decoration:underline;text-underline-offset:4px"></span></summary>
+            <div style="display:flex;flex-direction:column;gap:16px;margin-top:16px"><ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px">
+<li style="display:grid;grid-template-columns:14px 1fr;gap:11px;font-size:15.5px;line-height:1.55;color:var(--muted)"><span style="color:var(--ink)">—</span><span>Channels to tell apart: GUI, API, WebWidget, script, scheduler and the Assistant</span></li>
+<li style="display:grid;grid-template-columns:14px 1fr;gap:11px;font-size:15.5px;line-height:1.55;color:var(--muted)"><span style="color:var(--ink)">—</span><span>Positive and negative tests must pass before publishing</span></li>
+<li style="display:grid;grid-template-columns:14px 1fr;gap:11px;font-size:15.5px;line-height:1.55;color:var(--muted)"><span style="color:var(--ink)">—</span><span>Before attaching, you see the effect on real users and ingresses</span></li>
+<li style="display:grid;grid-template-columns:14px 1fr;gap:11px;font-size:15.5px;line-height:1.55;color:var(--muted)"><span style="color:var(--ink)">—</span><span>A policy error or evaluation timeout means denial</span></li>
+</ul></div>
+          </details>
+        </div>
+      </sc-if>
+      <sc-if value="{{ accessActive4 }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;flex-direction:column;gap:16px;padding:32px 32px 34px;border:1px solid var(--line);border-radius:16px;background:var(--paper-2)">
+          <span style="font-family:var(--font-mono);font-size:11.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--lit-deep)">Access 05</span>
+          <h3 style="margin:0;font-size:27px;font-weight:400;letter-spacing:-0.026em;line-height:1.2;color:var(--ink);text-wrap:pretty">The agent sees only documents the person it talks to may read.</h3>
+          <details class="more-d" style="display:block">
+            <summary class="more-s" style="display:flex;flex-direction:column;gap:8px;cursor:pointer"><p style="margin:0;font-size:16px;line-height:1.6;color:var(--muted);text-wrap:pretty" class="more-p">You set reader restrictions for a whole knowledge source or a single file: selected users, groups and channels. Disallowed passages are filtered out before search ranking, so they never reach the model.</p><span class="more-l" style="font-size:14.5px;font-weight:500;color:var(--ink);text-decoration:underline;text-underline-offset:4px"></span></summary>
+            <div style="display:flex;flex-direction:column;gap:16px;margin-top:16px"><ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px">
+<li style="display:grid;grid-template-columns:14px 1fr;gap:11px;font-size:15.5px;line-height:1.55;color:var(--muted)"><span style="color:var(--ink)">—</span><span>The same rules apply to citations, passage previews and downloading the original</span></li>
+<li style="display:grid;grid-template-columns:14px 1fr;gap:11px;font-size:15.5px;line-height:1.55;color:var(--muted)"><span style="color:var(--ink)">—</span><span>A file’s rule survives re-indexing and restoring an older version</span></li>
+<li style="display:grid;grid-template-columns:14px 1fr;gap:11px;font-size:15.5px;line-height:1.55;color:var(--muted)"><span style="color:var(--ink)">—</span><span>A conversation remembers which knowledge it used. Losing the permission blocks it from continuing</span></li>
+<li style="display:grid;grid-template-columns:14px 1fr;gap:11px;font-size:15.5px;line-height:1.55;color:var(--muted)"><span style="color:var(--ink)">—</span><span>Library files reach agents only when the user shares them, one file or a whole folder at a time</span></li>
+</ul></div>
+          </details>
+        </div>
+      </sc-if>
+      <sc-if value="{{ accessActive5 }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;flex-direction:column;gap:16px;padding:32px 32px 34px;border:1px solid var(--line);border-radius:16px;background:var(--paper-2)">
+          <span style="font-family:var(--font-mono);font-size:11.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--lit-deep)">Access 06</span>
+          <h3 style="margin:0;font-size:27px;font-weight:400;letter-spacing:-0.026em;line-height:1.2;color:var(--ink);text-wrap:pretty">Access described in plain language, applied only after you confirm it.</h3>
+          <details class="more-d" style="display:block">
+            <summary class="more-s" style="display:flex;flex-direction:column;gap:8px;cursor:pointer"><p style="margin:0;font-size:16px;line-height:1.6;color:var(--muted);text-wrap:pretty" class="more-p">The access assistant turns a sentence such as “Finance can use the Reports agent only through the GUI” into a proposal of assignments, roles and policies. The proposal is simulated on real users and applied as a whole only after you confirm it.</p><span class="more-l" style="font-size:14.5px;font-weight:500;color:var(--ink);text-decoration:underline;text-underline-offset:4px"></span></summary>
+            <div style="display:flex;flex-direction:column;gap:16px;margin-top:16px"><ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px">
+<li style="display:grid;grid-template-columns:14px 1fr;gap:11px;font-size:15.5px;line-height:1.55;color:var(--muted)"><span style="color:var(--ink)">—</span><span>The Assistant explains who has access and why, but never changes access itself</span></li>
+<li style="display:grid;grid-template-columns:14px 1fr;gap:11px;font-size:15.5px;line-height:1.55;color:var(--muted)"><span style="color:var(--ink)">—</span><span>The access audit records every change with its author and the state before and after</span></li>
+<li style="display:grid;grid-template-columns:14px 1fr;gap:11px;font-size:15.5px;line-height:1.55;color:var(--muted)"><span style="color:var(--ink)">—</span><span>The Access &amp; Security Administrator role is assigned once, with platform scope, normally to a group</span></li>
+</ul></div>
+          </details>
+        </div>
+      </sc-if>
+      <sc-if value="{{ accessActive6 }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;flex-direction:column;gap:16px;padding:32px 32px 34px;border:1px solid var(--line);border-radius:16px;background:var(--paper-2)">
+          <span style="font-family:var(--font-mono);font-size:11.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--lit-deep)">Access 07</span>
+          <h3 style="margin:0;font-size:27px;font-weight:400;letter-spacing:-0.026em;line-height:1.2;color:var(--ink);text-wrap:pretty">A person approves the agent’s action before it happens.</h3>
+          <details class="more-d" style="display:block">
+            <summary class="more-s" style="display:flex;flex-direction:column;gap:8px;cursor:pointer"><p style="margin:0;font-size:16px;line-height:1.6;color:var(--muted);text-wrap:pretty" class="more-p">When an agent wants to call an MCP tool that changes data, the call waits in the conversation until the responsible person approves it. Approval confirms one exact action and never grants access.</p><span class="more-l" style="font-size:14.5px;font-weight:500;color:var(--ink);text-decoration:underline;text-underline-offset:4px"></span></summary>
+            <div style="display:flex;flex-direction:column;gap:16px;margin-top:16px"><ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px">
+<li style="display:grid;grid-template-columns:14px 1fr;gap:11px;font-size:15.5px;line-height:1.55;color:var(--muted)"><span style="color:var(--ink)">—</span><span>The approval policy is set per integration and per tool: off, destructive, writes or all</span></li>
+<li style="display:grid;grid-template-columns:14px 1fr;gap:11px;font-size:15.5px;line-height:1.55;color:var(--muted)"><span style="color:var(--ink)">—</span><span>Tools that don’t describe their effect count as destructive</span></li>
+<li style="display:grid;grid-template-columns:14px 1fr;gap:11px;font-size:15.5px;line-height:1.55;color:var(--muted)"><span style="color:var(--ink)">—</span><span>Nobody waits for approval in the API or the WebWidget: tools that need it are left out there</span></li>
+<li style="display:grid;grid-template-columns:14px 1fr;gap:11px;font-size:15.5px;line-height:1.55;color:var(--muted)"><span style="color:var(--ink)">—</span><span>In background Script and Workflow runs the action waits in <strong style="color:var(--ink);font-weight:500">Inbox → Approvals</strong> for up to seven days</span></li>
+<li style="display:grid;grid-template-columns:14px 1fr;gap:11px;font-size:15.5px;line-height:1.55;color:var(--muted)"><span style="color:var(--ink)">—</span><span>Every request and decision is recorded in <strong style="color:var(--ink);font-weight:500">Logs → Action approvals</strong></span></li>
+</ul></div>
+          </details>
+        </div>
+      </sc-if>
+      </div>
+    </div>
+    <details class="more-d" style="display:block;margin-top:32px;max-width:860px"><summary class="more-s" style="display:flex;flex-direction:column;gap:8px;cursor:pointer"><p class="sub more-p" style="margin:0">TakeAny.AI doesn’t replace your identity directory. Accounts and group membership stay in AD, Entra ID or your IGA system, and TakeAny.AI turns them into permissions for specific agents, data and documents. It checks them on the server at every call.</p><span class="more-l" style="font-size:14.5px;font-weight:500;color:var(--ink);text-decoration:underline;text-underline-offset:4px"></span></summary></details>
+  </div>
+</section>
 <section class="section" id="cost" data-screen-label="05 Cost">
   <div class="container">
     <header class="section-head">
-      <span class="section-num" style="display:inline-flex;flex-wrap:wrap;align-items:center;gap:9px"><span>02 ·</span><svg class="icn icn-20" aria-hidden="true"><use href="#i-cost"></use></svg><span>Costs</span></span>
+      <span class="section-num" style="display:inline-flex;flex-wrap:wrap;align-items:center;gap:9px"><svg class="icn icn-20" aria-hidden="true"><use href="#i-cost"></use></svg><span>Costs</span></span>
       <h2>Predictable costs <strong>with no hidden fees (0% Step Tax)</strong></h2>
     </header>
     <div class="tab-row">
@@ -968,7 +1129,7 @@ summary::-webkit-details-marker{display:none}
 <section class="section" id="models" data-screen-label="06 Models">
   <div class="container">
     <header class="section-head">
-      <span class="section-num" style="display:inline-flex;flex-wrap:wrap;align-items:center;gap:9px"><span>03 ·</span><svg class="icn icn-20" aria-hidden="true"><use href="#i-mdl"></use></svg><span>Models</span></span>
+      <span class="section-num" style="display:inline-flex;flex-wrap:wrap;align-items:center;gap:9px"><svg class="icn icn-20" aria-hidden="true"><use href="#i-mdl"></use></svg><span>Models</span></span>
       <h2>Any model. Local or hosted. <strong>A one-line configuration change</strong></h2>
     </header>
     <div class="tab-row">
@@ -1049,59 +1210,63 @@ summary::-webkit-details-marker{display:none}
           <span style="{{ blocksIco0 }}">01</span>
           <span style="text-align:left">Chat</span>
         </button>
-                <button type="button" onClick="{{ blocksSet1 }}" aria-pressed="{{ blocksActive1 }}" style="{{ blocksBtn1 }}">
+        <button type="button" onClick="{{ blocksSet1 }}" aria-pressed="{{ blocksActive1 }}" style="{{ blocksBtn1 }}">
           <span style="{{ blocksIco1 }}">02</span>
-          <span style="text-align:left">Apps</span>
+          <span style="text-align:left">Library</span>
         </button>
                 <button type="button" onClick="{{ blocksSet2 }}" aria-pressed="{{ blocksActive2 }}" style="{{ blocksBtn2 }}">
           <span style="{{ blocksIco2 }}">03</span>
-          <span style="text-align:left">Inbox</span>
+          <span style="text-align:left">Apps</span>
         </button>
                 <button type="button" onClick="{{ blocksSet3 }}" aria-pressed="{{ blocksActive3 }}" style="{{ blocksBtn3 }}">
           <span style="{{ blocksIco3 }}">04</span>
+          <span style="text-align:left">Inbox</span>
+        </button>
+                <button type="button" onClick="{{ blocksSet4 }}" aria-pressed="{{ blocksActive4 }}" style="{{ blocksBtn4 }}">
+          <span style="{{ blocksIco4 }}">05</span>
           <span style="text-align:left">Assistant</span>
         </button>
         <span class="blk-grp">Build</span>
-        <button type="button" onClick="{{ blocksSet4 }}" aria-pressed="{{ blocksActive4 }}" style="{{ blocksBtn4 }}">
-          <span style="{{ blocksIco4 }}">05</span>
-          <span style="text-align:left">Agents</span>
-        </button>
-                <button type="button" onClick="{{ blocksSet5 }}" aria-pressed="{{ blocksActive5 }}" style="{{ blocksBtn5 }}">
+        <button type="button" onClick="{{ blocksSet5 }}" aria-pressed="{{ blocksActive5 }}" style="{{ blocksBtn5 }}">
           <span style="{{ blocksIco5 }}">06</span>
-          <span style="text-align:left">Scripts</span>
+          <span style="text-align:left">Agents</span>
         </button>
                 <button type="button" onClick="{{ blocksSet6 }}" aria-pressed="{{ blocksActive6 }}" style="{{ blocksBtn6 }}">
           <span style="{{ blocksIco6 }}">07</span>
-          <span style="text-align:left">Apps &amp; dashboards</span>
+          <span style="text-align:left">Scripts</span>
         </button>
                 <button type="button" onClick="{{ blocksSet7 }}" aria-pressed="{{ blocksActive7 }}" style="{{ blocksBtn7 }}">
           <span style="{{ blocksIco7 }}">08</span>
+          <span style="text-align:left">Apps &amp; dashboards</span>
+        </button>
+                <button type="button" onClick="{{ blocksSet8 }}" aria-pressed="{{ blocksActive8 }}" style="{{ blocksBtn8 }}">
+          <span style="{{ blocksIco8 }}">09</span>
           <span style="text-align:left">Integrations and tools</span>
         </button>
         <span class="blk-grp">Data sources</span>
-        <button type="button" onClick="{{ blocksSet8 }}" aria-pressed="{{ blocksActive8 }}" style="{{ blocksBtn8 }}">
-          <span style="{{ blocksIco8 }}">09</span>
-          <span style="text-align:left">Knowledge bases</span>
-        </button>
-                <button type="button" onClick="{{ blocksSet9 }}" aria-pressed="{{ blocksActive9 }}" style="{{ blocksBtn9 }}">
+        <button type="button" onClick="{{ blocksSet9 }}" aria-pressed="{{ blocksActive9 }}" style="{{ blocksBtn9 }}">
           <span style="{{ blocksIco9 }}">10</span>
-          <span style="text-align:left">DataLake and ML</span>
+          <span style="text-align:left">Knowledge bases</span>
         </button>
                 <button type="button" onClick="{{ blocksSet10 }}" aria-pressed="{{ blocksActive10 }}" style="{{ blocksBtn10 }}">
           <span style="{{ blocksIco10 }}">11</span>
+          <span style="text-align:left">DataLake and ML</span>
+        </button>
+                <button type="button" onClick="{{ blocksSet11 }}" aria-pressed="{{ blocksActive11 }}" style="{{ blocksBtn11 }}">
+          <span style="{{ blocksIco11 }}">12</span>
           <span style="text-align:left">Ontologies</span>
         </button>
         <span class="blk-grp">Operations &amp; settings</span>
-        <button type="button" onClick="{{ blocksSet11 }}" aria-pressed="{{ blocksActive11 }}" style="{{ blocksBtn11 }}">
-          <span style="{{ blocksIco11 }}">12</span>
-          <span style="text-align:left">Ingresses</span>
-        </button>
-                <button type="button" onClick="{{ blocksSet12 }}" aria-pressed="{{ blocksActive12 }}" style="{{ blocksBtn12 }}">
+        <button type="button" onClick="{{ blocksSet12 }}" aria-pressed="{{ blocksActive12 }}" style="{{ blocksBtn12 }}">
           <span style="{{ blocksIco12 }}">13</span>
-          <span style="text-align:left">Scheduler</span>
+          <span style="text-align:left">Ingresses</span>
         </button>
                 <button type="button" onClick="{{ blocksSet13 }}" aria-pressed="{{ blocksActive13 }}" style="{{ blocksBtn13 }}">
           <span style="{{ blocksIco13 }}">14</span>
+          <span style="text-align:left">Scheduler</span>
+        </button>
+                <button type="button" onClick="{{ blocksSet14 }}" aria-pressed="{{ blocksActive14 }}" style="{{ blocksBtn14 }}">
+          <span style="{{ blocksIco14 }}">15</span>
           <span style="text-align:left">Settings</span>
         </button>
         <div style="display:flex;gap:10px;margin-top:12px">
@@ -1128,6 +1293,21 @@ summary::-webkit-details-marker{display:none}
       <sc-if value="{{ blocksActive1 }}" hint-placeholder-val="{{ false }}">
         <div style="display:flex;flex-direction:column;gap:16px;padding:32px 32px 34px;border:1px solid var(--line);border-radius:16px;background:var(--paper-2)">
           <span style="font-family:var(--font-mono);font-size:11.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--lit-deep)">Module 02</span>
+          <h3 style="margin:0;font-size:27px;font-weight:400;letter-spacing:-0.026em;line-height:1.2;color:var(--ink);text-wrap:pretty">A library agents use only where you allow it.</h3>
+          <details class="more-d" style="display:block">
+            <summary class="more-s" style="display:flex;flex-direction:column;gap:8px;cursor:pointer"><p style="margin:0;font-size:16px;line-height:1.6;color:var(--muted);text-wrap:pretty" class="more-p">Files, worksheets and documents from conversations land in one place, organised in folders. Library items are private by default. You share a single file, or a whole folder with its subfolders, with your agents, and you can stop sharing at any time.</p><span class="more-l" style="font-size:14.5px;font-weight:500;color:var(--ink);text-decoration:underline;text-underline-offset:4px"></span></summary>
+            <div style="display:flex;flex-direction:column;gap:16px;margin-top:16px"><ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px">
+<li style="display:grid;grid-template-columns:14px 1fr;gap:11px;font-size:15.5px;line-height:1.55;color:var(--muted)"><span style="color:var(--ink)">—</span><span>In a shared folder agents read, change, create and delete files. A file shared on its own can only be edited</span></li>
+<li style="display:grid;grid-template-columns:14px 1fr;gap:11px;font-size:15.5px;line-height:1.55;color:var(--muted)"><span style="color:var(--ink)">—</span><span><strong style="color:var(--ink);font-weight:500">Share to Library</strong> moves an item from a conversation into the Library, after a confirmation</span></li>
+<li style="display:grid;grid-template-columns:14px 1fr;gap:11px;font-size:15.5px;line-height:1.55;color:var(--muted)"><span style="color:var(--ink)">—</span><span>Every change an agent makes needs the user’s current permission to write to the Library</span></li>
+<li style="display:grid;grid-template-columns:14px 1fr;gap:11px;font-size:15.5px;line-height:1.55;color:var(--muted)"><span style="color:var(--ink)">—</span><span>Up to 10,000 files and 4 GiB per user</span></li>
+</ul></div>
+          </details>
+        </div>
+      </sc-if>
+      <sc-if value="{{ blocksActive2 }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;flex-direction:column;gap:16px;padding:32px 32px 34px;border:1px solid var(--line);border-radius:16px;background:var(--paper-2)">
+          <span style="font-family:var(--font-mono);font-size:11.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--lit-deep)">Module 03</span>
           <h3 style="margin:0;font-size:27px;font-weight:400;letter-spacing:-0.026em;line-height:1.2;color:var(--ink);text-wrap:pretty">Ready-made apps for the whole team.</h3>
           <figure class="showcase" style="margin:0">
             <div class="frame">
@@ -1146,18 +1326,18 @@ summary::-webkit-details-marker{display:none}
           </details>
         </div>
       </sc-if>
-      <sc-if value="{{ blocksActive2 }}" hint-placeholder-val="{{ false }}">
+      <sc-if value="{{ blocksActive3 }}" hint-placeholder-val="{{ false }}">
         <div style="display:flex;flex-direction:column;gap:16px;padding:32px 32px 34px;border:1px solid var(--line);border-radius:16px;background:var(--paper-2)">
-          <span style="font-family:var(--font-mono);font-size:11.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--lit-deep)">Module 03</span>
+          <span style="font-family:var(--font-mono);font-size:11.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--lit-deep)">Module 04</span>
           <h3 style="margin:0;font-size:27px;font-weight:400;letter-spacing:-0.026em;line-height:1.2;color:var(--ink);text-wrap:pretty">The agent delivers results and notifications itself.</h3>
           <details class="more-d" style="display:block">
             <summary class="more-s" style="display:flex;flex-direction:column;gap:8px;cursor:pointer"><p style="margin:0;font-size:16px;line-height:1.6;color:var(--muted);text-wrap:pretty" class="more-p">Finished reports, alerts and responses land in the recipient's inbox, with an unread counter in the menu. Nobody has to ask the agent about the status of a task.</p><span class="more-l" style="font-size:14.5px;font-weight:500;color:var(--ink);text-decoration:underline;text-underline-offset:4px"></span></summary>
           </details>
         </div>
       </sc-if>
-      <sc-if value="{{ blocksActive3 }}" hint-placeholder-val="{{ false }}">
+      <sc-if value="{{ blocksActive4 }}" hint-placeholder-val="{{ false }}">
         <div style="display:flex;flex-direction:column;gap:16px;padding:32px 32px 34px;border:1px solid var(--line);border-radius:16px;background:var(--paper-2)">
-          <span style="font-family:var(--font-mono);font-size:11.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--lit-deep)">Module 04</span>
+          <span style="font-family:var(--font-mono);font-size:11.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--lit-deep)">Module 05</span>
           <h3 style="margin:0;font-size:27px;font-weight:400;letter-spacing:-0.026em;line-height:1.2;color:var(--ink);text-wrap:pretty">An assistant that configures the platform with you.</h3>
           <figure class="showcase" style="margin:0">
             <div class="frame">
@@ -1176,9 +1356,9 @@ summary::-webkit-details-marker{display:none}
           </details>
         </div>
       </sc-if>
-      <sc-if value="{{ blocksActive4 }}" hint-placeholder-val="{{ false }}">
+      <sc-if value="{{ blocksActive5 }}" hint-placeholder-val="{{ false }}">
         <div style="display:flex;flex-direction:column;gap:16px;padding:32px 32px 34px;border:1px solid var(--line);border-radius:16px;background:var(--paper-2)">
-          <span style="margin-top:8px;font-family:var(--font-mono);font-size:11.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--lit-deep)">Module 05</span>
+          <span style="margin-top:8px;font-family:var(--font-mono);font-size:11.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--lit-deep)">Module 06</span>
           <h3 style="margin:0;font-size:27px;font-weight:400;letter-spacing:-0.026em;line-height:1.2;color:var(--ink);text-wrap:pretty">The agent is your configuration, not a vendor's service.</h3>
           <figure class="showcase" style="margin:0">
             <div class="frame">
@@ -1192,9 +1372,9 @@ summary::-webkit-details-marker{display:none}
           </details>
         </div>
       </sc-if>
-      <sc-if value="{{ blocksActive5 }}" hint-placeholder-val="{{ false }}">
+      <sc-if value="{{ blocksActive6 }}" hint-placeholder-val="{{ false }}">
         <div style="display:flex;flex-direction:column;gap:16px;padding:32px 32px 34px;border:1px solid var(--line);border-radius:16px;background:var(--paper-2)">
-          <span style="margin-top:8px;font-family:var(--font-mono);font-size:11.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--lit-deep)">Module 06</span>
+          <span style="margin-top:8px;font-family:var(--font-mono);font-size:11.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--lit-deep)">Module 07</span>
           <h3 style="margin:0;font-size:27px;font-weight:400;letter-spacing:-0.026em;line-height:1.2;color:var(--ink);text-wrap:pretty">Isolated Python, run manually, by an agent or through an app.</h3>
           <figure class="showcase" style="margin:0">
             <div class="frame">
@@ -1208,9 +1388,9 @@ summary::-webkit-details-marker{display:none}
           </details>
         </div>
       </sc-if>
-      <sc-if value="{{ blocksActive6 }}" hint-placeholder-val="{{ false }}">
+      <sc-if value="{{ blocksActive7 }}" hint-placeholder-val="{{ false }}">
         <div style="display:flex;flex-direction:column;gap:16px;padding:32px 32px 34px;border:1px solid var(--line);border-radius:16px;background:var(--paper-2)">
-          <span style="font-family:var(--font-mono);font-size:11.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--lit-deep)">Module 07</span>
+          <span style="font-family:var(--font-mono);font-size:11.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--lit-deep)">Module 08</span>
           <h3 style="margin:0;font-size:27px;font-weight:400;letter-spacing:-0.026em;line-height:1.2;color:var(--ink);text-wrap:pretty">Turn a script into an app, and apps into a dashboard.</h3>
           <figure class="showcase" style="margin:0">
             <div class="frame">
@@ -1229,25 +1409,25 @@ summary::-webkit-details-marker{display:none}
           </details>
         </div>
       </sc-if>
-      <sc-if value="{{ blocksActive7 }}" hint-placeholder-val="{{ false }}">
+      <sc-if value="{{ blocksActive8 }}" hint-placeholder-val="{{ false }}">
         <div style="display:flex;flex-direction:column;gap:16px;padding:32px 32px 34px;border:1px solid var(--line);border-radius:16px;background:var(--paper-2)">
-          <span style="margin-top:8px;font-family:var(--font-mono);font-size:11.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--lit-deep)">Module 08</span>
+          <span style="margin-top:8px;font-family:var(--font-mono);font-size:11.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--lit-deep)">Module 09</span>
           <h3 style="margin:0;font-size:27px;font-weight:400;letter-spacing:-0.026em;line-height:1.2;color:var(--ink);text-wrap:pretty">Connections to external systems under host control.</h3>
           <figure class="showcase" style="margin:0">
             <div class="frame">
               <div class="bar"><i></i><i></i><i></i><span class="u">integrations · catalog</span></div>
               <span class="spr" style="display:block;position:relative;overflow:hidden;aspect-ratio:1400/1004"><img src="/assets/docs/sheets/product-2.webp" alt="A Brave Search integration in TakeAny.AI: the API key picked from secrets and a Python call example" loading="lazy" style="position:absolute;left:0;top:-0.0000%;width:100%;height:auto;max-width:none"></span>
             </div>
-            <figcaption><span class="fc-tag">Integrations and tools</span><span>Integrations serve Python scripts. The agent has no direct access to them.</span></figcaption>
+            <figcaption><span class="fc-tag">Integrations and tools</span><span>Credentials stay on the host. Agents and scripts get a typed tool, never the key.</span></figcaption>
           </figure>
           <details class="more-d" style="display:block">
-            <summary class="more-s" style="display:flex;flex-direction:column;gap:8px;cursor:pointer"><p style="margin:0;font-size:16px;line-height:1.6;color:var(--muted);text-wrap:pretty" class="more-p">Integrations such as SSH, TypeSafe or Jina Reader are configured once and attached to scripts. Tool profiles, such as web search or browser control, are attached to agents. Keys stay encrypted on the server.</p><span class="more-l" style="font-size:14.5px;font-weight:500;color:var(--ink);text-decoration:underline;text-underline-offset:4px"></span></summary>
+            <summary class="more-s" style="display:flex;flex-direction:column;gap:8px;cursor:pointer"><p style="margin:0;font-size:16px;line-height:1.6;color:var(--muted);text-wrap:pretty" class="more-p">Integrations are configured once: Brave Search, Jina Reader, SSH, TypeSafe, remote MCP servers, and PostgreSQL as a dataset source. Agents and scripts use only the integrations attached to them, and every call is authorized for the person it runs for. Keys stay encrypted on the server.</p><span class="more-l" style="font-size:14.5px;font-weight:500;color:var(--ink);text-decoration:underline;text-underline-offset:4px"></span></summary>
           </details>
         </div>
       </sc-if>
-      <sc-if value="{{ blocksActive8 }}" hint-placeholder-val="{{ false }}">
+      <sc-if value="{{ blocksActive9 }}" hint-placeholder-val="{{ false }}">
         <div style="display:flex;flex-direction:column;gap:16px;padding:32px 32px 34px;border:1px solid var(--line);border-radius:16px;background:var(--paper-2)">
-          <span style="margin-top:8px;font-family:var(--font-mono);font-size:11.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--lit-deep)">Module 09</span>
+          <span style="margin-top:8px;font-family:var(--font-mono);font-size:11.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--lit-deep)">Module 10</span>
           <h3 style="margin:0;font-size:27px;font-weight:400;letter-spacing:-0.026em;line-height:1.2;color:var(--ink);text-wrap:pretty">Documents and websites as versioned knowledge.</h3>
           <figure class="showcase" style="margin:0">
             <div class="frame">
@@ -1261,9 +1441,9 @@ summary::-webkit-details-marker{display:none}
           </details>
         </div>
       </sc-if>
-      <sc-if value="{{ blocksActive9 }}" hint-placeholder-val="{{ false }}">
+      <sc-if value="{{ blocksActive10 }}" hint-placeholder-val="{{ false }}">
         <div style="display:flex;flex-direction:column;gap:16px;padding:32px 32px 34px;border:1px solid var(--line);border-radius:16px;background:var(--paper-2)">
-          <span style="margin-top:8px;font-family:var(--font-mono);font-size:11.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--lit-deep)">Module 10</span>
+          <span style="margin-top:8px;font-family:var(--font-mono);font-size:11.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--lit-deep)">Module 11</span>
           <h3 style="margin:0;font-size:27px;font-weight:400;letter-spacing:-0.026em;line-height:1.2;color:var(--ink);text-wrap:pretty">Company tables the agent queries read-only.</h3>
           <figure class="showcase" style="margin:0">
             <div class="frame">
@@ -1273,13 +1453,18 @@ summary::-webkit-details-marker{display:none}
             <figcaption><span class="fc-tag">DataLake and ML</span><span>Datasets and analytical products in one catalogue, ready to connect to an agent.</span></figcaption>
           </figure>
           <details class="more-d" style="display:block">
-            <summary class="more-s" style="display:flex;flex-direction:column;gap:8px;cursor:pointer"><p style="margin:0;font-size:16px;line-height:1.6;color:var(--muted);text-wrap:pretty" class="more-p">You upload CSV or XLSX files as versioned datasets. On top of them you build analytical products, such as recommendations of products bought together. The agent sees only the published version.</p><span class="more-l" style="font-size:14.5px;font-weight:500;color:var(--ink);text-decoration:underline;text-underline-offset:4px"></span></summary>
+            <summary class="more-s" style="display:flex;flex-direction:column;gap:8px;cursor:pointer"><p style="margin:0;font-size:16px;line-height:1.6;color:var(--muted);text-wrap:pretty" class="more-p">Datasets come from CSV or XLSX files or from a PostgreSQL query, always as versioned snapshots. On top of them you build analytical products: products bought together and customer segments. The agent sees only the published version.</p><span class="more-l" style="font-size:14.5px;font-weight:500;color:var(--ink);text-decoration:underline;text-underline-offset:4px"></span></summary><div style="display:flex;flex-direction:column;gap:16px;margin-top:16px"><ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px">
+<li style="display:grid;grid-template-columns:14px 1fr;gap:11px;font-size:15.5px;line-height:1.55;color:var(--muted)"><span style="color:var(--ink)">—</span><span><strong style="color:var(--ink);font-weight:500">PostgreSQL source</strong> — <strong style="color:var(--ink);font-weight:500">Refresh from source</strong> runs your <code>SELECT</code> in a read-only transaction and saves the result as a new version. Agents never query the production database</span></li>
+<li style="display:grid;grid-template-columns:14px 1fr;gap:11px;font-size:15.5px;line-height:1.55;color:var(--muted)"><span style="color:var(--ink)">—</span><span><strong style="color:var(--ink);font-weight:500">Customer Segmentation</strong> — every customer in one of six segments by how recently, how often and for how much they bought, from Champions to Dormant. The agent finds customers by name or segment</span></li>
+<li style="display:grid;grid-template-columns:14px 1fr;gap:11px;font-size:15.5px;line-height:1.55;color:var(--muted)"><span style="color:var(--ink)">—</span><span><strong style="color:var(--ink);font-weight:500">Association Recommender</strong> — products bought together, with the evidence behind each suggestion and a quality check against a bestseller list at every build</span></li>
+<li style="display:grid;grid-template-columns:14px 1fr;gap:11px;font-size:15.5px;line-height:1.55;color:var(--muted)"><span style="color:var(--ink)">—</span><span>A new dataset version rebuilds its products automatically. A failed build never replaces a working one</span></li>
+</ul></div>
           </details>
         </div>
       </sc-if>
-      <sc-if value="{{ blocksActive10 }}" hint-placeholder-val="{{ false }}">
+      <sc-if value="{{ blocksActive11 }}" hint-placeholder-val="{{ false }}">
         <div style="display:flex;flex-direction:column;gap:16px;padding:32px 32px 34px;border:1px solid var(--line);border-radius:16px;background:var(--paper-2)">
-          <span style="margin-top:8px;font-family:var(--font-mono);font-size:11.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--lit-deep)">Module 11</span>
+          <span style="margin-top:8px;font-family:var(--font-mono);font-size:11.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--lit-deep)">Module 12</span>
           <h3 style="margin:0;font-size:27px;font-weight:400;letter-spacing:-0.026em;line-height:1.2;color:var(--ink);text-wrap:pretty">Describe your company's concepts and relationships before connecting data.</h3>
           <figure class="showcase" style="margin:0">
             <div class="frame">
@@ -1293,9 +1478,9 @@ summary::-webkit-details-marker{display:none}
           </details>
         </div>
       </sc-if>
-      <sc-if value="{{ blocksActive11 }}" hint-placeholder-val="{{ false }}">
+      <sc-if value="{{ blocksActive12 }}" hint-placeholder-val="{{ false }}">
         <div style="display:flex;flex-direction:column;gap:16px;padding:32px 32px 34px;border:1px solid var(--line);border-radius:16px;background:var(--paper-2)">
-          <span style="margin-top:8px;font-family:var(--font-mono);font-size:11.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--lit-deep)">Module 12</span>
+          <span style="margin-top:8px;font-family:var(--font-mono);font-size:11.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--lit-deep)">Module 13</span>
           <h3 style="margin:0;font-size:27px;font-weight:400;letter-spacing:-0.026em;line-height:1.2;color:var(--ink);text-wrap:pretty">Expose the agent through an API or a widget on your site.</h3>
           <figure class="showcase" style="margin:0">
             <div class="frame">
@@ -1309,9 +1494,9 @@ summary::-webkit-details-marker{display:none}
           </details>
         </div>
       </sc-if>
-      <sc-if value="{{ blocksActive12 }}" hint-placeholder-val="{{ false }}">
+      <sc-if value="{{ blocksActive13 }}" hint-placeholder-val="{{ false }}">
         <div style="display:flex;flex-direction:column;gap:16px;padding:32px 32px 34px;border:1px solid var(--line);border-radius:16px;background:var(--paper-2)">
-          <span style="font-family:var(--font-mono);font-size:11.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--lit-deep)">Module 13</span>
+          <span style="font-family:var(--font-mono);font-size:11.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--lit-deep)">Module 14</span>
           <h3 style="margin:0;font-size:27px;font-weight:400;letter-spacing:-0.026em;line-height:1.2;color:var(--ink);text-wrap:pretty">Apps that run on a schedule.</h3>
           <figure class="showcase" style="margin:0">
             <div class="frame">
@@ -1330,9 +1515,9 @@ summary::-webkit-details-marker{display:none}
           </details>
         </div>
       </sc-if>
-      <sc-if value="{{ blocksActive13 }}" hint-placeholder-val="{{ false }}">
+      <sc-if value="{{ blocksActive14 }}" hint-placeholder-val="{{ false }}">
         <div style="display:flex;flex-direction:column;gap:16px;padding:32px 32px 34px;border:1px solid var(--line);border-radius:16px;background:var(--paper-2)">
-          <span style="font-family:var(--font-mono);font-size:11.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--lit-deep)">Module 14</span>
+          <span style="font-family:var(--font-mono);font-size:11.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--lit-deep)">Module 15</span>
           <h3 style="margin:0;font-size:27px;font-weight:400;letter-spacing:-0.026em;line-height:1.2;color:var(--ink);text-wrap:pretty">All host configuration in one place.</h3>
           <figure class="showcase" style="margin:0">
             <div class="frame">
@@ -1360,7 +1545,7 @@ summary::-webkit-details-marker{display:none}
 <section class="section" id="observability" data-screen-label="08 Observability">
   <div class="container">
     <header class="section-head">
-      <span class="section-num" style="display:inline-flex;flex-wrap:wrap;align-items:center;gap:9px"><span>04 ·</span><svg class="icn icn-20" aria-hidden="true"><use href="#i-dash"></use></svg><span>Observability</span></span>
+      <span class="section-num" style="display:inline-flex;flex-wrap:wrap;align-items:center;gap:9px"><svg class="icn icn-20" aria-hidden="true"><use href="#i-dash"></use></svg><span>Observability</span></span>
       <h2>Every event recorded, <strong>queryable per resource</strong></h2>
     </header>
     <div class="tab-row">
@@ -1521,16 +1706,38 @@ summary::-webkit-details-marker{display:none}
 <section class="section" id="deployment" data-screen-label="09 Deployment">
   <div class="container">
     <header class="section-head">
-      <span class="section-num" style="display:inline-flex;flex-wrap:wrap;align-items:center;gap:9px"><span>05 ·</span><svg class="icn icn-20" aria-hidden="true"><use href="#i-prem"></use></svg><span>Deployment</span></span>
+      <span class="section-num" style="display:inline-flex;flex-wrap:wrap;align-items:center;gap:9px"><svg class="icn icn-20" aria-hidden="true"><use href="#i-prem"></use></svg><span>Deployment</span></span>
       <h2>An architecture <strong>that doesn't weigh on your IT team</strong></h2>
     </header>
     <div class="sec-grid sec-grid-2" style="margin-top:0">
       <div class="sec-card">
         <span class="k">Requirements</span>
         <ul class="sec-list">
-          <li>A Linux host with KVM (<code>/dev/kvm</code>)</li>
-          <li>Nested virtualisation when installing in a private cloud</li>
+          <li>One Linux machine with KVM (<code>/dev/kvm</code>), physical or virtual</li>
+          <li>At least 8 CPU cores and 16 GB RAM; more users means a bigger server</li>
+          <li>Nested virtualisation: also runs on a virtual machine in a private cloud</li>
+          <li>No Kubernetes or Docker: isolation comes from microVMs, not containers</li>
+          <li>Single-tenant install, vertical scaling (no horizontal scaling)</li>
           <li>A 32-byte master key for secrets</li>
+        </ul>
+      </div>
+      <div class="sec-card">
+        <span class="k">LLM models</span>
+        <ul class="sec-list">
+          <li>Any provider over API, including hyperscalers</li>
+          <li>Your own open-weight models on your GPUs (vLLM, Ollama)</li>
+          <li>Example starting point for your own GPU: NVIDIA L40S; sizing depends on the use case</li>
+          <li>We help you set up the inference infrastructure</li>
+        </ul>
+      </div>
+      <div class="sec-card">
+        <span class="k">Integration with your systems</span>
+        <ul class="sec-list">
+          <li>Agents talk to your systems over REST API or SOAP: they read data and make changes</li>
+          <li>RAG on your knowledge base</li>
+          <li>Workflows where an agent runs a whole process through your APIs, under control</li>
+          <li>PostgreSQL: snapshot selected tables into a local data lake, e.g. for classic ML</li>
+          <li>Oracle: connector in preparation</li>
         </ul>
       </div>
       <div class="sec-card">
@@ -1551,7 +1758,7 @@ summary::-webkit-details-marker{display:none}
 <section class="section" data-screen-label="10 Specs">
   <div class="container">
     <header class="section-head">
-      <span class="section-num" style="width:auto;max-width:240px;white-space:normal">06 · Specification</span>
+      <span class="section-num" style="width:auto;max-width:240px;white-space:normal">Specification</span>
       <h2>The control plane <strong>in numbers</strong></h2>
     </header>
     <div class="ws-specs">
@@ -1572,8 +1779,12 @@ summary::-webkit-details-marker{display:none}
         <div style="display:flex;flex-wrap:wrap;gap:8px">
           <span style="display:inline-flex;align-items:baseline;gap:7px;padding:7px 12px;border:1px solid var(--line);border-radius:6px;background:#fff;font-size:14px;letter-spacing:-0.01em;color:var(--ink)">Secrets vault<sup style="font-family:var(--font-mono);font-size:8.5px;letter-spacing:.06em;color:var(--muted-2)">AES-256-GCM</sup></span>
           <span style="display:inline-flex;align-items:baseline;gap:7px;padding:7px 12px;border:1px solid var(--line);border-radius:6px;background:#fff;font-size:14px;letter-spacing:-0.01em;color:var(--ink)">Passwords<sup style="font-family:var(--font-mono);font-size:8.5px;letter-spacing:.06em;color:var(--muted-2)">ARGON2ID</sup></span>
-          <span style="display:inline-flex;align-items:baseline;gap:7px;padding:7px 12px;border:1px solid var(--line);border-radius:6px;background:#fff;font-size:14px;letter-spacing:-0.01em;color:var(--ink)">RBAC<sup style="font-family:var(--font-mono);font-size:8.5px;letter-spacing:.06em;color:var(--muted-2)">ROLES AND GRANTS</sup></span>
-          <span style="display:inline-flex;align-items:baseline;gap:7px;padding:7px 12px;border:1px solid var(--line);border-radius:6px;background:#fff;font-size:14px;letter-spacing:-0.01em;color:var(--ink)">Resource families<sup style="font-family:var(--font-mono);font-size:8.5px;letter-spacing:.06em;color:var(--muted-2)">9</sup></span>
+          <span style="display:inline-flex;align-items:baseline;gap:7px;padding:7px 12px;border:1px solid var(--line);border-radius:6px;background:#fff;font-size:14px;letter-spacing:-0.01em;color:var(--ink)">RBAC<sup style="font-family:var(--font-mono);font-size:8.5px;letter-spacing:.06em;color:var(--muted-2)">PER RESOURCE</sup></span>
+          <span style="display:inline-flex;align-items:baseline;gap:7px;padding:7px 12px;border:1px solid var(--line);border-radius:6px;background:#fff;font-size:14px;letter-spacing:-0.01em;color:var(--ink)">SSO<sup style="font-family:var(--font-mono);font-size:8.5px;letter-spacing:.06em;color:var(--muted-2)">OIDC + PKCE</sup></span>
+          <span style="display:inline-flex;align-items:baseline;gap:7px;padding:7px 12px;border:1px solid var(--line);border-radius:6px;background:#fff;font-size:14px;letter-spacing:-0.01em;color:var(--ink)">SCIM<sup style="font-family:var(--font-mono);font-size:8.5px;letter-spacing:.06em;color:var(--muted-2)">2.0</sup></span>
+          <span style="display:inline-flex;align-items:baseline;gap:7px;padding:7px 12px;border:1px solid var(--line);border-radius:6px;background:#fff;font-size:14px;letter-spacing:-0.01em;color:var(--ink)">Policies<sup style="font-family:var(--font-mono);font-size:8.5px;letter-spacing:.06em;color:var(--muted-2)">OPA / REGO</sup></span>
+          <span style="display:inline-flex;align-items:baseline;gap:7px;padding:7px 12px;border:1px solid var(--line);border-radius:6px;background:#fff;font-size:14px;letter-spacing:-0.01em;color:var(--ink)">Secret types<sup style="font-family:var(--font-mono);font-size:8.5px;letter-spacing:.06em;color:var(--muted-2)">14</sup></span>
+          <span style="display:inline-flex;align-items:baseline;gap:7px;padding:7px 12px;border:1px solid var(--line);border-radius:6px;background:#fff;font-size:14px;letter-spacing:-0.01em;color:var(--ink)">Action approvals</span>
           <span style="display:inline-flex;align-items:baseline;gap:7px;padding:7px 12px;border:1px solid var(--line);border-radius:6px;background:#fff;font-size:14px;letter-spacing:-0.01em;color:var(--ink)">Host-side keys</span>
         </div>
       </div>
@@ -1623,6 +1834,7 @@ summary::-webkit-details-marker{display:none}
           <li><a href="/en/product">Overview</a></li>
           <li><a href="/en/use-cases">Use cases</a></li>
           <li><a href="/en/product#security">Security</a></li>
+          <li><a href="/en/product#access">Access &amp; identity</a></li>
           <li><a href="/en/product#cost">Cost control</a></li>
           <li><a href="/en/product#models">Model Selection</a></li>
           <li><a href="/en/pricing">Pricing</a></li>
@@ -1670,7 +1882,7 @@ summary::-webkit-details-marker{display:none}
         </button>
         <ul style="display:{{ abListDisplay }};position:absolute;left:0;bottom:52px;width:100%;max-width:640px;margin:0;padding:0;list-style:none;background:#fff;border:1px solid var(--ink);border-radius:16px;overflow:hidden;z-index:30">
           <sc-for list="{{ abItems }}" as="it" hint-placeholder-count="5">
-            <li style="border-bottom:1px solid var(--line)"><a href="{{ it.href }}" onClick="{{ it.pick }}" style="display:grid;grid-template-columns:34px minmax(0,1fr);gap:10px;align-items:baseline;min-height:52px;padding:14px 18px;color:var(--ink);text-decoration:none;background:{{ it.bg }}" style-hover="background:var(--ube-lavender-50)"><span style="font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;color:var(--lit-deep)">{{ it.n }}</span><span style="font-size:15px;line-height:1.35">{{ it.full }}</span></a></li>
+            <li style="border-bottom:1px solid var(--line)"><a href="{{ it.href }}" onClick="{{ it.pick }}" style="display:grid;grid-template-columns:minmax(0,1fr);gap:10px;align-items:baseline;min-height:52px;padding:14px 18px;color:var(--ink);text-decoration:none;background:{{ it.bg }}" style-hover="background:var(--ube-lavender-50)"><span style="font-size:15px;line-height:1.35">{{ it.full }}</span></a></li>
           </sc-for>
         </ul>
       </div>
@@ -1705,8 +1917,8 @@ class Component extends DCLogic {
       abItems: L.map((x, k) => ({ ...x, bg: x.hl ? 'var(--ube-lavender-100)' : k === ab ? 'var(--ube-lavender-50)' : '#fff', pick: () => this.setState({ ab: k, abOpen: false }) }))
     };
   }
-  groups = { planes: 5, security: 6, cost: 6, models: 3, blocks: 14, obs: 9 };
-  state = { navOpen: false, tabs: { planes: 0, security: 0, cost: 0, models: 0, blocks: 0, obs: 0 } };
+  groups = { planes: 5, security: 6, access: 7, cost: 6, models: 3, blocks: 15, obs: 9 };
+  state = { navOpen: false, tabs: { planes: 0, security: 0, access: 0, cost: 0, models: 0, blocks: 0, obs: 0 } };
 
   componentDidMount() {
     document.documentElement.lang = 'en';

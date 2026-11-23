@@ -461,7 +461,7 @@ section.section:not(.partners)::before{content:"";position:absolute;top:-2px;lef
 <section class="section" data-screen-label="01 Wartość biznesowa">
   <div class="container">
     <header class="section-head">
-      <span class="section-num" style="display:inline-flex;flex-wrap:wrap;align-items:center;gap:9px"><span>01 ·</span><svg class="icn icn-20" aria-hidden="true"><use href="#i-cost"></use></svg><span>Wartość biznesowa</span></span>
+      <span class="section-num" style="display:inline-flex;flex-wrap:wrap;align-items:center;gap:9px"><svg class="icn icn-20" aria-hidden="true"><use href="#i-cost"></use></svg><span>Wartość biznesowa</span></span>
       <h2>Dlaczego TakeAny.AI dla ERP, CRM i HRM? <strong>Pełny zestaw narzędzi do bezpiecznej automatyzacji systemów dziedzinowych</strong></h2>
       <p class="sub" style="max-width:82ch">Zamień podatne na awarie integracje i kosztowne pętle decyzyjne w elastyczny, bezpieczny silnik orkiestracji AI. <strong style="font-weight:600">Automatyzuj obieg dokumentów, aktualizacje danych klienta oraz procesy kadrowe</strong> bez ryzyka dla produkcyjnej bazy danych.</p>
     </header>
@@ -498,7 +498,7 @@ section.section:not(.partners)::before{content:"";position:absolute;top:-2px;lef
 <section class="section" data-screen-label="02 Porównanie">
   <div class="container">
     <header class="section-head">
-      <span class="section-num" style="display:inline-flex;flex-wrap:wrap;align-items:center;gap:9px"><span>02 ·</span><svg class="icn icn-20" aria-hidden="true"><use href="#i-dash"></use></svg><span>Porównanie architektury</span></span>
+      <span class="section-num" style="display:inline-flex;flex-wrap:wrap;align-items:center;gap:9px"><svg class="icn icn-20" aria-hidden="true"><use href="#i-dash"></use></svg><span>Porównanie architektury</span></span>
       <h2>Porównanie orkiestracji AI <strong>dla systemów biznesowych</strong></h2>
     </header>
     <div class="cmp">
@@ -519,7 +519,7 @@ section.section:not(.partners)::before{content:"";position:absolute;top:-2px;lef
 <section class="section" data-screen-label="03 Scenariusze">
   <div class="container">
     <header class="section-head">
-      <span class="section-num" style="display:inline-flex;flex-wrap:wrap;align-items:center;gap:9px"><span>03 ·</span><svg class="icn icn-20" aria-hidden="true"><use href="#i-dash"></use></svg><span>Obsługiwane scenariusze</span></span>
+      <span class="section-num" style="display:inline-flex;flex-wrap:wrap;align-items:center;gap:9px"><svg class="icn icn-20" aria-hidden="true"><use href="#i-dash"></use></svg><span>Obsługiwane scenariusze</span></span>
       <h2>Scenariusze automatyzacji <strong>ERP, CRM i HRM</strong></h2>
     </header>
     <div class="uc-caps uc-rail">
@@ -556,7 +556,7 @@ section.section:not(.partners)::before{content:"";position:absolute;top:-2px;lef
 <section class="section" data-screen-label="05 Specyfikacja">
   <div class="container">
     <header class="section-head">
-      <span class="section-num" style="width:auto;max-width:240px;white-space:normal;display:inline-flex;flex-wrap:wrap;align-items:center;gap:9px"><span>04 ·</span><svg class="icn icn-20" aria-hidden="true"><use href="#i-prem"></use></svg><span>Specyfikacja</span></span>
+      <span class="section-num" style="width:auto;max-width:240px;white-space:normal;display:inline-flex;flex-wrap:wrap;align-items:center;gap:9px"><svg class="icn icn-20" aria-hidden="true"><use href="#i-prem"></use></svg><span>Specyfikacja</span></span>
       <h2>Integracja bez otwierania <strong>infrastruktury firmy</strong></h2>
     </header>
     <div class="ws-specs">
@@ -631,6 +631,7 @@ section.section:not(.partners)::before{content:"";position:absolute;top:-2px;lef
           <li><a href="/pl/product">Przegląd</a></li>
           <li><a href="/pl/use-cases">Zastosowania</a></li>
           <li><a href="/pl/product#security">Bezpieczeństwo</a></li>
+          <li><a href="/pl/product#access">Tożsamość i dostęp</a></li>
           <li><a href="/pl/product#cost">Kontrola kosztów</a></li>
           <li><a href="/pl/product#models">Swoboda wyboru modeli</a></li>
           <li><a href="/pl/pricing">Cennik</a></li>
@@ -678,7 +679,7 @@ section.section:not(.partners)::before{content:"";position:absolute;top:-2px;lef
         </button>
         <ul style="display:{{ abListDisplay }};position:absolute;left:0;bottom:52px;width:100%;max-width:640px;margin:0;padding:0;list-style:none;background:#fff;border:1px solid var(--ink);border-radius:16px;overflow:hidden;z-index:30">
           <sc-for list="{{ abItems }}" as="it" hint-placeholder-count="5">
-            <li style="border-bottom:1px solid var(--line)"><a href="{{ it.href }}" onClick="{{ it.pick }}" style="display:grid;grid-template-columns:34px minmax(0,1fr);gap:10px;align-items:baseline;min-height:52px;padding:14px 18px;color:var(--ink);text-decoration:none;background:{{ it.bg }}" style-hover="background:var(--ube-lavender-50)"><span style="font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;color:var(--lit-deep)">{{ it.n }}</span><span style="font-size:15px;line-height:1.35">{{ it.full }}</span></a></li>
+            <li style="border-bottom:1px solid var(--line)"><a href="{{ it.href }}" onClick="{{ it.pick }}" style="display:grid;grid-template-columns:minmax(0,1fr);gap:10px;align-items:baseline;min-height:52px;padding:14px 18px;color:var(--ink);text-decoration:none;background:{{ it.bg }}" style-hover="background:var(--ube-lavender-50)"><span style="font-size:15px;line-height:1.35">{{ it.full }}</span></a></li>
           </sc-for>
         </ul>
       </div>

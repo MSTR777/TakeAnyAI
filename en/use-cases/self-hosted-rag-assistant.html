@@ -355,7 +355,7 @@ section.section:not(.partners)::before{content:"";position:absolute;top:-2px;lef
 <section class="section" data-screen-label="02 Why RAG">
   <div class="container">
     <header class="section-head">
-      <span class="section-num">01 · Why RAG</span>
+      <span class="section-num">Why RAG</span>
       <h2>Answers for your people right away, <strong>without reading hundreds of pages</strong></h2>
       <p class="sub" style="max-width:76ch">Manuals, guidelines, policies and contracts become an assistant that <strong style="font-weight:600">answers a question in seconds and shows which document the answer came from</strong>. You run the system directly on a company server or a workstation — no files sent to an external cloud, no charges per decision step, and full source verification.</p>
     </header>
@@ -392,7 +392,7 @@ section.section:not(.partners)::before{content:"";position:absolute;top:-2px;lef
 <section class="section" data-screen-label="03 Why TakeAny.AI RAG">
   <div class="container">
     <header class="section-head">
-      <span class="section-num" style="display:inline-flex;flex-wrap:wrap;align-items:center;gap:9px"><span>02 ·</span><svg class="icn icn-20" aria-hidden="true"><use href="#i-cost"></use></svg><span>Why TakeAny.AI</span></span>
+      <span class="section-num" style="display:inline-flex;flex-wrap:wrap;align-items:center;gap:9px"><svg class="icn icn-20" aria-hidden="true"><use href="#i-cost"></use></svg><span>Why TakeAny.AI</span></span>
       <h2>A complete toolkit to launch and run <strong>RAG inside your company</strong></h2>
       <p class="sub" style="max-width:76ch">TakeAny.AI is not a connector to someone else's RAG service. It is the full toolkit: you configure the knowledge base and how it is indexed, watch search and indexing as they run, and tune the chunking and inference prompts — all from one console, on your own infrastructure.</p>
     </header>
@@ -420,7 +420,7 @@ section.section:not(.partners)::before{content:"";position:absolute;top:-2px;lef
 <section class="section" data-screen-label="03 How it works">
   <div class="container">
     <header class="section-head">
-      <span class="section-num" style="display:inline-flex;flex-wrap:wrap;align-items:center;gap:9px"><span>03 ·</span><svg class="icn icn-20" aria-hidden="true"><use href="#i-dash"></use></svg><span>How it works</span></span>
+      <span class="section-num" style="display:inline-flex;flex-wrap:wrap;align-items:center;gap:9px"><svg class="icn icn-20" aria-hidden="true"><use href="#i-dash"></use></svg><span>How it works</span></span>
       <h2>Turn an outdated knowledge base into a secure AI assistant: <strong>a four-step conversion</strong></h2>
     </header>
     <div class="uc-how">
@@ -468,7 +468,7 @@ section.section:not(.partners)::before{content:"";position:absolute;top:-2px;lef
 <section class="section" data-screen-label="04 Why it is secure">
   <div class="container">
     <header class="section-head">
-      <span class="section-num" style="display:inline-flex;flex-wrap:wrap;align-items:center;gap:9px"><span>04 ·</span><svg class="icn icn-20" aria-hidden="true"><use href="#i-sec"></use></svg><span>Why it is secure</span></span>
+      <span class="section-num" style="display:inline-flex;flex-wrap:wrap;align-items:center;gap:9px"><svg class="icn icn-20" aria-hidden="true"><use href="#i-sec"></use></svg><span>Why it is secure</span></span>
       <h2>Sovereignty is <strong>structural here</strong></h2>
       <p class="sub" style="max-width:76ch">Four properties of the design, not four settings you have to remember to switch on.</p>
     </header>
@@ -501,7 +501,7 @@ section.section:not(.partners)::before{content:"";position:absolute;top:-2px;lef
 <section class="section" data-screen-label="05 Who this is for">
   <div class="container">
     <header class="section-head">
-      <span class="section-num">05 · Who this is for</span>
+      <span class="section-num">Who this is for</span>
       <h2>Sectors where the perimeter <strong>is the requirement</strong></h2>
     </header>
     <div class="uc-caps">
@@ -536,7 +536,7 @@ section.section:not(.partners)::before{content:"";position:absolute;top:-2px;lef
 <section class="section" data-screen-label="06 Related">
   <div class="container">
     <header class="section-head">
-      <span class="section-num">06 · Related</span>
+      <span class="section-num">Related</span>
       <h2>Teams that run this <strong>usually run these too</strong></h2>
     </header>
     <div class="uc-rel">
@@ -590,6 +590,7 @@ section.section:not(.partners)::before{content:"";position:absolute;top:-2px;lef
           <li><a href="/en/product">Overview</a></li>
           <li><a href="/en/use-cases">Use cases</a></li>
           <li><a href="/en/product#security">Security</a></li>
+          <li><a href="/en/product#access">Access &amp; identity</a></li>
           <li><a href="/en/product#cost">Cost control</a></li>
           <li><a href="/en/product#models">Model Selection</a></li>
           <li><a href="/en/pricing">Pricing</a></li>
@@ -637,7 +638,7 @@ section.section:not(.partners)::before{content:"";position:absolute;top:-2px;lef
         </button>
         <ul style="display:{{ abListDisplay }};position:absolute;left:0;bottom:52px;width:100%;max-width:640px;margin:0;padding:0;list-style:none;background:#fff;border:1px solid var(--ink);border-radius:16px;overflow:hidden;z-index:30">
           <sc-for list="{{ abItems }}" as="it" hint-placeholder-count="5">
-            <li style="border-bottom:1px solid var(--line)"><a href="{{ it.href }}" onClick="{{ it.pick }}" style="display:grid;grid-template-columns:34px minmax(0,1fr);gap:10px;align-items:baseline;min-height:52px;padding:14px 18px;color:var(--ink);text-decoration:none;background:{{ it.bg }}" style-hover="background:var(--ube-lavender-50)"><span style="font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;color:var(--lit-deep)">{{ it.n }}</span><span style="font-size:15px;line-height:1.35">{{ it.full }}</span></a></li>
+            <li style="border-bottom:1px solid var(--line)"><a href="{{ it.href }}" onClick="{{ it.pick }}" style="display:grid;grid-template-columns:minmax(0,1fr);gap:10px;align-items:baseline;min-height:52px;padding:14px 18px;color:var(--ink);text-decoration:none;background:{{ it.bg }}" style-hover="background:var(--ube-lavender-50)"><span style="font-size:15px;line-height:1.35">{{ it.full }}</span></a></li>
           </sc-for>
         </ul>
       </div>
