@@ -120,41 +120,41 @@ TakeAny.AI (dawniej aamp) to samodzielnie hostowana warstwa kontroli dla autonom
 ### Kanoniczne adresy polskie
 
 - Strona główna: https://takeany.ai/pl/
-- Produkt: https://takeany.ai/pl/product
-- Zastosowania: https://takeany.ai/pl/use-cases
-- Cennik: https://takeany.ai/pl/pricing
-- Czym się różnimy: https://takeany.ai/pl/how-we-differ
-- Rozpocznij: https://takeany.ai/pl/get-started
-- Program partnerski (prowizje, ochrona leada, poziomy Registered / Expert): https://takeany.ai/pl/partners
+- Produkt: https://takeany.ai/pl/produkt
+- Zastosowania: https://takeany.ai/pl/zastosowania
+- Cennik: https://takeany.ai/pl/cennik
+- Czym się różnimy: https://takeany.ai/pl/czym-sie-rozniemy
+- Rozpocznij: https://takeany.ai/pl/zacznij
+- Program partnerski (prowizje, ochrona leada, poziomy Registered / Expert): https://takeany.ai/pl/partnerzy
 - Blog: https://takeany.ai/pl/blog
-- Dokumenty prawne (Regulamin, Polityka Prywatności, Cookies, DPA): https://takeany.ai/pl/legal
+- Dokumenty prawne (Regulamin, Polityka Prywatności, Cookies, DPA): https://takeany.ai/pl/dokumenty-prawne
 - Dokumentacja (w języku angielskim): https://takeany.ai/en/docs
 
 ### Zastosowania (wersja polska)
 
-- Wdrożenie agentów AI w firmie: https://takeany.ai/pl/use-cases/build-ai-agents
-- RAG dla firmy (baza wiedzy AI na własnych serwerach): https://takeany.ai/pl/use-cases/self-hosted-rag-assistant
-- Chatbot z bazą wiedzy: https://takeany.ai/pl/use-cases/chatbot-widget
-- Inferencja na własnych GPU (vLLM, Ollama): https://takeany.ai/pl/use-cases/local-gpu-inference
-- AI dla ERP i CRM: https://takeany.ai/pl/use-cases/ai-for-erp-crm
-- Automatyzacja przetargów i RFP: https://takeany.ai/pl/use-cases/rfp-automation
-- Swoboda wyboru modeli LLM: https://takeany.ai/pl/use-cases/model-freedom
-- Automatyzacja procesów on-premise: https://takeany.ai/pl/use-cases/self-hosted-workflow-automation
-- White label AI dla dostawców oprogramowania (AI pod własną marką): https://takeany.ai/pl/use-cases/white-label-ai
+- Wdrożenie agentów AI w firmie: https://takeany.ai/pl/zastosowania/wdrozenie-agentow-ai
+- RAG dla firmy (baza wiedzy AI na własnych serwerach): https://takeany.ai/pl/zastosowania/rag-dla-firmy
+- Chatbot z bazą wiedzy: https://takeany.ai/pl/zastosowania/chatbot-z-baza-wiedzy
+- Inferencja na własnych GPU (vLLM, Ollama): https://takeany.ai/pl/zastosowania/inferencja-na-wlasnych-gpu
+- AI dla ERP i CRM: https://takeany.ai/pl/zastosowania/ai-dla-erp-i-crm
+- Automatyzacja przetargów i RFP: https://takeany.ai/pl/zastosowania/automatyzacja-przetargow-i-rfp
+- Swoboda wyboru modeli LLM: https://takeany.ai/pl/zastosowania/swoboda-wyboru-modeli-llm
+- Automatyzacja procesów on-premise: https://takeany.ai/pl/zastosowania/automatyzacja-procesow-on-premise
+- White label AI dla dostawców oprogramowania (AI pod własną marką): https://takeany.ai/pl/zastosowania/white-label-ai
 
 ### Porównania z alternatywami (wersja polska)
 
-- Alternatywa dla n8n: https://takeany.ai/pl/alternative-n8n
-- Alternatywa dla Dify.ai: https://takeany.ai/pl/alternative-dify
-- Alternatywa dla Flowise i Langflow: https://takeany.ai/pl/alternative-flowise-langflow
-- Alternatywa dla Lindy.ai: https://takeany.ai/pl/alternative-lindy
+- Alternatywa dla n8n: https://takeany.ai/pl/alternatywa-dla-n8n
+- Alternatywa dla Dify.ai: https://takeany.ai/pl/alternatywa-dla-dify
+- Alternatywa dla Flowise i Langflow: https://takeany.ai/pl/alternatywa-dla-flowise-langflow
+- Alternatywa dla Lindy.ai: https://takeany.ai/pl/alternatywa-dla-lindy
 
 ### Artykuły (wersja polska)
 
-- Praktyczny przewodnik: jak zbudować suwerenną AI w firmie: https://takeany.ai/pl/blog/digital-sovereignty-ai
-- Ile naprawdę kosztuje AI w Twojej firmie? Realne TCO modeli LLM: https://takeany.ai/pl/blog/true-cost-of-llm
-- Dlaczego sandboxy mają znaczenie dla agentów AI: https://takeany.ai/pl/blog/why-sandboxes-matter-for-ai-agents
-- Jak guardrails zatrzymują ataki prompt injection: https://takeany.ai/pl/blog/guardrails-prompt-injection
+- Praktyczny przewodnik: jak zbudować suwerenną AI w firmie: https://takeany.ai/pl/blog/suwerennosc-cyfrowa-ai
+- Ile naprawdę kosztuje AI w Twojej firmie? Realne TCO modeli LLM: https://takeany.ai/pl/blog/koszt-llm-dla-firm
+- Dlaczego sandboxy mają znaczenie dla agentów AI: https://takeany.ai/pl/blog/sandbox-dla-agentow-ai
+- Jak guardrails zatrzymują ataki prompt injection: https://takeany.ai/pl/blog/ochrona-przed-prompt-injection
 
 ### Najczęstsze pytania w języku polskim
 
